@@ -1,0 +1,56 @@
+// 변수 정의
+$button-size: 30px;
+$arrow-size: 8px;
+$arrow-color: #333;
+$transition-duration: 0.3s;
+$focus-color: #007bff;
+
+.button {
+  // 버튼 기본 스타일
+  width: $button-size;
+  height: $button-size;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+
+  // 포커스 스타일
+  &:focus {
+    outline: 2px solid $focus-color;
+    border-radius: 50%;
+  }
+
+  // 화살표 스타일
+  &::before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: $arrow-size;
+    height: $arrow-size;
+    border-right: 2px solid $arrow-color;
+    border-bottom: 2px solid $arrow-color;
+    transition: transform $transition-duration ease;
+  }
+
+  // 확장된 상태의 화살표 스타일
+  &.expanded::before {
+    transform: translate(-50%, -50%) rotate(-135deg);
+    top: 50%;
+  }
+}
+
+// 스크린 리더를 위한 숨김 텍스트 스타일
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

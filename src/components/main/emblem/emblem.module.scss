@@ -1,0 +1,45 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+.award_area {
+    overflow: hidden;
+    padding-top: 30px;
+    width: 100%;
+    height: 125px;
+    border-top: 1px solid #eee;
+
+    .sl_emblem {
+        width: 2500px;
+
+        .swiper-wrapper {
+            transition-timing-function: linear;
+        }
+
+        .swiper_slide {
+            @include flex();
+
+            img {
+                display: inline-block;
+            }
+
+            .emblem_desc {
+                display: inline-block;
+                padding-left: 13px;
+                color: #888;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+    }
+    
+    &.mobile {
+        .sl_emblem {
+            width: 1000px !important;
+    
+            .emblem_desc {
+                display: none !important;
+            }
+        }
+    }
+}

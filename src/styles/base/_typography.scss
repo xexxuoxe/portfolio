@@ -1,0 +1,113 @@
+@import '@styles/abstracts/_variables';
+@import '@styles/abstracts/_mixins';
+
+// Utility Classes
+.hide { display: none; }
+
+.ir {
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  left: -99999px;
+  width: 1%;
+  height: 1%;
+  @include margin(0);
+  @include padding(0);
+  font-size: 1%;
+  line-height: 1%;
+}
+
+.ir2 span {
+  display: inline-block;
+  position: relative;
+  z-index: -1;
+  height: 11px;
+  overflow: hidden;
+  font-size: 11px;
+  left: -3000em;
+}
+
+// Padding
+.pt0 { padding-top: 0 !important; }
+.pt3 { padding-top: 3px; }
+.pt15 { padding-top: 15px; }
+.pt20 { padding-top: 20px; }
+.pb10 { padding-bottom: 10px; }
+.pb15 { padding-bottom: 15px !important; }
+.pr15 { padding-right: 15px; }
+.pl15 { padding-left: 15px; }
+
+// Margin
+.ml10 { margin-left: 10px; }
+.mt70 { margin-top: 70px; }
+.mb10 { margin-bottom: 10px; }
+.mauto { margin: 0 auto; }
+
+// Text alignment
+.tc { text-align: center; }
+.tr { text-align: right; }
+
+// Float
+.fl { float: left; }
+.fr { float: right; }
+
+// Miscellaneous
+.ls { letter-spacing: -1px; }
+.vt { vertical-align: top; }
+.vm { vertical-align: middle; }
+.font_dotum { font-family: "돋움", Dotum; }
+.bold { font-weight: bold; }
+.ti18 { text-indent: 18px !important; }
+
+// Colors
+.black { color: $color-black; }
+.fc_blue { color: $color-blue !important; }
+.fc_blue2 { color: $color-light-blue !important; }
+.fc_999 { color: $color-gray; }
+
+// Clear
+.clear { clear: both; }
+
+// Readonly
+.readonly {
+  color: $color-dark-gray !important;
+  text-shadow: 1px 1px 1px #fff;
+  background: #f4f4f4 !important;
+  cursor: not-allowed;
+}
+
+// Notification
+.noti.ok {
+  background: url('//img.siwonschool.com/member/comm/ico_noti3.png') no-repeat !important;
+  color: #2170b8 !important;
+}
+
+// Top area
+.top_area .bt_prev { display: none; }
+
+// Clearfix
+.clearfix {
+  &::before, &::after {
+    content: "";
+    display: block;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.position { position: relative; }
+
+.container { 
+    width: 1280px;
+    padding: 0 15px;
+    max-width: 1280px;
+    width: calc(100% - 30px);
+    margin: 0 auto;
+}
+
+//.input_check_label{display:inline-block;height:25px;padding-left:35px;line-height:25px;background:url(//img.siwonschool.com/member/comm/bg_checkbox2_off.png) no-repeat;background-size:25px auto}
+//.input_check_label.on{background:url(//img.siwonschool.com/member/comm/bg_checkbox2_on.png) no-repeat;background-size:25px auto}
+
+.input_check_label2{display:inline-block;height:28px;padding-left:38px;line-height:28px;background:url(//img.siwonschool.com/member/comm/bg_checkbox5_off.png) no-repeat;background-size:28px auto;cursor:pointer}
+//.input_check_label2.on{background:url(//img.siwonschool.com/member/comm/bg_checkbox5_on.png) no-repeat;background-size:24px auto}

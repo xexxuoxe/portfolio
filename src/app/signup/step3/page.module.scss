@@ -1,0 +1,70 @@
+.join_step3 {
+    .finish_wrap {
+        padding: 62px 75px;
+        border-top: 1px solid #333;
+        background: #fff;
+        text-align: center;
+
+        .logo {
+            display: block;
+            width: 81px;
+            height: 82px;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .txt_box {
+            margin: 40px 0 45px;
+
+            strong {
+                display: block;
+                font-size: 24px;
+                color: #333;
+
+                em {
+                    font-weight: bold;
+                }
+            }
+
+            .txt {
+                display: block;
+                margin-top: 14px;
+                font-size: 16px;
+                color: #666;
+            }
+        }
+
+        .id_box {
+            padding: 30px 0;
+            border-width: 1px 0;
+            border-style: solid;
+            border-color: #c0c0c0;
+
+            strong {
+                display: block;
+                font-size: 22px;
+                font-weight: bold;
+
+                em {
+                    font-weight: bold;
+                    color: #2f62cb;
+                }
+            }
+        }
+    }
+
+    .bt_wrap {
+        overflow: hidden;
+
+        a {
+            float: left;
+            width: 100%;
+            background: #2f62cb;
+            font-size: 20px;
+        }
+    }
+}

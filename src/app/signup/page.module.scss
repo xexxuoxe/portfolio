@@ -1,0 +1,86 @@
+
+#siwon_container {
+	width: 100%;
+	padding: 0;
+
+	&.sub_section {
+		overflow: hidden;
+		background: #eee;
+	}
+
+	.inner_container {
+		position: relative;
+		width: 980px;
+		margin: 0 auto;
+	}
+
+	.contents {
+		margin: 0 auto;
+
+		&.main {
+			position: relative;
+			width: 980px;
+			overflow: hidden;
+		}
+
+		&.sub {
+			padding-bottom: 80px;
+			overflow: hidden;
+		}
+	}
+
+	.sub_con {
+		padding: 0 40px 30px;
+		background: #fff;
+
+		&.dormant {
+			margin-top: 40px;
+		}
+	}
+
+	.member {
+		&.inner_container {
+			width: 600px;
+			margin: 0 auto;
+			padding-bottom: 80px;
+		}
+
+		.top_wrap {
+			padding: 40px 0 28px;
+
+			h2 {
+				font-size: 30px;
+				font-weight: bold;
+				text-align: center;
+				color: #333;
+			}
+		}
+
+		.contents .bt_wrap {
+			margin-top: 40px;
+
+			a {
+				display: block;
+				height: 70px;
+				background: #ababab;
+				font-size: 22px;
+				line-height: 70px;
+				text-align: center;
+				text-decoration: none;
+				color: #fff;
+
+				&:first-child {
+					background: #2f62cb;
+				}
+			}
+
+			&.flex {
+				display: flex;
+
+				a + a {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,111 @@
+// Variables
+$font-family-base: 'Pretendard', Roboto, -apple-system, BlinkMacSystemFont, system-ui, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+$font-size-base: 13px;
+$line-height-base: inherit;
+$color-text: #666;
+$color-link: #7f7f7f;
+
+// Reset and base styles
+body, form, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, fieldset, th, td, input, textarea, button, select {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-family: $font-family-base;
+  font-weight: normal;
+}
+
+body {
+  font-size: $font-size-base;
+  font-weight: normal;
+  font-style: normal;
+  line-height: $line-height-base;
+  color: $color-text;
+}
+
+li { list-style: none; }
+
+a {
+  text-decoration: none;
+  color: $color-link;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+address, caption, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+input, textarea, select { letter-spacing: normal; }
+input, select { vertical-align: middle; }
+
+ol, ul, dl { list-style: none; }
+fieldset, img { border: 0; }
+legend, caption { display: none; }
+
+img {
+  border: 0;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+hr { display: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+br, p { letter-spacing: normal; }
+
+input {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  }
+  &[type="password"] {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+}
+
+button { cursor: pointer; }
+i { font-style: normal; }
+
+// Mobile styles
+@media (max-width: 767px) {
+  a[href^="tel"] {
+    font-style: normal;
+  }
+
+  input {
+    &[type="text"],
+    &[type="password"] {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &[type="radio"] {
+      border: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    &[type="button"],
+    &[type="text"],
+    &[type="submit"],
+    &[type="reset"],
+    &[type="file"] {
+      -webkit-appearance: button;
+      appearance: button;
+      border-radius: 0;
+    }
+  }
+
+  button {
+    -webkit-appearance: button;
+    appearance: button;
+    border-radius: 0;
+  }
+}
