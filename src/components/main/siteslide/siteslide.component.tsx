@@ -45,16 +45,6 @@ const siteBanners: Banner[] = [
         desc : '억지로 하는 영어학습은 그만! 재미없던 영어 고민 해결!',
         link : 'https://superkids.siwonschool.com/'
     },
-    /*{
-        id: 'www',
-        name : '기초영어',
-        img : 'https://siwon-cdn.siwonschool.com/member/main/v3/main_sl_challenge.png',
-        fullname : '챌린지',
-        tit01 : '챌린지',
-        tit02 : '챌린지',
-        desc : '챌린지',
-        link : 'https://challenge.siwonschool.com/'
-    }*/
 ];
 
 export default function SiteSlide() {

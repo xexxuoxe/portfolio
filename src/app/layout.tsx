@@ -7,12 +7,10 @@ import { StoreProviders } from '@store/stroe.provider'
 import ErrorWrapper from '@lib/error/errorWrapper.boundary';
 import { AlertProvider } from '@lib/alert/alert.context'
 import { LoadingProvider } from '@lib/loading/loading.context';
-
-import HeaderComponent from '@components/sementic/header.component'
+import MetaHeadComponent from '@components/sementic/meta-head.component'
 import GnbComponent from '@components/sementic/gnb.component'
 import FooterComponent from '@components/sementic/footer.component'
 import { ResponsiveProvider } from '@lib/context/responsive.context'
-
 
 export const metadata: Metadata = {
     title: '대한민국 왕초보탈출 시원스쿨',
@@ -28,7 +26,7 @@ export default function RootLayout({
         <html lang="ko">
             <ErrorWrapper>
                 <StoreProviders>
-                    <HeaderComponent />
+                    <MetaHeadComponent lang="vietnam" title='테스트'/>
                         <body id="siwon_wrap">
                             <AlertProvider>
                                 <LoadingProvider>
