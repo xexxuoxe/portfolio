@@ -11,30 +11,23 @@ export default function GnbComponent() {
 
 	return (
 		<div id={ styles.siwon_header }>
-			<div className={ `${styles.container} container` }>
+			<div className={styles.container}>
 				<h1 className={ styles.logo }>
 					<Link href="/">
-						{
-							isBreakpoint('desktop') &&
-								<Image
-								src="https://siwon-cdn.siwonschool.com/member/comm/logo.png"
-								alt="siwonschool members"
-								width={290}
-								height={30}
-								/>
-						}
-						{
-							isBreakpoint('mobile') &&
-								<Image
-								src="https://siwon-cdn.siwonschool.com/member/m/comm/logo.png"
-								alt="siwonschool members"
-								width={150}
-								height={39}
-								/>
-						}
+						<Image
+							src="https://siwon-cdn.siwonschool.com/asia/layout/logo.png"
+							alt="siwonschool members"
+							layout="fill"
+						/>
 					</Link>
 				</h1>
 
+						{/* <Image
+							src="https://data.siwonschool.com/banner/img/vietnam/2021/04/13/bimg_src_1618283065.png"
+							alt="siwonschool members"
+							layout="fill"
+						/> */}
+						
 				<ul className={ styles.util_menu }>
 					{/* 로그인 전 */}
 					<li>
@@ -43,10 +36,6 @@ export default function GnbComponent() {
 					<li className={ styles.join }>
 						<Link href={ `/signup/step1` } className={ styles.bar }>회원가입</Link>
 					</li>
-
-					{/* 로그인 후 */}
-					{/* <li><a href="/?s=logout">로그아웃</a></li>
-					<li><a href="/?s=modify" className="bar">내정보관리</a></li> */}
 				</ul>
 			</div>
 		</div>
