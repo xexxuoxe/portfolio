@@ -8,7 +8,7 @@ import EmblemComponent from '@components/main/emblem/emblem.component';
 
 export default function Main() {
 	const { currentBreakpoint, isBreakpoint } = useResponsive();
-  
+
   return (
     <div className='main_section' id='siwon_container'>
       { isBreakpoint('desktop') && <TitleComponent /> }

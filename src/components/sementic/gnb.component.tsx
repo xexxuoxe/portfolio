@@ -14,8 +14,8 @@ export default function GnbComponent() {
 			<div className={ `${styles.container} container` }>
 				<h1 className={ styles.logo }>
 					<Link href="/">
-						{ 
-							isBreakpoint('desktop') && 
+						{
+							isBreakpoint('desktop') &&
 								<Image
 								src="https://siwon-cdn.siwonschool.com/member/comm/logo.png"
 								alt="siwonschool members"
@@ -23,8 +23,8 @@ export default function GnbComponent() {
 								height={30}
 								/>
 						}
-						{ 
-							isBreakpoint('mobile') && 
+						{
+							isBreakpoint('mobile') &&
 								<Image
 								src="https://siwon-cdn.siwonschool.com/member/m/comm/logo.png"
 								alt="siwonschool members"

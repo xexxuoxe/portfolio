@@ -1,0 +1,75 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+#siwon_navigation {
+	position: relative;
+	background: #333;
+	z-index: 65;
+	box-sizing: border-box;
+	.inner_wrap {
+		@include flex($align: 'between');
+		width: 1200px;
+		height: 40px;
+		margin: 0 auto;
+		.language_menu, .social_links {
+			@include flex($align: '');
+			li {
+				position: relative;
+				height: 40px;
+				&:hover, &:focus, &:active {
+					> a {
+						color: #eee;
+						font-weight: 500;
+						text-decoration: none;
+					}
+					> .sub_menu {
+						display: block;
+					}
+				}
+				a {
+					@include flex($align: 'center');
+					width: 100%;
+					height: 100%;
+					color: #999;
+					font-size: 13px;
+					font-weight: 500;
+					text-align: center;
+				}
+			}
+		}
+		.language_menu {
+			&:first-child {padding-left: 0;}
+			&:last-child {padding-right: 0;}
+			li {
+				padding: 0 15px;
+				.sub_menu {
+					display: none;
+					position: absolute;
+					width: 104px;
+					max-width: 104px;
+					min-width: 104px;
+					top: 40px;
+					left: -15px;
+					z-index: 1;
+					background: #333;
+					text-align: center;
+					li {
+						padding: 0 5px;
+					}
+				}
+			}
+		}
+		.social_links {
+			li {
+				padding: 0 5px;
+				a {
+					position: relative;
+					display: block;
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+	}
+}
