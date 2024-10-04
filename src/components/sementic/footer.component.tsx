@@ -5,28 +5,29 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.scss';
+import CustomSelect from'@components/_utiles/select/select.component';
 
 export default function FooterComponent() {
 
-	const [isOpen, setIsOpen] = useState(false);
-	const [selectedOption, setSelectedOption] = useState('FAMILY SITE');
-	const dropdownRef = useRef<HTMLDivElement>(null);
+	// const [isOpen, setIsOpen] = useState(false);
+	// const [selectedOption, setSelectedOption] = useState('FAMILY SITE');
+	// const dropdownRef = useRef<HTMLDivElement>(null);
 
-	// family bar option click event
-	const toggleDropdown = () => setIsOpen(!isOpen);
-	// select box 외부 click 시 사라지는 event
-	useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
-
+	// // family bar option click event
+	// const toggleDropdown = () => setIsOpen(!isOpen);
+	// // select box 외부 click 시 사라지는 event
+	// useEffect(() => {
+    //     const handleClickOutside = (event: MouseEvent) => {
+    //         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    //             setIsOpen(false);
+    //         }
+    //     };
+    //     document.addEventListener('mousedown', handleClickOutside);
+    //     return () => {
+    //         document.removeEventListener('mousedown', handleClickOutside);
+    //     };
+    // }, []);
+	// select list array
 	const options = [
 		{
 			label: '기초영어',
@@ -91,6 +92,10 @@ export default function FooterComponent() {
 			]
 		},
 	];
+	// 현재 날짜 가져오기
+	const today = new Date();
+	const todayYear = today.getFullYear();
+
 	return (
 		<div id={ styles.siwon_footer }>
             <div className={ styles.inner_wrap }>
@@ -123,24 +128,12 @@ export default function FooterComponent() {
 							</li>
 							{/* family_site */}
 							<li className={ styles.family_site }>
-								<div ref={dropdownRef}>
-									<div className={ styles.select } onClick={ toggleDropdown }>
-										{ selectedOption }
-										<span className={ styles.arrow }>{isOpen ? '▲' : '▼'}</span>
-									</div>
-									{isOpen && (
-										<div className={ styles.select_list }>
-											{options.map((group, groupIndex) => (
-												<ul key={ groupIndex } className={ styles.optgroup }>
-													{group.options.map((option, optionIndex) => (
-														<li key={optionIndex} className={styles.option}>
-															<a href={option.value} target='_blank'>{option.label}</a>
-														</li>
-													))}
-												</ul>
-											))}
-										</div>
-									)}
+								<CustomSelect
+									options={options}
+									selectedOption={selectedOption}
+									setSelectedOption={setSelectedOption}
+									id="default"
+								/>
 								</div>
 							</li>
 						</ul>
@@ -201,15 +194,14 @@ export default function FooterComponent() {
 						</article>
 						{/*
 							1. 슬라이드 만들고 컴포넌트화하기
-							2. 카피라이터 2024 현재날짜로 가져오기
-							3. family site 아이콘 삽입
-							4. footer logo 동적 생성
-							5. select box 컴포넌트화하기
-							6. _reset.scss 선택자 오류 해결하기
-							7. meta파일 head import 해결하기
+							2. family site 아이콘 삽입
+							3. footer logo 동적 생성
+							4. select box 컴포넌트화하기
+							5. _reset.scss 선택자 오류 해결하기
+							6. meta파일 head import 해결하기
 						*/}
 						<address className={ styles.copyright }>
-							Copyright &copy; 2024 siwonschool. All Rights Reserved.
+							Copyright &copy; {`${todayYear}`} siwonschool. All Rights Reserved.
 						</address>
 					</div>
 				</div>
