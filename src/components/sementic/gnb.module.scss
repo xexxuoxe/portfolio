@@ -10,50 +10,78 @@
 }
 
 #siwon_header {
-	height: 82px;
+	height: 110px;
 	border-bottom: 1px solid #f0f0f0;
-
-	.container {
-		position: relative;
+	.header_top {
+		@include flex($align: 'between');
+		width: 1200px;
 		height: 100%;
+		margin: 0 auto;
+		.wrap_items {
+			width: 33.333%;
+		}
+		.banner {
 
+		}
 		.logo {
-			position: absolute;
-			box-sizing: border-box;
-			top: 0;
-			left: 0;
-			height: 100%;
-
-			a {
-				@include flex();
-				width: 100%;
-				height: 100%;
-				padding: 18px 0;
-
-				.mo {
-					display: none;
+			text-align: center;
+		}
+		.user_menu {
+			.user_container {
+				margin-left: auto;
+				float: right;
+				li {
+					float: left;
+					&:last-child {
+						padding: 0;
+						&::after {
+							display: none;
+						}
+					}
+					a {
+						display: block;
+						width: 100%;
+						height: 100%;
+					}
 				}
 			}
-		}
-
-		.util_menu {
-			position: absolute;
-			top: 50%;
-			right: 0;
-			transform: translateY(-49%);
-
-			li {
-				display: inline-block;
-
-				a {
-					padding-left: 15px;
-					font-size: 13px;
-					color: #666;
+			.user_view {
+				padding-bottom: 15px;
+				li {
+					position: relative;
+					flex: 1 1 auto;
+					padding: 0 10px;
+					&::after {
+						content: "";
+						position: absolute;
+						width: 2px;
+						height: 10px;
+						top: 3px;
+						right: 0;
+						background: #eaeaea;
+					}
+					a {
+						color: #707070;
+						font-size: 13px;
+					}
 				}
-
-				&.join a {
-					padding-right: 0;
+			}
+			.user_page {
+				height: 30px;
+				li {
+					flex: 1 1 auto;
+					position: relative;
+					width: 33px;
+					height: 100%;
+					margin-left: 15px;
+					background-image: url(//siwon-cdn.siwonschool.com/comm/layout/ico_util.png);
+					background-repeat: no-repeat;
+					background-size: cover;
 				}
+				.survey {width: 125px; background-position-x: 0;}
+				.mypage {background-position-x: -188px;}
+				.coupon {background-position-x: -236px;}
+				.cart {background-position-x: -284px;}
 			}
 		}
 	}

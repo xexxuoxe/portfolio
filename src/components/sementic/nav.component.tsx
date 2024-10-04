@@ -75,11 +75,11 @@ const languages = [
 ];
 {/* sns link arry  */}
 const socialLinks = [
-  { name: "유튜브", url: "https://www.youtube.com/channel/UC19bLFMBYY1YChAWQ7sNl8A", src: "" },
-  { name: "네이버 TV", url: "https://tv.naver.com/siwonvietnam/", src: ""},
-  { name: "인스타그램", url: "https://www.instagram.com/siwonvietnam/", src: "" },
-  { name: "블로그", url: "https://blog.naver.com/siwonvietnam" , src: "", },
-  { name: "페이스북", url: "https://www.facebook.com/siwonvietnam/", src: "" },
+  { name: "유튜브", url: "//www.youtube.com/channel/UC19bLFMBYY1YChAWQ7sNl8A", class: "youtube" },
+  { name: "네이버 TV", url: "//tv.naver.com/siwonvietnam/", class: "navertv" },
+  { name: "인스타그램", url: "//www.instagram.com/siwonvietnam/", class: "instagram" },
+  { name: "블로그", url: "//blog.naver.com/siwonvietnam" , class: "naverblog", },
+  { name: "페이스북", url: "//www.facebook.com/siwonvietnam/", class: "facebook" },
 ];
 
 export default function NavComponent() {
@@ -96,7 +96,7 @@ export default function NavComponent() {
               {lang.subLinks && lang.subLinks.length > 0 && (
                 <ul className={styles.sub_menu}>
                   {lang.subLinks.map((subLang, subIndex) => (
-                    <li key={subIndex}>
+                    <li key={subIndex} className={styles.name}>
                       <Link
                         href={subLang.url}
                         target="_blank"
@@ -113,16 +113,9 @@ export default function NavComponent() {
         </ul>
 		{/* sns link */}
         <ul className={styles.social_links}>
-          {socialLinks.map((link, index) => (
-            <li key={index}>
-              <Link href={link.url} target="_blank" rel="noopener noreferrer">
-			  <Image
-				src="https://siwon-cdn.siwonschool.com/comm/fam_sns.png"
-				layout="fill"
-      			objectFit="none"
-				alt={link.name}
-				/>
-              </Link>
+          {socialLinks.map((socialLink, index) => (
+            <li key={index} className={styles[socialLink.class]}>
+              <Link href={socialLink.url} target="_blank" rel="noopener noreferrer"></Link>
             </li>
           ))}
         </ul>
