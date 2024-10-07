@@ -5,29 +5,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.scss';
-import CustomSelect from'@components/_utiles/select/select.component';
+import ComponentSelect from'@components/_utiles/select/select.component';
+import ComponentSlider from'@components/_utiles/slider/slider.component';
 
 export default function FooterComponent() {
 
-	// const [isOpen, setIsOpen] = useState(false);
-	// const [selectedOption, setSelectedOption] = useState('FAMILY SITE');
-	// const dropdownRef = useRef<HTMLDivElement>(null);
+	const [selectedOption, setSelectedOption] = useState({ label: 'FAMILY SITE', value: '' });
 
-	// // family bar option click event
-	// const toggleDropdown = () => setIsOpen(!isOpen);
-	// // select box 외부 click 시 사라지는 event
-	// useEffect(() => {
-    //     const handleClickOutside = (event: MouseEvent) => {
-    //         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-    //             setIsOpen(false);
-    //         }
-    //     };
-    //     document.addEventListener('mousedown', handleClickOutside);
-    //     return () => {
-    //         document.removeEventListener('mousedown', handleClickOutside);
-    //     };
-    // }, []);
-	// select list array
+	//select list array
 	const options = [
 		{
 			label: '기초영어',
@@ -92,6 +77,77 @@ export default function FooterComponent() {
 			]
 		},
 	];
+
+	//slide list array
+	const slides = [
+		{
+			id: "slide01",
+			title: "2022 국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_nba2023.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide02",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_customer2021.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide03",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_customer2020.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide04",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_goodtowork.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide05",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_brand2020.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide06",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_yearbrand2017.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide07",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_yearbrand2022.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide08",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_consumer.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide09",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_nba2019.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide10",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_brand2018.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+		{
+			id: "slide11",
+			title: "국가브랜드 대상",
+			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem01.png",
+			link: "//www.siwonschool.com/?s=press"
+		},
+	]
+
 	// 현재 날짜 가져오기
 	const today = new Date();
 	const todayYear = today.getFullYear();
@@ -128,13 +184,12 @@ export default function FooterComponent() {
 							</li>
 							{/* family_site */}
 							<li className={ styles.family_site }>
-								<CustomSelect
+								<ComponentSelect
 									options={options}
 									selectedOption={selectedOption}
 									setSelectedOption={setSelectedOption}
 									id="default"
 								/>
-								</div>
 							</li>
 						</ul>
 					</div>
@@ -192,11 +247,22 @@ export default function FooterComponent() {
 								<p> 개인정보보호책임자<span>최광철</span></p>
 							</div>
 						</article>
+						<ComponentSlider
+							slides={slides}
+							spaceBetween={30}
+							slidesPerView={8}
+							loop={true} // Pass as boolean
+							navigation={true} // Pass as boolean
+							pagination={false}
+							scrollbar={false}
+							autoplay={{ delay: 2000, disableOnInteraction: false }} // Pass autoplay settings
+						/>
+
+
 						{/*
 							1. 슬라이드 만들고 컴포넌트화하기
 							2. family site 아이콘 삽입
 							3. footer logo 동적 생성
-							4. select box 컴포넌트화하기
 							5. _reset.scss 선택자 오류 해결하기
 							6. meta파일 head import 해결하기
 						*/}

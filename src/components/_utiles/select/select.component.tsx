@@ -1,55 +1,80 @@
-// components/CustomSelect.js
+// scr/components/sementic/select.component.tsx
+// select box component
 import React, { useState, useRef, useEffect } from 'react';
-import styles from './CustomSelect.module.css'; // CSS Module import
+import styles from './select.module.scss';
 
-const CustomSelect = ({ options, selectedOption, setSelectedOption, id }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
+// 옵션 타입 정의
+type Option = {
+	label?: string;
+	value?: string;
+};
 
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
+// Props 타입 정의
+interface CustomSelectProps {
+	options: { label: string; options: Option[] }[];
+	selectedOption: Option;
+	setSelectedOption: (option: Option) => void;
+	id: string;
+}
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
+const ComponentSelect = (props: CustomSelectProps) => {
+	const {
+		options,
+		selectedOption,
+		setSelectedOption,
+		id
+	} = props;
 
-  // 클릭 외부 감지
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
+	const [isOpen, setIsOpen] = useState(false);
+	const dropdownRef = useRef<HTMLDivElement>(null);
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+	const toggleDropdown = () => {
+	  setIsOpen((prev) => !prev);
+	};
 
-  return (
-    <div className={styles[id]} ref={dropdownRef}>
+	const handleOptionClick = (option: Option) => {
+	  setSelectedOption(option);
+	  setIsOpen(false);
+	};
+
+	useEffect(() => {
+	  const handleClickOutside = (event: MouseEvent) => {
+		if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+		  setIsOpen(false);
+		}
+	  };
+
+	  document.addEventListener('mousedown', handleClickOutside);
+	  return () => {
+		document.removeEventListener('mousedown', handleClickOutside);
+	  };
+	}, []);
+
+	return (
+	  <div className={styles[id]} ref={dropdownRef}>
 		<div className={styles.select} onClick={toggleDropdown}>
-			{selectedOption.label}
-			<span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
+		  	{selectedOption.label}
+		  	<span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
 		</div>
 		{isOpen && (
 			<div className={styles.select_list}>
-			{options.map((group, groupIndex) => (
+				{options.map((group, groupIndex) => (
 				<ul key={groupIndex} className={styles.optgroup}>
-				{group.options.map((option, optionIndex) => (
-					<li key={optionIndex} className={styles.option} onClick={() => handleOptionClick(option)}>
-					<a href={option.value} target='_blank' rel='noopener noreferrer'>{option.label}</a>
+					{group.options.map((option) => (
+					<li
+						key={option.value}
+						className={styles.option}
+						onClick={() => handleOptionClick(option)}
+					>
+						<a href={option.value} target='_blank' rel='noopener noreferrer'>{option.label}</a>
 					</li>
-				))}
+					))}
 				</ul>
-			))}
-			</div>
+				))}
+		  </div>
 		)}
-    </div>
-  );
+	  </div>
+	);
 };
 
-export default CustomSelect;
+export default ComponentSelect;
