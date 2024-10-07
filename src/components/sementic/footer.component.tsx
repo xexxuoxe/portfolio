@@ -8,6 +8,12 @@ import styles from './footer.module.scss';
 import ComponentSelect from'@components/_utiles/select/select.component';
 import ComponentSlider from'@components/_utiles/slider/slider.component';
 
+						{/*
+							1. footer logo 동적 생성
+							2. select, slide(pagnai,nav) 커스텀 가능하게 작업
+							3. _reset.scss 선택자 오류 해결하기
+							4. meta파일 head import 해결하기
+						*/}
 export default function FooterComponent() {
 
 	const [selectedOption, setSelectedOption] = useState({ label: 'FAMILY SITE', value: '' });
@@ -247,25 +253,18 @@ export default function FooterComponent() {
 								<p> 개인정보보호책임자<span>최광철</span></p>
 							</div>
 						</article>
-						<ComponentSlider
-							slides={slides}
-							spaceBetween={30}
-							slidesPerView={8}
-							loop={true} // Pass as boolean
-							navigation={true} // Pass as boolean
-							pagination={false}
-							scrollbar={false}
-							autoplay={{ delay: 2000, disableOnInteraction: false }} // Pass autoplay settings
-						/>
-
-
-						{/*
-							1. 슬라이드 만들고 컴포넌트화하기
-							2. family site 아이콘 삽입
-							3. footer logo 동적 생성
-							5. _reset.scss 선택자 오류 해결하기
-							6. meta파일 head import 해결하기
-						*/}
+						<div className={ styles.award_slide }>
+							<ComponentSlider
+								slides={slides}
+								spaceBetween={30}
+								slidesPerView={8}
+								loop={true}
+								navigation={true}
+								pagination={false}
+								scrollbar={false}
+								autoplay={{ delay: 2000, disableOnInteraction: false }}
+							/>
+						</div>
 						<address className={ styles.copyright }>
 							Copyright &copy; {`${todayYear}`} siwonschool. All Rights Reserved.
 						</address>

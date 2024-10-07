@@ -4,10 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, Autoplay, Pagination } from 'swiper/modules';
-import styles from './slider.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import './slider.component.scss';
 
 interface Slide {
   id: string;
@@ -50,8 +50,8 @@ const ComponentSlider = (props: ComponentSliderProps) => {
 		pagination={pagination ? { clickable: true } : false}
 		scrollbar={scrollbar ? { draggable: true } : false}
 		autoplay={autoplay}
-		onSwiper={(swiper) => console.log(swiper)}
-		onSlideChange={() => console.log('slide change')}
+		// onSwiper={(swiper) => }
+		// onSlideChange={() => }
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>

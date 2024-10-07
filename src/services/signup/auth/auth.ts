@@ -6,8 +6,8 @@ export class AuthService {
     public static async start(
         type: 'phone' | 'email',
         receiver: string
-    ): Promise<number> 
-    {  
+    ): Promise<number>
+    {
         try {
             const result : {
                 status : Promise<number>
@@ -17,7 +17,7 @@ export class AuthService {
                     type: type,
                     receiver: receiver
                 },
-                { 
+                {
                     bearerToken: NEXUS_SERVER_TOKEN
                 }
             )
