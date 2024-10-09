@@ -1,0 +1,49 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+.siwon_board {
+    width: 1200px;
+    margin: auto;
+    .table_header {
+        @include flex($align: 'between');
+        .table_header_left {
+            .table_title {
+                h2 {
+                    margin-top: 50px;
+                    padding-bottom: 16px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    span {
+                        color: #d10e0e;
+                    }
+                }
+            }
+            .table_filter {
+                
+            }
+        }
+        .table_header_right {
+            .table_button {
+                li {
+                    a {
+                        padding: 10px;
+                        font-size: 13px;
+                        color: #fff;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        background-color: #867d7d;
+                    }
+                }
+            }
+        }
+        > div {
+            ul {
+                @include flex($align: 'between');
+                li {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

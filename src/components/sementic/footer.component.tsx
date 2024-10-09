@@ -13,6 +13,7 @@ import ComponentSlider from'@components/_utiles/slider/slider.component';
 							2. select, slide(pagnai,nav) 커스텀 가능하게 작업
 							3. _reset.scss 선택자 오류 해결하기
 							4. meta파일 head import 해결하기
+							5. 각 컴포넌트 id 값 어떻게 할건지
 						*/}
 export default function FooterComponent() {
 
@@ -24,7 +25,7 @@ export default function FooterComponent() {
 			label: '기초영어',
 			options: [
 				{ label: '시원스쿨 기초영어', value: '//www.siwonschool.com/' },
-				{ label: "시원스쿨 편입영어", value: "//ut.siwonschool.com" },
+				{ label: '시원스쿨 편입영어', value: '//ut.siwonschool.com' },
 				{ label: '시원스쿨 네이티브', value: '//native.siwonschool.com/' },
 			]
 		},
@@ -32,15 +33,15 @@ export default function FooterComponent() {
 			label: 'LAB',
 			options: [
 				{ label: '시원스쿨 토익', value: '//lab.siwonschool.com/' },
-				{ label: "시원스쿨 토스/오픽", value: "//lab.siwonschool.com/?p=tosopic" },
-				{ label: "시원스쿨 텝스", value: "//lab.siwonschool.com/?p=teps" },
-				{ label: "시원스쿨 지텔프", value: "//lab.siwonschool.com/?p=gtelp" },
-				{ label: "시원스쿨 아이엘츠", value: "//lab.siwonschool.com/?p=ielts" },
-				{ label: "시원스쿨 토플", value: "//lab.siwonschool.com/?p=toefl" },
-				{ label: "시원스쿨 듀오링고", value: "//lab.siwonschool.com/?s=event&t=duolingo" },
-				{ label: "시원스쿨 영문법/회화", value: "//lab.siwonschool.com/?s=event&t=basic_grammar" },
-				{ label: "시원스쿨 비즈니스/취업영어", value: "//lab.siwonschool.com/?s=event&t=businesspack" },
-				{ label: "시원스쿨 SPA", value: "//lab.siwonschool.com/?s=event&t=spa" },
+				{ label: '시원스쿨 토스/오픽', value: '//lab.siwonschool.com/?p=tosopic' },
+				{ label: '시원스쿨 텝스', value: '//lab.siwonschool.com/?p=teps' },
+				{ label: '시원스쿨 지텔프', value: '//lab.siwonschool.com/?p=gtelp' },
+				{ label: '시원스쿨 아이엘츠', value: '//lab.siwonschool.com/?p=ielts' },
+				{ label: '시원스쿨 토플', value: '//lab.siwonschool.com/?p=toefl' },
+				{ label: '시원스쿨 듀오링고', value: '//lab.siwonschool.com/?s=event&t=duolingo' },
+				{ label: '시원스쿨 영문법/회화', value: '//lab.siwonschool.com/?s=event&t=basic_grammar' },
+				{ label: '시원스쿨 비즈니스/취업영어', value: '//lab.siwonschool.com/?s=event&t=businesspack' },
+				{ label: '시원스쿨 SPA', value: '//lab.siwonschool.com/?s=event&t=spa' },
 			]
 		},
 		{

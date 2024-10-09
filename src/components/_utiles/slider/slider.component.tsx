@@ -26,6 +26,7 @@ interface ComponentSliderProps {
 	navigation?: boolean;
 	scrollbar?: boolean;
 	autoplay?: {delay?: number; disableOnInteraction?: boolean;}
+	id: string;
 }
 
 const ComponentSlider = (props: ComponentSliderProps) => {
@@ -37,11 +38,13 @@ const ComponentSlider = (props: ComponentSliderProps) => {
 		pagination,
 		navigation,
 		scrollbar,
-		autoplay
+		autoplay,
+		id
 	} = props;
 
   return (
     <Swiper
+		className={id}
 		modules={[Navigation, Pagination, Scrollbar, Autoplay]}
 		loop={loop}
 		spaceBetween={spaceBetween}
