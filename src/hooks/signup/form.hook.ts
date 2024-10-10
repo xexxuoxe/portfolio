@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import api from '@lib/api/fetch.client'; 
+import api from '@lib/api/fetch.client';
 import { useAlert } from '@lib/alert/alert.context'
 
 interface FormData {
@@ -22,7 +22,7 @@ interface Validity {
 
 export const useFormHook = () => {
     const { showAlert } = useAlert();
-    
+
     const [formData, setFormData] = useState<FormData>({
         id: '',
         password: '',
@@ -91,7 +91,7 @@ export const useFormHook = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         // 각 필드의 유효성 검사
         const newValidity = {
             id: validateId(formData.id),
@@ -114,13 +114,13 @@ export const useFormHook = () => {
 
         // 모든 필드가 유효하면 폼 데이터 처리
         console.log('Form submitted:', formData);
-        
+
         const response = await api.post<{ message: string }>('/api/signup', formData);
 
         if( response.status == 1 ){
             showAlert(`${response.message}`);
         }
-        
+
         return true; // 폼 제출 성공
     };
 

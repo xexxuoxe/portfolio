@@ -10,10 +10,10 @@ import ComponentSlider from'@components/_utiles/slider/slider.component';
 
 						{/*
 							1. footer logo 동적 생성
-							2. select, slide(pagnai,nav) 커스텀 가능하게 작업
+							2. pagenation, slide(pagnai,nav) 커스텀 가능하게 작업
 							3. _reset.scss 선택자 오류 해결하기
 							4. meta파일 head import 해결하기
-							5. 각 컴포넌트 id 값 어떻게 할건지
+							5.
 						*/}
 export default function FooterComponent() {
 
@@ -192,10 +192,10 @@ export default function FooterComponent() {
 							{/* family_site */}
 							<li className={ styles.family_site }>
 								<ComponentSelect
+									className={styles.select}
 									options={options}
 									selectedOption={selectedOption}
 									setSelectedOption={setSelectedOption}
-									id="default"
 								/>
 							</li>
 						</ul>

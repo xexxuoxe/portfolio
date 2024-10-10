@@ -11,8 +11,8 @@
 			.corp_list {
 				@include flex($align: 'between');
 				height: 80px;
-				ul {
-					li {
+				> ul {
+					> li {
 						padding-right: 25px;
 						a {
 							display: block;
@@ -35,12 +35,31 @@
 				&_right {
 					float: right;
 					@include flex($align: '');
-					li {
+					> li {
 						float: left;
 						&.family_site {
 							position: relative;
 							width: 172px;
 							height: 35px;
+							.select {
+								div {
+									border: none;
+									border-bottom: 1px solid #fff !important;
+									color: #eee;
+									div {
+										border: 1px solid #fff;
+										background: #2c2b34;
+										color: #fff;
+										.optgroup {
+											.option {
+												a {
+													color: #fff;
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}

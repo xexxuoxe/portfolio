@@ -11,19 +11,13 @@ type Option = {
 
 // Props 타입 정의
 interface CustomSelectProps {
+	className?: string;
 	options: { label: string; options: Option[] }[];
 	selectedOption: Option;
 	setSelectedOption: (option: Option) => void;
-	id: string;
 }
 
-const ComponentSelect = (props: CustomSelectProps) => {
-	const {
-		options,
-		selectedOption,
-		setSelectedOption,
-		id
-	} = props;
+const ComponentSelect = ({ className, options, selectedOption, setSelectedOption }: CustomSelectProps) => {
 
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
@@ -51,28 +45,28 @@ const ComponentSelect = (props: CustomSelectProps) => {
 	}, []);
 
 	return (
-	  <div className={styles[id]} ref={dropdownRef}>
-		<div className={styles.select} onClick={toggleDropdown}>
+	  <div ref={dropdownRef} className={`${styles.select} ${className}`}>
+		<div className={styles.select_current} onClick={toggleDropdown}>
 		  	{selectedOption.label}
 		  	<span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
-		</div>
-		{isOpen && (
-			<div className={styles.select_list}>
-				{options.map((group, groupIndex) => (
-				<ul key={groupIndex} className={styles.optgroup}>
-					{group.options.map((option) => (
-					<li
-						key={option.value}
-						className={styles.option}
-						onClick={() => handleOptionClick(option)}
-					>
-						<a href={option.value} target='_blank' rel='noopener noreferrer'>{option.label}</a>
-					</li>
+			{isOpen && (
+				<div className={styles.select_list}>
+					{options.map((group, groupIndex) => (
+					<ul key={groupIndex} className={styles.optgroup}>
+						{group.options.map((option) => (
+						<li
+							key={option.value}
+							className={styles.option}
+							onClick={() => handleOptionClick(option)}
+						>
+							<a href={option.value} target='_blank' rel='noopener noreferrer'>{option.label}</a>
+						</li>
+						))}
+					</ul>
 					))}
-				</ul>
-				))}
-		  </div>
-		)}
+			</div>
+			)}
+		</div>
 	  </div>
 	);
 };

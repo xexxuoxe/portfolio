@@ -10,14 +10,15 @@ import 'swiper/css/pagination';
 import './slider.component.scss';
 
 interface Slide {
-  id: string;
   title: string;
   img: string;
   link: string;
+  id : string;
 }
 
 // Props type definition
 interface ComponentSliderProps {
+	className: string;
   	slides: Slide[];
 	spaceBetween?: number;
 	slidesPerView?: number;
@@ -26,25 +27,13 @@ interface ComponentSliderProps {
 	navigation?: boolean;
 	scrollbar?: boolean;
 	autoplay?: {delay?: number; disableOnInteraction?: boolean;}
-	id: string;
 }
 
-const ComponentSlider = (props: ComponentSliderProps) => {
-  	const {
-		slides,
-		spaceBetween,
-		slidesPerView,
-		loop,
-		pagination,
-		navigation,
-		scrollbar,
-		autoplay,
-		id
-	} = props;
+const ComponentSlider = ({className, slides, spaceBetween, slidesPerView, loop, pagination, navigation, scrollbar, autoplay}: ComponentSliderProps) => {
 
   return (
     <Swiper
-		className={id}
+		className={className}
 		modules={[Navigation, Pagination, Scrollbar, Autoplay]}
 		loop={loop}
 		spaceBetween={spaceBetween}

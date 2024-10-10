@@ -1,5 +1,5 @@
 
-import ListItem from '@components/main/board/board.component'
+import ListItem from '@components/main/post/post.component'
 import Image from 'next/image';
 import './globals.scss'
 

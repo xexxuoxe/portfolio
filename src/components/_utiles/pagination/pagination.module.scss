@@ -1,0 +1,23 @@
+@import '@styles/abstracts/_mixins';
+
+.pagination {
+	padding-top: 25px;
+	.page_list{
+		@include flex($align: 'center');
+		.page_num , .page_num_on {
+			@include flex($align: 'center');
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin: 0 2px;
+			border: 1px solid #e2e2e2;
+			font-size: 15px;
+			color: #b6b6b6;
+			&_on {
+				background: #666;
+				border: 1px solid #666;
+				color: #fff;
+			}
+		}
+	}
+}
