@@ -1,0 +1,62 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+.inner_container  {
+	.section_sub {
+		text-align: center;
+		padding: 70px 0 25px;
+	}
+	.siwon_board {
+		width: 1100px;
+		margin: auto;
+		.post_header {
+			@include flex($align: 'between');
+			align-items: flex-end;
+			padding-bottom: 25px;
+			.post_header_left {
+				.post_title {
+					h2 {
+						margin-top: 50px;
+						font-size: 22px;
+						font-weight: bold;
+						color: #222;
+						span {
+							color: #1e57ab;
+						}
+					}
+				}
+				.post_filter {
+					padding-top: 16px;
+				}
+			}
+			.post_header_right {
+				.post_button {
+					li {
+						a {
+							@include flex($align: 'center');
+							box-sizing: content-box;
+							padding: 10px 20px;
+							font-size: 15px;
+							color: #fff;
+							font-weight: 600;
+							border-radius: 5px;
+							background-color: #867d7d;
+						}
+					}
+				}
+			}
+			> div {
+				> ul {
+					@include flex($align: 'between');
+					> li {
+						margin-right: 7px;
+					}
+				}
+			}
+		}
+		.post_table {
+			padding-bottom: 25px;
+		}
+	}
+}
+

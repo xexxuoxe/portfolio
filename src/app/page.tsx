@@ -1,20 +1,11 @@
 
-import ListItem from '@components/main/post/post.component'
-import Image from 'next/image';
+import ListItem from '@components/main/post/list/postList.component'
 import './globals.scss'
 
 export default function Main() {
 
   return (
-    <div className='main_section' id='siwon_container'>
-		<div className='inner_container'>
-			<Image
-				src="https://siwon-cdn.siwonschool.com/vietnam/banner/imghead_review.jpg"
-				width={1100}
-				height={170}
-				alt="수강후기"
-            />
-		</div>
+    <div className='review_section' id='siwon_container'>
 		<ListItem></ListItem>
     </div>
   );

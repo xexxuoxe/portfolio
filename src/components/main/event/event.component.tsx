@@ -14,29 +14,39 @@ export default function EventItem() {
 	const events = eventData;
 
     return (
-        <div className={styles.siwon_events}>
-			<div className={styles.evnets_list}>
-				<ul>
-					{events.map((index) => (
-					<li key={index.id} className={styles.events_items}>
-						<Link href={index.link} target="_blank">
-							<div className={styles.items_img}>
-								<Image
-									src={index.image}
-									alt={index.title}
-									fill={true}
-								/>
-							</div>
-							<div className={styles.items_detail}>
-								<span><em>{index.state}</em></span>
-								<h3>{index.title}</h3>
-								<p>{index.subtitle}</p>
-							</div>
-						</Link>
-					</li>
-					))}
-				</ul>
+		<div className={styles.inner_container}>
+			<div className={styles.section_sub}>
+				<Image
+					src="https://siwon-cdn.siwonschool.com/asia/community/event/vietnam_event_header.jpg"
+					width={1100}
+					height={170}
+					alt="수강후기"
+				/>
 			</div>
-        </div>
+			<div className={styles.siwon_events}>
+				<div className={styles.evnets_list}>
+					<ul>
+						{events.map((index) => (
+						<li key={index.id} className={styles.events_items}>
+							<Link href={index.link} target="_blank">
+								<div className={styles.items_img}>
+									<Image
+										src={index.image}
+										alt={index.title}
+										fill={true}
+									/>
+								</div>
+								<div className={styles.items_detail}>
+									<span><em>{index.state}</em></span>
+									<h3>{index.title}</h3>
+									<p>{index.subtitle}</p>
+								</div>
+							</Link>
+						</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</div>
     )
 }
