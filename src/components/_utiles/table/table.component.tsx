@@ -19,12 +19,10 @@ interface PostListProps<T> {
 function PostList<T>({ items, columns, itemsPerPage = 10 }: PostListProps<T>) {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Get current items
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (

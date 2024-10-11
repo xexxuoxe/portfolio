@@ -7,11 +7,12 @@ import styles from './postList.module.scss';
 import ComponentTable from '@components/_utiles/table/table.component';
 import { Post, usePostHook } from './postList.hook';
 
-export default function ListItem() {
+export default function PostListItem() {
     //const [selectedOption, setSelectedOption] = useState({ label: '선생님', value: '' });
 
 	const {
-		postData
+		postData,
+		// columns
 	} = usePostHook();
 
 	const posts = postData;
