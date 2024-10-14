@@ -13,6 +13,16 @@ export default function EventItem() {
 
 	const events = eventData;
 
+
+	// const [currentPage, setCurrentPage] = useState(1);
+
+	// const indexOfLastItem = currentPage * itemsPerPage;
+	// const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	// const currentItems = events.slice(indexOfFirstItem, indexOfLastItem);
+
+	// const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+
     return (
 		<div className={styles.inner_container}>
 			<div className={styles.section_sub}>
@@ -27,7 +37,10 @@ export default function EventItem() {
 				<div className={styles.evnets_list}>
 					<ul>
 						{events.map((index) => (
-						<li key={index.id} className={styles.events_items}>
+						<li 
+							key={index.id} 
+							className={`${styles.events_items} ${index.state.includes('종료') ? `${styles.finished}` : ''}`}
+							>
 							<Link href={index.link} target="_blank">
 								<div className={styles.items_img}>
 									<Image
@@ -46,6 +59,11 @@ export default function EventItem() {
 						))}
 					</ul>
 				</div>
+				<ComponentPagination
+					currentPage={currentPage}
+					totalPages={Math.ceil(items.length / itemsPerPage)}
+					onPageChange={paginate}
+				/>
 			</div>
 		</div>
     )

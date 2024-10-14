@@ -19,7 +19,7 @@ interface Slide {
 // Props type definition
 interface ComponentSliderProps {
 	className: string;
-  	slides: Slide[];
+  slides: Slide[];
 	spaceBetween?: number;
 	slidesPerView?: number;
 	loop?: boolean;
