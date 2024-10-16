@@ -88,27 +88,27 @@ export default function NavComponent() {
       <div className={styles.inner_wrap}>
 		{/* site link */}
         <ul className={styles.language_menu}>
-          {languages.map((lang, index) => (
-            <li key={index}>
-              <Link href={lang.url} target="_blank" rel="noopener noreferrer">
-                {lang.name}
-              </Link>
-              {lang.subLinks && lang.subLinks.length > 0 && (
-                <ul className={styles.sub_menu}>
-                  {lang.subLinks.map((subLang, subIndex) => (
-                    <li key={subIndex} className={styles.name}>
-                      <Link
-                        href={subLang.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {subLang.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
+			{languages.map((lang, index) => (
+			<li key={index}>
+				<Link href={lang.url} target="_blank" rel="noopener noreferrer">
+					{lang.name}
+				</Link>
+				{lang.subLinks && lang.subLinks.length > 0 && (
+					<ul className={styles.sub_menu}>
+					{lang.subLinks.map((subLang, subIndex) => (
+						<li key={subIndex} className={styles.name}>
+						<Link
+							href={subLang.url}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{subLang.name}
+						</Link>
+						</li>
+					))}
+					</ul>
+				)}
+			</li>
           ))}
         </ul>
 		{/* sns link */}

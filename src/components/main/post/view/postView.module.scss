@@ -1,0 +1,77 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+.inner_container  {
+	padding: 100px 0;
+	.siwon_board {
+		width: 1100px;
+		margin: auto;
+		.board_view_top {
+			border-top: 1px solid #222;
+			border-bottom: 3px solid #222;
+			.view_top_header {
+				@include flex($align : 'between');
+				min-height: 100px;
+				.view_top_left {
+					padding: 0 0 0 35px;
+					.view_top_title {
+						font-size: 18px;
+						font-weight: bold;
+						color : #000;
+					}
+					.view_top_detail {
+						@include flex($align : '');
+						padding: 10px 0 0 0;
+						li {
+							padding-right: 35px;
+							span {
+								font-size: 14px;
+								color: #999;
+								&.detail_subject {
+									position: relative;
+									display: inline-block;
+									padding-right: 20px;
+									&::after {
+										position: absolute;
+										display: inline-block;
+										content: '';
+										width: 1.2px;
+										height: 100%;
+										right: 10px;
+										background: #e2e2e2;
+									}
+								}
+							}
+						}
+					}
+				}
+				.view_top_right {
+
+				}
+			}
+			.view_top_sub {
+				border-top: 1px solid #e2e2e2;
+				padding: 15px 35px;
+				p {
+					font-weight: bold;
+					color: #eb8900;
+					font-size : 14px;
+				}
+			}
+		}
+		.board_view_main {
+			background: #fafafa;
+			border-bottom: 1px solid #222;
+			article {
+				padding: 35px;
+				color: #666;
+				font-size: 14px;
+			}
+		}
+		.board_view_bottom {
+			border-bottom: 2px solid #222;
+			padding: 20px 0;
+		}
+	}
+}
+

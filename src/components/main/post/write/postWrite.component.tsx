@@ -62,8 +62,8 @@ export default function PostWritePage() {
 				<form onSubmit={handleSubmit}>
 					<table>
 						<colgroup>
-							<col width={"30%"} />
-							<col width={"70%"} />
+							<col width={"20%"} />
+							<col width={"80%"} />
 						</colgroup>
 						<tbody>
 							<tr>
@@ -111,21 +111,38 @@ export default function PostWritePage() {
 									<label htmlFor="write_satisfac">만족도</label>
 								</th>
 								<td className={styles.td}>
-								<ComponentSelect
+								{/* <ComponentSelect
 									className={styles.select}
 									options={stars}
 									selectedOption={selectedOption}
 									setSelectedOption={setSelectedOption}
-								/>
+								/> */}
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</form>
-
-				<button type="submit" className={styles.form_cancel}>취소</button>
-				<button type="submit" className={styles.submit}>작성 완료</button>
-
+				<div className={styles.policy_wrap}>
+					<div className={styles.policy_wrap_inner}>
+						<p className={styles.notice}>[ 개인정보 수집 및 활용 동의 안내 ]</p>
+						<p className={styles.notice}>1. 개인정보 수집 이용 목적</p>
+						- 이벤트 신청 접수에 따른 본인 확인 절차 진행 및 문의사항 응대
+						- 제출한 수강 수기를 바탕으로 학습법 및 학원 홍보
+						<p className={styles.notice}>2. 개인정보 수집 항목</p>
+						- 신청인의 이름, 시원스쿨 ID, 수강한 강의명, 공인 어학시험 성적표, 수강후기
+						<p className={styles.notice}>3. 개인정보 이용기간 및 보유기간</p>
+						- 홍보 페이지 게시 종료 시까지
+						<p className={styles.notice}>4. 개인정보 제공 동의 거부 권리 및 동의 거부에 따른 불이익</p>
+						- 귀하는 개인 정보 제공 동의를 거부할 권리가 있으며 동의 거부에 따른 불이익은
+						없으나, 위 제공사항은 이벤트 참여에 반드시 필요한 사항으로 거부하실 경우
+						이벤트 신청이 불가능함을 알려드립니다.
+						㈜에스제이더블유인터내셔널에 개인정보를 제공 및 이를 마케팅에 활용하는 것에 동의합니다.
+					</div>
+				</div>
+				<div className={styles.submit_btn}>
+					<button type="submit" className={styles.form_cancel}>취소</button>
+					<button type="submit" className={styles.submit}>작성 완료</button>
+				</div>
 			</div>
 		</div>
 	);

@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link';
-import Image from 'next/image'
 import React, { useState, useEffect } from 'react';
 import styles from './postList.module.scss';
 //import ComponentSelect from '@components/_utiles/select/select.component';
@@ -34,17 +33,8 @@ export default function PostListItem() {
 		{ key: 'views', header: '조회수' },
 	];
 
-
     return (
 		<div className={styles.inner_container}>
-			<div className={styles.section_sub}>
-				<Image
-					src="https://siwon-cdn.siwonschool.com/vietnam/banner/imghead_review.jpg"
-					width={1100}
-					height={170}
-					alt="수강후기"
-				/>
-			</div>
 			<div className={styles.siwon_board}>
 				<div className={styles.post_header}>
 					<div className={styles.post_header_left}>

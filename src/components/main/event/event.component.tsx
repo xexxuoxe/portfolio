@@ -7,21 +7,18 @@ import { Event, useEventHook } from './event.hook';
 import styles from './event.module.scss';
 
 export default function EventItem() {
-	const {
-		eventData
-	} = useEventHook();
 
-	const events = eventData;
+	const { eventData } = useEventHook();
+	const [currentPage, setCurrentPage] = useState(1);
+	const [itemsPerPage, setItemsPerPage] = useState(10);
 
+	const indexOfLastItem = currentPage * itemsPerPage;
+	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	const currentItems = eventData.slice(indexOfFirstItem, indexOfLastItem);
 
-	// const [currentPage, setCurrentPage] = useState(1);
-
-	// const indexOfLastItem = currentPage * itemsPerPage;
-	// const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	// const currentItems = events.slice(indexOfFirstItem, indexOfLastItem);
-
-	// const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
+	const paginate = (page: number) => {
+		setCurrentPage(page);
+	};
 
     return (
 		<div className={styles.inner_container}>
@@ -36,35 +33,36 @@ export default function EventItem() {
 			<div className={styles.siwon_events}>
 				<div className={styles.evnets_list}>
 					<ul>
-						{events.map((index) => (
-						<li 
-							key={index.id} 
-							className={`${styles.events_items} ${index.state.includes('종료') ? `${styles.finished}` : ''}`}
-							>
-							<Link href={index.link} target="_blank">
-								<div className={styles.items_img}>
-									<Image
-										src={index.image}
-										alt={index.title}
-										fill={true}
-									/>
-								</div>
-								<div className={styles.items_detail}>
-									<span><em>{index.state}</em></span>
-									<h3>{index.title}</h3>
-									<p>{index.subtitle}</p>
-								</div>
-							</Link>
-						</li>
+						{currentItems.map((index) => (
+							<li
+								key={index.id}
+								className={`${styles.events_items} ${index.state.includes('종료') ? `${styles.finished}` : ''}`}
+								>
+								<Link href={index.link} target="_blank">
+									<div className={styles.items_img}>
+										<Image
+											src={index.image}
+											alt={index.title}
+											fill={true}
+										/>
+									</div>
+									<div className={styles.items_detail}>
+										<span><em>{index.state}</em></span>
+										<h3>{index.title}</h3>
+										<p>{index.subtitle}</p>
+									</div>
+								</Link>
+							</li>
 						))}
 					</ul>
 				</div>
 				<ComponentPagination
 					currentPage={currentPage}
-					totalPages={Math.ceil(items.length / itemsPerPage)}
+					totalPages={Math.ceil(eventData.length / itemsPerPage)}
 					onPageChange={paginate}
 				/>
 			</div>
 		</div>
     )
 }
+

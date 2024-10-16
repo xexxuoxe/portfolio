@@ -26,27 +26,11 @@ export const usePostHook = () => {
    }, []);
 
 	const getData = async () => {
-		const posts = await api.get('http://localhost:3002/postList');
+		const posts = await api.get('http://localhost:3002/postView')
 		setPostData(posts);
+
+		posts.findOne();
 	}
-
-	//  const columns: Column[] = [
-    //     { key: 'id', header: '번호' },
-    //     {
-    //         key: 'title',
-    //         header: '제목',
-    //         render: (post: Post) => (
-    //             <Link href={`/posts/${post.id}`}>
-    //                 {post.title}
-    //             </Link>
-    //         )
-    //     },
-    //     { key: 'author', header: '작성자' },
-    //     { key: 'date', header: '작성일' },
-    //     { key: 'satisfaction', header: '강의만족도' },
-    //     { key: 'views', header: '조회수' },
-    // ];
-
     return {
 		getData,
         postData,

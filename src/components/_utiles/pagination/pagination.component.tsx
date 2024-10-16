@@ -7,24 +7,37 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
-  const pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <nav className={styles.pagination}>
       <ul className={styles.page_list}>
+        <li>
+          <button
+            onClick={() => onPageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+        </li>
         {pageNumbers.map((number) => (
           <li key={number}>
             <button
               onClick={() => onPageChange(number)}
-              className={`${ currentPage === number ? styles.page_num_on : styles.page_num}`}
+              className={`${currentPage === number ? styles.page_num_on : styles.page_num}`}
             >
               {number}
             </button>
           </li>
         ))}
+        <li>
+          <button
+            onClick={() => onPageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </li>
       </ul>
     </nav>
   );

@@ -23,7 +23,9 @@ function PostList<T>({ items, columns, itemsPerPage = 10 }: PostListProps<T>) {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+	setCurrentPage(pageNumber);
+  }
 
   return (
     <div>
