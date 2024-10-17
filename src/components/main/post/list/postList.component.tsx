@@ -11,7 +11,6 @@ export default function PostListItem() {
 
 	const {
 		postData,
-		// columns
 	} = usePostHook();
 
 	const posts = postData;
@@ -22,7 +21,7 @@ export default function PostListItem() {
 			key: 'title',
 			header: '제목',
 			render: (posts: Post) => (
-				<Link href={`/posts/${posts.id}`}>
+				<Link href={`/post/view/${posts.id}`}>
 					{posts.title}
 				</Link>
 			)

@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import api from '@lib/api/fetch.client';
 
 export interface Post {
@@ -30,41 +29,8 @@ export const usePostHook = () => {
 		setPostData(posts);
 	}
 
-	//  const columns: Column[] = [
-    //     { key: 'id', header: '번호' },
-    //     {
-    //         key: 'title',
-    //         header: '제목',
-    //         render: (post: Post) => (
-    //             <Link href={`/posts/${post.id}`}>
-    //                 {post.title}
-    //             </Link>
-    //         )
-    //     },
-    //     { key: 'author', header: '작성자' },
-    //     { key: 'date', header: '작성일' },
-    //     { key: 'satisfaction', header: '강의만족도' },
-    //     { key: 'views', header: '조회수' },
-    // ];
-
     return {
 		getData,
         postData,
-		// colums
     };
 };
-
-
-// 첨부파일 받기
-// const formData = new FormData();
-// formData.append("file", selectedFile); // selectedFile은 사용자가 선택한 파일
-
-// fetch('/api/upload', {
-//     method: 'POST',
-//     body: formData
-// })
-// .then(response => response.json())
-// .then(data => {
-//     console.log(data.filePath); // 업로드된 파일 경로
-// })
-// .catch(error => console.error('Error:', error));
