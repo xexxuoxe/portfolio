@@ -6,8 +6,11 @@ export interface PostCont {
 	title: string;
 	author: string;
 	date: string;
+	file: string;
+	teacher: string;
+	contents: string;
 	satisfaction: string;
-	views: number;
+	views: string;
 }
 
 export const usePostHook = (postId: number) => {

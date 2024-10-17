@@ -4,7 +4,7 @@ import PostListItem from '@components/main/post/list/postList.component';
 import { PostCont } from './postView.hook';
 
 interface PostViewItemProps {
-	post: PostCont | null;
+	post: PostCont;
 }
 
 export default function PostViewItem({ post }: PostViewItemProps) {
