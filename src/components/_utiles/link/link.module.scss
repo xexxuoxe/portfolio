@@ -1,0 +1,39 @@
+@import '@styles/abstracts/_variables';
+@import '@styles/abstracts/_mixins';
+
+.btn_cancel {
+	min-width: 120px;
+	padding: 13px 30px;
+	background-color: $color-black;
+	span {
+		color:#fff;
+		font-size: 15px;
+	}
+}
+.btn_collect {
+	min-width: 120px;
+	padding: 13px 30px;
+	background-color: $color-yellow;
+	span {
+		color:#fff;
+		font-size: 15px;
+	}
+}
+.btn_list {
+	min-width: 120px;
+	padding: 13px 30px;
+	background-color: $color-dark-gray;
+	span {
+		color:#fff;
+		font-size: 15px;
+	}
+}
+.btn_signup {
+	min-width: 120px;
+	padding: 13px 30px;
+	background-color: $color-red;
+	span {
+		color:#fff;
+		font-size: 15px;
+	}
+}

@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import styles from './postList.module.scss';
-//import ComponentSelect from '@components/_utiles/select/select.component';
-import ComponentTable from '@components/_utiles/table/table.component';
+import LinkButton from '@components/_utiles/link/link.component';
+import Table from '@components/_utiles/table/table.component';
 import { Post, usePostHook } from './postList.hook';
 
 export default function PostListItem() {
@@ -55,17 +55,19 @@ export default function PostListItem() {
 					<div className={styles.post_header_right}>
 						<ul className={styles.post_button}>
 							<li>
-								<Link href="//b2b.siwonschool.com/" target="_blank">내 수강후기</Link>
-							</li>
-							<li>
-								<Link href="//b2b.siwonschool.com/" target="_blank">수강후기 작성</Link>
+								<LinkButton
+									variant="btn_signup"
+									className="link_btn"
+									href="/post/list"
+									text="수강후기 작성"
+								/>
 							</li>
 						</ul>
 					</div>
 				</div>
 				{/* post table */}
 				<div className={styles.post_table}>
-					<ComponentTable
+					<Table
 						items={posts}
 						columns={columns}
 					/>

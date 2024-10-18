@@ -48,7 +48,17 @@
 				}
 			}
 		}
+		.submit_btn {
+			.form_cancel {
 
+			}
+			.form_submit {
+				background : gray;
+				&_on {
+					background : red;
+				}
+			}
+		}
 
 
 

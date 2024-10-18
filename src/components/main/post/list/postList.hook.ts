@@ -25,7 +25,7 @@ export const usePostHook = () => {
    }, []);
 
 	const getData = async () => {
-		const posts = await api.get('http://localhost:3002/postList');
+		const posts = await api.get('http://localhost:3002/postReview');
 		setPostData(posts);
 	}
 

@@ -1,5 +1,5 @@
-// scr/components/sementic/select.component.tsx
-// select box component
+// scr/components/_utiles/select/select.component.tsx
+// select component
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './select.module.scss';
 
@@ -17,7 +17,7 @@ interface CustomSelectProps {
 	setSelectedOption: (option: Option) => void;
 }
 
-const ComponentSelect = ({ className, options, selectedOption, setSelectedOption }: CustomSelectProps) => {
+const Select = ({ className, options, selectedOption, setSelectedOption }: CustomSelectProps) => {
 
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
@@ -71,4 +71,4 @@ const ComponentSelect = ({ className, options, selectedOption, setSelectedOption
 	);
 };
 
-export default ComponentSelect;
+export default Select;

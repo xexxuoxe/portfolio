@@ -22,7 +22,7 @@ export const usePostHook = (postId: number) => {
 	}, [postId]);
 
 	const getData = async () => {
-			const ports = await api.get(`http://localhost:3002/postView/${postId}`);
+			const ports = await api.get(`http://localhost:3002/postReview/${postId}`);
 			setPostData(ports);
 	};
 

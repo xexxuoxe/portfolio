@@ -28,16 +28,6 @@
 			.post_header_right {
 				.post_button {
 					li {
-						a {
-							@include flex($align: 'center');
-							box-sizing: content-box;
-							padding: 10px 20px;
-							font-size: 15px;
-							color: #fff;
-							font-weight: 600;
-							border-radius: 5px;
-							background-color: #867d7d;
-						}
 					}
 				}
 			}

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import ComponentPagination from '@components/_utiles/pagination/pagination.component';
+import Pagination from '@components/_utiles/pagination/pagination.component';
 import styles from './table.module.scss'
 
 interface Column<T> {
@@ -54,7 +54,7 @@ function PostList<T>({ items, columns, itemsPerPage = 10 }: PostListProps<T>) {
         </table>
       </div>
       {items.length > itemsPerPage && (
-        <ComponentPagination
+        <Pagination
           currentPage={currentPage}
           totalPages={Math.ceil(items.length / itemsPerPage)}
           onPageChange={paginate}

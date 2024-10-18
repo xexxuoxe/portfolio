@@ -1,6 +1,7 @@
 'use client'
 import styles from './postView.module.scss';
 import PostListItem from '@components/main/post/list/postList.component';
+import LinkButton from '@components/_utiles/link/link.component';
 import { PostCont } from './postView.hook';
 
 interface PostViewItemProps {
@@ -44,7 +45,14 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 					<article>{post.contents}</article>
 				</div>
 				<div className={styles.board_view_bottom}>
-					{/* <Link href={}>목록보기</Link> */}
+					<div className={styles.view_bottom_list}>
+						<LinkButton
+							variant="btn_list"
+							className="link_btn"
+							href="/post/list"
+							text="목록보기"
+						/>
+					</div>
 				</div>
 			</div>
 			{/* 강의 리스트 */}

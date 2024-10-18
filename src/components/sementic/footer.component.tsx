@@ -5,8 +5,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.scss';
-import ComponentSelect from'@components/_utiles/select/select.component';
-import ComponentSlider from'@components/_utiles/slider/slider.component';
+import Select from'@components/_utiles/select/select.component';
+import Slider from'@components/_utiles/slider/slider.component';
 
 						{/*
 							1. footer logo 동적 생성
@@ -191,7 +191,7 @@ export default function FooterComponent() {
 							</li>
 							{/* family_site */}
 							<li className={ styles.family_site }>
-								<ComponentSelect
+								<Select
 									className={styles.select}
 									options={options}
 									selectedOption={selectedOption}
@@ -255,7 +255,7 @@ export default function FooterComponent() {
 							</div>
 						</article>
 						<div className={ styles.award_slide }>
-							<ComponentSlider
+							<Slider
 								slides={slides}
 								spaceBetween={30}
 								slidesPerView={8}

@@ -17,7 +17,7 @@ interface Slide {
 }
 
 // Props type definition
-interface ComponentSliderProps {
+interface SliderProps {
 	className: string;
   slides: Slide[];
 	spaceBetween?: number;
@@ -29,7 +29,7 @@ interface ComponentSliderProps {
 	autoplay?: {delay?: number; disableOnInteraction?: boolean;}
 }
 
-const ComponentSlider = ({className, slides, spaceBetween, slidesPerView, loop, pagination, navigation, scrollbar, autoplay}: ComponentSliderProps) => {
+const Slider = ({className, slides, spaceBetween, slidesPerView, loop, pagination, navigation, scrollbar, autoplay}: SliderProps) => {
 
   return (
     <Swiper
@@ -60,6 +60,6 @@ const ComponentSlider = ({className, slides, spaceBetween, slidesPerView, loop, 
     </Swiper>
   );
 }
-export default ComponentSlider;
+export default Slider;
 
 

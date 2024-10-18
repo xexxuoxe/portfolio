@@ -13,9 +13,9 @@ interface ButtonProps {
 }
 
 // Button 컴포넌트 정의
-const Button: React.FC<ButtonProps> = ({ 
-    onClick, 
-    children, 
+const Button: React.FC<ButtonProps> = ({
+    onClick,
+    children,
     disabled = false,
     backgroundColor,
     textColor,
@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
         color: textColor,
         ...style
     };
-    
+
     // 이벤트 핸들러 래퍼 함수
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         if (onClick) {
