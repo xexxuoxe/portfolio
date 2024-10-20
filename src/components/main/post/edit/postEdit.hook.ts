@@ -1,5 +1,5 @@
 // scr/hooks/postWrite.hook.ts
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@lib/api/fetch.client';
 
@@ -18,7 +18,7 @@ interface FormData {
 }
 
 // 훅 정의
-export const usePostWrite = () => {
+export const usePostEdit = (postId: number) => {
 	const [formData, setFormData] = useState<FormData>({
 		id: '',
 		title: '',
@@ -46,7 +46,9 @@ export const usePostWrite = () => {
 		e.preventDefault();
 
 		// API에 데이터 POST 전송
-		const response = await api.post('http://localhost:3002/postReview', formData);
+		const response = await api.post(`http://localhost:3002/postReview/${postId}`, formData);
+
+
 
 		if (response.ok) {
 			const result = await response.json();
@@ -57,6 +59,7 @@ export const usePostWrite = () => {
 			alert(errorData.message || 'Error submitting the post');
 		}
 	};
+
 
 	return {
 		formData,

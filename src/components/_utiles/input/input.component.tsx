@@ -1,14 +1,17 @@
-// scr/components/_utiles/input/input.component.tsx
-// input component
+/* 
+	input component
+	src/component/_utiles/input/input.component.tsx
+*/
 import styles from './input.module.scss'
 
-const Input = ({ id, name, type, variant, className , defaultValue, onChange, placeholder }: {
-	id: string
-	name: string
-	type: string
+const Input = ({ name, type, id, className, variant, defaultValue, value, onChange, placeholder }: {
+	name: string;
+	type: string;
+	id: string;
+	className : string;
 	variant: keyof typeof styles;
-	className : string
-	defaultValue?: string
+	defaultValue?: string;
+	value: string;
 	onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	placeholder?: string;
 	}) => {
@@ -19,6 +22,7 @@ const Input = ({ id, name, type, variant, className , defaultValue, onChange, pl
 				name={name}
 				type={type}
 				defaultValue={defaultValue}
+				value={value}
 				onChange={onChange}
 				placeholder={placeholder}
 			></input>

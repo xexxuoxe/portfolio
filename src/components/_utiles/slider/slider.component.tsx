@@ -1,5 +1,7 @@
-// scr/components/sementic/slider.component.tsx
-// slider box component
+/* 
+	slider component
+	src/component/_utiles/slider/slider.component.tsx
+*/
 import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,7 +9,7 @@ import { Navigation, Scrollbar, Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import './slider.component.scss';
+import styles from './slider.module.scss';
 
 interface Slide {
   title: string;
@@ -19,6 +21,7 @@ interface Slide {
 // Props type definition
 interface SliderProps {
 	className: string;
+  variant: string;
   slides: Slide[];
 	spaceBetween?: number;
 	slidesPerView?: number;
@@ -29,12 +32,12 @@ interface SliderProps {
 	autoplay?: {delay?: number; disableOnInteraction?: boolean;}
 }
 
-const Slider = ({className, slides, spaceBetween, slidesPerView, loop, pagination, navigation, scrollbar, autoplay}: SliderProps) => {
+const Slider = ({className, variant, slides, spaceBetween, slidesPerView, loop, pagination, navigation, scrollbar, autoplay}: SliderProps) => {
 
   return (
     <Swiper
-		className={className}
-		modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+		className={`${styles[variant]} ${className}`}
+    modules={[Navigation, Pagination, Scrollbar, Autoplay]}
 		loop={loop}
 		spaceBetween={spaceBetween}
 		slidesPerView={slidesPerView}

@@ -1,8 +1,10 @@
-// context/MetaContext.tsx
+/* 
+	meta tag sementic
+	scr/components/sementic/meta tag.component.tsx
+*/
 "use client";
 import Head from "next/head";
 import React, { createContext, useContext, useState , ReactNode } from 'react';
-// 동적 props type 정의
 interface MetaContextType {
     lang?: string;
     title?: string;
@@ -11,7 +13,6 @@ interface MetaContextType {
     image?: string;
     setMeta?: (meta: Partial<MetaContextType>) => void;
 }
-// 동적 pops 정의
 const defaultMeta: MetaContextType = {
     lang: "언어",
     title: "기본 제목",

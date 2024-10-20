@@ -1,3 +1,7 @@
+/* 
+	post list component
+	src/component/main/post/list/postList.component.tsx
+*/
 'use client'
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
@@ -58,7 +62,7 @@ export default function PostListItem() {
 								<LinkButton
 									variant="btn_signup"
 									className="link_btn"
-									href="/post/list"
+									href="/post/write"
 									text="수강후기 작성"
 								/>
 							</li>

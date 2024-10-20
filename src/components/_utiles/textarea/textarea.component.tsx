@@ -1,13 +1,16 @@
-// scr/components/_utiles/textarea/textarea.component.tsx
-// textarea component
+/* 
+	textarea component
+	src/component/_utiles/textarea/textarea.component.tsx
+*/
 import styles from './textarea.module.scss'
 
-const TextArea = ({ id, name, variant, className, defaultValue , onChange, placeholder }: {
-	id: string;
+const TextArea = ({ name, id, className, variant, defaultValue, value, onChange, placeholder }: {
 	name: string;
-	variant: keyof typeof styles;
+	id: string;
 	className : string;
+	variant: keyof typeof styles;
 	defaultValue?: string;
+	value: string;
 	onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 	placeholder?: string;
   }) => {
@@ -17,6 +20,7 @@ const TextArea = ({ id, name, variant, className, defaultValue , onChange, place
 				id={id}
 				name={name}
 				defaultValue={defaultValue}
+				value={value}
 				onChange={onChange}
 				placeholder={placeholder}
 				rows={5}

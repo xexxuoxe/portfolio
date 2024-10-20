@@ -1,3 +1,7 @@
+/* 
+	evnet component
+	src/component/main/evnet/evnet.component.tsx
+*/
 'use client'
 import Link from 'next/link';
 import Image from 'next/image';

@@ -1,23 +1,23 @@
-// scr/components/_utiles/select/select.component.tsx
-// select component
+/* 
+	select component
+	src/component/_utiles/select/select.component.tsx
+*/
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './select.module.scss';
 
-// 옵션 타입 정의
 type Option = {
 	label?: string;
 	value?: string;
 };
-
-// Props 타입 정의
 interface CustomSelectProps {
-	className?: string;
 	options: { label: string; options: Option[] }[];
+	className?: string;
+	variant: string;
 	selectedOption: Option;
 	setSelectedOption: (option: Option) => void;
 }
 
-const Select = ({ className, options, selectedOption, setSelectedOption }: CustomSelectProps) => {
+const Select = ({ options, className, variant, selectedOption, setSelectedOption }: CustomSelectProps) => {
 
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
@@ -45,7 +45,7 @@ const Select = ({ className, options, selectedOption, setSelectedOption }: Custo
 	}, []);
 
 	return (
-	  <div ref={dropdownRef} className={`${styles.select} ${className}`}>
+	  <div ref={dropdownRef} className={`${styles.select} ${styles[variant]} ${className}`}>
 		<div className={styles.select_current} onClick={toggleDropdown}>
 		  	{selectedOption.label}
 		  	<span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>

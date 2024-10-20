@@ -1,5 +1,7 @@
-// scr/components/sementic/footer.component.tsx
-// 상단 고정 헤더 bottom
+/* 
+	footer sementic
+	scr/components/sementic/footer.component.tsx
+*/
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -8,13 +10,6 @@ import styles from './footer.module.scss';
 import Select from'@components/_utiles/select/select.component';
 import Slider from'@components/_utiles/slider/slider.component';
 
-						{/*
-							1. footer logo 동적 생성
-							2. pagenation, slide(pagnai,nav) 커스텀 가능하게 작업
-							3. _reset.scss 선택자 오류 해결하기
-							4. meta파일 head import 해결하기
-							5.
-						*/}
 export default function FooterComponent() {
 
 	const [selectedOption, setSelectedOption] = useState({ label: 'FAMILY SITE', value: '' });

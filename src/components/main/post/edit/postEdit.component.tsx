@@ -1,6 +1,6 @@
 /* 
 	post write component
-	src/component/main/post/write/postWrite.component.tsx
+	src/component/main/post/write/postEdit.component.tsx
 */
 'use client';
 import Input from '@components/_utiles/input/input.component';
@@ -8,11 +8,13 @@ import TextArea from '@components/_utiles/textarea/textarea.component';
 import Checkbox from '@components/_utiles/checkbox/checkbox.component';
 import Link from '@components/_utiles/link/link.component';
 import Button from '@components/_utiles/button/button.component';
-import { usePostWrite } from './postWrite.hook';
-import styles from './postWrite.module.scss';
+import { usePostEdit } from './postEdit.hook';
+import styles from './postEdit.module.scss';
 
-export default function PostWritePage() {
-  const { formData, handleChange, handleSubmit } = usePostWrite();
+export default function PostEditPage() {
+  const { formData, handleChange, handleSubmit } = usePostEdit();
+
+  console.log(formData);
 
   return (
     <div className={styles.inner_container}>
@@ -35,8 +37,8 @@ export default function PostWritePage() {
                     type="text"
                     name="title"
                     defaultValue={formData.title}
+                    value={formData.title}
                     onChange={handleChange}
-                    placeholder='제목을 입력해주세요'
                     className="title"
                   />
                 </td>
@@ -48,11 +50,11 @@ export default function PostWritePage() {
                 <td className={styles.td}>
                   <TextArea
                     id="write_content"
-					variant ="input_gray"
+					          variant ="input_gray"
                     name="content"
                     defaultValue={formData.content}
+                    value={formData.content}
                     onChange={handleChange}
-                    placeholder="내용을 입력해주세요"
                     className="content"
                   />
                 </td>
@@ -67,8 +69,8 @@ export default function PostWritePage() {
                     type="file"
                     name="file"
                     defaultValue={formData.file}
+                    value={formData.file}
                     onChange={handleChange}
-                    placeholder='파일명을 입력해주세요'
                     className="file"
                   />
                 </td>

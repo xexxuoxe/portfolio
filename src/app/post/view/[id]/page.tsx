@@ -1,3 +1,7 @@
+/* 
+	post view page
+	src/app/post/view/[id]/page.tsx
+*/
 'use client';
 import PostViewItem from '@components/main/post/view/postView.component';
 import { usePostHook } from '@components/main/post/view/postView.hook';

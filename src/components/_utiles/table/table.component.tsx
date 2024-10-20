@@ -1,5 +1,8 @@
+/* 
+	table component
+	src/component/_utiles/table/table.component.tsx
+*/
 'use client';
-
 import React, { useState } from 'react';
 import Pagination from '@components/_utiles/pagination/pagination.component';
 import styles from './table.module.scss'
@@ -11,12 +14,14 @@ interface Column<T> {
 }
 
 interface PostListProps<T> {
+  className?: string;
+  variant: string;
   items: T[];
   columns: Column<T>[];
   itemsPerPage?: number;
 }
 
-function PostList<T>({ items, columns, itemsPerPage = 10 }: PostListProps<T>) {
+function PostList<T>({ className, variant, items, columns, itemsPerPage = 10 }: PostListProps<T>) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -28,7 +33,7 @@ function PostList<T>({ items, columns, itemsPerPage = 10 }: PostListProps<T>) {
   }
 
   return (
-    <div>
+    <div className={`${styles[variant]} ${className}`}>
       <div className={styles.table_container}>
         <table>
           <thead>

@@ -1,4 +1,7 @@
-// event page
+/* 
+	event page
+	src/app/event/page.tsx
+*/
 import EventItem from '@components/main/event/event.component'
 
 export default function event() {

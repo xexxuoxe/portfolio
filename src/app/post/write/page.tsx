@@ -1,4 +1,7 @@
-// event page
+/* 
+	post write page
+	src/app/post/write/[id]/page.tsx
+*/
 import PostWritePage from '@components/main/post/write/postWrite.component'
 
 export default function event() {

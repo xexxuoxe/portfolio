@@ -1,3 +1,7 @@
+/* 
+	post view component
+	src/component/main/post/view/postView.component.tsx
+*/
 'use client'
 import styles from './postView.module.scss';
 import PostListItem from '@components/main/post/list/postList.component';
@@ -9,7 +13,7 @@ interface PostViewItemProps {
 }
 
 export default function PostViewItem({ post }: PostViewItemProps) {
-	console.log(post)
+
 	return (
 		<div className={styles.inner_container}>
 			<div className={styles.siwon_board}>
@@ -46,6 +50,12 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 				</div>
 				<div className={styles.board_view_bottom}>
 					<div className={styles.view_bottom_list}>
+						<LinkButton
+							variant="btn_list"
+							className="link_btn"
+							href={`/post/edit/${post.id}`}
+							text="수정하기"
+						/>
 						<LinkButton
 							variant="btn_list"
 							className="link_btn"

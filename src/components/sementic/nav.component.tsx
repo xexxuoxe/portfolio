@@ -1,9 +1,10 @@
-// scr/components/sementic/nav.component.tsx
-// 상단 고정 네비메뉴바
+/* 
+	nav component
+	src/component/_utiles/nav/pagination.component.tsx
+*/
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from 'next/image';
 import styles from "./nav.module.scss";
 {/* site link arry  */}
 const languages = [

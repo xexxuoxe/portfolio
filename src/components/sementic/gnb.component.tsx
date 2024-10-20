@@ -1,5 +1,7 @@
-// scr/components/sementic/gnb.component.tsx
-// 상단 고정 헤더 top
+/* 
+	gnb sementic
+	scr/components/sementic/gnb.component.tsx
+*/
 'use client'
 import React from 'react';
 import Link from 'next/link';

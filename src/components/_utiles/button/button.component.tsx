@@ -1,11 +1,15 @@
+/* 
+	button component
+	src/component/_utiles/button/button.component.tsx
+*/
 import styles from './button.module.scss'
 
-const Button = ({ onClick, text, type, variant, className }: {
-	onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+const Button = ({ text, type, className, variant,  onClick }: {
 	text: string;
 	type: string;
-	variant: keyof typeof styles;
 	className : string;
+	variant: keyof typeof styles;
+	onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }) => {
   return (
     <button

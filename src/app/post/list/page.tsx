@@ -1,4 +1,7 @@
-
+/* 
+	post list page
+	src/app/post/list/[id]/page.tsx
+*/
 import Image from 'next/image'
 import PostListItem from '@components/main/post/list/postList.component'
 
