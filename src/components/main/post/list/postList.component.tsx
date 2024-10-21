@@ -1,4 +1,4 @@
-/* 
+/*
 	post list component
 	src/component/main/post/list/postList.component.tsx
 */

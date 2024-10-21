@@ -1,4 +1,4 @@
-/* 
+/*
 	post view component
 	src/component/main/post/view/postView.component.tsx
 */
@@ -37,8 +37,19 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 							</ul>
 						</div>
 						<div className={styles.view_top_right}>
-							<button type='button'>이전</button>
-							<button type='button'>다음</button>
+							<LinkButton
+								variant="btn_list"
+								className="link_btn"
+								href={`/post/view/${parseInt(post.id) - 1}`}
+								text="이전"
+							/>
+							<LinkButton
+								variant="btn_list"
+								className="link_btn"
+								href={`/post/view/${parseInt(post.id) + 1}`}
+
+								text="다음"
+							/>
 						</div>
 					</div>
 					<div className={styles.view_top_sub}>
@@ -53,7 +64,7 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 						<LinkButton
 							variant="btn_list"
 							className="link_btn"
-							href={`/post/edit/${post.id}`}
+							href={`/post/write/${post.id}`}
 							text="수정하기"
 						/>
 						<LinkButton

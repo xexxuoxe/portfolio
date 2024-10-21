@@ -1,10 +1,19 @@
 import { successResponse, errorResponse } from '@lib/api/response';
+import { postData, WriteService } from '@services/post/write.service';
 
-export default async function POST(request: Request) {
-    // POST 요청 처리
-    const body : {
+export async function GET(request: Request) {
+	return successResponse(null, '정상적으로 작성되었습니다.');
+}
 
-    } = await request.json();
+export async function POST(request: Request) {
 
-    return successResponse(null, '로그인 성공');
+    const postData : postData = await request.json();
+
+    const result: postData | false = await WriteService.start(postData);
+
+    if( result === false ){
+		return errorResponse('인증번호 발신 중 오류가 발생했습니다.');
+    }
+
+	return successResponse(null, '정상적으로 작성되었습니다.');
 }

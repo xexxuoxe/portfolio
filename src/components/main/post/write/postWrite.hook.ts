@@ -2,8 +2,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@lib/api/fetch.client';
-
-// 상태의 타입 정의
 interface FormData {
 	id: '',
   	title: string;
@@ -17,7 +15,6 @@ interface FormData {
     views: string
 }
 
-// 훅 정의
 export const usePostWrite = () => {
 	const [formData, setFormData] = useState<FormData>({
 		id: '',
@@ -37,24 +34,25 @@ export const usePostWrite = () => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value, type, checked } = e.target;
 		setFormData((prev) => ({
-		...prev,
-		[name]: type === '' ? checked : value,
+			...prev,
+			[name]: type === '' ? checked : value,
 		}));
 	};
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
 		e.preventDefault();
 
-		// API에 데이터 POST 전송
-		const response = await api.post('http://localhost:3002/postReview', formData);
+		const response : {
+			status : number,
+			message : string
+		} = await api.post('/api/post', formData);
 
-		if (response.ok) {
-			const result = await response.json();
-			alert(result.message);
+		if (response.status == 1) {
+			alert(response.message);
 			router.push('/post/list');
 		} else {
-			const errorData = await response.json();
-			alert(errorData.message || 'Error submitting the post');
+			alert(response.message || 'Error submitting the post');
 		}
 	};
 

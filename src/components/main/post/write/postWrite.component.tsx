@@ -1,4 +1,4 @@
-/* 
+/*
 	post write component
 	src/component/main/post/write/postWrite.component.tsx
 */
