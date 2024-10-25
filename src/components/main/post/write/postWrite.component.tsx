@@ -15,6 +15,8 @@ interface PostWriteItemProps {
 	post: FormData;
 }
 
+console.log(FormData)
+
 export default function PostWritePage({post} : PostWriteItemProps) {
 
   const { formData, handleChange, handleSubmit } = usePostWrite();
@@ -39,7 +41,7 @@ export default function PostWritePage({post} : PostWriteItemProps) {
 					variant ="input_gray"
                     name="title"
                     type="text"
-                    value={post.title}
+                    //value={post.title}
                     defaultValue={formData.title}
                     onChange={handleChange}
                     placeholder='제목을 입력해주세요'
@@ -56,7 +58,7 @@ export default function PostWritePage({post} : PostWriteItemProps) {
                     id="write_content"
 					variant ="input_gray"
                     name="content"
-					value={post.content}
+					//value={post.content}
                     defaultValue={formData.content}
                     onChange={handleChange}
                     placeholder="내용을 입력해주세요"
@@ -74,7 +76,7 @@ export default function PostWritePage({post} : PostWriteItemProps) {
                     name="file"
 					variant ="input_gray"
                     type="file"
-					value={post.file}
+					//value={post.file}
                     defaultValue={formData.file}
                     onChange={handleChange}
                     placeholder='파일명을 입력해주세요'

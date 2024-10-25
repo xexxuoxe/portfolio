@@ -2,8 +2,9 @@
 	post modify page
 	src/app/post/modify/page.tsx
 */
+'use client';
 import PostWritePage from '@components/main/post/write/postWrite.component';
-import { usePostHook } from '@components/main/post/write/postWrite.hook';
+import { usePostWrite } from '@components/main/post/write/postWrite.hook';
 
 interface PostModifyProps {
 	params : {
@@ -13,7 +14,9 @@ interface PostModifyProps {
 
 export default function Main({params}  : PostModifyProps) {
 
-	const postData = usePostHook(params.id);
+	const postData = usePostWrite(params.id);
+
+	console.log(params)
 
   return (
     <div className='event_section' id='siwon_container'>
