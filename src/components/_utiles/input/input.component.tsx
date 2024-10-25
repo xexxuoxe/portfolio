@@ -1,4 +1,4 @@
-/* 
+/*
 	input component
 	src/component/_utiles/input/input.component.tsx
 */
@@ -21,8 +21,8 @@ const Input = ({ name, type, id, className, variant, defaultValue, value, onChan
 				id={id}
 				name={name}
 				type={type}
-				defaultValue={defaultValue}
 				value={value}
+				defaultValue={defaultValue}
 				onChange={onChange}
 				placeholder={placeholder}
 			></input>

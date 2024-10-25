@@ -47,7 +47,6 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 								variant="btn_list"
 								className="link_btn"
 								href={`/post/view/${parseInt(post.id) + 1}`}
-
 								text="다음"
 							/>
 						</div>

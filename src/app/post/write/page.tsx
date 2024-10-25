@@ -1,6 +1,6 @@
-/* 
+/*
 	post write page
-	src/app/post/write/[id]/page.tsx
+	src/app/post/write/page.tsx
 */
 import PostWritePage from '@components/main/post/write/postWrite.component'
 

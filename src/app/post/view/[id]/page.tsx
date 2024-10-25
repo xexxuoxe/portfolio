@@ -1,4 +1,4 @@
-/* 
+/*
 	post view page
 	src/app/post/view/[id]/page.tsx
 */

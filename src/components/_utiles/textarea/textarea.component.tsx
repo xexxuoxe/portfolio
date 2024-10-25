@@ -1,4 +1,4 @@
-/* 
+/*
 	textarea component
 	src/component/_utiles/textarea/textarea.component.tsx
 */
@@ -19,8 +19,8 @@ const TextArea = ({ name, id, className, variant, defaultValue, value, onChange,
 			<textarea
 				id={id}
 				name={name}
-				defaultValue={defaultValue}
 				value={value}
+				defaultValue={defaultValue}
 				onChange={onChange}
 				placeholder={placeholder}
 				rows={5}

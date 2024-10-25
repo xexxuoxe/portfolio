@@ -1,9 +1,10 @@
 // scr/hooks/postWrite.hook.ts
-import { useState } from 'react';
+'use client'
+import { useEffect , useState } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@lib/api/fetch.client';
 interface FormData {
-	id: '',
+	id: number,
   	title: string;
 	author: string,
 	date: string,
@@ -15,7 +16,7 @@ interface FormData {
     views: string
 }
 
-export const usePostWrite = () => {
+export const usePostWrite = ( id: string ) => {
 	const [formData, setFormData] = useState<FormData>({
 		id: '',
 		title: '',
@@ -40,13 +41,17 @@ export const usePostWrite = () => {
 	};
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-
 		e.preventDefault();
 
-		const response : {
-			status : number,
-			message : string
-		} = await api.post('/api/post', formData);
+		const response = id
+		? await api.put(`/api/post/${id}` , formData)
+		: await api.post(`/api/post` , formData)
+
+
+		// const response : {
+		// 	status : number,
+		// 	message : string
+		// } = await api.post('/api/post', formData);
 
 		if (response.status == 1) {
 			alert(response.message);
@@ -62,4 +67,3 @@ export const usePostWrite = () => {
 		handleSubmit,
 	};
 };
-

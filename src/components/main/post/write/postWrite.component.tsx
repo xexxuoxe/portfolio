@@ -8,10 +8,15 @@ import TextArea from '@components/_utiles/textarea/textarea.component';
 import Checkbox from '@components/_utiles/checkbox/checkbox.component';
 import Link from '@components/_utiles/link/link.component';
 import Button from '@components/_utiles/button/button.component';
-import { usePostWrite } from './postWrite.hook';
+import { FormData , usePostWrite } from './postWrite.hook';
 import styles from './postWrite.module.scss';
 
-export default function PostWritePage() {
+interface PostWriteItemProps {
+	post: FormData;
+}
+
+export default function PostWritePage({post} : PostWriteItemProps) {
+
   const { formData, handleChange, handleSubmit } = usePostWrite();
 
   return (
@@ -31,9 +36,10 @@ export default function PostWritePage() {
                 <td className={styles.td}>
                   <Input
                     id="write_title"
-					          variant ="input_gray"
-                    type="text"
+					variant ="input_gray"
                     name="title"
+                    type="text"
+                    value={post.title}
                     defaultValue={formData.title}
                     onChange={handleChange}
                     placeholder='제목을 입력해주세요'
@@ -50,6 +56,7 @@ export default function PostWritePage() {
                     id="write_content"
 					variant ="input_gray"
                     name="content"
+					value={post.content}
                     defaultValue={formData.content}
                     onChange={handleChange}
                     placeholder="내용을 입력해주세요"
@@ -64,8 +71,10 @@ export default function PostWritePage() {
                 <td className={styles.td}>
                   <Input
                     id="write_file"
-                    type="file"
                     name="file"
+					variant ="input_gray"
+                    type="file"
+					value={post.file}
                     defaultValue={formData.file}
                     onChange={handleChange}
                     placeholder='파일명을 입력해주세요'
