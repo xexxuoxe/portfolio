@@ -1,4 +1,4 @@
-/* 
+/*
 	meta tag sementic
 	scr/components/sementic/meta tag.component.tsx
 */
@@ -11,7 +11,7 @@ interface MetaContextType {
     description?: string;
     keyword?: string;
     image?: string;
-    setMeta?: (meta: Partial<MetaContextType>) => void;
+    setMeta?: ( meta: Partial<MetaContextType> ) => void;
 }
 const defaultMeta: MetaContextType = {
     lang: "언어",
@@ -30,9 +30,9 @@ interface MetaProviderProps {
 }
 
 export function MetaProvider({ children }: MetaProviderProps) {
-    const [meta, setMeta] = useState<MetaContextType>(defaultMeta);
+    const [ meta, setMeta ] = useState<MetaContextType>(defaultMeta);
 
-    const updateMeta = (newMeta: Partial<MetaContextType>) => {
+    const updateMeta = ( newMeta: Partial<MetaContextType> ) => {
         setMeta(prevMeta => ({ ...prevMeta, ...newMeta }));
     };
 
@@ -46,7 +46,7 @@ export function MetaProvider({ children }: MetaProviderProps) {
 export function MetaHeadComponent() {
     const { lang, title, description, keyword, image } = useMetaContext();
     return (
-        <head>
+        <Head>
 			<title>{title}</title>
             <meta charSet="utf-8" />
             <meta name="apple-mobile-web-app-title" content="시원스쿨" />
@@ -78,6 +78,6 @@ export function MetaHeadComponent() {
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
-        </head>
+        </Head>
     );
 }
