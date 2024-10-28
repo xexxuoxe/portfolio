@@ -1,18 +1,24 @@
 @import '@styles/abstracts/_mixins';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
-.inner_container  {
+
+.inner_container {
+	padding: 80px 0;
 	.siwon_board {
 		width: 1100px;
 		margin: auto;
+		background-color: #ffffff;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+		overflow: hidden;
+
 		.post_header {
 			@include flex($align: 'between');
-			align-items: flex-end;
-			padding-bottom: 25px;
+			align-items: center;
+			padding: 20px 25px;
+
 			.post_header_left {
 				.post_title {
 					h2 {
-						margin-top: 50px;
+						margin: 0;
 						font-size: 22px;
 						font-weight: bold;
 						color: #222;
@@ -21,28 +27,31 @@
 						}
 					}
 				}
-				.post_filter {
-					padding-top: 16px;
-				}
 			}
+
 			.post_header_right {
 				.post_button {
 					li {
+						margin-left: 10px;
 					}
 				}
 			}
+
 			> div {
 				> ul {
 					@include flex($align: 'between');
 					> li {
-						margin-right: 7px;
+						margin-right: 10px;
 					}
 				}
 			}
 		}
+
 		.post_table {
-			padding-bottom: 25px;
+			padding: 20px;
+			background-color: #f9f9f9;
+			border-radius: 8px;
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 		}
 	}
 }
-

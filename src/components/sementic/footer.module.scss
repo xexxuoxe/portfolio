@@ -1,59 +1,75 @@
 @import '@styles/abstracts/_mixins';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
 
 #siwon_footer {
-	background: #2c2b34;
+	background: #1a1f24;
+	color: #f0f0f0;
 	.inner_wrap {
 		width: 1200px;
 		margin: 0 auto;
+
 		.footer_top {
 			.corp_list {
 				@include flex($align: 'between');
 				height: 80px;
+
 				> ul {
 					> li {
 						padding-right: 25px;
+
 						a {
 							display: block;
-							font-size: 13px;
-							color: #eee;
+							font-size: 14px;
+							color: #f0f0f0;
+							transition: color 0.3s;
+
+							&:hover {
+								color: #2c6ccc;
+							}
 						}
+
 						&.personal_info {
 							a {
-								color: #2f62cb;
+								color: #2c6ccc;
 								font-weight: 700;
 							}
 						}
 					}
 				}
+
 				&_left {
 					li {
 						float: left;
 					}
 				}
+
 				&_right {
 					float: right;
 					@include flex($align: '');
+
 					> li {
 						float: left;
+
 						&.family_site {
 							position: relative;
-							width: 172px;
-							height: 35px;
+							width: 180px;
+							height: 40px;
+
 							.select {
 								div {
 									border: none;
-									border-bottom: 1px solid #fff !important;
-									color: #eee;
+									border-bottom: 1px solid #f0f0f0;
+									color: #f0f0f0;
+
 									div {
-										border: 1px solid #fff;
-										background: #2c2b34;
-										color: #fff;
+										height: 300px;
+										border: 1px solid #f0f0f0;
+										background: #1a1f24;
+										color: #f0f0f0;
+
 										.optgroup {
 											.option {
 												a {
-													color: #fff;
+													color: #f0f0f0;
 												}
 											}
 										}
@@ -65,38 +81,53 @@
 				}
 			}
 		}
+
 		.footer_bottom {
 			.logo {
 				text-align: center;
 				padding: 40px 0 50px;
+
+				Image {
+					max-width: 100%;
+					height: auto;
+				}
 			}
+
 			.corp_info {
 				article {
 					text-align: center;
-					line-height: 1.9;
+					line-height: 1.8;
+
 					p {
 						display: inline;
-						color: #999;
-						margin-right: 35px;
-						font-size: 14px;
+						color: #cccccc;
+						margin-right: 40px;
+						font-size: 15px;
+
 						span {
 							padding-left: 20px;
-							color: #eee;
+							color: #f0f0f0;
 							a {
-								color: #eee;
+								color: #f0f0f0;
+								transition: color 0.3s;
+
+								&:hover {
+									color: #03a9f4;
+								}
 							}
 						}
 					}
 				}
+
 				.award_slide {
-					width: 550px;
+					width: 600px;
 					padding: 55px 0;
 					margin: auto;
-
 				}
+
 				address {
 					text-align: center;
-					color: #999;
+					color: #cccccc;
 					padding-bottom: 80px;
 				}
 			}

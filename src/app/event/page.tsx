@@ -1,4 +1,4 @@
-/* 
+/*
 	event page
 	src/app/event/page.tsx
 */

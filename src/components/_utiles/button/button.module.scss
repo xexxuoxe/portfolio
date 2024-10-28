@@ -1,25 +1,45 @@
-@import '@styles/abstracts/_variables';
 @import '@styles/abstracts/_mixins';
 
-.btn_list {
-	min-width: 120px;
-	padding: 13px 30px;
-	background-color: $color-dark-gray;
+@mixin button-style($btn-color) {
+	min-width: 50px;
+	padding: 8px 24px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 0.3s, transform 0.2s;
+	background-color: $btn-color;
 	border: none;
-	line-height: 1;
-	span {
-		color:#fff;
-		font-size: 15px;
+
+	&:hover {
+	background-color: darken($btn-color, 10%);
+		transform: scale(1.05);
 	}
 }
-.btn_signup {
-	min-width: 120px;
-	padding: 13px 30px;
-	background-color: $color-red;
-	border: none;
-	line-height: 1;
-	span {
-		color:#fff;
-		font-size: 15px;
-	}
+
+.btn_base {
+	@include button-style(#666);
+}
+
+.btn_mint {
+	@include button-style(#50BFAE);
+}
+
+.btn_coral {
+	@include button-style(#FF6F61);
+}
+
+.btn_lavender {
+	@include button-style(#A57BBE);
+}
+
+.btn_orange {
+	@include button-style(#FF9F00);
+}
+
+.btn_pastel_blue {
+	@include button-style(#4A90E2);
 }

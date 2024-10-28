@@ -1,22 +1,57 @@
 @import '@styles/abstracts/_mixins';
 
 .pagination {
-	padding-top: 25px;
-	.page_list{
+	padding: 25px 0;
+	.page_list {
 		@include flex($align: 'center');
-		.page_num , .page_num_on {
+		justify-content: center;
+
+		.page_num,
+		.page_num_on {
 			@include flex($align: 'center');
 			display: inline-block;
-			width: 30px;
-			height: 30px;
-			margin: 0 2px;
+			width: 36px;
+			height: 36px;
+			margin: 0 5px;
 			border: 1px solid #e2e2e2;
-			font-size: 15px;
-			color: #b6b6b6;
-			&_on {
-				background: #666;
-				border: 1px solid #666;
-				color: #fff;
+			border-radius: 50%;
+			font-size: 16px;
+			color: #666;
+			background: #fff;
+			cursor: pointer;
+			transition: background 0.3s, color 0.3s;
+
+			&:hover {
+				background: #f0f0f0;
+				color: #1e57ab;
+			}
+		}
+
+		.page_num_on {
+			background: #1e57ab;
+			border: 1px solid #1e57ab;
+			color: #fff;
+		}
+
+		.page_prev,
+		.page_next {
+			width: 36px;
+			height: 36px;
+			background: none;
+			border: none;
+			color: #1e57ab;
+			font-size: 16px;
+			font-weight: 700;
+			cursor: pointer;
+			transition: color 0.3s;
+
+			&:disabled {
+				color: #b6b6b6;
+				cursor: default;
+			}
+
+			&:hover:not(:disabled) {
+				color: #0f4b88;
 			}
 		}
 	}

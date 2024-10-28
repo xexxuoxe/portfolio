@@ -1,88 +1,111 @@
 @import '@styles/abstracts/_mixins';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
-
-#siwon_header,
-#siwon_header *,
-#siwon_header *::before,
-#siwon_header *::after {
-	box-sizing: border-box;
-}
 
 #siwon_header {
 	height: 110px;
-	border-bottom: 1px solid #f0f0f0;
-	.header_top {
-		@include flex($align: 'between');
-		width: 1200px;
-		height: 100%;
-		margin: 0 auto;
-		.wrap_items {
-			width: 33.333%;
-		}
-		.banner {
+	border-bottom: 1px solid #e0e0e0;
+	background: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-		}
-		.logo {
-			text-align: center;
-		}
-		.user_menu {
-			.user_container {
-				margin-left: auto;
-				float: right;
-				li {
-					float: left;
-					&:last-child {
-						padding: 0;
-						&::after {
-							display: none;
-						}
-					}
-					a {
-						display: block;
-						width: 100%;
-						height: 100%;
-					}
-				}
-			}
-			.user_view {
-				padding-bottom: 15px;
-				li {
-					position: relative;
-					flex: 1 1 auto;
-					padding: 0 10px;
+.header_top {
+	@include flex($align: 'between');
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+
+	.wrap_items {
+		width: 33.333%;
+	}
+
+	.logo {
+		text-align: center;
+	}
+
+	.user_menu {
+		.user_container {
+			margin-left: auto;
+			float: right;
+
+			li {
+				float: left;
+
+				&:last-child {
+					padding: 0;
 					&::after {
-						content: "";
-						position: absolute;
-						width: 2px;
-						height: 10px;
-						top: 3px;
-						right: 0;
-						background: #eaeaea;
-					}
-					a {
-						color: #707070;
-						font-size: 13px;
+						display: none;
 					}
 				}
-			}
-			.user_page {
-				height: 30px;
-				li {
-					flex: 1 1 auto;
-					position: relative;
-					width: 33px;
+
+				a {
+					display: block;
+					width: 100%;
 					height: 100%;
-					margin-left: 15px;
-					background-image: url(//siwon-cdn.siwonschool.com/comm/layout/ico_util.png);
-					background-repeat: no-repeat;
-					background-size: cover;
+					color: #555;
+					font-size: 14px;
+					transition: color 0.3s;
+
+					&:hover {
+						color: #000;
+					}
 				}
-				.survey {width: 125px; background-position-x: 0;}
-				.mypage {background-position-x: -188px;}
-				.coupon {background-position-x: -236px;}
-				.cart {background-position-x: -284px;}
 			}
+		}
+
+		.user_view {
+			padding-bottom: 15px;
+
+			li {
+				position: relative;
+				flex: 1 1 auto;
+				padding: 0 15px;
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 2px;
+					height: 12px;
+					top: 50%;
+					right: 0;
+					transform: translateY(-50%);
+					background: #d0d0d0;
+				}
+
+				&:last-child {
+					padding: 0 0 0 15px;
+				}
+
+				a {
+					color: #707070;
+					font-size: 13px;
+				}
+			}
+		}
+
+		.user_page {
+			height: 30px;
+
+			li {
+				position: relative;
+				width: 33px;
+				height: 100%;
+				margin-left: 15px;
+				background-image: url(//siwon-cdn.siwonschool.com/comm/layout/ico_util.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+
+			.survey { width: 125px;  background-position-x: 0; }
+			.mypage { background-position-x: -188px; }
+			.coupon { background-position-x: -236px; }
+			.cart { background-position-x: -284px; }
 		}
 	}
 }

@@ -1,4 +1,6 @@
-// scr/hooks/postWrite.hook.ts
+/*
+	scr/components/main/post/write/postWrite.hook.ts
+*/
 'use client'
 import { useEffect , useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -8,7 +10,6 @@ interface FormData {
   	title: string;
 	author: string,
 	date: string,
-	file: string;
 	teacher: string,
   	content: string;
   	collect: boolean;
@@ -16,13 +17,13 @@ interface FormData {
     views: string
 }
 
-export const usePostWrite = ( id: string ) => {
-	const [formData, setFormData] = useState<FormData>({
-		id: '',
+export const usePostWrite = ( postId: number ) => {
+
+	const [postData, setPostData] = useState<FormData>({
+		id: 0,
 		title: '',
 		author: '',
 		date: '',
-		file: '',
 		teacher: '',
 		content: '',
 		collect: false,
@@ -32,37 +33,42 @@ export const usePostWrite = ( id: string ) => {
 
 	const router = useRouter();
 
+	useEffect(() => {
+		if(postId) {
+			const getData = async () => {
+				const ports = await api.get(`http://localhost:3002/postReview/${postId}`);
+				setPostData(ports);
+			};
+			getData();
+		}
+	}, [postId]);
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value, type, checked } = e.target;
-		setFormData((prev) => ({
+		setPostData((prev) => ({
 			...prev,
-			[name]: type === '' ? checked : value,
+			[name]: type === 'checkbox' ? checked : value,
 		}));
 	};
 
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) => {
 		e.preventDefault();
 
-		const response = id
-		? await api.put(`/api/post/${id}` , formData)
-		: await api.post(`/api/post` , formData)
+		const response = postId
+		? await api.put(`http://localhost:3002/postReview/${postId}` , postData)
+		: await api.post(`http://localhost:3002/postReview` , postData)
 
-
-		// const response : {
-		// 	status : number,
-		// 	message : string
-		// } = await api.post('/api/post', formData);
-
-		if (response.status == 1) {
-			alert(response.message);
+		if (response) {
+			// alert(response.message);
+			alert('등록되었습니다.');
 			router.push('/post/list');
 		} else {
-			alert(response.message || 'Error submitting the post');
+			alert(response.message || 'error');
 		}
 	};
 
 	return {
-		formData,
+		postData,
 		handleChange,
 		handleSubmit,
 	};

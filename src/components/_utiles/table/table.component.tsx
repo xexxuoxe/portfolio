@@ -1,4 +1,4 @@
-/* 
+/*
 	table component
 	src/component/_utiles/table/table.component.tsx
 */
@@ -22,51 +22,51 @@ interface PostListProps<T> {
 }
 
 function PostList<T>({ className, variant, items, columns, itemsPerPage = 10 }: PostListProps<T>) {
-  const [currentPage, setCurrentPage] = useState(1);
+	const [currentPage, setCurrentPage] = useState(1);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+	const indexOfLastItem = currentPage * itemsPerPage;
+	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber: number) => {
-	setCurrentPage(pageNumber);
-  }
+	const paginate = ( pageNumber: number ) => {
+		setCurrentPage(pageNumber);
+	}
 
-  return (
-    <div className={`${styles[variant]} ${className}`}>
-      <div className={styles.table_container}>
-        <table>
-          <thead>
-            <tr className={styles.table_header}>
-              {columns.map((column) => (
-                <th key={column.key as string} className={styles.table_header_list}>
-                  {column.header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.map((item, index) => (
-              <tr key={index} className={styles.table_body}>
-                {columns.map((column) => (
-                  <td key={column.key as string} className={styles.table_body_list}>
-                    {column.render ? column.render(item) : item[column.key]}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {items.length > itemsPerPage && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={Math.ceil(items.length / itemsPerPage)}
-          onPageChange={paginate}
-        />
-      )}
-    </div>
-  );
+	return (
+		<div className={ `${ styles[variant] } ${ className }` }>
+		<div className={ styles.table_container }>
+			<table>
+			<thead>
+				<tr className={ styles.table_header }>
+				{ columns.map((column) => (
+					<th key={ column.key as string } className={ styles.table_header_list }>
+					{ column.header }
+					</th>
+				)) }
+				</tr>
+			</thead>
+			<tbody>
+				{ currentItems.map((item, index) => (
+				<tr key={ index } className={ styles.table_body }>
+					{ columns.map((column) => (
+					<td key={ column.key as string } className={ styles.table_body_list }>
+						{ column.render ? column.render(item) : item[column.key] }
+					</td>
+					)) }
+				</tr>
+				)) }
+			</tbody>
+			</table>
+		</div>
+		{ items.length > itemsPerPage && (
+			<Pagination
+				currentPage={ currentPage }
+				totalPages={ Math.ceil(items.length / itemsPerPage) }
+				onPageChange={ paginate }
+			/>
+		)}
+		</div>
+	);
 }
 
 export default PostList;

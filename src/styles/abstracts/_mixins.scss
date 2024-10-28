@@ -12,6 +12,9 @@
 	} @else if #{$align} == 'between' {
 		justify-content: space-between;
 		align-items: center;
+	} @else if #{$align} == 'end' {
+		justify-content: end;
+		align-items: center;
 	} @else if #{$align} == 'column' {
 		flex-direction: column;
 	}

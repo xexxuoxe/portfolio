@@ -1,8 +1,61 @@
-@import '@styles/abstracts/_variables';
 @import '@styles/abstracts/_mixins';
 
-.input_gray {
+@mixin input-stlye($input-color) {
+	position: relative;
+	width: 100%;
 	input {
-		border: 1px solid #e2e2e2;
+		width: calc(100% - 30px);
+		padding: 10px 15px;
+		border: 1px solid $input-color;
+		border-radius: 5px;
+		font-size: 16px;
+		color: #333;
+		background: #fff;
+		transition: border 0.3s, box-shadow 0.3s;
+
+		&:focus {
+			outline: none;
+			border-color: darken($input-color, 10%);
+			box-shadow: 0 0 5px rgb(140 140 140 / 50%);
+		}
+
+		&:disabled {
+			background-color: #f7f7f7;
+			border-color: #d2d2d2;
+			color: #999;
+			cursor: default;
+		}
+
+		input:hover {
+			border-color: lighten($input-color, 10%);
+		}
+
+		&:active {
+			border-color: darken($input-color, 20%);
+		}
 	}
+}
+
+.input_base {
+	@include input-stlye(#d4d4d4);
+}
+
+.input_red {
+	@include input-stlye(#e74c3c);
+}
+
+.input_green {
+	@include input-stlye(#2ecc71);
+}
+
+.input_blue {
+	@include input-stlye(#3498db);
+}
+
+.input_yellow {
+	@include input-stlye(#f1c40f);
+}
+
+.input_purple {
+	@include input-stlye(#9b59b6);
 }

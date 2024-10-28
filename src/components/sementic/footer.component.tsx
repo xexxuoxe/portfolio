@@ -1,4 +1,4 @@
-/* 
+/*
 	footer sementic
 	scr/components/sementic/footer.component.tsx
 */
@@ -187,8 +187,9 @@ export default function FooterComponent() {
 							{/* family_site */}
 							<li className={ styles.family_site }>
 								<Select
-									className={styles.select}
 									options={options}
+									variant="select_base"
+									className={styles.select}
 									selectedOption={selectedOption}
 									setSelectedOption={setSelectedOption}
 								/>

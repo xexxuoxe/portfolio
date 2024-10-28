@@ -11,7 +11,6 @@ import Table from '@components/_utiles/table/table.component';
 import { Post, usePostHook } from './postList.hook';
 
 export default function PostListItem() {
-    //const [selectedOption, setSelectedOption] = useState({ label: '선생님', value: '' });
 
 	const {
 		postData,
@@ -43,25 +42,13 @@ export default function PostListItem() {
 					<div className={styles.post_header_left}>
 						<div className={styles.post_title}>
 							<h2>총 <span>{posts.length}</span>개의 수강후기</h2>
-
 						</div>
-						<ul>
-							<li>
-								{/* <ComponentSelect
-									className={styles.select}
-									options={teacherList}
-									selectedOption={selectedOption}
-									setSelectedOption={setSelectedOption}
-								/> */}
-							</li>
-						</ul>
 					</div>
 					<div className={styles.post_header_right}>
 						<ul className={styles.post_button}>
 							<li>
 								<LinkButton
-									variant="btn_signup"
-									className="link_btn"
+									variant="btn_orange"
 									href="/post/write"
 									text="수강후기 작성"
 								/>

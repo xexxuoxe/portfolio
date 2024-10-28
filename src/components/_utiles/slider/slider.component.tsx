@@ -1,4 +1,4 @@
-/* 
+/*
 	slider component
 	src/component/_utiles/slider/slider.component.tsx
 */
@@ -12,17 +12,16 @@ import 'swiper/css/pagination';
 import styles from './slider.module.scss';
 
 interface Slide {
-  title: string;
-  img: string;
-  link: string;
-  id : string;
+	title: string;
+	img: string;
+	link: string;
+	id : string;
 }
 
-// Props type definition
 interface SliderProps {
 	className: string;
-  variant: string;
-  slides: Slide[];
+  	variant: keyof typeof styles;
+  	slides: Slide[];
 	spaceBetween?: number;
 	slidesPerView?: number;
 	loop?: boolean;
@@ -34,34 +33,39 @@ interface SliderProps {
 
 const Slider = ({className, variant, slides, spaceBetween, slidesPerView, loop, pagination, navigation, scrollbar, autoplay}: SliderProps) => {
 
-  return (
-    <Swiper
-		className={`${styles[variant]} ${className}`}
-    modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-		loop={loop}
-		spaceBetween={spaceBetween}
-		slidesPerView={slidesPerView}
-		navigation={navigation}
-		pagination={pagination ? { clickable: true } : false}
-		scrollbar={scrollbar ? { draggable: true } : false}
-		autoplay={autoplay}
-		// onSwiper={(swiper) => }
-		// onSlideChange={() => }
-    >
-      {slides.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <a href={slide.link}>
-            <Image
-              src={slide.img}
-              width={50}
-              height={50}
-              alt={slide.title}
-            />
-          </a>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  );
+	return (
+		<Swiper
+			className={ `${ styles[variant] } ${ className } ${styles.swiper}` }
+			modules={ [Navigation, Pagination, Scrollbar, Autoplay] }
+			loop={ loop }
+			spaceBetween={ spaceBetween }
+			slidesPerView={ slidesPerView }
+			// navigation={{
+			// 	navigation,
+			// 	nextEl: `.${styles['swiper-button-next']}`,
+			// 	prevEl: `.${styles['swiper-buttonprev-']}`,
+			// }}
+			navigation={navigation}
+			pagination={ pagination ? {  clickable: true  } : false }
+			scrollbar={ scrollbar ? {  draggable: true  } : false }
+			autoplay={ autoplay }
+			// onSwiper={ (swiper) =>  }
+			// onSlideChange={ () =>  }
+		>
+		{ slides.map(( slide ) => (
+			<SwiperSlide key={ slide.id } className={styles.swiper_slide}>
+				<a href={ slide.link }>
+					<Image
+						src={ slide.img }
+						width={ 50 }
+						height={ 50 }
+						alt={ slide.title }
+					/>
+				</a>
+			</SwiperSlide>
+		))}
+		</Swiper>
+	);
 }
 export default Slider;
 

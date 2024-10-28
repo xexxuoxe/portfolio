@@ -1,2 +1,60 @@
-@import '@styles/abstracts/_variables';
 @import '@styles/abstracts/_mixins';
+
+@mixin checkbox-style($bg-color, $border-color, $check-color) {
+	position: relative;
+	display: inline-block;
+	input {
+		width: 18px;
+		height: 18px;
+		border: 2px solid $border-color;
+		background-color: $bg-color;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+
+		&:hover {
+			border-color: lighten($border-color, 10%);
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background-color: $check-color;
+			border-radius: 2px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0);
+			transition: transform 0.3s;
+		}
+	}
+
+	input[type="checkbox"]:checked + .checkbox:after {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.checkbox_base {
+	@include checkbox-style(#fff, #9c9c9c, #9c9c9c);
+}
+
+.checkbox_red {
+	@include checkbox-style(#fff, #e74c3c, #e74c3c);
+}
+
+.checkbox_green {
+	@include checkbox-style(#fff, #2ecc71, #2ecc71);
+}
+
+.checkbox_blue {
+	@include checkbox-style(#fff, #3498db, #3498db);
+}
+
+.checkbox_yellow {
+	@include checkbox-style(#fff, #f1c40f, #f1c40f);
+}
+
+.checkbox_purple {
+	@include checkbox-style(#fff, #9b59b6, #9b59b6);
+}

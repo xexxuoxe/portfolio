@@ -1,4 +1,4 @@
-/* 
+/*
 	evnet component
 	src/component/main/evnet/evnet.component.tsx
 */
@@ -6,8 +6,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import ComponentPagination from '@components/_utiles/pagination/pagination.component';
-import { Event, useEventHook } from './event.hook';
+import Pagination from '@components/_utiles/pagination/pagination.component';
+import { useEventHook } from './event.hook';
 import styles from './event.module.scss';
 
 export default function EventItem() {
@@ -25,45 +25,45 @@ export default function EventItem() {
 	};
 
     return (
-		<div className={styles.inner_container}>
-			<div className={styles.section_sub}>
+		<div className={ styles.inner_container }>
+			<div className={ styles.section_sub }>
 				<Image
 					src="https://siwon-cdn.siwonschool.com/asia/community/event/vietnam_event_header.jpg"
-					width={1100}
-					height={170}
+					width={ 1100 }
+					height={ 170 }
 					alt="수강후기"
 				/>
 			</div>
-			<div className={styles.siwon_events}>
-				<div className={styles.evnets_list}>
+			<div className={ styles.siwon_events }>
+				<div className={ styles.evnets_list }>
 					<ul>
-						{currentItems.map((index) => (
+						{ currentItems.map((index) => (
 							<li
-								key={index.id}
-								className={`${styles.events_items} ${index.state.includes('종료') ? `${styles.finished}` : ''}`}
+								key={ index.id }
+								className={ `${ styles.events_items } ${ index.state.includes('종료') ? `${ styles.finished }` : ''}`}
 								>
-								<Link href={index.link} target="_blank">
-									<div className={styles.items_img}>
+								<Link href={ index.link } target="_blank">
+									<div className={ styles.items_img }>
 										<Image
-											src={index.image}
-											alt={index.title}
-											fill={true}
+											src={ index.image }
+											alt={ index.title }
+											fill={ true }
 										/>
 									</div>
-									<div className={styles.items_detail}>
-										<span><em>{index.state}</em></span>
-										<h3>{index.title}</h3>
-										<p>{index.subtitle}</p>
+									<div className={ styles.items_detail }>
+										<span><em>{ index.state }</em></span>
+										<h3>{ index.title }</h3>
+										<p>{ index.subtitle }</p>
 									</div>
 								</Link>
 							</li>
 						))}
 					</ul>
 				</div>
-				<ComponentPagination
-					currentPage={currentPage}
-					totalPages={Math.ceil(eventData.length / itemsPerPage)}
-					onPageChange={paginate}
+				<Pagination
+					currentPage={ currentPage }
+					totalPages={ Math.ceil( eventData.length / itemsPerPage )}
+					onPageChange={ paginate }
 				/>
 			</div>
 		</div>

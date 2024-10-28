@@ -6,68 +6,82 @@
 import styles from './postView.module.scss';
 import PostListItem from '@components/main/post/list/postList.component';
 import LinkButton from '@components/_utiles/link/link.component';
-import { PostCont } from './postView.hook';
+import Button from '@components/_utiles/button/button.component';
+import { usePostView } from '../view/postView.hook';
 
 interface PostViewItemProps {
-	post: PostCont;
+	post: number;
 }
 
 export default function PostViewItem({ post }: PostViewItemProps) {
 
+	const { postData, handleDelete } = usePostView(post);
+
+	if (!postData) {
+        return <div>로딩 중</div>;
+    }
+
 	return (
-		<div className={styles.inner_container}>
-			<div className={styles.siwon_board}>
-				<div className={styles.board_view_top}>
-					<div className={styles.view_top_header}>
-						<div className={styles.view_top_left}>
-							<h4 className={styles.view_top_title}>{post.title}</h4>
-							<ul className={styles.view_top_detail}>
+		<div className={ styles.inner_container }>
+			<div className={ styles.siwon_board }>
+				<div className={ styles.board_view_top }>
+					<div className={ styles.view_top_header }>
+						<div className={ styles.view_top_left }>
+							<h4 className={ styles.view_top_title }>{ postData.title }</h4>
+							<ul className={ styles.view_top_detail }>
 								<li>
-									<span className={styles.detail_subject}>작성자</span>
-									<span>{post.author}</span>
+									<span className={ styles.detail_subject }>작성자</span>
+									<span>{ postData.author }</span>
 								</li>
 								<li>
-									<span className={styles.detail_subject}>작성일</span>
-									<span>{post.date}</span>
+									<span className={ styles.detail_subject }>작성일</span>
+									<span>{ postData.date }</span>
 								</li>
 								<li>
-									<span className={styles.detail_subject}>조회수</span>
-									<span>{post.views}</span>
+									<span className={ styles.detail_subject }>조회수</span>
+									<span>{ postData.views }</span>
 								</li>
 							</ul>
 						</div>
-						<div className={styles.view_top_right}>
+						<div className={ styles.view_top_right }>
 							<LinkButton
-								variant="btn_list"
+								variant="btn_base"
 								className="link_btn"
-								href={`/post/view/${parseInt(post.id) - 1}`}
+								href={ `/post/view/${ parseInt(postData.id) - 1 }` }
 								text="이전"
 							/>
 							<LinkButton
-								variant="btn_list"
+								variant="btn_base"
 								className="link_btn"
-								href={`/post/view/${parseInt(post.id) + 1}`}
+								href={ `/post/view/${ parseInt(postData.id) + 1 }` }
 								text="다음"
 							/>
 						</div>
 					</div>
-					<div className={styles.view_top_sub}>
-						<p>{post.teacher}</p>
+					<div className={ styles.view_top_sub }>
+						<p>{ postData.teacher }</p>
 					</div>
 				</div>
-				<div className={styles.board_view_main}>
-					<article>{post.contents}</article>
+				<div className={ styles.board_view_main }>
+					<article>{ postData.content }</article>
 				</div>
-				<div className={styles.board_view_bottom}>
-					<div className={styles.view_bottom_list}>
-						<LinkButton
-							variant="btn_list"
+				<div className={ styles.board_view_bottom }>
+					<div className={ styles.view_bottom_list }>
+						<Button
+							variant="btn_base"
+							type='button'
 							className="link_btn"
-							href={`/post/write/${post.id}`}
+							onClick={ handleDelete }
+							text="삭제하기"
+						/>
+						<LinkButton
+							variant="btn_base"
+							className="link_btn"
+							href={ `/post/modify/${ postData.id }` }
 							text="수정하기"
 						/>
 						<LinkButton
-							variant="btn_list"
+							variant="btn_base"
 							className="link_btn"
 							href="/post/list"
 							text="목록보기"
@@ -75,8 +89,8 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 					</div>
 				</div>
 			</div>
-			{/* 강의 리스트 */}
 			<PostListItem></PostListItem>
 		</div>
 	)
+
 }

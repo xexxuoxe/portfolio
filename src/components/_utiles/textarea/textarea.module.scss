@@ -1,5 +1,62 @@
-.input_gray {
+@import '@styles/abstracts/_variables';
+@import '@styles/abstracts/_mixins';
+
+@mixin textarea-style($textarea-color) {
 	textarea {
-		border: 1px solid #e2e2e2;
+		width: calc(100% - 30px);
+		padding: 10px 15px;
+		border: 1px solid $textarea-color;
+		border-radius: 5px;
+		font-size: 16px;
+		color: #333;
+		background: #fff;
+		resize: vertical;
+		transition: border 0.3s, box-shadow 0.3s;
+		resize: none;
+
+		&:focus {
+			outline: none;
+			border-color: darken($textarea-color, 10%);
+			box-shadow: 0 0 5px rgb(140 140 140 / 50%);
+		}
+
+		&:disabled {
+			background-color: #f7f7f7;
+			border-color: #d2d2d2;
+			color: #999;
+			cursor: default;
+		}
+
+		&:hover {
+			border-color: lighten($textarea-color, 10%);
+		}
+
+		&:active {
+			border-color: darken($textarea-color, 20%);
+		}
 	}
+}
+
+.textarea_base {
+	@include textarea-style(#d4d4d4);
+}
+
+.textarea_red {
+	@include textarea-style(#e74c3c);
+}
+
+.textarea_green {
+	@include textarea-style(#2ecc71);
+}
+
+.textarea_blue {
+	@include textarea-style(#3498db);
+}
+
+.textarea_yellow {
+	@include textarea-style(#f1c40f);
+}
+
+.textarea_purple {
+	@include textarea-style(#9b59b6);
 }

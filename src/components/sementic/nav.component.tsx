@@ -1,6 +1,6 @@
-/* 
+/*
 	nav component
-	src/component/_utiles/nav/pagination.component.tsx
+	src/component/sementic/nav.component.tsx
 */
 "use client";
 import React from "react";
@@ -85,25 +85,24 @@ const socialLinks = [
 
 export default function NavComponent() {
   return (
-    <div id={styles.siwon_navigation}>
-      <div className={styles.inner_wrap}>
+    <div id={ styles.siwon_navigation }>
+      <div className={ styles.inner_wrap }>
 		{/* site link */}
-        <ul className={styles.language_menu}>
-			{languages.map((lang, index) => (
-			<li key={index}>
-				<Link href={lang.url} target="_blank" rel="noopener noreferrer">
-					{lang.name}
+        <ul className={ styles.language_menu }>
+			{ languages.map(( lang, index ) => (
+			<li key={ index }>
+				<Link href={ lang.url } target="_blank">
+					{ lang.name }
 				</Link>
-				{lang.subLinks && lang.subLinks.length > 0 && (
-					<ul className={styles.sub_menu}>
-					{lang.subLinks.map((subLang, subIndex) => (
-						<li key={subIndex} className={styles.name}>
+				{ lang.subLinks && lang.subLinks.length > 0 && (
+					<ul className={ styles.sub_menu }>
+					{lang.subLinks.map(( subLang, subIndex ) => (
+						<li key={ subIndex } className={ styles.name } >
 						<Link
-							href={subLang.url}
+							href={ subLang.url }
 							target="_blank"
-							rel="noopener noreferrer"
 						>
-							{subLang.name}
+							{ subLang.name }
 						</Link>
 						</li>
 					))}
@@ -113,10 +112,10 @@ export default function NavComponent() {
           ))}
         </ul>
 		{/* sns link */}
-        <ul className={styles.social_links}>
-          {socialLinks.map((socialLink, index) => (
-            <li key={index} className={styles[socialLink.class]}>
-              <Link href={socialLink.url} target="_blank" rel="noopener noreferrer"></Link>
+        <ul className={ styles.social_links }>
+          { socialLinks.map(( socialLink, index ) => (
+            <li key={ index } className={ styles[socialLink.class] }>
+              <Link href={ socialLink.url } target="_blank"></Link>
             </li>
           ))}
         </ul>

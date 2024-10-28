@@ -12,12 +12,10 @@ export interface Event {
 
 export const useEventHook = () => {
 
-    const [eventData, setEventData] = useState<Event[]>([]);
+    const [ eventData, setEventData ] = useState<Event[]>([]);
 
 	useEffect(() => {
-        // validate 체크
 		getData();
-
     }, []);
 
 	const getData = async () => {

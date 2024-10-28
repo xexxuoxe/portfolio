@@ -1,4 +1,4 @@
-.select {
+@mixin select-color($color1, $color2, $color3, $color4, $color5) {
 	.select_current {
 		position: relative;
 		display: block;
@@ -6,11 +6,16 @@
 		height: 100%;
 		line-height: 35px;
 		padding: 0 10px;
-		border: none;
-		border: 1px solid #e2e2e2;
-		color: #222;
+		border: 1px solid $color1;
+		background: $color2;
+		color: $color3;
 		font-size: 13px;
 		cursor: pointer;
+
+		.arrow {
+			float : right;
+		}
+
 		.select_list {
 			position: absolute;
 			overflow-y: auto;
@@ -20,18 +25,18 @@
 			padding: 3px 0;
 			top: 35px;
 			left: 0;
-			border: 1px solid #222;
-			box-sizing: border-box;
-			background: #fff;
-			color: #222;
-			z-index: 10;
+			border: 1px solid $color1;
+			background: $color4;
+			color: $color3;
+
 			&::-webkit-scrollbar {
 				width: 5px;
 			}
 			&::-webkit-scrollbar-thumb {
-				background: #5c5a64 ;
+				background: $color5;
 				border-radius: 5px;
 			}
+
 			.optgroup {
 				.option {
 					display: block;
@@ -40,9 +45,10 @@
 					a {
 						width: 100%;
 						font-size: 13px;
-						color: #222;
 						cursor: pointer;
-						&:hover, &:focus, &:active  {
+						color: $color3;
+						&:hover, &:focus, &:active {
+							color: $color4;
 							text-decoration: underline;
 						}
 					}
@@ -51,3 +57,8 @@
 		}
 	}
 }
+
+.select_base {
+	@include select-color(#00bcd4, transparent, #222222, #f0f0f0, #5c5a64);
+}
+

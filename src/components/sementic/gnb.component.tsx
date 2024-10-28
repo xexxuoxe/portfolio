@@ -1,4 +1,4 @@
-/* 
+/*
 	gnb sementic
 	scr/components/sementic/gnb.component.tsx
 */
@@ -39,7 +39,7 @@ export default function GnbComponent() {
 							<Link href="/signin">로그인</Link>
 						</li>
 						<li className={ styles.join }>
-							<Link href={ `/signup/step1` } className={ styles.bar }>회원가입</Link>
+							<Link href={ `/signup` } className={ styles.bar }>회원가입</Link>
 						</li>
 						<li>
 							<Link href="/signin">고객센터</Link>
