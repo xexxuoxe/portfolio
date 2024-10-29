@@ -47,7 +47,8 @@ export default function EventItem() {
 										<Image
 											src={ index.image }
 											alt={ index.title }
-											fill={ true }
+											fill
+											sizes="(max-width: 640px) 50vw 100vw"
 										/>
 									</div>
 									<div className={ styles.items_detail }>

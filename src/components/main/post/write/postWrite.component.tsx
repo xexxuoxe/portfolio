@@ -3,8 +3,9 @@
 	src/component/main/post/write/postWrite.component.tsx
 */
 'use client';
+
 import Input from '@components/_utiles/input/input.component';
-import TextArea from '@components/_utiles/textarea/textarea.component';
+import Editor from '@components/_utiles/draftEditor/draftEditor.component';
 import Checkbox from '@components/_utiles/checkbox/checkbox.component';
 import Link from '@components/_utiles/link/link.component';
 import Button from '@components/_utiles/button/button.component';
@@ -51,16 +52,9 @@ export default function PostWritePage({ post } : PostWriteItemProps) {
 								<label htmlFor="write_content">내용</label>
 							</th>
 							<td className={ styles.td }>
-							<TextArea
-								id="write_content"
-								name="content"
-								variant ="textarea_base"
-								defaultValue ={ postData.content }
-								onChange={ handleChange }
-								placeholder="내용을 입력해주세요"
-								className="content"
-								rows={ 10 }
-							/></td>
+							<Editor />
+							{/* value={ postData.content } */}
+							</td>
 						</tr>
 						</tbody>
 					</table>
