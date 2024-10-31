@@ -1,6 +1,6 @@
 /*
 	pagination component
-	src/component/_utiles/pagination/pagination.component.tsx
+	src/components/_utiles/pagination/pagination.component.tsx
 */
 import styles from './pagination.module.scss';
 interface PaginationProps {

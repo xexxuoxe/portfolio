@@ -1,5 +1,5 @@
 /*
-	src/component/main/post/view/postView.hook.tsx
+	src/components/main/post/view/postView.hook.tsx
 */
 import { useState, useEffect } from 'react';
 import api from '@lib/api/fetch.client';

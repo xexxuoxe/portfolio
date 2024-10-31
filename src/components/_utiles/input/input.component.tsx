@@ -1,6 +1,6 @@
 /*
 	input component
-	src/component/_utiles/input/input.component.tsx
+	src/components/_utiles/input/input.component.tsx
 */
 import styles from './input.module.scss'
 

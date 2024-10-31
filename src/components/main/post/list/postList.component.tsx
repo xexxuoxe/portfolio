@@ -1,6 +1,6 @@
 /*
 	post list component
-	src/component/main/post/list/postList.component.tsx
+	src/components/main/post/list/postList.component.tsx
 */
 'use client'
 import Link from 'next/link';

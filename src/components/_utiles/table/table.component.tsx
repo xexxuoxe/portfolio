@@ -1,6 +1,6 @@
 /*
 	table component
-	src/component/_utiles/table/table.component.tsx
+	src/components/_utiles/table/table.component.tsx
 */
 'use client';
 import React, { useState } from 'react';

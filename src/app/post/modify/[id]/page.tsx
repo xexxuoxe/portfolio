@@ -3,19 +3,16 @@
 	src/app/post/modify/[id]/page.tsx
 */
 'use client';
+import { useParams } from 'next/navigation';
 import PostWritePage from '@components/main/post/write/postWrite.component';
 
-interface PostModifyProps {
-	params : {
-        id: number;
-	}
-}
+export default function Main() {
+  const params = useParams();
+  const postId = params.id;
 
-export default function Main({ params }  : PostModifyProps) {
-   return (
-		<div className='review_section' id='siwon_container'>
-			<PostWritePage post={params.id}/>
-			{params.id}
-		</div>
-   );
+  return (
+    <div className='review_section' id='siwon_container'>
+      	<PostWritePage post={postId} />
+    </div>
+  );
 }

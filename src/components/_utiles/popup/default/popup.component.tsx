@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@components/_utiles/button/squre.component'; // 버튼 컴포넌트의 위치에 따라 경로 조정이 필요할 수 있습니다.
-import styles from './Popup.module.scss';
+import styles from './popup.module.scss';
 import { PopupProps } from './popup.hook';
 
 const Popup: React.FC<PopupProps> = ({ isOpen, onClose, message, buttons }) => {

@@ -1,6 +1,6 @@
 /*
 	checkbox component
-	src/component/_utiles/checkbox/checkbox.component.tsx
+	src/components/_utiles/checkbox/checkbox.component.tsx
 */
 import { useState, ChangeEvent } from 'react';
 import styles from './checkbox.module.scss';

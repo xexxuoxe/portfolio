@@ -1,6 +1,6 @@
 /*
 	select component
-	src/component/_utiles/select/select.component.tsx
+	src/components/_utiles/select/select.component.tsx
 */
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './select.module.scss';

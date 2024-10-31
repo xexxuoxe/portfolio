@@ -1,42 +1,48 @@
-import React, { useState , useEffect } from 'react';
-import { Editor , EditorState, convertToRaw, convertFromRaw, RichUtils } from 'draft-js';
-import 'draft-js/dist/Draft.css';
-// 테마
-// '@draft-js-plugins/inline-toolbar';
+'use client';
+/*
+	draftEditor component
+	src/components/_utiles/draftEditor/draftEditor.component.tsx
+*/
+import React, { useState, useEffect } from 'react';
+import { Editor } from 'react-draft-wysiwyg';
+import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
+interface DraftEditorProps {
+  content: string;
+  onChange: (content: string) => void;
+}
 
-export default function DraftEditor() {
+export default function DraftEditor({ content, onChange }: DraftEditorProps) {
+	const [editorState, setEditorState] = useState<EditorState>(
+		EditorState.createEmpty()
+	);
 
-	// 에디터에서 입력된 내용 저장
-	const saveContent = () => {
-		const contentState = editorState.getCurrentContent();
-		const rawContent = convertToRaw(contentState);
+	useEffect(() => {
+		if (content) {
+		  try {
+			const contentState = convertFromRaw(JSON.parse(content));
+			setEditorState(EditorState.createWithContent(contentState));
+		  } catch (error) {
+			console.error("Failed to parse content:", error);
+		  }
+		}
+	  }, [content]);
 
-		console.log(JSON.stringify(rawContent)); // JSON 형태로 저장 가능
-
-		localStorage.setItem('my-draft', JSON.stringify(rawContent, null, 2))
+	  const onEditorStateChange = (state: EditorState) => {
+		setEditorState(state);
+		const rawContent = convertToRaw(state.getCurrentContent());
+		onChange(JSON.stringify(rawContent));
 	};
 
-	// JSON 형태의 콘텐츠 로드
-	const loadContent = (rawContent: any) => {
-		const contentState = convertFromRaw(JSON.parse(rawContent));
-		setEditorState(EditorState.createWithContent(contentState));
-	};
-
-	// draft-wysiwyg
-	const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
-	const onEditorStateChange = (state: EditorState) => { setEditorState(state); };
-
-	return (
-		<div>
-			<Editor
-				editorState={editorState}
-				toolbarClassName="toolbarClassName"
-				wrapperClassName="wrapperClassName"
-				editorClassName="editorClassName"
-				onEditorStateChange={onEditorStateChange}
-				placeholder='내용을 입력해주세요'
-			/>
-		</div>
-	)
+  return (
+      <Editor
+        editorState={editorState}
+        toolbarClassName="toolbarClassName"
+        wrapperClassName="wrapperClassName"
+        editorClassName="editorClassName"
+        onEditorStateChange={onEditorStateChange}
+        placeholder="내용을 입력해주세요"
+      />
+  );
 }

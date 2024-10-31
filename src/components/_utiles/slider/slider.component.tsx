@@ -1,6 +1,6 @@
 /*
 	slider component
-	src/component/_utiles/slider/slider.component.tsx
+	src/components/_utiles/slider/slider.component.tsx
 */
 import React from 'react';
 import Image from 'next/image';

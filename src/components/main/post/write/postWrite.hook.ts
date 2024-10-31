@@ -17,10 +17,10 @@ interface FormData {
     views: string
 }
 
-export const usePostWrite = ( postId: number ) => {
+export const usePostWrite = ( postId: string ) => {
 
 	const [postData, setPostData] = useState<FormData>({
-		id: 0,
+		id: '',
 		title: '',
 		author: '',
 		date: '',
@@ -61,9 +61,10 @@ export const usePostWrite = ( postId: number ) => {
 		if (response) {
 			// alert(response.message);
 			alert('등록되었습니다.');
-			// router.push('/post/list');
+			router.push('/post/list');
 		} else {
 			alert(response.message || 'error');
+			alert('실패하였습니다.');
 		}
 	};
 

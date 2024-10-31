@@ -3,36 +3,47 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@draft-js-plugins/image": "^4.1.4",
+    "@draft-js-plugins/inline-toolbar": "^4.2.1",
+    "@draft-js-plugins/linkify": "^4.2.2",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.5",
     "cookie": "^0.6.0",
     "draft-js": "^0.11.7",
+    "draft-js-link-plugin": "^1.2.2",
+    "draft-js-plugin-editor-toolbar-picker": "^0.1.7",
+    "draft-js-plugins-editor": "^2.0.0",
     "html-react-parser": "^5.1.12",
-    "next": "14.2.5",
+    "next": "^15.0.2",
     "next-redux-wrapper": "^8.1.0",
     "nookies": "^2.5.2",
-    "react": "^18.3.1",
+    "react": "19.0.0-rc-02c0e824-20241028",
     "react-cookie": "^7.2.0",
-    "react-dom": "^18.3.1",
-    "reyart-wysiwyg": "^1.15.0",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react-draft-wysiwyg": "^1.15.0",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
     "swiper": "^11.1.9"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react-draft-wysiwyg": "^1.13.8",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "15.0.2",
     "sass": "^1.77.8",
     "typescript": "^5",
     "typescript-plugin-css-modules": "^5.1.0"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
   }
 }

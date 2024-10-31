@@ -1,6 +1,6 @@
 /*
 	post view component
-	src/component/main/post/view/postView.component.tsx
+	src/components/main/post/view/postView.component.tsx
 */
 'use client'
 import styles from './postView.module.scss';

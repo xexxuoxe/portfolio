@@ -1,6 +1,6 @@
 /*
 	link component
-	src/component/_utiles/link/link.component.tsx
+	src/components/_utiles/link/link.component.tsx
 */
 import Link from 'next/link'
 import styles from './link.module.scss'

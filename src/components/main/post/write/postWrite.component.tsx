@@ -6,6 +6,7 @@
 
 import Input from '@components/_utiles/input/input.component';
 import Editor from '@components/_utiles/draftEditor/draftEditor.component';
+import TextArea from '@components/_utiles/textarea/textarea.component';
 import Checkbox from '@components/_utiles/checkbox/checkbox.component';
 import Link from '@components/_utiles/link/link.component';
 import Button from '@components/_utiles/button/button.component';
@@ -32,6 +33,40 @@ export default function PostWritePage({ post } : PostWriteItemProps) {
 						<tbody>
 						<tr>
 							<th className={ styles.th }>
+								<label htmlFor="write_author">이름</label>
+							</th>
+							<td className={ styles.td }>
+							<Input
+								id="write_author"
+								variant ="input_base"
+								name="author"
+								type="text"
+								value={ postData.author }
+								onChange={ handleChange }
+								placeholder='제목을 입력해주세요'
+								className="author"
+							/>
+							</td>
+						</tr>
+						<tr>
+							<th className={ styles.th }>
+								<label htmlFor="write_date">날짜</label>
+							</th>
+							<td className={ styles.td }>
+							<Input
+								id="write_date"
+								variant ="input_base"
+								name="date"
+								type="text"
+								value={ postData.date }
+								onChange={ handleChange }
+								placeholder='제목을 입력해주세요'
+								className="date"
+							/>
+							</td>
+						</tr>
+						<tr>
+							<th className={ styles.th }>
 								<label htmlFor="write_title">제목</label>
 							</th>
 							<td className={ styles.td }>
@@ -52,8 +87,16 @@ export default function PostWritePage({ post } : PostWriteItemProps) {
 								<label htmlFor="write_content">내용</label>
 							</th>
 							<td className={ styles.td }>
-							<Editor />
-							{/* value={ postData.content } */}
+							<TextArea
+								id="write_content"
+								name="content"
+								variant ="textarea_base"
+								defaultValue ={ postData.content }
+								onChange={ handleChange }
+								placeholder="내용을 입력해주세요"
+								className="content"
+								rows={ 10 }
+							/>
 							</td>
 						</tr>
 						</tbody>

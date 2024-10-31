@@ -1,6 +1,6 @@
 /*
 	textarea component
-	src/component/_utiles/textarea/textarea.component.tsx
+	src/components/_utiles/textarea/textarea.component.tsx
 */
 import styles from './textarea.module.scss'
 
