@@ -18,7 +18,6 @@ import { ResponsiveProvider } from '@lib/context/responsive.context'
 //     description: '왕초보 영어회화, 비즈니스, 면접, 모바일 강의, 온라인 기초영어',
 // }
 
-
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
 
     return (
