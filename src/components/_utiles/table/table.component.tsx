@@ -34,37 +34,42 @@ function PostList<T>({ className, variant, items, columns, itemsPerPage = 10 }: 
 
 	return (
 		<div className={ `${ styles[variant] } ${ className }` }>
-		<div className={ styles.table_container }>
-			<table>
-			<thead>
-				<tr className={ styles.table_header }>
-				{ columns.map((column) => (
-					<th key={ column.key as string } className={ styles.table_header_list }>
-					{ column.header }
-					</th>
-				)) }
-				</tr>
-			</thead>
-			<tbody>
-				{ currentItems.map((item, index) => (
-				<tr key={ index } className={ styles.table_body }>
-					{ columns.map((column) => (
-					<td key={ column.key as string } className={ styles.table_body_list }>
-						{ column.render ? column.render(item) : item[column.key] }
-					</td>
-					)) }
-				</tr>
-				)) }
-			</tbody>
-			</table>
-		</div>
-		{ items.length > itemsPerPage && (
-			<Pagination
-				currentPage={ currentPage }
-				totalPages={ Math.ceil(items.length / itemsPerPage) }
-				onPageChange={ paginate }
-			/>
-		)}
+			<div className={ styles.table_container }>
+				<table>
+					<thead>
+						<tr className={ styles.table_header }>
+							<th className={ styles.table_header_list }>번호</th>
+							{ columns.map((column) => (
+							<th key={ column.key as string } className={ styles.table_header_list }>
+							{ column.header }
+							</th>
+							)) }
+						</tr>
+					</thead>
+					<tbody>
+						{ currentItems.map((item, index) => (
+						<tr key={ index } className={ styles.table_body }>
+							<td className={ styles.table_body_list }>
+								{ (currentPage - 1) * itemsPerPage + index + 1 }
+							</td>
+							{ columns.map((column) => (
+							<td key={ column.key as string } className={ styles.table_body_list }>
+								{ column.render ? column.render(item) : item[column.key] }
+							</td>
+							)) }
+
+						</tr>
+						)) }
+					</tbody>
+				</table>
+			</div>
+			{ items.length > itemsPerPage && (
+				<Pagination
+					currentPage={ currentPage }
+					totalPages={ Math.ceil(items.length / itemsPerPage) }
+					onPageChange={ paginate }
+				/>
+			)}
 		</div>
 	);
 }

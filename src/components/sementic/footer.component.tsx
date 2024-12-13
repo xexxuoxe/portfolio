@@ -256,7 +256,6 @@ export default function FooterComponent() {
 								spaceBetween={30}
 								slidesPerView={8}
 								loop={true}
-								navigation={true}
 								pagination={false}
 								scrollbar={false}
 								autoplay={{ delay: 2000, disableOnInteraction: false }}

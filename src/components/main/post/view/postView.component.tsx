@@ -7,18 +7,22 @@ import styles from './postView.module.scss';
 import PostListItem from '@components/main/post/list/postList.component';
 import LinkButton from '@components/_utiles/link/link.component';
 import Button from '@components/_utiles/button/button.component';
-import { usePostView } from '../view/postView.hook';
-
+import { postData , usePostView } from '../view/postView.hook';
+// Type 선언
 interface PostViewItemProps {
-	post: number;
+	post: postData;
 }
 
 export default function PostViewItem({ post }: PostViewItemProps) {
 
-	const { postData, handleDelete } = usePostView(post);
+	const { 
+		postData, 
+		handleDelete 
+	} = usePostView(post);
 
+	// 데이터 로딩 중이거나 없을 때 처리
 	if (!postData) {
-        return <div>로딩 중</div>;
+        return <div>Loading...</div>;
     }
 
 	return (
@@ -29,17 +33,20 @@ export default function PostViewItem({ post }: PostViewItemProps) {
 						<div className={ styles.view_top_left }>
 							<h4 className={ styles.view_top_title }>{ postData.title }</h4>
 							<ul className={ styles.view_top_detail }>
+								{/* 작성자 입력 */}
 								<li>
-									<span className={ styles.detail_subject }>작성자</span>
+									<span className={ styles.detail_subject }>이름</span>
 									<span>{ postData.author }</span>
 								</li>
+								{/* 작성일 입력 */}
 								<li>
 									<span className={ styles.detail_subject }>작성일</span>
 									<span>{ postData.date }</span>
 								</li>
+								{/* 제목 입력 */}
 								<li>
-									<span className={ styles.detail_subject }>조회수</span>
-									<span>{ postData.views }</span>
+									<span className={ styles.detail_subject }>제목</span>
+									<span>{ postData.title }</span>
 								</li>
 							</ul>
 						</div>

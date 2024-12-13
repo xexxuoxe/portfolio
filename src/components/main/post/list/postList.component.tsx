@@ -19,21 +19,19 @@ export default function PostListItem() {
 	const posts = postData;
 
 	const columns = [
-		{ key: 'id', header: '번호' },
-		{
-			key: 'title',
-			header: '제목',
-			render: (posts: Post) => (
-				<Link href={`/post/view/${posts.id}`}>
-					{posts.title}
-				</Link>
-			)
-		},
-		{ key: 'author', header: '작성자' },
-		{ key: 'date', header: '작성일' },
-		{ key: 'satisfaction', header: '강의만족도' },
-		{ key: 'views', header: '조회수' },
-	];
+        {
+            key: 'title',
+            header: '제목',
+            render: (posts: Post) => (
+                <Link href={`/post/view/${posts.id}`}>
+                    { posts.title }
+                </Link>
+            )
+        },
+        { key: 'author', header: '작성자' },
+        { key: 'date', header: '작성일' },
+        { key: 'teacher', header: '선생님' },
+    ];
 
     return (
 		<div className={styles.inner_container}>

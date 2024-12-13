@@ -8,8 +8,6 @@ export interface Post {
 	title: string;
 	author: string;
 	date: string;
-	satisfaction: string;
-	views: number;
 }
 export interface Column {
 	key: string;
