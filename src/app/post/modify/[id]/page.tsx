@@ -4,6 +4,9 @@
 */
 'use client';
 import { useParams } from 'next/navigation';
+import NavComponent from '@components/sementic/nav.component'
+import GnbComponent from '@components/sementic/gnb.component'
+import FooterComponent from '@components/sementic/footer.component'
 import PostWritePage from '@components/main/post/write/postWrite.component';
 
 export default function Main() {
@@ -12,7 +15,10 @@ export default function Main() {
 
   return (
     <div className='review_section' id='siwon_container'>
+        <NavComponent></NavComponent>
+        <GnbComponent></GnbComponent>
       	<PostWritePage post={postId} />
+        <FooterComponent />
     </div>
   );
 }

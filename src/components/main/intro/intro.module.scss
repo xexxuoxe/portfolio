@@ -1,0 +1,58 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+
+/* intro */
+.main_view {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #f6f6f6;
+	z-index: 1;
+    .intro_txt {
+        .intro_content {
+            width: 100%;
+            height: 100vh;
+            background: #f0f3ff;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+           	.title {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 8.13em;
+                color: #f0f3ff;
+                -webkit-text-stroke: 1.5px #0c0c0e;
+                font-weight: 400;
+            }
+			&01 {
+				display: block;
+			}
+			&03 {
+				background: #000;
+				.title {
+					color: #000;
+					-webkit-text-stroke: 1.5px #fff;
+				}
+			}
+        }
+    }
+    #follow {
+		position: fixed;
+		width: 8rem;
+		height: 8rem;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		pointer-events: none;
+    }
+}
