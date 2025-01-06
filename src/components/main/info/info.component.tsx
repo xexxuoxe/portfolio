@@ -84,43 +84,39 @@ export default function InfoItemPage() {
 
 	// HTML
 	return (
-		<div>
+		<div className={styles.info_view}>
 			{/* about*/}
-			<h1>ABOUT</h1>
-			<div className="">
-				<h2 className="">CRAFTING DIGITAL EXPERIENCES ALL AROUND THE GLOB</h2>
-				<h3 className="">Lab21 is an independent web development studio based in Athens, Greece with worldwide projects. We specialize in UX driven custom websites, portals, blogs and all aspects of web development.</h3>
+			<h1 className={styles.info_title}>ABOUT</h1>
+			<div className={styles.sub_title}>
+				<h2>CRAFTING DIGITAL EXPERIENCES ALL AROUND THE GLOB</h2>
+				<h3>Lab21 is an independent web development studio based in Athens, Greece with worldwide projects. We specialize in UX driven custom websites, portals, blogs and all aspects of web development.</h3>
 			</div>
 			{/* skill*/}
-			<article className="">
-				<div className="">
-					<div className="">
-						<h2 className="">My Skill</h2>
-						<h3 className="">WHAT I CAN DO FOR YOUR</h3>
-						<p>비즈니스의 발전, 사용자의 아이디어를 현실로 바꾸는 창의적인 기술 및 스타일을 받아들일 자세와 지식이 준비되어있습니다.</p>
-						<p>저의 기술에 자부심을 가지고 있으며, 기술뿐만 아니라 기획 디자인 개발 등 마지막까지 충실하며사용자 경험과 사용성을 중심으로 웹사이트를 구축합니다.</p>
-						<p>저의 목표는 성과가 아닌, 사용자 중심의 경험을 만들고 고객의 목표달성입니다.</p>
-					</div>
+			<article className={styles.info_skill}>
+				<div className={styles.skill_title}>
+					<h2>My Skill</h2>
+					<h3>WHAT I CAN DO FOR YOUR</h3>
+					<p>비즈니스의 발전, 사용자의 아이디어를 현실로 바꾸는 창의적인 기술 및 스타일을 받아들일 자세와 지식이 준비되어있습니다.</p>
+					<p>저의 기술에 자부심을 가지고 있으며, 기술뿐만 아니라 기획 디자인 개발 등 마지막까지 충실하며사용자 경험과 사용성을 중심으로 웹사이트를 구축합니다.</p>
+					<p>저의 목표는 성과가 아닌, 사용자 중심의 경험을 만들고 고객의 목표달성입니다.</p>
 				</div>
-				<div className="">
-					<div className="">
-						<ul>
-							<li>JavaScript</li>                 
-							<li>React & Next.js</li>
-							<li>Typescript</li>
-							<li>Node.js</li>
-							<li>HTML</li>
-							<li>CSS</li>
-							<li>SASS</li>
-							<li>JQuery</li>
-							<li>Git / GitHub</li>
-							<li>Figma / Zeplin</li>                      
-						</ul>
-					</div>
+				<div className={styles.skill_list}>
+					<ul>
+						<li>JavaScript</li>                 
+						<li>React & Next.js</li>
+						<li>Typescript</li>
+						<li>Node.js</li>
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>SASS</li>
+						<li>JQuery</li>
+						<li>Git / GitHub</li>
+						<li>Figma / Zeplin</li>                      
+					</ul>
 				</div>
 			</article>
 			{/* slide*/}
-			<div className={ styles.award_slide }>
+			<div className={styles.skill_slide}>
 				<Slider
 					slides={slides}
 					spaceBetween={30}

@@ -3,6 +3,27 @@
 @import '@styles/base/_typography.scss';
 
 /* info */
+.info_view {
+	width: 90%;
+    margin: 0 auto;
+    max-width: 1524px;
+	color: #141414;
+
+	.info_title{
+		font-size: 1.75rem;
+		line-height: 2.375rem;
+		font-weight: 600;
+		float: left;
+	}
+	.sub_title {
+		font-size: 1.1875rem;
+		line-height: 2.0625rem;
+		color: #242532;
+		
+	}
+}
+
+
 
 // <div class="morph-wrap">
 //       <svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
@@ -30,3 +51,5 @@
 // 	fill: var(--background-color-2);
 // 	flex: none;
 //   }
+
+
