@@ -2,9 +2,9 @@
 	post list page
 	src/app/post/list/[id]/page.tsx
 */
-import NavComponent from '@components/sementic/nav.component'
-import GnbComponent from '@components/sementic/gnb.component'
-import FooterComponent from '@components/sementic/footer.component'
+import NavComponent from '@components/sementic/siwon/nav.component'
+import GnbComponent from '@components/sementic/siwon/gnb.component'
+import FooterComponent from '@components/sementic/siwon/footer.component'
 import PostListItem from '@components/main/post/list/postList.component'
 
 export default function Main() {

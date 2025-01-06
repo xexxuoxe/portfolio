@@ -7,7 +7,7 @@ import { StoreProviders } from '@store/stroe.provider'
 import ErrorWrapper from '@lib/error/errorWrapper.boundary';
 import { AlertProvider } from '@lib/alert/alert.context'
 import { LoadingProvider } from '@lib/loading/loading.context';
-import { MetaProvider } from '@components/sementic/meta.component';
+import { MetaProvider } from '@components/sementic/siwon/meta.component';
 import { ResponsiveProvider } from '@lib/context/responsive.context'
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {

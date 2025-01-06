@@ -2,9 +2,9 @@
 	post write page
 	src/app/post/write/page.tsx
 */
-import NavComponent from '@components/sementic/nav.component'
-import GnbComponent from '@components/sementic/gnb.component'
-import FooterComponent from '@components/sementic/footer.component'
+import NavComponent from '@components/sementic/siwon/nav.component'
+import GnbComponent from '@components/sementic/siwon/gnb.component'
+import FooterComponent from '@components/sementic/siwon/footer.component'
 import PostWritePage from '@components/main/post/write/postWrite.component'
 
 export default function event() {
