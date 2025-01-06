@@ -1,3 +1,5 @@
+@import '@styles/abstracts/_mixins';
+
 // Variables
 $font-family-base: 'Pretendard', Roboto, -apple-system, BlinkMacSystemFont, system-ui, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 $font-size-base: 16px;
@@ -109,3 +111,38 @@ i { font-style: normal; }
     border-radius: 0;
   }
 }
+
+// font-face
+@mixin font-face($name, $path, $weight, $format) {
+  @font-face {
+    font-family: $name;
+    src: url($path) format($format);
+    font-weight: $weight;
+  }
+}
+
+// SpoqaHan 폰트 정의 
+@include font-face("SpoqaHan", "./src/app/fonts/SpoqaHanSansNeoThin.otf", 100, "opentype");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoThin.eot", 100, "eot");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoThin.woff", 100, "woff");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoThin.woff2", 100, "woff2");
+
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoLight.otf", 300, "opentype");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoLight.eot", 300, "eot");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoLight.woff", 300, "woff");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoLight.woff2", 300, "woff2");
+
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoRegular.otf", 400, "opentype");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoRegular.eot", 400, "eot");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoRegular.woff", 400, "woff");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoRegular.woff2", 400, "woff2");
+
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoMedium.otf", 500, "opentype");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoMedium.eot", 500, "eot");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoMedium.woff", 500, "woff");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoMedium.woff2", 500, "woff2");
+
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoBold.otf", 600, "opentype");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoBold.eot", 600, "eot");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoBold.woff", 600, "woff");
+// @include font-face("SpoqaHan", "@app/fonts/SpoqaHanSansNeoBold.woff2", 600, "woff2");

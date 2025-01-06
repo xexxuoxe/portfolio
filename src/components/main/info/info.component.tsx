@@ -86,13 +86,16 @@ export default function InfoItemPage() {
 	return (
 		<div className={styles.info_view}>
 			{/* about*/}
-			<h1 className={styles.info_title}>ABOUT</h1>
-			<div className={styles.sub_title}>
-				<h2>CRAFTING DIGITAL EXPERIENCES ALL AROUND THE GLOB</h2>
-				<h3>Lab21 is an independent web development studio based in Athens, Greece with worldwide projects. We specialize in UX driven custom websites, portals, blogs and all aspects of web development.</h3>
+			<div className={`${styles.info_detail} ${styles.info_container}`}>
+				<h1 className={styles.info_title}>CRAFTING DIGITAL EXPERIENCES ALL AROUND THE GLOB</h1>
+				<h2 className={styles.info_title}>ABOUT</h2>
+				<div className={styles.sub_title}>
+					<h2>CRAFTING DIGITAL EXPERIENCES ALL AROUND THE GLOB</h2>
+					<h3>Lab21 is an independent web development studio based in Athens, Greece with worldwide projects. We specialize in UX driven custom websites, portals, blogs and all aspects of web development.</h3>
+				</div>
 			</div>
 			{/* skill*/}
-			<article className={styles.info_skill}>
+			<article className={`${styles.info_skill} ${styles.info_container}`}>
 				<div className={styles.skill_title}>
 					<h2>My Skill</h2>
 					<h3>WHAT I CAN DO FOR YOUR</h3>
