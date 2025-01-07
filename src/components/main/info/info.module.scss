@@ -4,28 +4,110 @@
 
 /* info */
 .info_view {
-	width: 90%;
-    margin: 0 auto;
-    max-width: 1524px;
-	color: #141414;
 	padding-top: 16rem;
+	background: #f5f5f8;
+
+	h3 {
+		font-size: 1.75rem;
+		font-weight: 700;
+		font-family: Helvetica;
+	}
 	
 	.info_container {
-		
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1524px;
 	}
 
-	.info_title{
-		font-size: 1.75rem;
-		line-height: 2.375rem;
-		font-weight: 600;
-		float: left;
+	.info_detail {
+
+		.info_title {
+			font-size: 3.125rem;
+			font-weight: 900;
+			line-height: 2.375rem;
+			margin-bottom: 4.5rem;
+		}
+
+		.sub_title {
+			@include flex();
+			font-size: 1.1875rem;
+			line-height: 2.0625rem;
+			color: #242532;
+
+			h2 {
+				width: 20%;
+				font-size: 1.75rem;
+				font-weight: 700;
+				font-family: Helvetica;
+			}
+
+			.info_cont {
+				width: 80%;
+
+				h3 {
+					padding-bottom: 1.3rem;
+				}
+			}
+		}
 	}
-	.sub_title {
-		font-size: 1.1875rem;
-		line-height: 2.0625rem;
-		color: #242532;
+	
+
+	.info_skill {
+		width: 60%;
+
+		.skill_title {
+			margin: 4rem 0 3rem;
+			text-align: center;
+
+			h2 {
+				display: inline-block;
+				color: #fff;
+				font-size: 1rem;
+				word-break: keep-all;
+				line-height: 1;
+				padding: 0.7rem;
+				background: #7087f7;
+				border-radius: 50px;
+				font-weight: 800;
+				margin-bottom: 1.4rem
+			}
+
+			h3 {
+				font-size: 2.5rem;
+				font-weight: 800;
+			}
+		}
+
+		.skill_cont {
+			@include flex('between');
+			align-items: flex-start;
+
+			.sub_title {
+				width: 45%;
+
+			}
+			.skill_list {
+				width: 45%;
+
+				li {
+					font-size: 1.125rem;
+					font-weight: 700;
+					font-family: Helvetica;
+    				line-height: 1.75rem;
+					position: relative;
+					color: #242532;
+					padding-left: 2.325rem;
+
+					&::before {
+						@include pseudo-element(1.3125rem, 0.0625rem, 0.65rem, 0);
+						background-color: #242532;
+					}
+				}
+			}
+		}
 		
 	}
+	
 }
 
 

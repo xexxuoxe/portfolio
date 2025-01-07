@@ -1,5 +1,14 @@
 // mixin scss
 
+// font-face
+@mixin font-face($name, $path, $weight, $format) {
+	@font-face {
+	  font-family: $name;
+	  src: url($path) format($format);
+	  font-weight: $weight;
+	}
+}
+
 // Flex
 @mixin flex($align: '') {
 	display: flex;
@@ -157,22 +166,20 @@
 
 // box sizing 
 @mixin box-sizing {
-	& {
+	box-sizing: border-box;
+  
+	&::before,
+	&::after {
 		box-sizing: border-box;
-
-		&::before,
-		&::after {
-			box-sizing: border-box;
-		}
-
+	}
+  
 		* {
-			box-sizing: border-box;
-
-			&::before,
+		  box-sizing: border-box;
+  
+	  	&::before,
 			&::after {
-				box-sizing: border-box;
-			}
-		}
+			box-sizing: border-box;
+	  	}
 	}
 }
 
@@ -184,4 +191,15 @@
 // margin
 @mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
 	margin: $top $right $bottom $left;
+}
+
+// pseudo-element
+@mixin pseudo-element($width: auto, $height: auto, $top: auto, $left: auto, $position: absolute, $display: inline-block) {
+	content: '';
+	display: $display;
+	position: $position;
+	width: $width;
+	height: $height;
+	top: $top;
+	left: $left;
 }
