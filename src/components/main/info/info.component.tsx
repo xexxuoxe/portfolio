@@ -4,90 +4,30 @@
 */
 'use client'
 import gsap from "gsap";
-import { useRef } from 'react';
-import { useGSAP } from "@gsap/react";
-import Link from 'next/link';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './info.module.scss';
 import Slider from'@components/_utiles/slider/slider.component';
+import Loader from'@components/_utiles/loader/loader.component';
 
 export default function InfoItemPage() {
-	//slide list array
-	const slides = [
-		{
-			id: "slide01",
-			title: "2022 국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_nba2023.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide02",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_customer2021.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide03",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_customer2020.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide04",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_goodtowork.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide05",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_brand2020.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide06",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_yearbrand2017.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide07",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_yearbrand2022.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide08",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_consumer.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide09",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_nba2019.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide10",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem_brand2018.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-		{
-			id: "slide11",
-			title: "국가브랜드 대상",
-			img: "https://siwon-cdn.siwonschool.com/pc/www/footer/emblem_v2/emblem01.png",
-			link: "//www.siwonschool.com/?s=press"
-		},
-	]
 
+	const [isLoaded, setIsLoaded] = useState(false);
+
+	console.log(isLoaded)
+	
 	// HTML
 	return (
-		<div className={styles.info_view}>
-			{/* about*/}
+		<>
+		{/* loader */}
+		<Loader
+			variant="blind_base"
+			onComplete={() => setIsLoaded(true)}
+    	/>
+		{/* about */}
+		<div className={`${styles.info_view} ${isLoaded ? styles.visible : ""}`}>
 			<div className={`${styles.info_detail} ${styles.info_container}`}>
-				<h1 className={styles.info_title}>저를 소개합니다 두근두근 하하하</h1>
+				<h1 className={styles.info_title}>저를 소개합니다.</h1>
 				<div className={styles.sub_title}>
 					<h2>ABOUT</h2>
 					<div className={styles.info_cont}>
@@ -122,19 +62,7 @@ export default function InfoItemPage() {
 					</ul>
 				</div>
 			</article>
-			{/* slide*/}
-			<div className={styles.skill_slide}>
-				<Slider
-					slides={slides}
-					spaceBetween={30}
-					slidesPerView={8}
-					loop={true}
-					pagination={false}
-					scrollbar={false}
-					autoplay={{ delay: 2000, disableOnInteraction: false }}
-				/>
-			</div>
 		</div>
-		
+		</>
     )
 }

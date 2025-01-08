@@ -2,10 +2,11 @@
 	post list page
 	src/app/home/page.tsx
 */
-import HomeItemPage from '@components/main/home/home.component'
+// import HomeItemPage from '@components/main/home/home.component'
 
 export default function HomePage() {
   return (
-		<HomeItemPage></HomeItemPage>
-  );
+		// <HomeItemPage></HomeItemPage>
+		<div></div>
+  )
 }

@@ -6,6 +6,9 @@ import IntroItemPage from '@components/main/intro/intro.component'
 
 export default function Main() {
   return (
-	<IntroItemPage></IntroItemPage>
+	<div>
+		<IntroItemPage></IntroItemPage>
+	</div>
+	
   );
 }

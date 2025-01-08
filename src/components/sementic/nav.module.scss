@@ -1,0 +1,45 @@
+@import '@styles/abstracts/_mixins';
+
+#navigation {
+	position: fixed;
+	width: 100%;
+	height: 6rem;
+	top: 0;
+	left: 0;
+	z-index: 60;
+	.inner_wrap {
+		@include flex($align: 'center');
+		width: 28%;
+		height: 100%;
+		margin: 0 auto;
+		.nav_menu {
+			@include flex($align: 'center');
+			width : 100%;
+			height: 100%;
+			li {
+				position: relative;
+				width: 25%;
+				height: 100%;
+				&:hover, &:focus, &:active {
+					> a {
+						color: #000;
+						text-decoration: underline;
+					}
+					> .sub_menu {
+						display: block;
+					}
+				}
+				a {
+					@include flex($align: 'center');
+					width: 100%;
+					height: 100%;
+					font-size: 1.1rem;
+					font-weight: 600;
+					text-align: center;
+					font-family: Helvetica;
+					transition: color 0.3s;
+				}
+			}
+		}
+	}
+}
