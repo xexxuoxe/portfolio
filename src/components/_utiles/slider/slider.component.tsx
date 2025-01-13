@@ -5,7 +5,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Scrollbar, Autoplay, Pagination } from 'swiper/modules';
+import { Navigation, Scrollbar, EffectFade, Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -36,7 +36,7 @@ const Slider = ({className, variant, slides, spaceBetween, slidesPerView, loop, 
 	return (
 		<Swiper
 			className={ `${ styles[variant] } ${ className } ${styles.swiper}` }
-			modules={ [Navigation, Pagination, Scrollbar, Autoplay] }
+			modules={ [Navigation, Pagination, EffectFade, Scrollbar, Autoplay] }
 			loop={ loop }
 			spaceBetween={ spaceBetween }
 			slidesPerView={ slidesPerView }

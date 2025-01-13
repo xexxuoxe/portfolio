@@ -30,7 +30,7 @@ export default function FooterComponent() {
 					<aside className={styles.footer_media}>
 						<div className={styles.media_title}>Social media</div>
 						<a href="" target="_blank" className={styles.media_icon} aria-label="GitHub">
-							<svg width="40px" height="43px" viewBox="0 0 20 20" version="1.1" >
+							<svg width="39px" height="42px" viewBox="0 0 20 20" version="1.1" >
 								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 									<g transform="translate(-140.000000, -7559.000000)" fill="#fff">
 										<g transform="translate(56.000000, 160.000000)">
