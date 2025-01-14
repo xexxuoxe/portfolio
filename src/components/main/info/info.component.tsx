@@ -3,14 +3,16 @@
 	src/component/main/info/info.component.tsx
 */
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import FooterComponent from '@components/sementic/footer.component'
 import Loader from'@components/_utiles/loader/loader.component';
 import styles from './info.module.scss';
+import 'swiper/css/effect-fade';
 import 'swiper/css';
 
 
@@ -18,23 +20,69 @@ export default function InfoItemPage() {
 
 	const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
 	const [showContent, setShowContent] = useState<boolean>(false);
+	const [animating, setAnimating] = useState<boolean>(false);
 
+	// loader
 	const handleLoaderComplete = (): void => {
 		setIsLoaderDone(true);
 	  	setShowContent(true);
 	}
-	
+	// const handleSlideChange = () => {
+
+	// 	setAnimating(true);
+		
+	// 	setTimeout(() => {
+	// 		setAnimating(false);
+	// 	}, 6000);
+	// };
+
+	const handleSlideChange = () => {
+		setAnimating(true);
+		
+		// 애니메이션이 완전히 끝난 후 다음 슬라이드로 전환
+		setTimeout(() => {
+		  	setAnimating(false);
+		}, 6000); // aniFade 애니메이션 시간과 동일하게 설정
+	};
+
+	console.log(animating)
+
 	//slide list array
 	const logos = [
-		'https://cdn.sanity.io/images/s1rnfuvk/production/8b742b3fdf7836c37e6f2a3f9fd8b2be00bce631-230x134.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/ad8e52ab8e0ba241a98149aee74b55b7ad4e41b5-230x135.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/ff1482b1746270c7ea744ca83b06a32aba4c6de8-230x134.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/b8ef747b771e363e333fb7ecf4e77aee78ff15fd-230x135.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/092d595077a46cf214a670e7b10ee221779f2a6c-230x134.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/c6b5645f66f6db4d59ff31c1da3e26c1b91f9e58-230x134.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/94e279fa8c37360d7cefae8d022963954ad7b7ed-230x134.svg',
-		'https://cdn.sanity.io/images/s1rnfuvk/production/3bf709743aacf6a7b2c6b55aa6564ccfe0e2748c-230x134.svg',
+		{
+			index: "1",
+			options: [
+				{ img: "/images/ico_css.png", title: "css logo"},
+				{ img: "/images/ico_figma.png", title: "figma logo"},
+				{ img: "/images/ico_git.png", title: "git logo"},
+				{ img: "/images/ico_github.png", title: "github logo"},
+				{ img: "/images/ico_html.png", title: "html logo"},
+				{ img: "/images/ico_javascript.png", title: "javascript logo"},
+			],
+		},
+		{
+			index: "2",
+			options: [
+				{ img: "/images/ico_node.png", title: "node logo"},
+				{ img: "/images/ico_zeplin.png", title: "zeplin logo"},
+				{ img: "/images/ico_react.png", title: "react logo"},
+				{ img: "/images/ico_sass.png", title: "sass logo"},
+				{ img: "/images/ico_typescript.png", title: "typescript logo"},
+				{ img: "/images/ico_jquery.png", title: "jquery logo"},
+			],
+		},
 	];
+	
+	// work link
+	const texts = (
+		<div className={styles.text_list}>
+			<span>Let's work together</span>
+			<svg fill="transparent" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg">
+				<path d="M33.8992 45.6573C33.8992 44.8613 33.4314 44.1417 32.7067 43.8201C31.9812 43.4984 31.1357 43.636 30.5496 44.1716C23.2788 50.8129 6.70007 65.9535 6.70007 65.9535C5.52786 67.0247 3.83602 67.3 2.38576 66.6566C0.935497 66.0148 0 64.5741 0 62.9837V8.0167C0 6.42634 0.935497 4.98559 2.38576 4.34226C3.83602 3.70043 5.52786 3.97572 6.70007 5.04693C6.70007 5.04693 23.2788 20.1875 30.5496 26.8288C31.1357 27.3644 31.9812 27.502 32.7067 27.1803C33.4314 26.8587 33.8992 26.1391 33.8992 25.3431C33.8992 18.9353 33.8992 8.0167 33.8992 8.0167C33.8992 6.42634 34.8347 4.98559 36.2849 4.34226C37.7352 3.70043 39.427 3.97572 40.6001 5.04693L70.6916 32.5304C71.5249 33.2919 72 34.3691 72 35.5002C72 36.6313 71.5249 37.7085 70.6916 38.47L40.6001 65.9535C39.427 67.0247 37.7352 67.3 36.2849 66.6566C34.8347 66.0148 33.8992 64.5741 33.8992 62.9837C33.8992 62.9837 33.8992 52.0651 33.8992 45.6573Z" fill="#fc6454" stroke-width="0">
+				</path>
+			</svg>
+		</div>
+	)
 
 	// HTML
 	return (
@@ -73,33 +121,42 @@ export default function InfoItemPage() {
 						</div>
 					</div>
 				</div>
-				{/* slide */}
-				<Swiper
-					modules={[ Autoplay ]}
-					navigation
-					pagination={{ clickable: true }}
-					autoplay={{ delay: 2000 }}
-					spaceBetween={30}
-					slidesPerView={6}
-					breakpoints={{
-						1024: { slidesPerView: 4 },
-						768: { slidesPerView: 2 },
-						480: { slidesPerView: 1 },
-					}}
-				>
-					{logos.map((logo, index) => (
-					<SwiperSlide key={index}>
-						<div className={styles.slideWrapper}>
-						<Image
-							//src={logo}
-							alt={`Logo ${index + 1}`}
-							className={styles.logo}
-							style={{ animationDelay: `${index * 0.2}s` }}
-						/>
-						</div>
-					</SwiperSlide>
-					))}
-				</Swiper>
+				{/* slider */}
+				<div className={styles.info_slide}>
+					<Swiper
+						className={styles.skill_swiper}
+						modules={[ Autoplay, EffectFade ]}
+						effect={"fade"}
+						fadeEffect= {{crossFade: true}}
+						loop={true}
+						speed={1000}
+						autoplay={{
+							delay: 5000,
+							disableOnInteraction: false,
+						}}
+						slidesPerView={1}
+						onSlideChange={handleSlideChange}
+					>
+						{logos.map((slide, index) => (
+							<SwiperSlide key={index} className={styles.swiper_slide}>
+								{slide.options.map((list, idx) => (
+									<div 
+										className={`${styles.slide_wrapper}`} key={idx}
+									>
+										<Image
+											className={animating ? styles.fadeIn : ''}
+											src={list.img}
+											width={100}
+											height={100}
+											alt={list.title || 'Logo'}
+											style={{ animationDelay: `${idx * 0.2}s` }}
+										/>
+									</div>
+								))}
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 				{/* skill*/}
 				<article className={`${styles.info_skill} ${styles.info_container}`}>
 					<div className={styles.skill_title}>
@@ -128,6 +185,16 @@ export default function InfoItemPage() {
 						</ul>
 					</div>
 				</article>
+				{/* work button */}
+				<div className={styles.info_work}>
+					<div className={styles.link_container}>
+						<Link href="/work">
+							{[...Array(6)].map((idx) => (
+								<div key={idx}>{texts}</div>
+							))}
+						</Link>
+					</div>
+				</div>
 				{/* footer */}
 				<FooterComponent />
 			</motion.div>

@@ -23,7 +23,7 @@ const Loader = ({ className, variant, onComplete }: {
 				display: "block", 
 				y: 0,
 				transition: {
-					duration: .2,
+					duration: .3,
 					ease: "easeOut"
 				}
 			}}

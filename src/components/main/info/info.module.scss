@@ -3,9 +3,18 @@
 @import '@styles/base/_reset';
 @import '@styles/base/_typography.scss';
 
-@keyframes fadeUp {
-	0% { opacity: 0; transform: translateY(30px);}
+@keyframes aniFadeIn {
+	0% {opacity: 0; transform: translateY(30px);}
 	100% {opacity: 1; transform: translateY(0);}
+}
+@keyframes aniFade {
+	0% {opacity: 0; transform: translateY(30%);}
+	10%, 90% {opacity: 1; transform: translateY(0%);}
+	100% {opacity: 0; transform: translateY(-30%);}
+}
+@keyframes aniSlideLeft {
+	0% {transform: translate(0px, 0px);}
+	100% {transform: translate(-49.999%, 0px);}
 }
  
 /* info */
@@ -28,7 +37,7 @@
 		margin: 0 auto;
 		max-width: 1524px;
 	}
-
+	// about
 	.info_detail {
 
 		.info_title {
@@ -69,29 +78,43 @@
 			}
 		}
 	}
-
-	.skill_swiper {
+	// slider
+	.info_slide {
 		width: 1000px;
-		padding: 10rem 0;
-		.slideWrapper {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
-			.logo {
-				width: 150px;
-				height: auto;
-				margin: 0 auto;
-				animation: fadeUp 1s ease-in-out;
-				animation-fill-mode: both;
-			}
-		}
-			
-	}
+		padding: 13rem 0 11rem;
+		margin: auto;
 
+		.skill_swiper {
+			width: 100%;
+
+			.swiper_slide {
+				@include flex('center');
+				flex-wrap: wrap;
+
+				.slide_wrapper {
+					width: 33.333%;
+					padding: 4rem 0;
+					text-align: center;
+					margin: 0 auto;
+
+					img {
+						opacity: 0;
+						transform: translateY(30%);
+
+						&.fadeIn {
+							animation: aniFade 5s ease-in-out forwards;
+						}
+					}
+
+					
+				}
+			}
+			
+		}
+	}
+	// skill
 	.info_skill {
 		width: 1100px;
-		padding: 16rem 0;
 
 		.skill_title {
 			margin: 4rem 0 3rem;
@@ -99,12 +122,12 @@
 
 			h2 {
 				display: inline-block;
-				color: #fff;
+				color: #000;
 				font-size: 1rem;
 				word-break: keep-all;
 				line-height: 1;
 				padding: 0.7rem;
-				background: $subColor;
+				background: linear-gradient(-45deg, #9df6dd, #a89be2, #fdd0f6, #9ae4fa);
 				border-radius: 50px;
 				font-weight: 800;
 				margin-bottom: 1.4rem
@@ -144,5 +167,54 @@
 			}
 		}
 		
+	}
+	// work button
+	.info_work {
+		width: auto;
+		max-width: 1400px;
+		padding: 220px 0px;
+		margin: 0px auto;
+		position: relative;
+
+		.link_container{
+			
+			a {
+				@include flex('center');
+				flex-wrap: nowrap;
+				width: max-content;
+				overflow: hidden;
+				margin: 0rem 4px;
+				padding: 24px 0px;
+				animation: 70s linear 0s infinite normal none running aniSlideLeft;
+
+				&:hover {
+					text-decoration: none;
+
+					.text_list {
+						
+						span {
+							color: #333;
+						}
+					}
+				}
+
+				.text_list {
+					@include flex('center');
+
+					span {
+						text-transform: uppercase;
+						margin: 0px 30px;
+						color: transparent;
+						-webkit-text-stroke: 2px #333;
+						transition: color 0.2s ease-in-out;
+						font-size: 7rem;
+					}
+
+					svg {
+						transform: translateY(8px);
+					}
+				}
+			}
+		}
 	}
 }
