@@ -1,5 +1,5 @@
 /*
-	info component
+	Info component
 	src/component/main/info/info.component.tsx
 */
 'use client'
@@ -27,25 +27,14 @@ export default function InfoItemPage() {
 		setIsLoaderDone(true);
 	  	setShowContent(true);
 	}
-	// const handleSlideChange = () => {
-
-	// 	setAnimating(true);
-		
-	// 	setTimeout(() => {
-	// 		setAnimating(false);
-	// 	}, 6000);
-	// };
-
+	// slide
 	const handleSlideChange = () => {
 		setAnimating(true);
-		
-		// 애니메이션이 완전히 끝난 후 다음 슬라이드로 전환
+	
 		setTimeout(() => {
 		  	setAnimating(false);
-		}, 6000); // aniFade 애니메이션 시간과 동일하게 설정
+		}, 6000);
 	};
-
-	console.log(animating)
 
 	//slide list array
 	const logos = [

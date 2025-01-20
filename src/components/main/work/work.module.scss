@@ -1,0 +1,125 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/abstracts/_variables';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+@keyframes aniFadeIn {
+	0% {opacity: 0; transform: translateY(30px);}
+	100% {opacity: 1; transform: translateY(0);}
+}
+@keyframes aniFade {
+	0% {opacity: 0; transform: translateY(30%);}
+	10%, 90% {opacity: 1; transform: translateY(0%);}
+	100% {opacity: 0; transform: translateY(-30%);}
+}
+@keyframes aniSlideLeft {
+	0% {transform: translate(0px, 0px);}
+	100% {transform: translate(-49.999%, 0px);}
+}
+ 
+/* info */
+.info_view {
+	position: absolute;
+	width: 100%;
+	padding: 16rem 0 0 0;
+	background: #f5f5f8;
+	transition: opacity 1s ease;
+	z-index: 10;
+
+	h3, h5 {
+		font-size: 1.75rem;
+		font-weight: 700;
+		font-family: Helvetica;
+	}
+	
+	.info_container {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1524px;
+	}
+	// about
+	.info_detail {
+
+		.info_title {
+			font-size: 6rem;
+			font-weight: 900;
+			line-height: 2.375rem;
+			margin-bottom: 8rem;
+			font-family: Helvetica;
+		}
+
+		.sub_title {
+			@include flex();
+			align-items: flex-start;
+			line-height: 2.0625rem;
+			color: #242532;
+
+			h2 {
+				width: 13%;
+				font-size: 1.75rem;
+				font-weight: 700;
+				font-family: Helvetica;
+			}
+
+			.info_cont {
+				width: 87%;
+
+				h3, h5 {
+					padding-bottom: 1.3rem;
+				}
+				
+				h5 {
+					font-weight: 100;
+				}
+
+				p {
+					line-height: 2;
+				}
+			}
+		}
+	}
+	//  A representative list
+	.si-career {
+		height: auto;
+		color: $color-white;
+		padding: 10em 6em 0;
+		.si-career-tit {
+			font-size: 7em;
+			padding: 0.5em 0;
+			margin-left: -12px;
+		}
+		.si-career-table { 
+			font-size: 1.2em; 
+			font-weight: 300;
+			.si-list-item{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid  #fff;
+				padding: 1em 0;
+				.item-name {
+					width: 60%;
+					line-height: 1.5;
+					h4 {
+						font-size: .9em;
+					}
+					h3 {    
+					   font-size: 1.5em;
+					   font-weight: 400;
+					}
+					.date {
+						@include bg-rab;
+						font-size: .7em;
+						color: #000;
+						font-weight: bold;
+						padding: 1px 9px;
+					}
+				}
+				.description-text {
+					width: 40%;
+					text-align: right;
+				}
+			}
+		}
+	}
+}
