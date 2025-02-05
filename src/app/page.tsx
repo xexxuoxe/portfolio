@@ -8,6 +8,7 @@ export default function Main() {
   return (
 	<div>
 		<IntroItemPage></IntroItemPage>
+		
 	</div>
 	
   );

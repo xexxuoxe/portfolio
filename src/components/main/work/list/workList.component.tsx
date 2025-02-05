@@ -10,10 +10,10 @@ import { useSpring, animated } from '@react-spring/web'
 import { motion } from 'framer-motion';
 import FooterComponent from '@components/sementic/footer.component'
 import Loader from'@components/_utiles/loader/loader.component';
-import styles from './work.module.scss';
+import styles from './workList.module.scss';
 
 
-export default function InfoItemPage() {
+export default function WorkListPage() {
 
 	const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
 	const [showContent, setShowContent] = useState<boolean>(false);
@@ -36,7 +36,7 @@ export default function InfoItemPage() {
 			link: "https://lab.siwonschool.com/m/?s=products",
 			img: "/images/bg_siwonlab.png",
 			area: "WEBSITE",
-			company: "시원스쿨 LAB 수강신청",
+			company: "시원스쿨 LAB",
 			year: "©2024",
 		},
 		{
@@ -169,7 +169,7 @@ export default function InfoItemPage() {
 				}}
 			>
 				{/* work */}
-				<div className={`${styles.work_detail} ${styles.info_container}`}>
+				<div className={`${styles.work_detail} ${styles.work_container}`}>
 					<h1 className={styles.work_title}>Work</h1>
 					<div className={styles.sub_title}>
 						<div className={styles.work_cont}>

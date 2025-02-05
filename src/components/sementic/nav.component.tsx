@@ -14,7 +14,7 @@ export default function NavComponent() {
 		{ name: "HOME", url: "/home" },
 		{ name: "ABOUT", url: "/info" },
 		{ name: "WORK", url: "/work" },
-		{ name: "BOARD", url: "/board" }
+		{ name: "BOARD", url: "/post/list" }
 	];
 
 	return (

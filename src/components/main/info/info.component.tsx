@@ -177,7 +177,7 @@ export default function InfoItemPage() {
 				{/* work button */}
 				<div className={styles.info_work}>
 					<div className={styles.link_container}>
-						<Link href="/work">
+						<Link href="/work/list">
 							{[...Array(6)].map((idx) => (
 								<div key={idx}>{texts}</div>
 							))}
