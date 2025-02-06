@@ -6,10 +6,14 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSpring, animated } from '@react-spring/web'
+// animation
 import { motion } from 'framer-motion';
+// component
 import FooterComponent from '@components/sementic/footer.component'
 import Loader from'@components/_utiles/loader/loader.component';
+import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
+import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
+// style
 import styles from './workList.module.scss';
 
 
@@ -17,7 +21,7 @@ export default function WorkListPage() {
 
 	const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
 	const [showContent, setShowContent] = useState<boolean>(false);
-	const [animating, setAnimating] = useState<boolean>(false);
+	const [isBackgroundInView, setIsBackgroundInView] = useState(false);
 
 	// loader
 	const handleLoaderComplete = (): void => {
@@ -25,12 +29,7 @@ export default function WorkListPage() {
 	  	setShowContent(true);
 	}
 
-	const springs = useSpring({
-		from: { x: 0 },
-		to: { x: 100 },
-	})
-
-	//main list array
+	//main array
 	const mainList = [
 		{
 			link: "https://lab.siwonschool.com/m/?s=products",
@@ -98,7 +97,7 @@ export default function WorkListPage() {
 		
 	];
 
-	//sub list array
+	//sub array
 	const subList = [
 		{
 			company: "현대해상",
@@ -154,7 +153,7 @@ export default function WorkListPage() {
 			/>
 			{/* work_view container */}
 			<motion.div 
-				className={styles.work_view}
+				className={`${styles.work_view} ${ isBackgroundInView ? styles.active : ''}`}
 				initial={{ 
 					display: "none",  
 					y: "100%" 
@@ -170,41 +169,47 @@ export default function WorkListPage() {
 			>
 				{/* work */}
 				<div className={`${styles.work_detail} ${styles.work_container}`}>
-					<h1 className={styles.work_title}>Work</h1>
+					<FadeInMotion delay={0} initialX={-100} initialY={0}>
+						<h1 className={styles.work_title}>Work</h1>
+					</FadeInMotion>
 					<div className={styles.sub_title}>
+						<FadeInMotion delay={0.2} initialX={0} initialY={100}>
 						<div className={styles.work_cont}>
 							<h3>사용자 경력 27년,</h3>
 							<h5>바탕으로 쉽게 간과할 수 있는 디테일까지 스스로 문제를 정의하고 해결하는 서비스를 하나하나 다시 사용해보며 사용자 입장에서 생각합니다</h5>
 						</div>
+						</FadeInMotion>
 					</div>
 				</div>
 
 				{/* A representative list */}
 				<div className={styles.main_content}>
 					<ul className={styles.main_grid}>
-						{mainList.map((value , index) => (
-							<li className={styles.main_list_box} key={index}>
-								<Link
-									href={value.link}
-								>
-									<Image 
-										src={value.img}
-										fill="true"
-										alt=""
-									/>
-									<div className={styles.box_text}>
-										<p>{value.area}</p>
-										<p>{value.company}</p> 
-										<p>{value.year}</p>
-									</div>
-								</Link>
-							</li>
+					{mainList.map((value, index) => (
+						<li className={styles.main_list_box} key={index}>
+							<FadeInMotion delay={`${index * 0.1}`} initialX={0} initialY={100}>
+							<Link href={value.link}>
+								<Image 
+								src={value.img}
+								fill="true"
+								alt=""
+								/>
+								<div className={styles.box_text}>
+								<p>{value.area}</p>
+								<p>{value.company}</p> 
+								<p>{value.year}</p>
+								</div>
+							</Link>
+							</FadeInMotion>
+						</li>
 						))}
+
 					</ul>
 				</div>
 
 				{/* sub other list */}
 				<div className={styles.sub_content}>
+					<BackgroundMotion onInView={setIsBackgroundInView}>
 					{subList.map((value , index) => (
 						<div className={styles.sub_list_box} key={index}>
 							<div className={styles.box_left}>
@@ -217,6 +222,7 @@ export default function WorkListPage() {
 							</div>
 						</div>
 					))}
+					</BackgroundMotion>
 				</div>
 				{/* footer */}
 				<FooterComponent />

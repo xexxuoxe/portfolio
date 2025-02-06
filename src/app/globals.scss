@@ -53,6 +53,12 @@ html, body {
   font-style: normal;
   line-height: $line-height-base;
   color: $color-text;
+
+  ::selection {
+    background:#ffd810;
+    color:#000;
+    text-shadow: none;
+}
 }
 
 li { list-style: none; }
