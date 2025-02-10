@@ -8,8 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // animation
 import { motion } from 'framer-motion';
+import { useGSAP } from "@gsap/react";
 // component
-import FooterComponent from '@components/sementic/footer.component'
 import Loader from'@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
@@ -28,7 +28,7 @@ export default function WorkListPage() {
 		setIsLoaderDone(true);
 	  	setShowContent(true);
 	}
-
+	
 	//main array
 	const mainList = [
 		{
@@ -47,14 +47,14 @@ export default function WorkListPage() {
 		},
 		{
 			link: "https://ggbaro.kr/web/index.do",
-			img: "/images/bg_ggbaro.jpg",
+			img: "/images/bg_ggbaro.png",
 			area: "WEBSITE",
 			company: "경기도상권분석서비스",
 			year: "©2023",
 		},
 		{
 			link: "",
-			img: "/images/bg_lgcns.jpg",
+			img: "/images/bg_lgcns.png",
 			area: "ADMIN SYSTEM",
 			company: "LG 화학 ITMS 업무Portal 재구축",
 			year: "©2022",
@@ -75,7 +75,7 @@ export default function WorkListPage() {
 		},
 		{
 			link: "",
-			img: "/images/bg_mslk.jpg",
+			img: "/images/bg_mslk.png",
 			area: "WEBSITE",
 			company: "MSLINK&SOLUTION",
 			year: "©2023",
@@ -89,7 +89,7 @@ export default function WorkListPage() {
 		},
 		{
 			link: "http://www.lawdw.com/",
-			img: "/images/bg_lawdw.jpg",
+			img: "/images/bg_lawdw.png",
 			area: "WEBSITE",
 			company: "법무법인 두우",
 			year: "©2021",
@@ -170,7 +170,7 @@ export default function WorkListPage() {
 				{/* work */}
 				<div className={`${styles.work_detail} ${styles.work_container}`}>
 					<FadeInMotion delay={0} initialX={-100} initialY={0}>
-						<h1 className={styles.work_title}>Work</h1>
+						<h1 className={styles.work_title}>Projects</h1>
 					</FadeInMotion>
 					<div className={styles.sub_title}>
 						<FadeInMotion delay={0.2} initialX={0} initialY={100}>
@@ -187,45 +187,51 @@ export default function WorkListPage() {
 					<ul className={styles.main_grid}>
 					{mainList.map((value, index) => (
 						<li className={styles.main_list_box} key={index}>
-							<FadeInMotion delay={`${index * 0.1}`} initialX={0} initialY={100}>
+							<FadeInMotion delay={`${index * 0.1}`} initialX={0} initialY={150}>
 							<Link href={value.link}>
-								<Image 
-								src={value.img}
-								fill="true"
-								alt=""
-								/>
+								<picture className={styles.box_img}>
+									<Image 
+										src={value.img}
+										fill="true"
+										alt=""
+									/>
+								</picture>
 								<div className={styles.box_text}>
-								<p>{value.area}</p>
-								<p>{value.company}</p> 
-								<p>{value.year}</p>
+									<p>{value.area}</p>
+									<p>{value.company}</p> 
+									<p>{value.year}</p>
 								</div>
 							</Link>
 							</FadeInMotion>
 						</li>
 						))}
-
 					</ul>
 				</div>
 
 				{/* sub other list */}
 				<div className={styles.sub_content}>
 					<BackgroundMotion onInView={setIsBackgroundInView}>
-					{subList.map((value , index) => (
-						<div className={styles.sub_list_box} key={index}>
-							<div className={styles.box_left}>
-								<h4>{value.company}</h4> 
-								<h3>{value.title}</h3>
-								<p className={styles.date}>{value.date}</p>
+						<FadeInMotion delay={0} initialX={-100} initialY={0}>
+							<h1 className={styles.sub_content_title}>Other Experience</h1>
+						</FadeInMotion>
+						{subList.map((value , index) => (
+							<div key={index}>
+								<FadeInMotion delay={`${index * 0.1}`} initialX={150} initialY={0}>
+									<div className={styles.sub_list_box}>
+										<div className={styles.box_left}>
+											<h4>{value.company}</h4> 
+											<h3>{value.title}</h3>
+											<p className={styles.date}>{value.date}</p>
+										</div>
+										<div className={styles.box_right}>
+											<p>{value.content}</p>
+										</div>
+									</div>
+								</FadeInMotion>
 							</div>
-							<div className={styles.box_right}>
-								<p>{value.content}</p>
-							</div>
-						</div>
-					))}
+						))}
 					</BackgroundMotion>
 				</div>
-				{/* footer */}
-				<FooterComponent />
 			</motion.div>
 		</>
     )

@@ -13,7 +13,7 @@ export default function NavComponent() {
 	const menuList = [
 		{ name: "HOME", url: "/home" },
 		{ name: "ABOUT", url: "/info" },
-		{ name: "WORK", url: "/work" },
+		{ name: "WORK", url: "/work/list" },
 		{ name: "BOARD", url: "/post/list" }
 	];
 

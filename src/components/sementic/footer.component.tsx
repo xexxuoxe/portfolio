@@ -12,8 +12,8 @@ export default function FooterComponent() {
 	const menuList = [
 		{ name: "HOME", url: "/home" },
 		{ name: "ABOUT", url: "/info" },
-		{ name: "WORK", url: "/work" },
-		{ name: "BOARD", url: "/board" }
+		{ name: "WORK", url: "/work/list" },
+		{ name: "BOARD", url: "/post/list" }
 	];
 	// 현재 날짜 가져오기
 	const today = new Date();
