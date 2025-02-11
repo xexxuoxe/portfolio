@@ -12,6 +12,7 @@ export default function IntroItemPage() {
 	
 	const followRef = useRef<HTMLDivElement | null>(null);
 	const contentRefs = useRef<HTMLDivElement | null>([]);
+	const loaderRef = useRef<HTMLDivElement | null>(null);
 
 	useGSAP (() => {
 		// 마우스 이동 이벤트
@@ -26,7 +27,7 @@ export default function IntroItemPage() {
 		document.addEventListener( 'mousemove' , handleMouseMove );
 
 		// 초기 세팅
-		gsap.set([ contentRefs.current[1], contentRefs.current[2]], {
+		gsap.set([ contentRefs.current[1], contentRefs.current[2], loaderRef.current], {
 			display: 'none',
 			opacity: 0
 		});
@@ -43,6 +44,9 @@ export default function IntroItemPage() {
 			{ target: contentRefs.current[1], props: { opacity: 1, display: 'block' }, duration: 1 },
 			{ target: contentRefs.current[1], props: { opacity: 0, display: 'none' }, duration: 0.6 },
 			{ target: contentRefs.current[2], props: { opacity: 1, display: 'block' }, duration: 1 },
+			{ target: loaderRef.current, props: { opacity: 1, display: 'block', top: '0' }, duration: 0.6 },
+			{ target: contentRefs.current[2], props: { opacity: 0, display: 'none' }, duration: 0 },
+			{ target: loaderRef.current, props: { opacity: 1, display: 'none', top: '-100%' }, duration: 0.6 },
 		];
 	
 		steps.forEach(step => {
@@ -67,6 +71,7 @@ export default function IntroItemPage() {
 				</div>
 				<div className={styles.follow} ref={followRef} />
 			</div>
+			<div className={styles.loader_window} ref={loaderRef}></div>
 		</>
     )
 }

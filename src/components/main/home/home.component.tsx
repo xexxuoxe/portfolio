@@ -14,6 +14,7 @@ import { Autoplay, EffectFade } from 'swiper/modules';
 import FooterComponent from '@components/sementic/footer.component';
 import Loader from'@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
+import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
 // style
 import 'swiper/css';
 import 'swiper/css/effect-fade';
@@ -25,6 +26,8 @@ export default function HomeItemPage() {
 	const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
 	const [showContent, setShowContent] = useState<boolean>(false);
 	const [animating, setAnimating] = useState<boolean>(false);
+	const [isBackgroundInView01, setIsBackgroundInView01] = useState(false);
+	const [isBackgroundInView02, setIsBackgroundInView02] = useState(false);
 
 	// loader
 	const handleLoaderComplete = (): void => {
@@ -64,6 +67,84 @@ export default function HomeItemPage() {
 			],
 		},
 	];
+	//main array
+	const mainList = [
+		{
+			link: "https://lab.siwonschool.com/m/?s=products",
+			img: "/images/bg_siwonlab.png",
+			area: "WEBSITE",
+			company: "시원스쿨 LAB",
+			year: "©2024",
+		},
+		{
+			link: "https://japan.siwonschool.com/?s=products&cate=3",
+			img: "/images/bg_siwonjapan.png",
+			area: "WEBSITE",
+			company: "시원스쿨 일본어 맞춤강좌찾기",
+			year: "©2024",
+		},
+		{
+			link: "https://ggbaro.kr/web/index.do",
+			img: "/images/bg_ggbaro.png",
+			area: "WEBSITE",
+			company: "경기도상권분석서비스",
+			year: "©2023",
+		},
+		{
+			link: "",
+			img: "/images/bg_lgcns.png",
+			area: "ADMIN SYSTEM",
+			company: "LG 화학 ITMS 업무Portal 재구축",
+			year: "©2022",
+		},
+		{
+			link: "",
+			img: "/images/bg_lges.png",
+			area: "ADMIN SYSTEM",
+			company: "LG에너지솔루션 ITMS 업무Portal 이관",
+			year: "©2022",
+		},
+		{
+			link: "",
+			img: "/images/bg_korloy.png",
+			area: "ADMIN SYSTEM",
+			company: "KORLOY 견적 시스템 'KQS-2023 Project' ",
+			year: "©2023",
+		},
+		{
+			link: "",
+			img: "/images/bg_mslk.png",
+			area: "WEBSITE",
+			company: "MSLINK&SOLUTION",
+			year: "©2023",
+		},
+		{
+			link: "",
+			img: "/images/bg_nh.png",
+			area: "ADMIN SYSTEM",
+			company: "농협 고객행복센터 방화벽 교체 및 IT자산관리시스템 고도화",
+			year: "©2023",
+		},
+		{
+			link: "http://www.lawdw.com/",
+			img: "/images/bg_lawdw.png",
+			area: "WEBSITE",
+			company: "법무법인 두우",
+			year: "©2021",
+		},
+		
+	];
+	// work svg
+	const texts = (
+		<div className={styles.text_list}>
+			<span>Let's work together</span>
+			<svg fill="transparent" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg">
+				<path d="M33.8992 45.6573C33.8992 44.8613 33.4314 44.1417 32.7067 43.8201C31.9812 43.4984 31.1357 43.636 30.5496 44.1716C23.2788 50.8129 6.70007 65.9535 6.70007 65.9535C5.52786 67.0247 3.83602 67.3 2.38576 66.6566C0.935497 66.0148 0 64.5741 0 62.9837V8.0167C0 6.42634 0.935497 4.98559 2.38576 4.34226C3.83602 3.70043 5.52786 3.97572 6.70007 5.04693C6.70007 5.04693 23.2788 20.1875 30.5496 26.8288C31.1357 27.3644 31.9812 27.502 32.7067 27.1803C33.4314 26.8587 33.8992 26.1391 33.8992 25.3431C33.8992 18.9353 33.8992 8.0167 33.8992 8.0167C33.8992 6.42634 34.8347 4.98559 36.2849 4.34226C37.7352 3.70043 39.427 3.97572 40.6001 5.04693L70.6916 32.5304C71.5249 33.2919 72 34.3691 72 35.5002C72 36.6313 71.5249 37.7085 70.6916 38.47L40.6001 65.9535C39.427 67.0247 37.7352 67.3 36.2849 66.6566C34.8347 66.0148 33.8992 64.5741 33.8992 62.9837C33.8992 62.9837 33.8992 52.0651 33.8992 45.6573Z" fill="#9df6dd" stroke-width="0">
+				</path>
+			</svg>
+		</div>
+	)
+	
 	// HTML
 	return (
 		<>
@@ -74,7 +155,7 @@ export default function HomeItemPage() {
 			/>
 			{/* main home container */}
 			<motion.div 
-				className={styles.home_detail}
+				className={`${styles.home_detail} ${ isBackgroundInView01 ? styles.active01 : ''} ${ isBackgroundInView02 ? styles.active02 : ''}`}
 				initial={{ 
 					display: "none",  
 					y: "100%" 
@@ -90,13 +171,6 @@ export default function HomeItemPage() {
 			>
 				{/* about */}
 				<div className={`${styles.info_detail} ${styles.home_container}`}>
-					<FadeInMotion 
-						delay={0} 
-						initialX={-100} 
-						initialY={0}
-					>
-						<h1 className={styles.info_title}>About me</h1>
-					</FadeInMotion>
 					<div className={styles.sub_title}>
 						<FadeInMotion delay={0.2} initialX={-100} initialY={0}>
 							<h2>ABOUT</h2>
@@ -184,19 +258,46 @@ export default function HomeItemPage() {
 					</FadeInMotion>
 				</article>
 				{/* work */}
-				<div className={`${styles.work_detail} ${styles.home_container}`}>
-					<FadeInMotion delay={0} initialX={-100} initialY={0}>
-						<h1 className={styles.work_title}>Projects</h1>
-					</FadeInMotion>
-					<div className={styles.sub_title}>
-						<FadeInMotion delay={0.2} initialX={0} initialY={100}>
-						<div className={styles.work_cont}>
-							<h3>사용자 경력 27년,</h3>
-							<h5>바탕으로 쉽게 간과할 수 있는 디테일까지 스스로 문제를 정의하고 해결하는 서비스를 하나하나 다시 사용해보며 사용자 입장에서 생각합니다</h5>
-						</div>
-						</FadeInMotion>
+				<BackgroundMotion onInView={setIsBackgroundInView01}>
+					<div className={styles.main_content}>
+						<ul className={styles.main_grid}>
+						{mainList.map((value, index) => (
+							<li className={styles.main_list_box} key={index}>
+								<FadeInMotion delay={`${index * 0.1}`} initialX={0} initialY={150}>
+								<Link href={value.link}>
+									<picture className={styles.box_img}>
+										<Image 
+											src={value.img}
+											fill="true"
+											alt=""
+										/>
+									</picture>
+									<div className={styles.box_text}>
+										<p>{value.area}</p>
+										<p>{value.company}</p> 
+										<p>{value.year}</p>
+									</div>
+								</Link>
+								</FadeInMotion>
+							</li>
+							))}
+						</ul>
 					</div>
-				</div>
+				</BackgroundMotion>
+				{/* work button */}
+				<BackgroundMotion onInView={setIsBackgroundInView02}>
+					<div className={styles.info_work}>
+						<div className={styles.link_container}>
+							<Link href="/work/list">
+								{[...Array(6)].map((idx) => (
+									<div key={idx}>{texts}</div>
+								))}
+							</Link>
+						</div>
+					</div>
+				</BackgroundMotion>
+				{/* footer */}
+				<FooterComponent />
 			</motion.div>
 		</>
     )

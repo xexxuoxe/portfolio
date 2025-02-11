@@ -15,10 +15,7 @@ export default function Main() {
 
   return (
     <div className='review_section' id='siwon_container'>
-        <NavComponent></NavComponent>
-        <GnbComponent></GnbComponent>
       	<PostWritePage post={postId} />
-        <FooterComponent />
     </div>
   );
 }

@@ -30,7 +30,6 @@ export default function PostListItem() {
         },
         { key: 'author', header: '작성자' },
         { key: 'date', header: '작성일' },
-        { key: 'teacher', header: '선생님' },
     ];
 
     return (
@@ -39,16 +38,16 @@ export default function PostListItem() {
 				<div className={styles.post_header}>
 					<div className={styles.post_header_left}>
 						<div className={styles.post_title}>
-							<h2>총 <span>{posts.length}</span>개의 수강후기</h2>
+							<h2>총 <span>{posts.length}</span>개의 게시글</h2>
 						</div>
 					</div>
 					<div className={styles.post_header_right}>
 						<ul className={styles.post_button}>
 							<li>
 								<LinkButton
-									variant="btn_orange"
+									variant="btn_pastel_blue"
 									href="/post/write"
-									text="수강후기 작성"
+									text="글 작성"
 								/>
 							</li>
 						</ul>
