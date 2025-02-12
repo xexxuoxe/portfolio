@@ -3,29 +3,16 @@
 @import '@styles/base/_reset';
 @import '@styles/base/_typography.scss';
 
-@keyframes aniFadeIn {
-	0% {opacity: 0; transform: translateY(30px);}
-	100% {opacity: 1; transform: translateY(0);}
-}
-@keyframes aniFade {
-	0% {opacity: 0; transform: translateY(30%);}
-	10%, 90% {opacity: 1; transform: translateY(0%);}
-	100% {opacity: 0; transform: translateY(-30%);}
-}
-@keyframes aniSlideLeft {
-	0% {transform: translate(0px, 0px);}
-	100% {transform: translate(-49.999%, 0px);}
-}
- 
 /* info */
 .work_view {
 	position: absolute;
-	width: 100%;
-	padding: 10rem 0 0 0;
-	background: #f0f3ff;
-	transition: opacity 1s ease;
-	overflow-x: hidden;
-	z-index: 10;
+    width: calc(100% - 10rem);
+    background: #f0f3ff;
+	transition: all .5s;
+    transition-delay: 0s;
+    overflow-x: hidden;
+    z-index: 10;
+    padding: 20rem 5rem 10rem;
 
 	&.active {
 		background: #000;
@@ -36,23 +23,17 @@
 			color: #fff !important;
 		}
 	}
-	// page start
-	.work_container {
-		width: 80%;
-		margin: 0 auto;
-		max-width: 1524px;
-	}
 	// work
 	.work_detail {
-		margin-bottom: 4rem;
 
 		.work_title {
-			font-size: 7rem;
-			font-weight: 900;
+			font-size: clamp(3.8rem,calc(-1.675rem + 13.375vw),14.375rem);
+			font-weight: 700;
 			line-height: 2.375rem;
-			margin-bottom: 6rem;
+			margin-bottom: 8rem;
 			font-family: 'Helvetica Neue';
 			text-transform: uppercase !important;
+			transform: translateX(-15px);
 		}
 
 		.sub_title {
@@ -80,6 +61,7 @@
 				
 				h5 {
 					font-weight: 100;
+					line-height: 1.3;
 				}
 
 				p {
@@ -95,12 +77,12 @@
 			@include flex('between');
 			flex-wrap: wrap;
 			align-items: flex-start;
-			width: 80%;
+			width: 100%;
 			margin-bottom: 4rem;
 			margin: auto;
 			
 			.main_list_box {
-				width: 32%;
+				width: 32.5%;
 
 				> div{
 					width: 100%;
@@ -115,9 +97,8 @@
 							position: relative;
 							display: block;
 							width: 100%;
-							height: 28rem;
-							box-shadow: rgba(195, 171, 206, 0.1) 0px 0px 5px 0px, rgba(235, 192, 250, 0.1) 0px 0px 1px 0px;
-							border-radius: 15px;
+							height: 30rem;
+							border-radius: 5px;
 							overflow: hidden;
 
 							img {	
@@ -157,17 +138,17 @@
     }
 	//  sub other list
 	.sub_content {
-		width: 90%;
+		width: 100%;
 		height: auto;
-		padding: 14rem 6rem;
 		margin: 0 auto;
+		padding-top: 13rem;
 
 		.sub_content_title {
 			display: ruby-text;
 			background: linear-gradient(-45deg, #a89be2, #fdd0f6, #9ae4fa) !important;
 			color: transparent !important;
 			-webkit-background-clip: text !important;
-			font-size: 7rem;
+			font-size: clamp(2.8rem, 11.75vw - 3.675rem, 14.375rem);
 			font-weight: 900;
 			line-height: 2.375rem;
 			margin-bottom: 5rem;

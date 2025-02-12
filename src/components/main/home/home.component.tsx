@@ -3,7 +3,7 @@
 	src/component/main/info/info.component.tsx
 */
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // animation
@@ -35,13 +35,10 @@ export default function HomeItemPage() {
 	  	setShowContent(true);
 	}
 	// slider
-	const handleSlideChange = () => {
-		setAnimating(true);
-	
-		setTimeout(() => {
-		  	setAnimating(false);
-		}, 6000);
-	};
+	const handleSlideChange = useCallback(() => {
+		setAnimating(false);
+		setInterval(() => setAnimating(true), 50);
+	}, []);
 	//slider array
 	const logos = [
 		{
@@ -139,7 +136,7 @@ export default function HomeItemPage() {
 		<div className={styles.text_list}>
 			<span>Let's work together</span>
 			<svg fill="transparent" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg">
-				<path d="M33.8992 45.6573C33.8992 44.8613 33.4314 44.1417 32.7067 43.8201C31.9812 43.4984 31.1357 43.636 30.5496 44.1716C23.2788 50.8129 6.70007 65.9535 6.70007 65.9535C5.52786 67.0247 3.83602 67.3 2.38576 66.6566C0.935497 66.0148 0 64.5741 0 62.9837V8.0167C0 6.42634 0.935497 4.98559 2.38576 4.34226C3.83602 3.70043 5.52786 3.97572 6.70007 5.04693C6.70007 5.04693 23.2788 20.1875 30.5496 26.8288C31.1357 27.3644 31.9812 27.502 32.7067 27.1803C33.4314 26.8587 33.8992 26.1391 33.8992 25.3431C33.8992 18.9353 33.8992 8.0167 33.8992 8.0167C33.8992 6.42634 34.8347 4.98559 36.2849 4.34226C37.7352 3.70043 39.427 3.97572 40.6001 5.04693L70.6916 32.5304C71.5249 33.2919 72 34.3691 72 35.5002C72 36.6313 71.5249 37.7085 70.6916 38.47L40.6001 65.9535C39.427 67.0247 37.7352 67.3 36.2849 66.6566C34.8347 66.0148 33.8992 64.5741 33.8992 62.9837C33.8992 62.9837 33.8992 52.0651 33.8992 45.6573Z" fill="#9df6dd" stroke-width="0">
+				<path d="M33.8992 45.6573C33.8992 44.8613 33.4314 44.1417 32.7067 43.8201C31.9812 43.4984 31.1357 43.636 30.5496 44.1716C23.2788 50.8129 6.70007 65.9535 6.70007 65.9535C5.52786 67.0247 3.83602 67.3 2.38576 66.6566C0.935497 66.0148 0 64.5741 0 62.9837V8.0167C0 6.42634 0.935497 4.98559 2.38576 4.34226C3.83602 3.70043 5.52786 3.97572 6.70007 5.04693C6.70007 5.04693 23.2788 20.1875 30.5496 26.8288C31.1357 27.3644 31.9812 27.502 32.7067 27.1803C33.4314 26.8587 33.8992 26.1391 33.8992 25.3431C33.8992 18.9353 33.8992 8.0167 33.8992 8.0167C33.8992 6.42634 34.8347 4.98559 36.2849 4.34226C37.7352 3.70043 39.427 3.97572 40.6001 5.04693L70.6916 32.5304C71.5249 33.2919 72 34.3691 72 35.5002C72 36.6313 71.5249 37.7085 70.6916 38.47L40.6001 65.9535C39.427 67.0247 37.7352 67.3 36.2849 66.6566C34.8347 66.0148 33.8992 64.5741 33.8992 62.9837C33.8992 62.9837 33.8992 52.0651 33.8992 45.6573Z" fill="#ffd810" stroke-width="0">
 				</path>
 			</svg>
 		</div>
@@ -150,6 +147,7 @@ export default function HomeItemPage() {
 		<>
 			{/* loader */}
 			<Loader
+				className=''
 				variant="blind_base"
 				onComplete={ handleLoaderComplete }
 			/>
@@ -197,13 +195,14 @@ export default function HomeItemPage() {
 						effect={"fade"}
 						fadeEffect= {{crossFade: true}}
 						loop={true}
-						speed={1000}
-						autoplay={{
-							delay: 5000,
-							disableOnInteraction: false,
-						}}
+						speed={500}
 						slidesPerView={1}
 						onSlideChange={handleSlideChange}
+						autoplay={{
+							delay: 4000,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: false
+						}}
 					>
 						{logos.map((slide, index) => (
 							<SwiperSlide key={index} className={styles.swiper_slide}>
@@ -217,7 +216,7 @@ export default function HomeItemPage() {
 											width={130}
 											height={130}
 											alt={list.title || 'Logo'}
-											style={{ animationDelay: `${idx * 0.2}s` }}
+											style={{ animationDelay: `${idx * 0.1}s` }}
 										/>  
 									</div>
 								))}

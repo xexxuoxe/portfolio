@@ -3,20 +3,6 @@
 @import '@styles/base/_reset';
 @import '@styles/base/_typography.scss';
 
-@keyframes aniFadeIn {
-	0% {opacity: 0; transform: translateY(30px);}
-	100% {opacity: 1; transform: translateY(0);}
-}
-@keyframes aniFade {
-	0% {opacity: 0; transform: translateY(30%);}
-	10%, 90% {opacity: 1; transform: translateY(0%);}
-	100% {opacity: 0; transform: translateY(-30%);}
-}
-@keyframes aniSlideLeft {
-	0% {transform: translate(0px, 0px);}
-	100% {transform: translate(-49.999%, 0px);}
-}
-
 /* info */
 .home_detail {
 	position: absolute;

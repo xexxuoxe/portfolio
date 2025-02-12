@@ -1,14 +1,16 @@
 
 // import type { Metadata } from 'next'
-import { Suspense } from 'react'
-import Loading from './loading'
-import './globals.scss'
-import { StoreProviders } from '@store/stroe.provider'
+import { Suspense } from 'react';
+import Loading from './loading';
+import { StoreProviders } from '@store/stroe.provider';
 import ErrorWrapper from '@lib/error/errorWrapper.boundary';
-import { AlertProvider } from '@lib/alert/alert.context'
+import { AlertProvider } from '@lib/alert/alert.context';
 import { LoadingProvider } from '@lib/loading/loading.context';
 import { MetaProvider } from '@components/sementic/siwon/meta.component';
-import { ResponsiveProvider } from '@lib/context/responsive.context'
+import NavComponent from '@components/sementic/nav.component'
+import { ResponsiveProvider } from '@lib/context/responsive.context';
+import Scrollbar from '@hooks/scroll/smooth.hook';
+import './globals.scss'
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
 
@@ -17,17 +19,20 @@ export default function RootLayout({ children }: Readonly<{children: React.React
             <ErrorWrapper>
                 <StoreProviders>
 					<MetaProvider>
-						<body>
-							<AlertProvider>
-								<LoadingProvider>
-									<Suspense fallback={ <Loading /> }>
-										<ResponsiveProvider>
-											{children}
-										</ResponsiveProvider>
-									</Suspense>
-								</LoadingProvider>
-							</AlertProvider>
-						</body>
+							<body>
+								<AlertProvider>
+									<LoadingProvider>
+										<Suspense fallback={ <Loading /> }>
+											<ResponsiveProvider>
+													<NavComponent />
+													<Scrollbar>
+														{children}
+													</Scrollbar>
+											</ResponsiveProvider>
+										</Suspense>
+									</LoadingProvider>
+								</AlertProvider>
+							</body>
 					</MetaProvider>
                 </StoreProviders>
             </ErrorWrapper>

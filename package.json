@@ -38,6 +38,7 @@
     "react-redux": "^9.1.2",
     "react-transition-group": "^4.4.5",
     "redux": "^5.0.1",
+    "smooth-scrollbar": "^8.8.4",
     "swiper": "^11.1.9"
   },
   "devDependencies": {

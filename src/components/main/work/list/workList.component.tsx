@@ -3,12 +3,11 @@
 	src/component/main/work/work.component.tsx
 */
 'use client'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // animation
 import { motion } from 'framer-motion';
-import { useGSAP } from "@gsap/react";
 // component
 import Loader from'@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
@@ -148,6 +147,7 @@ export default function WorkListPage() {
 		<>
 			{/* loader */}
 			<Loader
+				className=''
 				variant="blind_base"
 				onComplete={ handleLoaderComplete }
 			/>
@@ -162,7 +162,7 @@ export default function WorkListPage() {
 					display: "block", 
 					y: showContent ? 0 : "100%",
 					transition: { 
-						duration: .3,
+						duration: .1,
 						ease: "easeOut"
 					}
 				}}
@@ -187,22 +187,22 @@ export default function WorkListPage() {
 					<ul className={styles.main_grid}>
 					{mainList.map((value, index) => (
 						<li className={styles.main_list_box} key={index}>
-							<FadeInMotion delay={`${index * 0.1}`} initialX={0} initialY={150}>
+						<FadeInMotion delay={index * 0.1} initialX={0} initialY={150}>
 							<Link href={value.link}>
-								<picture className={styles.box_img}>
-									<Image 
-										src={value.img}
-										fill="true"
-										alt=""
-									/>
-								</picture>
+									<picture className={styles.box_img}>
+										<Image 
+											src={value.img}
+											fill="true"
+											alt=""
+										/>
+									</picture>
 								<div className={styles.box_text}>
 									<p>{value.area}</p>
 									<p>{value.company}</p> 
 									<p>{value.year}</p>
 								</div>
 							</Link>
-							</FadeInMotion>
+						</FadeInMotion>
 						</li>
 						))}
 					</ul>

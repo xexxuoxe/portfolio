@@ -3,7 +3,7 @@
 @mixin blind-style($blind-color) {	
 	position: absolute;
     width: 100%;
-	height: 100%;
+	height: 100vh;
 	min-height: 100%;
 	background-color: $blind-color;
     z-index: 4;

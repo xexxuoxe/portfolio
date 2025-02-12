@@ -4,18 +4,32 @@
 */
 'use client'
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
-import styles from './postList.module.scss';
+import React, { useState } from 'react';
+// animation
+import { motion } from 'framer-motion';
+// component
 import LinkButton from '@components/_utiles/link/link.component';
+import Loader from'@components/_utiles/loader/loader.component';
+import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import Table from '@components/_utiles/table/table.component';
+// hook
 import { Post, usePostHook } from './postList.hook';
+// style
+import styles from './postList.module.scss';
+
 
 export default function PostListItem() {
 
-	const {
-		postData,
-	} = usePostHook();
-
+	const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
+	const [showContent, setShowContent] = useState<boolean>(false);
+	const { postData } = usePostHook();
+	
+	// loader
+	const handleLoaderComplete = (): void => {
+		setIsLoaderDone(true);
+	  	setShowContent(true);
+	}
+	
 	const posts = postData;
 
 	const columns = [
@@ -33,8 +47,45 @@ export default function PostListItem() {
     ];
 
     return (
-		<div className={styles.inner_container}>
-			<div className={styles.siwon_board}>
+	<>
+		{/* loader */}
+		<Loader
+			className=''
+			variant="blind_base"
+			onComplete={ handleLoaderComplete }
+		/>
+		{/* board_view container */}
+		<motion.div 
+			className={styles.board_view}
+			initial={{ 
+				display: "none",  
+				y: "100%" 
+			}}
+			animate={{ 
+				display: "block", 
+				y: showContent ? 0 : "100%",
+				transition: { 
+					duration: .6,
+					ease: "easeOut"
+				}
+			}}
+		>
+			<div className={`${styles.board_detail} ${styles.info_container}`}>
+				<FadeInMotion 
+					delay={0} 
+					initialX={-100} 
+					initialY={0}
+				>
+					<h1 className={styles.board_title}>board</h1>
+				</FadeInMotion>
+				<div className={styles.info_cont}>
+					<FadeInMotion delay={0.4} initialX={0} initialY={100}>
+						<h3>자유롭게 글을 작성해보세요</h3>
+					</FadeInMotion>
+				</div>
+			</div>
+
+			<div className={styles.board_main}>
 				<div className={styles.post_header}>
 					<div className={styles.post_header_left}>
 						<div className={styles.post_title}>
@@ -61,6 +112,7 @@ export default function PostListItem() {
 					/>
 				</div>
 			</div>
-		</div>
+		</motion.div>
+	</>
     )
 }

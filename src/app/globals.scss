@@ -5,7 +5,7 @@ $font-family-base: 'Pretendard', Roboto, -apple-system, BlinkMacSystemFont, syst
 $font-size-base: 16px;
 $line-height-base: inherit;
 $color-text: #141414;
-$color-link: #7f7f7f;
+$color-link: #000;
 
 // SpoqaHan 폰트 정의 
 @include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Thin.otf", 100, "opentype");
@@ -53,6 +53,7 @@ html, body {
   font-style: normal;
   line-height: $line-height-base;
   color: $color-text;
+  scroll-behavior: smooth;
 
   ::selection {
     background:#ffd810;

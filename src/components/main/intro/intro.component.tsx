@@ -10,9 +10,10 @@ import styles from './intro.module.scss';
 
 export default function IntroItemPage() {
 	
-	const followRef = useRef<HTMLDivElement | null>(null);
-	const contentRefs = useRef<HTMLDivElement | null>([]);
-	const loaderRef = useRef<HTMLDivElement | null>(null);
+	const followRef = useRef<(HTMLDivElement | null)[]>(null);
+	const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+	const loaderRef = useRef<(HTMLDivElement | null)[]>(null);
+	const mainViewRef = useRef<(HTMLDivElement | null)[]>(null);
 
 	useGSAP (() => {
 		// 마우스 이동 이벤트
@@ -46,7 +47,8 @@ export default function IntroItemPage() {
 			{ target: contentRefs.current[2], props: { opacity: 1, display: 'block' }, duration: 1 },
 			{ target: loaderRef.current, props: { opacity: 1, display: 'block', top: '0' }, duration: 0.6 },
 			{ target: contentRefs.current[2], props: { opacity: 0, display: 'none' }, duration: 0 },
-			{ target: loaderRef.current, props: { opacity: 1, display: 'none', top: '-100%' }, duration: 0.6 },
+			{ target: mainViewRef.current, props: { opacity: 0, display: 'none' }, duration: 0 },
+			{ target: loaderRef.current, props: { opacity: 1, display: 'none', top: '-100vh' }, duration: 0.6 },
 		];
 	
 		steps.forEach(step => {
@@ -57,15 +59,15 @@ export default function IntroItemPage() {
 	// HTML
 	return (
 		<>
-			<div className={styles.main_view} onClick={handleIndexEffect}>
+			<div className={styles.main_view} ref={mainViewRef} onClick={handleIndexEffect}>
 				<div className={styles.intro_txt}>
-					<div ref={ (el) => el && (contentRefs.current[0] = el) } className={`${styles.intro_content} ${styles.intro_content01}`}>
+					<div ref={ (el) => (contentRefs.current[0] = el) } className={`${styles.intro_content} ${styles.intro_content01}`}>
 						<h1 className={styles.title}>Portfolio</h1>
 					</div>
-					<div ref={ (el) => el && (contentRefs.current[1] = el) } className={`${styles.intro_content} ${styles.intro_content02}`}>
+					<div ref={ (el) => (contentRefs.current[1] = el) } className={`${styles.intro_content} ${styles.intro_content02}`}>
 						<h1 className={styles.title}>Lee Eun Seo</h1>
 					</div>
-					<div ref={(el) => el && (contentRefs.current[2] = el) } className={`${styles.intro_content} ${styles.intro_content03}`}>
+					<div ref={(el) => (contentRefs.current[2] = el) } className={`${styles.intro_content} ${styles.intro_content03}`}>
 						<h1 className={styles.title}>Projects</h1>
 					</div>
 				</div>
