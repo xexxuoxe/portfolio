@@ -18,19 +18,19 @@ export default function NavComponent() {
 	];
 
 	return (
-	<div id={ styles.navigation }>
-		<div className={ styles.inner_wrap }>
-		{/* site link */}
-		<ul className={ styles.nav_menu }>
-			{ menuList.map(( link, index ) => (
-			<li key={ index }>
-				<Link href={ link.url }>
-					{ link.name }
-				</Link>
-			</li>
-			))}
-		</ul>
+		<div id={ styles.navigation }>
+			<div className={ styles.inner_wrap }>
+			{/* site link */}
+			<ul className={ styles.nav_menu }>
+				{ menuList.map(( link, index ) => (
+				<li key={ index }>
+					<Link href={ link.url }>
+						{ link.name }
+					</Link>
+				</li>
+				))}
+			</ul>
+			</div>
 		</div>
-	</div>
 	);
 }

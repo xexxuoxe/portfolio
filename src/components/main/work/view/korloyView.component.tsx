@@ -1,6 +1,6 @@
 /*
-	Work component
-	src/component/main/work/work.component.tsx
+	korloy view component
+	src/component/main/work/view/korloy.component.tsx
 */
 'use client'
 import { useState, useEffect } from 'react';
@@ -57,7 +57,7 @@ export default function WorkViewPage() {
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>
-						<FadeInMotion delay={0} initialX={-100} initialY={0}>
+						<FadeInMotion delay={.2} initialX={-100} initialY={0}>
 							<h1 className={styles.work_detail_title}>SIWONSCHOOL</h1>
 						</FadeInMotion>
 						<div className={styles.detail_sub_title}>
@@ -72,6 +72,7 @@ export default function WorkViewPage() {
 						</div>
 					</header>
 					<main>
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
 						<div className={styles.row}>
 							<div className= {`${styles.grid_100} ${styles.img_bg}`}>
 								<Image 
@@ -81,9 +82,12 @@ export default function WorkViewPage() {
 								/>
 							</div>
 						</div>
+						</FadeInMotion>
+
 						{/* detail text */}
 						<article>
-							<div className={styles.grid_50}>
+							<FadeInMotion delay={.2} initialX={-100} initialY={0}>
+							<div className={styles.grid_40}>
 								<ul>
 									<li>
 										<h4>유형</h4>
@@ -111,16 +115,19 @@ export default function WorkViewPage() {
 										<h4>설명</h4>
 										<p>설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다</p>
 									</li>
-									<li>
+									{/* <li>
 										<div className={styles.project_btn}>
 											<Link href="">
 												<span>VIEW PROJECT</span>
 											</Link>
 										</div>
-									</li>
+									</li> */}
 								</ul>
 							</div>
+							</FadeInMotion>
 						</article>
+						
+						<FadeInMotion delay={.2} initialX={0} initialY={100}>
 						<div className={styles.row}>
 							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
 								<Image 
@@ -130,39 +137,67 @@ export default function WorkViewPage() {
 								/>
 							</div>
 						</div>
+						</FadeInMotion>
+
+						{/* notice */}
+						<FadeInMotion delay={.2} initialX={0} initialY={100}>
+						<em className={styles.notice_txt}>※ 회사 시스템 소스유출 방지로 이미지로만 표시됩니다.</em>
+						</FadeInMotion>
+						
+						<FadeInMotion delay={.2} initialX={0} initialY={100}>
 						<div className={styles.row}>
+							<div className= {`${styles.grid_80} ${styles.lo_left} ${styles.img_bg}`}>
+								<Image 
+									src="/images/korloy_img3.png"
+									fill={true}
+									alt=""
+								/>
+							</div>
+						</div>
+						</FadeInMotion>
+
+						<FadeInMotion delay={.2} initialX={0} initialY={100}>
+						<div className={styles.row}>
+							<div className= {`${styles.grid_80} ${styles.lo_right} ${styles.img_bg}`} style={{height : '62rem'}}>
+								<Image 
+									src="/images/korloy_img4.png"
+									fill={true}
+									alt=""
+								/>
+							</div>
+						</div>
+						</FadeInMotion>
+						{/* <div className={styles.row}>
 							<ul className={styles.grid_40}>
 								<li className={styles.img_bg}>
 									<Image 
 										src="/images/korloy_img3.png"
-										width={600}
-										height={200}
+										fill={true}
 										alt=""
 									/>
 								</li>
 								<li className={styles.img_bg}>
 									<Image 
 										src="/images/korloy_img4.png"
-										width={600}
-										height={200}
+										fill={true}
 										alt=""
 									/>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</main>
-					{/* work button */}
+					{/* work list button */}
 					<BackgroundMotion onInView={setIsBackgroundInView}>
-						<div className={styles.info_work}>
-							<div className={styles.link_container}>
+						<div className={styles.next_project_btn}>
+							<h2>
 								<Link href="/work/list">
-									NEXT PROJECT
+									NEXT<br />PROJECT
 								</Link>
-							</div>
+							</h2>
 						</div>
 					</BackgroundMotion>
-					{/* link button */}
-					<div className={styles.work_view_btn}>
+					{/* all work list button */}
+					<div className={` ${styles.work_view_btn} ${styles.all_project_btn}`}>
 						<Link href="">
 							<span>VIEW ALL PROJECTS</span>
 						</Link>

@@ -1,6 +1,6 @@
 /*
-	Work component
-	src/component/main/work/work.component.tsx
+	lges view component
+	src/component/main/work/view/lges.component.tsx
 */
 'use client'
 import { useState, useEffect } from 'react';
@@ -57,33 +57,37 @@ export default function WorkViewPage() {
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>
-						<FadeInMotion delay={0} initialX={-100} initialY={0}>
-							<h1 className={styles.work_detail_title}>SIWONSCHOOL</h1>
+						<FadeInMotion delay={.2} initialX={-150} initialY={0}>
+							<h1 className={styles.work_detail_title}>Energy Solution</h1>
 						</FadeInMotion>
 						<div className={styles.detail_sub_title}>
-							<FadeInMotion delay={0.2} initialX={-100} initialY={0}>
-								<h2>EDUCATION WEBSITE</h2>
+							<FadeInMotion delay={0.2} initialX={-150} initialY={0}>
+								<h2>ADMIN SYSTEM</h2>
 							</FadeInMotion>
 							<div className={styles.sub_title_cont}>
-								<FadeInMotion delay={0.4} initialX={0} initialY={100}>
+								<FadeInMotion delay={0.4} initialX={0} initialY={200}>
 									<h3>시험영어 인터넷 강의 전문 사이트, 토익/토스/오픽/지텔프/아이엘츠/토플/텝스/SPA 시험영어 전문으로 이루어진 사이트이다.</h3>
 								</FadeInMotion>
 							</div>
 						</div>
 					</header>
 					<main>
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
 						<div className={styles.row}>
 							<div className= {`${styles.grid_100} ${styles.img_bg}`}>
 								<Image 
-									src="/images/korloy_img1.png"
+									src="/images/lges_img1.png"
 									fill={true}
 									alt=""
 								/>
 							</div>
 						</div>
+						</FadeInMotion>
+
 						{/* detail text */}
 						<article>
-							<div className={styles.grid_50}>
+							<FadeInMotion delay={.2} initialX={-150} initialY={0}>
+							<div className={styles.grid_40}>
 								<ul>
 									<li>
 										<h4>유형</h4>
@@ -111,58 +115,73 @@ export default function WorkViewPage() {
 										<h4>설명</h4>
 										<p>설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다</p>
 									</li>
-									<li>
-										<div className={styles.project_btn}>
-											<Link href="">
-												<span>VIEW PROJECT</span>
-											</Link>
-										</div>
-									</li>
 								</ul>
 							</div>
+							</FadeInMotion>
 						</article>
+						
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
 						<div className={styles.row}>
 							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
 								<Image 
-									src="/images/korloy_img2.png"
+									src="/images/lges_img2.png"
 									fill={true}
 									alt=""
 								/>
 							</div>
 						</div>
+						</FadeInMotion>
+
+						{/* notice */}
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
+						<em className={styles.notice_txt}>※ 회사 시스템 소스유출 방지로 이미지로만 표시됩니다.</em>
+						</FadeInMotion>
+
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
 						<div className={styles.row}>
 							<ul className={styles.grid_40}>
 								<li className={styles.img_bg}>
 									<Image 
-										src="/images/korloy_img3.png"
-										width={600}
-										height={200}
+										src="/images/lges_img3.png"
+										fill={true}
 										alt=""
 									/>
 								</li>
 								<li className={styles.img_bg}>
 									<Image 
-										src="/images/korloy_img4.png"
-										width={600}
-										height={200}
+										src="/images/lges_img4.png"
+										fill={true}
 										alt=""
 									/>
 								</li>
 							</ul>
 						</div>
-					</main>
-					{/* work button */}
-					<BackgroundMotion onInView={setIsBackgroundInView}>
-						<div className={styles.info_work}>
-							<div className={styles.link_container}>
-								<Link href="/work/list">
-									NEXT PROJECT
-								</Link>
+						</FadeInMotion>
+						
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
+						<div className={styles.row}>
+							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
+								<Image 
+									src="/images/lges_img5.png"
+									fill={true}
+									alt=""
+								/>
 							</div>
 						</div>
+						</FadeInMotion>
+					</main>
+					{/* work list button */}
+					<BackgroundMotion onInView={setIsBackgroundInView}>
+						<div className={styles.next_project_btn}>
+							<h2>
+								<Link href="/work/list">
+									NEXT<br />PROJECT
+								</Link>
+							</h2>
+						</div>
 					</BackgroundMotion>
-					{/* link button */}
-					<div className={styles.work_view_btn}>
+					{/* all work list button */}
+					<div className={` ${styles.work_view_btn} ${styles.all_project_btn}`}>
 						<Link href="">
 							<span>VIEW ALL PROJECTS</span>
 						</Link>

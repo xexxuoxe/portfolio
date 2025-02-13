@@ -2,30 +2,38 @@
 @import '@styles/abstracts/_variables';
 @import '@styles/base/_reset';
 @import '@styles/base/_typography.scss';
- 
+
 /* info */
 .work_view {
 	position: absolute;
-	width: 100%;
-	padding: 16rem 0 0 0;
-	background: #f5f5f8;
-	transition: opacity 1s ease;
-	z-index: 10;
+    width: calc(100% - 10rem);
+    background: #f0f3ff;
+	transition: all .5s;
+    transition-delay: 0s;
+    overflow-x: hidden;
+    z-index: 10;
+    padding: 20rem 5rem 10rem;
 
-	.work_container {
-		width: 90%;
-		margin: 0 auto;
-		max-width: 1524px;
+	&.active {
+		background: #000;
+		transition: .3s;
+		transition-delay: .3s;
+
+		* {
+			color: #fff !important;
+			transition: .3s;
+			transition-delay: .3s;
+		}
 	}
 
 	//next page button 
-	.work_view_btn {
-		text-align: center;
-		margin-bottom: 5rem;
+	.work_view_btn, 
+	.project_btn {
+
 		a {
 			position: relative;
 			display: inline-block;
-			padding: 1.5rem 2rem;
+			padding: 1.5rem 2rem 1.5rem;
 			border-bottom: 2px solid #000;
 			margin: auto;
 			
@@ -52,8 +60,10 @@
 			
 			&:hover {
 				text-decoration: none;
+
 				&::before{
 					transform: scaleY(1);
+					
 				}
 			}
 		}
@@ -61,52 +71,213 @@
 
 	.work_detail_veiw {
 		header {
-			padding: 0 9rem;
 
 			.work_detail_title {
+				font-size: clamp(3.8rem,calc(-1.675rem + 13.375vw),14.375rem);
+				font-weight: 700;
+				line-height: 2.375rem;
+				margin-bottom: 10rem;
 				font-family: 'Helvetica Neue';
-				em {
-					display: inline-block;
-					font-size: 4rem;
-					font-weight: 900;
-					margin-bottom: 1rem;
-				}
-				p {
-					font-size: 1.5rem;
-					font-weight: 700;
-				}
+				text-transform: uppercase !important;
+				letter-spacing: -1.6rem;
+				transform: translateX(-20px);
 			}
+
 			.detail_sub_title {
-				font-size: 1.1rem;
-				color: #535353;
-				padding: 3rem 0 5rem 25rem;
-				word-break: keep-all;
+				@include flex();
+				align-items: flex-start;
+				line-height: 2.0625rem;
+				color: #242532;
+	
+				h2 {
+					font-size: 2rem;
+					font-weight: 700;
+					font-family: 'Helvetica Neue';
+				}
+	
+				.sub_title_cont {
+					padding-left: 7rem;
+	
+					h3, h5 {
+						padding-bottom: 1.3rem;
+					}
+					
+					h5 {
+						font-weight: 100;
+					}
+				}
 			}
 		}
 		// main
 		main {
-			padding: 5rem 0;
-			.grid_mb2 {
-				display: flex;
+			width: 100%;
+
+			&.link_page {
+				@include flex('between');
 				align-items: flex-start;
-				justify-content: space-between;
+
+				.row {
+					width: 70%;
+				}
+
+				article {
+					width: 30%;
+					margin: inherit;
+				}
+
 			}
+
+			.notice_txt {
+				display: inline-block;
+				width: 100%;
+				font-size: 1.2rem;
+				font-weight: 700;
+				text-align: center;
+				padding: 5rem 0;
+				color: #333;
+			}
+
+			.row {
+				width: 100%;
+				padding: 5rem 0;
+			}
+
+			.grid_100 {
+				position: relative;
+				width: calc(100% + 10rem);
+				left: -5rem;
+				height: 61rem;
+			}
+			
+			.grid_90 {
+				position: relative;
+				width: 90%;
+				height: 50rem;
+			}
+
+			.grid_80 {
+				position: relative;
+				width: 80%;
+				height: 46rem;
+				margin: auto;
+
+				&.lo_left {
+					margin: inherit;
+					margin-right: auto;
+				}
+
+				&.lo_right {
+					margin: inherit;
+					margin-left: auto;
+				}
+			}
+
+			.grid_60 {
+				position: relative;
+				width: 60%;
+				height: 42rem;
+				margin: auto;
+			}
+
+			.grid_40 {
+				@include flex('between');
+				align-items: flex-start;
+				width: 100%;
+				margin: auto;
+
+				li {
+					position: relative;
+					width: 49%;
+					height: 32rem;
+				}
+			}
+
 			article {
 				width: 70%;
 				margin: auto;
-				ul {
-					width: 50%;
-					font-size: 1rem;
-					li {
-						padding-bottom: 1.4rem;
-						line-height: 1.7rem;
-						h4 {
-							font-weight: 800;
-							
+				padding: 5rem 0;
+
+				.grid_40 {
+					width: 100% !important;
+
+					ul {
+						width: 50%;
+						font-size: 1.2rem;
+	
+						li {
+							width: auto !important;
+							height: auto !important;
+							padding-bottom: 1.4rem;
+							line-height: 2.2rem;
+	
+							h4 {
+								font-weight: 800;
+								
+							}
+	
+							p {
+								font-weight: 500;
+							}
+	
+							.project_btn {
+	
+								a {
+									padding: 1rem 2rem 1rem;
+	
+									span {
+										font-size: 1.4rem;
+										font-weight: 700;
+									}
+								}
+							}
 						}
-						p {
-							font-weight: 500;
-						}
+					}
+				}
+			}
+		}
+		// work list button
+		.next_project_btn {
+			text-align: center;
+			padding: 14rem 0;
+
+			h2 {
+				transition: transform .3s;
+
+				a {
+					font-size: clamp(3.8rem,calc(-1.675rem + 13.375vw),14.375rem);
+					color: transparent !important;
+					transition: color 0s;
+					-webkit-text-stroke: 5px #fff;
+					line-height: 1;
+				}
+
+				&:hover {
+					transform: scale(1.1);
+					transition: transform .3s;
+
+					a {
+						color:#fff !important;
+						transition: color 0s;
+						-webkit-text-stroke: 5px #fff;
+					}
+				}	
+			}
+		}
+		// all work list button
+		.all_project_btn {
+			text-align: center;
+			a {
+				border-bottom: 2px solid #fff;
+				
+				span {
+					font-weight: 700;
+				}
+
+				&:hover {
+					
+					span {
+						color: #333 !important;
+						transition: 0s;
 					}
 				}
 			}

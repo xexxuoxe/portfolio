@@ -30,7 +30,7 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
   }, []);
 
   return (
-    <div ref={scrollRef} style={{ height: '100vh', overflow: 'hidden', zIndex: '50' }}>
+    <div ref={scrollRef} style={{ height: '100vh', overflow: 'hidden' }}>
       {children}
     </div>
   );

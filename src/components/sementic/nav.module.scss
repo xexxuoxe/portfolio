@@ -7,7 +7,7 @@
 	top: 0;
 	left: 0;
 	backdrop-filter: blur(12px);
-	z-index: 40;
+	z-index: 49;
 	.inner_wrap {
 		@include flex($align: 'center');
 		width: 28%;

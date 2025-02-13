@@ -1,6 +1,6 @@
 /*
-	Work component
-	src/component/main/work/work.component.tsx
+	siwonLab view component
+	src/component/main/work/view/siwonLabView.component.tsx
 */
 'use client'
 import { useState, useEffect } from 'react';
@@ -57,7 +57,7 @@ export default function WorkViewPage() {
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>
-						<FadeInMotion delay={0} initialX={-100} initialY={0}>
+						<FadeInMotion delay={.2} initialX={-100} initialY={0}>
 							<h1 className={styles.work_detail_title}>SIWONSCHOOL</h1>
 						</FadeInMotion>
 						<div className={styles.detail_sub_title}>
@@ -71,9 +71,9 @@ export default function WorkViewPage() {
 							</div>
 						</div>
 					</header>
-					<main>
+					<main className={styles.link_page}>
 						<div className={styles.row}>
-							<div className= {`${styles.grid_100} ${styles.img_bg}`}>
+							<div className= {`${styles.grid_90} ${styles.img_bg}`}>
 								<Image 
 									src="/images/korloy_img1.png"
 									fill={true}
@@ -81,10 +81,16 @@ export default function WorkViewPage() {
 								/>
 							</div>
 						</div>
+
 						{/* detail text */}
 						<article>
-							<div className={styles.grid_50}>
+							<FadeInMotion delay={.2} initialX={-100} initialY={0}>
+							<div className={styles.grid_40}>
 								<ul>
+									<li>
+										<h4>설명</h4>
+										<p>설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다</p>
+									</li>
 									<li>
 										<h4>유형</h4>
 										<p>Mobile</p>
@@ -105,64 +111,30 @@ export default function WorkViewPage() {
 										<h4>제작년도</h4>
 										<p>2024년 09월</p>
 									</li>
-								</ul>
-								<ul>
-									<li>
-										<h4>설명</h4>
-										<p>설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다</p>
-									</li>
 									<li>
 										<div className={styles.project_btn}>
-											<Link href="">
+											<Link href="https://lab.siwonschool.com/m/?s=products" target='_blanck'>
 												<span>VIEW PROJECT</span>
 											</Link>
 										</div>
 									</li>
 								</ul>
 							</div>
+							</FadeInMotion>
 						</article>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
-								<Image 
-									src="/images/korloy_img2.png"
-									fill={true}
-									alt=""
-								/>
-							</div>
-						</div>
-						<div className={styles.row}>
-							<ul className={styles.grid_40}>
-								<li className={styles.img_bg}>
-									<Image 
-										src="/images/korloy_img3.png"
-										width={600}
-										height={200}
-										alt=""
-									/>
-								</li>
-								<li className={styles.img_bg}>
-									<Image 
-										src="/images/korloy_img4.png"
-										width={600}
-										height={200}
-										alt=""
-									/>
-								</li>
-							</ul>
-						</div>
 					</main>
-					{/* work button */}
+					{/* work list button */}
 					<BackgroundMotion onInView={setIsBackgroundInView}>
-						<div className={styles.info_work}>
-							<div className={styles.link_container}>
+						<div className={styles.next_project_btn}>
+							<h2>
 								<Link href="/work/list">
-									NEXT PROJECT
+									NEXT<br />PROJECT
 								</Link>
-							</div>
+							</h2>
 						</div>
 					</BackgroundMotion>
-					{/* link button */}
-					<div className={styles.work_view_btn}>
+					{/* all work list button */}
+					<div className={` ${styles.work_view_btn} ${styles.all_project_btn}`}>
 						<Link href="">
 							<span>VIEW ALL PROJECTS</span>
 						</Link>
