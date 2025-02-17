@@ -66,7 +66,7 @@ export default function WorkViewPage() {
 							</FadeInMotion>
 							<div className={styles.sub_title_cont}>
 								<FadeInMotion delay={0.4} initialX={0} initialY={200}>
-									<h3>시험영어 인터넷 강의 전문 사이트, 토익/토스/오픽/지텔프/아이엘츠/토플/텝스/SPA 시험영어 전문으로 이루어진 사이트이다.</h3>
+									<h3>LG Chem 내부 IT 관리 시스템 'ITM 업무혁신 Portal' 효율적인 IT투자 사업계획 수립 및 Rolling Plan 관리 체계 기준으로 종합지원 시스템 구축</h3>
 								</FadeInMotion>
 							</div>
 						</div>
@@ -90,30 +90,39 @@ export default function WorkViewPage() {
 							<div className={styles.grid_40}>
 								<ul>
 									<li>
-										<h4>유형</h4>
-										<p>Mobile</p>
+										<h4>Type</h4>
+										<p>Web</p>
 									</li>
 									<li>
-										<h4>프로젝트트</h4>
-										<p>사내 서비스</p>
+										<h4>Project</h4>
+										<p>Admin System</p>
 									</li>
 									<li>
-										<h4>참여도</h4>
-										<p>프론트 100%</p>
+										<h4>Participation</h4>
+										<p>Front : 100%</p>
 									</li>
 									<li>
-										<h4>라이브러리</h4>
-										<p></p>
-									</li>
-									<li>
-										<h4>제작년도</h4>
-										<p>2024년 09월</p>
+										<h4>Technology</h4>
+										<p>
+											<span>DevOn Frame,</span>
+											<span>JSP,</span>
+											<span>CSS,</span>
+											<span>Vanilla,</span>
+											<span>Jquery,</span>
+											<span>Zeplin</span>
+										</p>
 									</li>
 								</ul>
 								<ul>
 									<li>
-										<h4>설명</h4>
-										<p>설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다</p>
+										<h4>Description</h4>
+										<p>기업 내부 IT 관리 시스템을 고객 중심의 서비스 관점으로 전환하여, 보다 효율적인 IT 서비스 운영을 지원하는 내부 관리자 시스템입니다.<br /><br />
+										DevOnFrame을 기반으로 Enterprise 시스템 개발을 위한 아키텍처, 공통 컴포넌트, 템플릿 프로젝트을 활용하여 신속한 설계 및 개발이 가능하도록 구현하였으며, 이를 통해 유지보수의 효율성을 극대화하였습니다.
+										</p>
+									</li>
+									<li>
+										<h4>Year</h4>
+										<p>2022</p>
 									</li>
 								</ul>
 							</div>
@@ -172,7 +181,7 @@ export default function WorkViewPage() {
 
 						<FadeInMotion delay={.2} initialX={0} initialY={200}>
 						<div className={styles.row}>
-							<div className= {`${styles.grid_80} ${styles.lo_right} ${styles.img_bg}`} style={{height : '62rem'}}>
+							<div className= {`${styles.grid_80} ${styles.lo_right} ${styles.img_bg}`}>
 								<Image 
 									src="/images/lgcns_img6.png"
 									fill={true}
@@ -186,7 +195,7 @@ export default function WorkViewPage() {
 					<BackgroundMotion onInView={setIsBackgroundInView}>
 						<div className={styles.next_project_btn}>
 							<h2>
-								<Link href="/work/list">
+								<Link href="/work/view/lges">
 									NEXT<br />PROJECT
 								</Link>
 							</h2>
@@ -194,7 +203,7 @@ export default function WorkViewPage() {
 					</BackgroundMotion>
 					{/* all work list button */}
 					<div className={` ${styles.work_view_btn} ${styles.all_project_btn}`}>
-						<Link href="">
+						<Link href="/work/list">
 							<span>VIEW ALL PROJECTS</span>
 						</Link>
 					</div>

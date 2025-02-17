@@ -1,6 +1,6 @@
 /*
-	nh view component
-	src/component/main/work/view/nh.component.tsx
+	japan view component
+	src/component/main/work/view/japan.component.tsx
 */
 'use client'
 import { useState, useEffect } from 'react';
@@ -57,27 +57,33 @@ export default function WorkViewPage() {
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>
-						<FadeInMotion delay={.2} initialX={-150} initialY={0}>
-							<h1 className={styles.work_detail_title}>
-							Nonghyup</h1>
+						<FadeInMotion delay={.2} initialX={-100} initialY={0}>
+							<h1 className={styles.work_detail_title}>SIWONSCHOOL</h1>
 						</FadeInMotion>
 						<div className={styles.detail_sub_title}>
-							<FadeInMotion delay={0.2} initialX={-150} initialY={0}>
-								<h2>ADMIN SYSTEM</h2>
+							<FadeInMotion delay={0.2} initialX={-100} initialY={0}>
+								<h2>EDUCATION WEBSITE</h2>
 							</FadeInMotion>
 							<div className={styles.sub_title_cont}>
-								<FadeInMotion delay={0.4} initialX={0} initialY={200}>
-									<h3>Nonghyup 정보 IT 자산 관리 고도화 프로젝트</h3>
+								<FadeInMotion delay={0.4} initialX={0} initialY={100}>
+									<h3>시원스쿨 일본어 인터넷 강의 전문 사이트로로 일본어인강 | 기초일본어, 일본어회화, 일본어탭, JLPT N1/N2/N3, JPT, 일본어문법등 이루어진 사이트</h3>
 								</FadeInMotion>
 							</div>
 						</div>
 					</header>
 					<main>
 						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_100} ${styles.img_bg}`}>
+						<div className={`${styles.link_page}`} style={{background: '#ef8d83'}}>
+							<div className= {`${styles.grid_50}`}>
 								<Image 
-									src="/images/nh_img1.png"
+									src="/images/japan_img01.png"
+									fill={true}
+									alt=""
+								/>
+							</div>
+							<div className= {`${styles.grid_50}`}>
+								<Image 
+									src="/images/japan_img02.png"
 									fill={true}
 									alt=""
 								/>
@@ -86,17 +92,17 @@ export default function WorkViewPage() {
 						</FadeInMotion>
 
 						{/* detail text */}
-						<article>
-							<FadeInMotion delay={.2} initialX={-150} initialY={0}>
+						<article style={{padding: '10rem 0 20rem 0'}}>
+							<FadeInMotion delay={.2} initialX={-100} initialY={0}>
 							<div className={styles.grid_40}>
-							<ul>
+								<ul>
 									<li>
 										<h4>Type</h4>
-										<p>Web</p>
+										<p>Web / Mobile</p>
 									</li>
 									<li>
 										<h4>Project</h4>
-										<p>Admin System</p>
+										<p>사내 서비스</p>
 									</li>
 									<li>
 										<h4>Participation</h4>
@@ -105,87 +111,43 @@ export default function WorkViewPage() {
 									<li>
 										<h4>Technology</h4>
 										<p>
-											<span>AdminLTE,</span>
-											<span>Html,</span>
-											<span>CSS,</span>
-											<span>Vanilla,</span>
-											<span>Jquery,</span>
-											<span>Zeplin</span>
+											<span>React,</span>
+											<span>SCSS,</span>
+											<span>Zustand,</span>
+											<span>Figma</span>
 										</p>
+									</li>
+									<li>
+										<h4>Year</h4>
+										<p>2024</p>
 									</li>
 								</ul>
 								<ul>
 									<li>
 										<h4>Description</h4>
 										<p>
-										Pioneer Platform을 기반으로 한 IT 자산 관리 프로그램을 개발하였으며, WEB과 Eg Manager를 활용한 대시보드를 구현하여 효율적인 자산 관리와 모니터링을 지원하는 시스템을 구축하였습니다.<br /><br />
-										IT 자산 관리의 효율성을 극대화하고, 실시간 데이터 분석 및 관리 기능을 제공하는 프로젝트입니다.
+											시원스쿨 일본어는 일본어 학습을 위한 전문 플랫폼으로, 기초 일본어, 일본어 회화, 일본어탭, JLPT N1/N2/N3, JPT, 일본어 문법 등 다양한 학습 콘텐츠를 제공합니다.<br /><br />
+											본 프로젝트에서는 상품 유형, 강사, 학습 기간, 가격 등 4가지 필터 조건을 적용하여, 사용자가 원하는 강좌를 효율적으로 찾아볼 수 있는 맞춤 강좌 검색 페이지를 개발하였습니다.<br /><br />
+											이를 통해 사용자 경험(UX)을 향상시키고, 보다 직관적인 학습 과정 설계를 지원하도록 최적화하였습니다.
 										</p>
 									</li>
 									<li>
-										<h4>Year</h4>
-										<p>2023</p>
+										<div className={styles.project_btn}>
+											<Link href="https://japan.siwonschool.com/?s=products&cate=3" target='_blanck'>
+												<span>VIEW PROJECT</span>
+											</Link>
+										</div>
 									</li>
 								</ul>
 							</div>
 							</FadeInMotion>
 						</article>
-						
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
-								<Image 
-									src="/images/nh_img2.png"
-									fill={true}
-									alt=""
-								/>
-							</div>
-						</div>
-						</FadeInMotion>
-
-						{/* notice */}
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<em className={styles.notice_txt}>※ 회사 시스템 소스유출 방지로 이미지로만 표시됩니다.</em>
-						</FadeInMotion>
-
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<ul className={styles.grid_40}>
-								<li className={styles.img_bg}>
-									<Image 
-										src="/images/nh_img3.png"
-										fill={true}
-										alt=""
-									/>
-								</li>
-								<li className={styles.img_bg}>
-									<Image 
-										src="/images/nh_img4.png"
-										fill={true}
-										alt=""
-									/>
-								</li>
-							</ul>
-						</div>
-						</FadeInMotion>
-						
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
-								<Image 
-									src="/images/nh_img5.png"
-									fill={true}
-									alt=""
-								/>
-							</div>
-						</div>
-						</FadeInMotion>
 					</main>
 					{/* work list button */}
 					<BackgroundMotion onInView={setIsBackgroundInView}>
 						<div className={styles.next_project_btn}>
 							<h2>
-								<Link href="/work/view/dw">
+								<Link href="/work/view/ggbaro">
 									NEXT<br />PROJECT
 								</Link>
 							</h2>

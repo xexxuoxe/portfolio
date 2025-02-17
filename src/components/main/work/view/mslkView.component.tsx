@@ -1,6 +1,6 @@
 /*
-	nh view component
-	src/component/main/work/view/nh.component.tsx
+	ggbaro view component
+	src/component/main/work/view/ggbaro.component.tsx
 */
 'use client'
 import { useState, useEffect } from 'react';
@@ -57,27 +57,33 @@ export default function WorkViewPage() {
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>
-						<FadeInMotion delay={.2} initialX={-150} initialY={0}>
-							<h1 className={styles.work_detail_title}>
-							Nonghyup</h1>
+						<FadeInMotion delay={.2} initialX={-100} initialY={0}>
+							<h1 className={styles.work_detail_title}>MSLINK&SOLUTION</h1>
 						</FadeInMotion>
 						<div className={styles.detail_sub_title}>
-							<FadeInMotion delay={0.2} initialX={-150} initialY={0}>
-								<h2>ADMIN SYSTEM</h2>
+							<FadeInMotion delay={0.2} initialX={-100} initialY={0}>
+								<h2>HOME PAGE</h2>
 							</FadeInMotion>
 							<div className={styles.sub_title_cont}>
-								<FadeInMotion delay={0.4} initialX={0} initialY={200}>
-									<h3>Nonghyup 정보 IT 자산 관리 고도화 프로젝트</h3>
+								<FadeInMotion delay={0.4} initialX={0} initialY={100}>
+									<h3>MSLINK&SOLUTION 홈페이지 구축</h3>
 								</FadeInMotion>
 							</div>
 						</div>
 					</header>
 					<main>
 						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_100} ${styles.img_bg}`}>
+						<div className={`${styles.link_page}`} style={{background: '#ffffff'}}>
+							<div className= {`${styles.grid_50}`}>
 								<Image 
-									src="/images/nh_img1.png"
+									src="/images/mslk_img01.png"
+									fill={true}
+									alt=""
+								/>
+							</div>
+							<div className= {`${styles.grid_50}`}>
+								<Image 
+									src="/images/mslk_img02.png"
 									fill={true}
 									alt=""
 								/>
@@ -86,17 +92,17 @@ export default function WorkViewPage() {
 						</FadeInMotion>
 
 						{/* detail text */}
-						<article>
-							<FadeInMotion delay={.2} initialX={-150} initialY={0}>
+						<article style={{padding: '10rem 0 20rem 0'}}>
+							<FadeInMotion delay={.2} initialX={-100} initialY={0}>
 							<div className={styles.grid_40}>
-							<ul>
+								<ul>
 									<li>
 										<h4>Type</h4>
 										<p>Web</p>
 									</li>
 									<li>
 										<h4>Project</h4>
-										<p>Admin System</p>
+										<p>홈페이지</p>
 									</li>
 									<li>
 										<h4>Participation</h4>
@@ -105,21 +111,12 @@ export default function WorkViewPage() {
 									<li>
 										<h4>Technology</h4>
 										<p>
-											<span>AdminLTE,</span>
 											<span>Html,</span>
 											<span>CSS,</span>
 											<span>Vanilla,</span>
 											<span>Jquery,</span>
+											<span>Figma,</span>
 											<span>Zeplin</span>
-										</p>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<h4>Description</h4>
-										<p>
-										Pioneer Platform을 기반으로 한 IT 자산 관리 프로그램을 개발하였으며, WEB과 Eg Manager를 활용한 대시보드를 구현하여 효율적인 자산 관리와 모니터링을 지원하는 시스템을 구축하였습니다.<br /><br />
-										IT 자산 관리의 효율성을 극대화하고, 실시간 데이터 분석 및 관리 기능을 제공하는 프로젝트입니다.
 										</p>
 									</li>
 									<li>
@@ -127,65 +124,31 @@ export default function WorkViewPage() {
 										<p>2023</p>
 									</li>
 								</ul>
+								<ul>
+									<li>
+										<h4>Description</h4>
+										<p>
+											MSLINK&SOLUTION의 홈페이지를 구축하여 회사의 서비스와 솔루션을 효과적으로 소개할 수 있는 온라인 플랫폼을 마련하였습니다.<br /><br />
+											해당 홈페이지는 사용자 친화적인 인터페이스와 최적화된 디자인을 통해 방문자들에게 회사의 핵심 가치와 솔루션을 명확하고 직관적으로 전달할 수 있도록 설계되었습니다.
+										</p>
+									</li>
+									<li>
+										<div className={styles.project_btn}>
+											<Link href="https://xexxuoxe.mycafe24.com" target='_blanck'>
+												<span>VIEW PROJECT</span>
+											</Link>
+										</div>
+									</li>
+								</ul>
 							</div>
 							</FadeInMotion>
 						</article>
-						
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
-								<Image 
-									src="/images/nh_img2.png"
-									fill={true}
-									alt=""
-								/>
-							</div>
-						</div>
-						</FadeInMotion>
-
-						{/* notice */}
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<em className={styles.notice_txt}>※ 회사 시스템 소스유출 방지로 이미지로만 표시됩니다.</em>
-						</FadeInMotion>
-
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<ul className={styles.grid_40}>
-								<li className={styles.img_bg}>
-									<Image 
-										src="/images/nh_img3.png"
-										fill={true}
-										alt=""
-									/>
-								</li>
-								<li className={styles.img_bg}>
-									<Image 
-										src="/images/nh_img4.png"
-										fill={true}
-										alt=""
-									/>
-								</li>
-							</ul>
-						</div>
-						</FadeInMotion>
-						
-						<FadeInMotion delay={.2} initialX={0} initialY={200}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_80} ${styles.img_bg}`}>
-								<Image 
-									src="/images/nh_img5.png"
-									fill={true}
-									alt=""
-								/>
-							</div>
-						</div>
-						</FadeInMotion>
 					</main>
 					{/* work list button */}
 					<BackgroundMotion onInView={setIsBackgroundInView}>
 						<div className={styles.next_project_btn}>
 							<h2>
-								<Link href="/work/view/dw">
+								<Link href="/work/view/nh">
 									NEXT<br />PROJECT
 								</Link>
 							</h2>

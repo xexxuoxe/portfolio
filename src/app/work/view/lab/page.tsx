@@ -1,14 +1,14 @@
 /*
-	siwonLab View page
-	src/app/work/view/siwonLab/page.tsx
+	lab View page
+	src/app/work/view/lab/page.tsx
 */
-import SiwonLabViewPage from '@components/main/work/view/siwonLabView.component';
+import LabViewPage from '@components/main/work/view/labView.component';
 
 export default function WorkPage() {
 
 	return (
 		<>
-			<SiwonLabViewPage/>
+			<LabViewPage/>
 		</>
 	);
 }

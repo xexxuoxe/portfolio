@@ -1,6 +1,6 @@
 /*
-	siwonLab view component
-	src/component/main/work/view/siwonLabView.component.tsx
+	ggbaro view component
+	src/component/main/work/view/ggbaro.component.tsx
 */
 'use client'
 import { useState, useEffect } from 'react';
@@ -58,62 +58,83 @@ export default function WorkViewPage() {
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>
 						<FadeInMotion delay={.2} initialX={-100} initialY={0}>
-							<h1 className={styles.work_detail_title}>SIWONSCHOOL</h1>
+							<h1 className={styles.work_detail_title}>DW Partners</h1>
 						</FadeInMotion>
 						<div className={styles.detail_sub_title}>
 							<FadeInMotion delay={0.2} initialX={-100} initialY={0}>
-								<h2>EDUCATION WEBSITE</h2>
+								<h2>HOME PAGE</h2>
 							</FadeInMotion>
 							<div className={styles.sub_title_cont}>
 								<FadeInMotion delay={0.4} initialX={0} initialY={100}>
-									<h3>시험영어 인터넷 강의 전문 사이트, 토익/토스/오픽/지텔프/아이엘츠/토플/텝스/SPA 시험영어 전문으로 이루어진 사이트이다.</h3>
+									<h3>법무법인 두우 홈페이지 구축</h3>
 								</FadeInMotion>
 							</div>
 						</div>
 					</header>
-					<main className={styles.link_page}>
-						<div className={styles.row}>
-							<div className= {`${styles.grid_90} ${styles.img_bg}`}>
+					<main>
+						<FadeInMotion delay={.2} initialX={0} initialY={200}>
+						<div className={`${styles.link_page}`} style={{background: '#dcdcdc'}}>
+							<div className= {`${styles.grid_50}`}>
 								<Image 
-									src="/images/korloy_img1.png"
+									src="/images/dw_img01.png"
+									fill={true}
+									alt=""
+								/>
+							</div>
+							<div className= {`${styles.grid_50}`}>
+								<Image 
+									src="/images/dw_img02.png"
 									fill={true}
 									alt=""
 								/>
 							</div>
 						</div>
+						</FadeInMotion>
 
 						{/* detail text */}
-						<article>
+						<article style={{padding: '10rem 0 20rem 0'}}>
 							<FadeInMotion delay={.2} initialX={-100} initialY={0}>
 							<div className={styles.grid_40}>
 								<ul>
 									<li>
-										<h4>설명</h4>
-										<p>설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다설명입니다</p>
+										<h4>Type</h4>
+										<p>Web</p>
 									</li>
 									<li>
-										<h4>유형</h4>
-										<p>Mobile</p>
+										<h4>Project</h4>
+										<p>홈페이지</p>
 									</li>
 									<li>
-										<h4>프로젝트트</h4>
-										<p>사내 서비스</p>
+										<h4>Participation</h4>
+										<p>Front : 100%</p>
 									</li>
 									<li>
-										<h4>참여도</h4>
-										<p>프론트 100%</p>
+										<h4>Technology</h4>
+										<p>
+											<span>Php,</span>
+											<span>CSS,</span>
+											<span>Vanilla,</span>
+											<span>Jquery,</span>
+											<span>Figma,</span>
+											<span>Zeplin,</span>
+										</p>
 									</li>
 									<li>
-										<h4>라이브러리</h4>
-										<p></p>
+										<h4>Year</h4>
+										<p>2023</p>
 									</li>
+								</ul>
+								<ul>
 									<li>
-										<h4>제작년도</h4>
-										<p>2024년 09월</p>
+										<h4>Description</h4>
+										<p>
+											법무법인 두우는 변호사 회사로, 해당 홈페이지를 구축하여 법률 서비스와 솔루션을 효과적으로 소개하는 온라인 플랫폼을 마련하였습니다.<br /><br />
+											홈페이지는 사용자 친화적인 인터페이스와 최적화된 디자인을 통해 방문자들에게 법무법인의 핵심 가치와 법률 서비스를 명확하고 직관적으로 전달할 수 있도록 설계되었습니다.
+										</p>
 									</li>
 									<li>
 										<div className={styles.project_btn}>
-											<Link href="https://lab.siwonschool.com/m/?s=products" target='_blanck'>
+											<Link href="http://www.lawdw.com/" target='_blanck'>
 												<span>VIEW PROJECT</span>
 											</Link>
 										</div>
@@ -125,20 +146,12 @@ export default function WorkViewPage() {
 					</main>
 					{/* work list button */}
 					<BackgroundMotion onInView={setIsBackgroundInView}>
-						<div className={styles.next_project_btn}>
-							<h2>
-								<Link href="/work/list">
-									NEXT<br />PROJECT
-								</Link>
-							</h2>
+						<div className={` ${styles.work_view_btn} ${styles.all_project_btn}`}>
+							<Link href="/work/list">
+								<span>VIEW ALL PROJECTS</span>
+							</Link>
 						</div>
 					</BackgroundMotion>
-					{/* all work list button */}
-					<div className={` ${styles.work_view_btn} ${styles.all_project_btn}`}>
-						<Link href="">
-							<span>VIEW ALL PROJECTS</span>
-						</Link>
-					</div>
 				</div>
 			</motion.div>
 		</>

@@ -7,7 +7,7 @@
 .work_view {
 	position: absolute;
     width: calc(100% - 10rem);
-    background: #f0f3ff;
+    background: #f6f7f9;
 	transition: all .5s;
     transition-delay: 0s;
     overflow-x: hidden;
@@ -23,6 +23,12 @@
 			color: #fff !important;
 			transition: .3s;
 			transition-delay: .3s;
+
+			.project_btn {
+				a {
+					border-bottom: 1px solid #fff !important;
+				}
+			}
 		}
 	}
 
@@ -110,28 +116,22 @@
 		}
 		// main
 		main {
-			width: 100%;
 
-			&.link_page {
+			.link_page {
+
+				position: relative;
 				@include flex('between');
 				align-items: flex-start;
-
-				.row {
-					width: 70%;
-				}
-
-				article {
-					width: 30%;
-					margin: inherit;
-				}
-
+				width: calc(100% - 10rem);
+				left: -5rem;
+				padding: 10rem;
 			}
-
+			
 			.notice_txt {
 				display: inline-block;
 				width: 100%;
-				font-size: 1.2rem;
-				font-weight: 700;
+				font-size: 1.1rem;
+				font-weight: 100;
 				text-align: center;
 				padding: 5rem 0;
 				color: #333;
@@ -145,8 +145,8 @@
 			.grid_100 {
 				position: relative;
 				width: calc(100% + 10rem);
+				height: 63rem;
 				left: -5rem;
-				height: 61rem;
 			}
 			
 			.grid_90 {
@@ -179,6 +179,13 @@
 				margin: auto;
 			}
 
+			.grid_50 {
+				position: relative;
+				width: 49%;
+				height: 30rem;
+				filter: drop-shadow(0 4px 12px #00000029);
+			}
+
 			.grid_40 {
 				@include flex('between');
 				align-items: flex-start;
@@ -190,6 +197,15 @@
 					width: 49%;
 					height: 32rem;
 				}
+			}
+
+			.grid_30 {
+				position: relative;
+				width: 30%;
+				height: 72rem;
+				filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
+				border-radius: 20px;
+    			overflow: hidden;
 			}
 
 			article {
@@ -218,8 +234,14 @@
 							p {
 								font-weight: 500;
 							}
+
+							span {
+								display: inline-block;
+								padding: 0 1rem 0 0;
+							}
 	
 							.project_btn {
+								margin-top: 3rem;
 	
 								a {
 									padding: 1rem 2rem 1rem;
