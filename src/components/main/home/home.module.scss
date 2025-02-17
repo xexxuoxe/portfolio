@@ -34,7 +34,7 @@
 		transition-delay: .5s;
 	}
 	&.active02 {
-		background: #7087f7;
+		background: #000;
 		transition: .5s;
 		transition-delay: .5s;
 
@@ -89,7 +89,7 @@
 	}
 	// slider
 	.info_slide {
-		width: 1000px;
+		width: 80%;
 		padding: 10rem 0 7rem;
 		margin: auto;
 
@@ -111,7 +111,7 @@
 						transform: translateY(30%);
 
 						&.fadeIn {
-							animation: aniFade 5s ease-in-out forwards;
+							animation: aniFade 4s ease-in-out forwards;
 						}
 					}
 
