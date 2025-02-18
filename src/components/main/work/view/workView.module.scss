@@ -126,14 +126,14 @@
 				align-items: flex-start;
 				width: calc(100% - 5vw);
 				left: -5vw;
-				padding: 10rem;
+				padding: 10vw;
 				margin-top: 3vw;
 			}
 
 			.notice_txt {
 				display: inline-block;
 				width: 100%;
-				font-size: 1.1rem;
+				font-size: clamp(1rem, 2vw, 1.1rem); 
 				font-weight: 100;
 				text-align: center;
 				padding: 5rem 0;
@@ -150,12 +150,22 @@
 				width: calc(100% + 10rem);
 				height: 63rem;
 				left: -5rem;
+
+				@media (max-width: 768px) {
+					width: 100%;
+					left: 0;
+				}
 			}
 
 			.grid_90 {
 				position: relative;
 				width: 90%;
 				height: 50rem;
+
+				@media (max-width: 768px) {
+					width: 100%;
+					height: 40rem; 
+				}
 			}
 
 			.grid_80 {
@@ -173,6 +183,11 @@
 					margin: inherit;
 					margin-left: auto;
 				}
+
+				@media (max-width: 768px) {
+					width: 100%;
+					height: 35rem;
+				}
 			}
 
 			.grid_60 {
@@ -180,6 +195,11 @@
 				width: 60%;
 				height: 42rem;
 				margin: auto;
+
+				@media (max-width: 768px) {
+					width: 100%;
+					height: 30rem;
+				}
 			}
 
 			.grid_50 {
@@ -187,6 +207,11 @@
 				width: 49%;
 				height: 30rem;
 				filter: drop-shadow(0 4px 12px #00000029);
+
+				@media (max-width: 768px) {
+					width: 100%;
+					height: 25rem;
+				}
 			}
 
 			.grid_40 {
@@ -199,6 +224,16 @@
 					position: relative;
 					width: 49%;
 					height: 32rem;
+
+					@media (max-width: 768px) {
+						width: 100%; 
+						height: 20rem;
+					}
+				}
+
+				@media (max-width: 768px) {
+					display: block;
+					width: 100%;
 				}
 			}
 
@@ -209,8 +244,12 @@
 				filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
 				border-radius: 20px;
 				overflow: hidden;
-			}
 
+				@media (max-width: 768px) {
+					width: 100%;
+					height: clamp(6rem, 40rem, 80rem);
+				}
+			}
 			article {
 				width: 70%;
 				margin: auto;
