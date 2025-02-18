@@ -6,15 +6,15 @@
 /* info */
 .work_view {
 	position: absolute;
-    width: calc(100% - 10vw);
+	width: calc(100% - 10vw);
 	min-width: 1000px;
-	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 10rem) clamp(5rem, 10vw, 10rem);
+	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 5vw) clamp(5rem, 10vw, 10rem);
 	font-size: clamp(1rem, 1.5vw, 1.2rem);
-    background: #f0f3ff;
+	background: #f0f3ff;
 	transition: all .5s;
-    transition-delay: 0s;
-    overflow-x: hidden;
-    z-index: 10;
+	transition-delay: 0s;
+	overflow-x: hidden;
+	z-index: 10;
 
 
 	&.active {
@@ -36,7 +36,7 @@
 	}
 
 	//next page button 
-	.work_view_btn, 
+	.work_view_btn,
 	.project_btn {
 
 		a {
@@ -45,13 +45,13 @@
 			padding: 1.5rem 2rem 1.5rem;
 			border-bottom: 2px solid #000;
 			margin: auto;
-			
+
 			span {
 				display: block;
 				font-size: 2rem;
 				color: #000;
 			}
-			
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -66,13 +66,13 @@
 				transition-duration: 380ms;
 				z-index: -1;
 			}
-			
+
 			&:hover {
 				text-decoration: none;
 
-				&::before{
+				&::before {
 					transform: scaleY(1);
-					
+
 				}
 			}
 		}
@@ -96,13 +96,13 @@
 				align-items: flex-start;
 				line-height: clamp(1.5rem, 2.2vw, 2.0625rem);
 				color: #242532;
-	
+
 				h2 {
 					font-size: clamp(2rem, 1vw, 2rem);
 					font-weight: 700;
 					line-height: 1;
 				}
-	
+
 				.sub_title_cont {
 					padding-left: clamp(2rem, 5vw, 7rem);
 
@@ -116,6 +116,7 @@
 				}
 			}
 		}
+
 		// main
 		main {
 
@@ -128,7 +129,7 @@
 				padding: 10rem;
 				margin-top: 3vw;
 			}
-			
+
 			.notice_txt {
 				display: inline-block;
 				width: 100%;
@@ -150,7 +151,7 @@
 				height: 63rem;
 				left: -5rem;
 			}
-			
+
 			.grid_90 {
 				position: relative;
 				width: 90%;
@@ -207,7 +208,7 @@
 				height: clamp(8.8rem, 72rem, 102rem);
 				filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
 				border-radius: 20px;
-    			overflow: hidden;
+				overflow: hidden;
 			}
 
 			article {
@@ -221,33 +222,35 @@
 					ul {
 						width: 50%;
 						font-size: 1.2rem;
-	
+
 						li {
 							width: auto !important;
 							height: auto !important;
 							padding-bottom: 1.4rem;
-							line-height: 2.2rem;
-	
+							line-height: clamp(1rem, 2vw, 6.2rem);
+
 							h4 {
 								font-weight: 800;
-								
+								font-size: clamp(1rem, 1vw, 5.2rem);
+
 							}
-	
+
 							p {
 								font-weight: 300;
+								font-size: clamp(1rem, 1vw, 5.2rem);
 							}
 
 							span {
 								display: inline-block;
 								padding: 0 1rem 0 0;
 							}
-	
+
 							.project_btn {
 								margin-top: 3rem;
-	
+
 								a {
 									padding: 1rem 2rem 1rem;
-	
+
 									span {
 										font-size: 1.4rem;
 										font-weight: 700;
@@ -259,6 +262,7 @@
 				}
 			}
 		}
+
 		// work list button
 		.next_project_btn {
 			text-align: center;
@@ -268,7 +272,7 @@
 				transition: transform .3s;
 
 				a {
-					font-size: clamp(3.8rem,calc(-1.675rem + 13.375vw),14.375rem);
+					font-size: clamp(3.8rem, 12.375vw - 1.675rem, 23.375rem);
 					color: transparent !important;
 					transition: color 0s;
 					-webkit-text-stroke: 5px #fff;
@@ -280,25 +284,29 @@
 					transition: transform .3s;
 
 					a {
-						color:#fff !important;
+						color: #fff !important;
 						transition: color 0s;
 						-webkit-text-stroke: 5px #fff;
 					}
-				}	
+				}
 			}
 		}
+
 		// all work list button
 		.all_project_btn {
 			text-align: center;
+
 			a {
 				border-bottom: 2px solid #fff;
-				
+				font-size: clamp(1rem, 2vw, 1.2rem);
+				padding: clamp(0.5rem, 2vw, 1rem);
+
 				span {
 					font-weight: 700;
+					font-size: clamp(1rem, 1.6vw, 2.2rem)
 				}
 
 				&:hover {
-					
 					span {
 						color: #333 !important;
 						transition: 0s;

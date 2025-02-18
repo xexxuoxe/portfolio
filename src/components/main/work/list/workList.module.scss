@@ -8,7 +8,7 @@
 	position: absolute;
     width: calc(100% - 10vw);
 	min-width: 1000px;
-	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 10rem) clamp(5rem, 10vw, 10rem);
+	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 5vw) clamp(5rem, 10vw, 10rem);
 	font-size: clamp(1rem, 1.5vw, 1.2rem);
     background: #f0f3ff;
 	transition: all .5s;
@@ -92,7 +92,7 @@
 							position: relative;
 							display: block;
 							width: 100%;
-							height: clamp(20rem, 30vw, 28rem);
+							height: clamp(20rem, 30vw, 32rem);
 							border-radius: 5px;
 							overflow: hidden;
 
