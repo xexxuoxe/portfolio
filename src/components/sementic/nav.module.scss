@@ -1,43 +1,53 @@
 @import '@styles/abstracts/_mixins';
+@import '@styles/abstracts/_mixins';
 
 #navigation {
 	position: fixed;
 	width: 100%;
-	height: 6rem;
+	min-width: 1000px;
+	height: clamp(4rem, 8vw, 6rem); 
 	top: 0;
 	left: 0;
 	backdrop-filter: blur(12px);
 	z-index: 49;
+
 	.inner_wrap {
 		@include flex($align: 'center');
-		width: 28%;
+		width: clamp(40%, 45vw, 23%);
 		height: 100%;
 		margin-left: auto;
+
 		.nav_menu {
 			@include flex($align: 'center');
-			width : 100%;
+			width: 100%;
 			height: 100%;
+
 			li {
 				position: relative;
-				width: 17%;
+				width: clamp(15%, 12vw, 11%);
 				height: 100%;
-				&:hover, &:focus, &:active {
-					> a {
+
+				&:hover,
+				&:focus,
+				&:active {
+					>a {
 						color: #000;
 						text-decoration: underline;
 					}
-					> .sub_menu {
+
+					>.sub_menu {
 						display: block;
 					}
 				}
+
 				a {
 					@include flex($align: 'center');
 					width: 100%;
 					height: 100%;
-					font-size: 1.08rem;
+					font-size: clamp(0.9rem, 1.2vw, 1.08rem);
 					font-weight: 600;
 					text-align: center;
-					font-family: 'Helvetica Neue';
+					font-family: 'Helvetica Neue', 'Spoqa Han Sans Neo';
 					transition: color 0.3s;
 				}
 			}

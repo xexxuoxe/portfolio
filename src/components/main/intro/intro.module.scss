@@ -8,6 +8,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	min-width: 1000px;
 	height: 100vh;
 	background: #f6f6f6;
 	z-index: 1;
@@ -29,7 +30,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                font-size: 8.13rem;
+                font-size: clamp(4.5rem, 8vw, 8.13rem);
                 color: #f0f3ff;
                 -webkit-text-stroke: 1.5px #0c0c0e;
                 font-weight: 400;
@@ -53,13 +54,17 @@
 
     .follow {
 		position: fixed;
-		width: 3rem;
-		height: 3rem;
-		background-color: rgba(191, 108, 199, 0.712);
-		color: white;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		width: clamp(3rem, 4.2vw, 4rem); 
+		height: clamp(3rem, 4.2vw, 4rem);
+		background-color: #4467a2;
+		font-size: clamp(0.5rem, 0.7vw, 0.7rem);
+		font-weight: 300;
+		font-family: 'Helvetica Neue' , 'Spoqa Han Sans Neo';
+		color: white;
+		text-align: center;
 		border-radius: 50%;
 		pointer-events: none;
     }

@@ -6,13 +6,16 @@
 /* info */
 .work_view {
 	position: absolute;
-    width: calc(100% - 10rem);
-    background: #f6f7f9;
+    width: calc(100% - 10vw);
+	min-width: 1000px;
+	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 10rem) clamp(5rem, 10vw, 10rem);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+    background: #f0f3ff;
 	transition: all .5s;
     transition-delay: 0s;
     overflow-x: hidden;
     z-index: 10;
-    padding: 20rem 5rem 10rem;
+
 
 	&.active {
 		background: #000;
@@ -76,40 +79,39 @@
 	}
 
 	.work_detail_veiw {
+
 		header {
 
 			.work_detail_title {
-				font-size: clamp(3.8rem,calc(-1.675rem + 13.375vw),14.375rem);
+				font-size: clamp(8.8rem, calc(-1.675rem + 13.375vw), 14.375rem);
 				font-weight: 700;
 				line-height: 2.375rem;
-				margin-bottom: 10rem;
-				font-family: 'Helvetica Neue';
+				margin-bottom: clamp(4.8rem, 11.375vw - 1.675rem, 14.375rem);
 				text-transform: uppercase !important;
 				letter-spacing: -1.6rem;
-				transform: translateX(-20px);
 			}
 
 			.detail_sub_title {
 				@include flex();
 				align-items: flex-start;
-				line-height: 2.0625rem;
+				line-height: clamp(1.5rem, 2.2vw, 2.0625rem);
 				color: #242532;
 	
 				h2 {
-					font-size: 2rem;
+					font-size: clamp(2rem, 1vw, 2rem);
 					font-weight: 700;
-					font-family: 'Helvetica Neue';
+					line-height: 1;
 				}
 	
 				.sub_title_cont {
-					padding-left: 7rem;
-	
-					h3, h5 {
-						padding-bottom: 1.3rem;
-					}
-					
+					padding-left: clamp(2rem, 5vw, 7rem);
+
+					h3,
 					h5 {
-						font-weight: 100;
+						padding-bottom: clamp(.8rem, 5.5vw, 1.3rem);
+						font-size: clamp(1.2rem, 1vw, 2rem);
+						font-weight: 300;
+						line-height: 1.2;
 					}
 				}
 			}
@@ -118,13 +120,13 @@
 		main {
 
 			.link_page {
-
 				position: relative;
 				@include flex('between');
 				align-items: flex-start;
-				width: calc(100% - 10rem);
-				left: -5rem;
+				width: calc(100% - 5vw);
+				left: -5vw;
 				padding: 10rem;
+				margin-top: 3vw;
 			}
 			
 			.notice_txt {
@@ -202,7 +204,7 @@
 			.grid_30 {
 				position: relative;
 				width: 30%;
-				height: 72rem;
+				height: clamp(8.8rem, 72rem, 102rem);
 				filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
 				border-radius: 20px;
     			overflow: hidden;
@@ -232,7 +234,7 @@
 							}
 	
 							p {
-								font-weight: 500;
+								font-weight: 300;
 							}
 
 							span {

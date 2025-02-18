@@ -1,32 +1,34 @@
-// hooks/smooth.hook.ts
+// lib/scroll/smooth.componen.tsx
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, FC } from 'react';
 import Scrollbar from 'smooth-scrollbar';
 
 interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
-const SmoothScroll = ({ children }: SmoothScrollProps) => {
+const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollbarInstance = useRef<Scrollbar | null>(null);
 
   useEffect(() => {
     if (scrollRef.current) {
-      Scrollbar.init(scrollRef.current, {
+      scrollbarInstance.current = Scrollbar.init(scrollRef.current, {
         damping: 0.1,
         thumbMinSize: 20,
         renderByPixels: true,
         alwaysShowTracks: false,
         continuousScrolling: true
       });
-
-      return () => {
-        if (scrollRef.current) {
-          Scrollbar.destroy(scrollRef.current);
-        }
-      };
     }
+
+    return () => {
+      if (scrollbarInstance.current) {
+        scrollbarInstance.current.destroy();
+        scrollbarInstance.current = null;
+      }
+    };
   }, []);
 
   return (

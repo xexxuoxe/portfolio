@@ -10,7 +10,7 @@
 }
   
 .blind_base {
-	@include blind-style(#7087f7);
+	@include blind-style(#a3bded);
 }
 
 .blind_mint {
@@ -31,4 +31,12 @@
 
 .blind_pastel_blue {
 	@include blind-style(#4A90E2);
+}
+
+.blind_dark_blue {
+	@include blind-style(#9eaab7);
+}
+
+.blind_white_blue {
+	@include blind-style(#e3e4ff);
 }

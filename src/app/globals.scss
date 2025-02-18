@@ -6,37 +6,34 @@ $font-size-base: 16px;
 $line-height-base: inherit;
 $color-text: #141414;
 $color-link: #000;
+$base_width : 1200px;
 
 // SpoqaHan 폰트 정의 
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Thin.otf", 100, "opentype");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Thin.ttf", 100, "ttf");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Thin.eot", 100, "eot");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Thin.woff", 100, "woff");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Thin.woff2", 100, "woff2");
-
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Light.otf", 300, "opentype");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Light.ttf", 300, "ttf");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Light.eot", 300, "eot");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Light.woff", 300, "woff");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Light.woff2", 300, "woff2");
-
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Regular.otf", 400, "opentype");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Regular.ttf", 400, "ttf");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Regular.eot", 400, "eot");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Regular.woff", 400, "woff");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Regular.woff2", 400, "woff2");
-
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Medium.otf", 500, "opentype");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Medium.ttf", 500, "ttf");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Medium.eot", 500, "eot");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Medium.woff", 500, "woff");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Medium.woff2", 500, "woff2");
-
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Bold.otf", 600, "opentype");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Bold.ttf", 600, "ttf");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Bold.eot", 600, "eot");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Bold.woff", 600, "woff");
-@include font-face("Spoqa Han Sans Neo", "/public/fonts/SpoqaHanSansNeo-Bold.woff2", 600, "woff2");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.otf", 100, "opentype");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.ttf", 100, "ttf");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.eot", 100, "eot");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.woff", 100, "woff");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.woff2", 100, "woff2");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.otf", 300, "opentype");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.ttf", 300, "ttf");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.eot", 300, "eot");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.woff", 300, "woff");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.woff2", 300, "woff2");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.otf", 400, "opentype");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.ttf", 400, "ttf");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.eot", 400, "eot");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.woff", 400, "woff");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.woff2", 400, "woff2");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.otf", 500, "opentype");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.ttf", 500, "ttf");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.eot", 500, "eot");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.woff", 500, "woff");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.woff2", 500, "woff2");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.otf", 600, "opentype");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.ttf", 600, "ttf");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.eot", 600, "eot");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.woff", 600, "woff");
+@include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.woff2", 600, "woff2");
 
 // Reset and base styles
 body, form, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, fieldset, th, td, input, textarea, button, select {
@@ -59,7 +56,11 @@ html, body {
     background:#ffd810;
     color:#000;
     text-shadow: none;
-}
+  }
+
+  * {
+		font-family: 'Helvetica Neue' , 'Spoqa Han Sans Neo';
+	}
 }
 
 li { list-style: none; }

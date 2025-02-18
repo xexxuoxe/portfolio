@@ -71,7 +71,9 @@ export default function IntroItemPage() {
 						<h1 className={styles.title}>Projects</h1>
 					</div>
 				</div>
-				<div className={styles.follow} ref={followRef} />
+				<div className={styles.follow} ref={followRef}>
+				VIEW<br />PROJECT
+				</div>
 			</div>
 			<div className={styles.loader_window} ref={loaderRef}></div>
 		</>

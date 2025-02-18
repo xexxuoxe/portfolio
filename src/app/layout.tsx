@@ -1,3 +1,4 @@
+'use client';
 
 // import type { Metadata } from 'next'
 import { Suspense } from 'react';
@@ -9,7 +10,7 @@ import { LoadingProvider } from '@lib/loading/loading.context';
 import { MetaProvider } from '@components/sementic/siwon/meta.component';
 import NavComponent from '@components/sementic/nav.component'
 import { ResponsiveProvider } from '@lib/context/responsive.context';
-import Scrollbar from '@hooks/scroll/smooth.hook';
+import SmoothScroll from '@lib/scroll/smooth.componen';
 import './globals.scss'
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
@@ -24,10 +25,10 @@ export default function RootLayout({ children }: Readonly<{children: React.React
 									<LoadingProvider>
 										<Suspense fallback={ <Loading /> }>
 											<ResponsiveProvider>
+												{/* <SmoothScroll> */}
 													<NavComponent />
-													<Scrollbar>
-														{children}
-													</Scrollbar>
+													{children}
+												{/* </SmoothScroll> */}
 											</ResponsiveProvider>
 										</Suspense>
 									</LoadingProvider>

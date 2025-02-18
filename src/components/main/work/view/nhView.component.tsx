@@ -35,7 +35,7 @@ export default function WorkViewPage() {
 			{/* loader */}
 			<Loader
 				className=''
-				variant="blind_base"
+				variant="blind_mint"
 				onComplete={ handleLoaderComplete }
 			/>
 			{/* work_view container */}
