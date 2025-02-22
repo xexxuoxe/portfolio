@@ -1,6 +1,7 @@
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import styles from './aboutSection.module.scss';
 
+
 export const AboutSection = () => {
   return (
     <div className={`${styles.work_detail} ${styles.work_container}`}>

@@ -4,6 +4,7 @@ import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import { PROJECTS_LIST } from '../constants/projectList';
 import styles from './project.module.scss';
 
+
 export const Project = () => {
   return (
     <div className={styles.main_content}>

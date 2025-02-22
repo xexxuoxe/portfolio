@@ -1,6 +1,7 @@
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import styles from './skillInfo.module.scss';
 
+
 export const SkillInfo = () => {
 
   return (

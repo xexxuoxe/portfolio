@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { SKILL_LOGOS } from '../constants/skillLogs';
 import styles from './skill.module.scss';
 
+
 export const Skill = () => {
   const [animating, setAnimating] = useState(false);
 
