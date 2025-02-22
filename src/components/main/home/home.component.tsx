@@ -1,6 +1,6 @@
 /*
 	Info component
-	src/component/main/info/info.component.tsx
+	src/component/main/info/info.component.tsx 
 */
 'use client'
 import { useState, useCallback, useEffect } from 'react';
@@ -144,7 +144,7 @@ export default function HomeItemPage() {
 				</path>
 			</svg>
 		</div>
-	)
+	);
 
 	return (
 		<>
