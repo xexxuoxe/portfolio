@@ -44,6 +44,7 @@ export default function HomeItemPage() {
 		setAnimating(false);
 		setTimeout(() => setAnimating(true), 50);
 	}, []);
+	
 	//slider array
 	const logos = [
 		{
