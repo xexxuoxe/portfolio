@@ -86,18 +86,8 @@ export default function InfoItemPage() {
 			{/* info_view container */}
 			<motion.div 
 				className={`${styles.info_view} ${ isBackgroundInView ? styles.active : ''}`}
-				initial={{ 
-					display: "none",  
-					y: "100%" 
-				}}
-				animate={{ 
-					display: "block", 
-					y: showContent ? 0 : "100%",
-					transition: { 
-						duration: .1,
-						ease: "easeOut"
-					}
-				}}
+				initial={{ display: 'none', y: '100%' }}
+				animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
 			>
 				{/* about */}
 				<div className={`${styles.info_detail} ${styles.info_container}`}>

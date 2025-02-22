@@ -9,8 +9,8 @@ import { AlertProvider } from '@lib/alert/alert.context';
 import { LoadingProvider } from '@lib/loading/loading.context';
 import NavComponent from '@components/sementic/nav.component'
 import { ResponsiveProvider } from '@lib/context/responsive.context';
-// import SmoothScroll from '@lib/scroll/smooth.component';
-import SmoothScroll from '@lib/scroll/index';
+ import SmoothScroll from '@lib/scroll/smooth.component';
+//import SmoothScroll from '@lib/scroll/index';
 import './globals.scss'
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {

@@ -154,18 +154,8 @@ export default function WorkListPage() {
 			{/* work_view container */}
 			<motion.div 
 				className={`${styles.work_view} ${ isBackgroundInView ? styles.active : ''}`}
-				initial={{ 
-					display: "none",  
-					y: "100%" 
-				}}
-				animate={{ 
-					display: "block", 
-					y: showContent ? 0 : "100%",
-					transition: { 
-						duration: .1,
-						ease: "easeOut"
-					}
-				}}
+				initial={{ display: 'none', y: '100%' }}
+				animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
 			>
 				{/* work */}
 				<div className={`${styles.work_detail} ${styles.work_container}`}>

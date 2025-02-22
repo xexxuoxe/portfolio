@@ -1,7 +1,8 @@
+// lib/scroll/smooth.componen.tsx
 'use client';
 
 import { useEffect, useRef, FC } from 'react';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+import Scrollbar from 'smooth-scrollbar';
 
 interface SmoothScrollProps {
   children: React.ReactNode;
@@ -9,30 +10,29 @@ interface SmoothScrollProps {
 
 const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const locomotiveScrollRef = useRef<any>(null);
+  const scrollbarInstance = useRef<Scrollbar | null>(null);
 
   useEffect(() => {
-    if (!scrollRef.current) return;
-
-    // 동적 임포트
-    (async () => {
-      const LocomotiveScroll = (await import('locomotive-scroll')).default;
-      
-      locomotiveScrollRef.current = new LocomotiveScroll({
-        el: scrollRef.current!,
-        smooth: true,
-        multiplier: 1,
-        lerp: 0.1
+    if (scrollRef.current) {
+      scrollbarInstance.current = Scrollbar.init(scrollRef.current, {
+        damping: 0.1,
+        thumbMinSize: 20,
+        renderByPixels: true,
+        alwaysShowTracks: false,
+        continuousScrolling: true
       });
-    })();
+    }
 
     return () => {
-      locomotiveScrollRef.current?.destroy();
+      if (scrollbarInstance.current) {
+        scrollbarInstance.current.destroy();
+        scrollbarInstance.current = null;
+      }
     };
   }, []);
 
   return (
-    <div ref={scrollRef} data-scroll-container>
+    <div ref={scrollRef} style={{ height: '100vh', overflow: 'hidden' }}>
       {children}
     </div>
   );

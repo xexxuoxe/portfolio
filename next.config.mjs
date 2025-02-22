@@ -11,6 +11,7 @@ const nextConfig = {
   },
   webpack: (config) => {
     config.resolve.alias['@styles'] = path.join(__dirname, 'src/styles');
+    config.resolve.alias['locomotive-scroll'] = require.resolve('locomotive-scroll');
     return config;
   },
   images: {
