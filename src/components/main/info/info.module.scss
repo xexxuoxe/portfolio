@@ -101,9 +101,8 @@
 	
 	// slider
 	.info_slide {
-		width: 80%;
-		padding: clamp(5rem, 10vw, 10rem);
-		margin: auto;
+		position: relative;
+		width: 100%;
 
 		.skill_swiper {
 			width: 100%;
@@ -114,15 +113,14 @@
 
 				.slide_wrapper {
 					width: 33.333%;
-					padding: clamp(3rem, 6vw, 5rem) 0;
 					text-align: center;
 					margin: 0 auto;
 
 					img {
-						width: auto;
-						height: auto;
-						opacity: 0;
+						width: inherit;
+						height: inherit;
 						transform: translateY(30%);
+						opacity: 0;
 
 						&.fadeIn {
 							animation: aniFade 4s ease-in-out forwards;

@@ -1,58 +1,33 @@
-/*
-	lgchem view component
-	src/component/main/work/view/lgchem.component.tsx
-*/
 'use client'
+
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-// animation
 import { motion } from 'framer-motion';
-// component
+import { useLoader } from '../hooks/useLoader';
+
 import Loader from'@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
-// style
+
 import styles from './workView.module.scss';
 
 
 export default function WorkViewPage() {
 
-	const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
-	const [showContent, setShowContent] = useState<boolean>(false);
-	const [animating, setAnimating] = useState<boolean>(false);
+	const { showContent, handleLoaderComplete } = useLoader();
 	const [isBackgroundInView, setIsBackgroundInView] = useState(false);
-
-	// loader
-	const handleLoaderComplete = (): void => {
-		setIsLoaderDone(true);
-	  	setShowContent(true);
-	}
 
 	// HTML
 	return (
 		<>
 			{/* loader */}
 			<Loader
-				className=''
-				variant="blind_orange"
-				onComplete={ handleLoaderComplete }
-			/>
-			{/* work_view container */}
+				className='' variant="blind_dark_blue" onComplete={ handleLoaderComplete }/>
 			<motion.div 
 				className={` ${styles.work_view} ${ isBackgroundInView ? styles.active : ''}`}
-				initial={{ 
-					display: "none",  
-					y: "100%" 
-				}}
-				animate={{ 
-					display: "block", 
-					y: showContent ? 0 : "100%",
-					transition: { 
-						duration: .3,
-						ease: "easeOut"
-					}
-				}}
+				initial={{ display: "none",	y: "100%" }}
+				animate={{ display: "block", y: showContent ? 0 : "100%", transition: { duration: .3, ease: "easeOut"}}}
 			>
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>

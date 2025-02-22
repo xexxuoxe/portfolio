@@ -24,10 +24,10 @@ export default function RootLayout({ children }: Readonly<{children: React.React
 							<LoadingProvider>
 								<Suspense fallback={ <Loading /> }>
 									<ResponsiveProvider>
-										<SmoothScroll>
+										{/* <SmoothScroll> */}
 											<NavComponent />
 											{children}
-										</SmoothScroll>
+										{/* </SmoothScroll> */}
 									</ResponsiveProvider>
 								</Suspense>
 							</LoadingProvider>

@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 
 const FadeInMotion = ({ children, delay = 0, initialX = 100, initialY = 100, initialClip = 0}) => {
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    //triggerOnce: true,
     threshold: 0,
   });
 

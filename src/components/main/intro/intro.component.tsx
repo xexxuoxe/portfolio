@@ -1,8 +1,5 @@
-/*
-	intro component
-	src/component/main/intro/intro.component.tsx
-*/
 'use client'
+
 import gsap from "gsap";
 import { useRef } from 'react';
 import { useGSAP } from "@gsap/react";

@@ -60,7 +60,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "src/components/main/work/components/SubProject.tsx"  ],
   "exclude": [
     "node_modules"
   ]
