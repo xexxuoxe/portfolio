@@ -129,18 +129,13 @@ export default function InfoItemPage() {
 				<div className={styles.info_slide}>
 					<Swiper
 						className={styles.skill_swiper}
-						modules={[ Autoplay, EffectFade ]}
-						effect={"fade"}
-						fadeEffect= {{crossFade: true}}
-						loop={true}
+						modules={[Autoplay, EffectFade]}
+						effect="fade"
 						speed={500}
 						slidesPerView={1}
+						slidesPerGroup={1}
 						onSlideChange={handleSlideChange}
-						autoplay={{
-							delay: 4000,
-							disableOnInteraction: false,
-							pauseOnMouseEnter: false
-						}}
+						autoplay={{ delay: 4000, disableOnInteraction: false }}
 					>
 						{logos.map((slide, index) => (
 							<SwiperSlide key={index} className={styles.swiper_slide}>

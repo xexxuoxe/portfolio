@@ -16,6 +16,7 @@ import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.comp
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import styles from './home.module.scss';
+import { log } from 'console';
 
 export default function HomeItemPage() {
 	const [isLoaderDone, setIsLoaderDone] = useState(false);
@@ -65,7 +66,7 @@ export default function HomeItemPage() {
 				{ img: "/images/ico_typescript.png", title: "typescript logo"},
 				{ img: "/images/ico_jquery.png", title: "jquery logo"},
 			],
-		},
+		}
 	];
 	//main array
 	const mainList = [
@@ -176,9 +177,9 @@ export default function HomeItemPage() {
 						className={styles.skill_swiper}
 						modules={[Autoplay, EffectFade]}
 						effect="fade"
-						loop
 						speed={500}
 						slidesPerView={1}
+						slidesPerGroup={1}
 						onSlideChange={handleSlideChange}
 						autoplay={{ delay: 4000, disableOnInteraction: false }}
 					>

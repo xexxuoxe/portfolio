@@ -11,7 +11,7 @@ export default function Main() {
   const postId = params.id;
 
   return (
-    <div className='review_section' id='siwon_container'>
+    <div className='review_section'>
       	<PostWritePage post={postId} />
     </div>
   );

@@ -6,7 +6,7 @@ import PostWritePage from '@components/main/post/write/postWrite.component'
 
 export default function event() {
   return (
-    <div className='review_section' id='siwon_container'>
+    <div className='review_section'>
       <PostWritePage></PostWritePage>
     </div>
   );
