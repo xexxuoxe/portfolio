@@ -3,7 +3,6 @@
 // import type { Metadata } from 'next'
 import { Suspense } from 'react';
 import Loading from './loading';
-import { StoreProviders } from '@store/stroe.provider';
 import ErrorWrapper from '@lib/error/errorWrapper.boundary';
 import { AlertProvider } from '@lib/alert/alert.context';
 import { LoadingProvider } from '@lib/loading/loading.context';
@@ -18,22 +17,20 @@ export default function RootLayout({ children }: Readonly<{children: React.React
     return (
         <html lang="ko">
             <ErrorWrapper>
-                <StoreProviders>
-					<body>
-						<AlertProvider>
-							<LoadingProvider>
-								<Suspense fallback={ <Loading /> }>
-									<ResponsiveProvider>
-										{/* <SmoothScroll> */}
-											<NavComponent />
-											{children}
-										{/* </SmoothScroll> */}
-									</ResponsiveProvider>
-								</Suspense>
-							</LoadingProvider>
-						</AlertProvider>
-					</body>
-                </StoreProviders>
+				<body>
+					<AlertProvider>
+						<LoadingProvider>
+							<Suspense fallback={ <Loading /> }>
+								<ResponsiveProvider>
+									{/* <SmoothScroll> */}
+										<NavComponent />
+										{children}
+									{/* </SmoothScroll> */}
+								</ResponsiveProvider>
+							</Suspense>
+						</LoadingProvider>
+					</AlertProvider>
+				</body>
             </ErrorWrapper>
         </html>
     )
