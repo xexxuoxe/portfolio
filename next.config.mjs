@@ -14,20 +14,8 @@ const nextConfig = {
     return config;
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: '',
-        pathname: '**',
-      },
-    ],
-    minimumCacheTTL: 60, // 캐시 유지 시간 (초)
-  }
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

@@ -28,6 +28,7 @@
     "draft-js-plugins-editor": "^2.0.0",
     "framer-motion": "^11.17.0",
     "html-react-parser": "^5.1.12",
+    "locomotive-scroll": "^4.1.4",
     "next": "^15.0.2",
     "next-redux-wrapper": "^8.1.0",
     "nookies": "^2.5.2",
