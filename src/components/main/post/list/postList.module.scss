@@ -2,44 +2,37 @@
 
 .board_view {
 	position: absolute;
-	width: 100%;
-	height: 100vh;
-	padding: 8rem 0;
-	background: #f0f3ff; 
-	font-size: 1.1rem;
-	transition: opacity 1s ease;
-	overflow-x: hidden;
-	z-index: 10;
+    width: calc(100% - 10vw);
+	min-width: 1000px;
+	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 5vw) clamp(5rem, 10vw, 10rem);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+    background: #f0f3ff;
+	transition: all .5s;
+    transition-delay: 0s;
+    overflow-x: hidden;
+    z-index: 10;
 
 	h3, h5 {
 		font-size: 2rem;
 		font-weight: 100;
 		font-family: 'Helvetica Neue' , 'Spoqa Han Sans Neo';
 	}
-
-	.info_container {
-		width: 80%;
-		margin: 0 auto;
-		max-width: 1524px;
-	}
-
+	// board
 	.board_detail {
+		margin-bottom: clamp(3.8rem, 10.375vw - 1.675rem, 14.375rem);
 
 		.board_title {
 			font-size: clamp(3.8rem,calc(-1.675rem + 13.375vw),14.375rem);
 			font-weight: 700;
 			line-height: 2.375rem;
-			margin-bottom: 6rem;
+			margin-bottom: clamp(3.8rem, 10.375vw - 1.675rem, 14.375rem);
 			font-family: 'Helvetica Neue' , 'Spoqa Han Sans Neo';
 			text-transform: uppercase !important;
+			transform: translateX(-17px);
 		}
 	}
 
 	.board_main {
-		width: 80%;
-		margin: auto;
-		overflow: hidden;
-		padding: 2rem;
 
 		.post_header {
 			display: flex;

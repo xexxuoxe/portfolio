@@ -43,6 +43,8 @@
 
 		* {
 			color: #fff !important;
+			transition: .5s;
+			transition-delay: .5s;
 		}
 	}
 
@@ -258,11 +260,12 @@
 	
 	// work button
 	.info_work {
+		position: relative;
 		width: auto;
-		max-width: 1400px;
+		max-width: 100%;
 		padding: clamp(8rem, 12vw, 13.75rem) 0;
 		margin: 0 auto;
-		position: relative;
+		overflow: hidden;
 
 		.link_container {
 			a {
