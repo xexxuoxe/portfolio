@@ -6,13 +6,15 @@
 /* home */
 .home_detail {
 	position: absolute;
-	width: 100%;
+    width: calc(100% - 15rem);
 	min-width: 1000px;
-	padding: clamp(5rem, 10vw, 10rem) 0 0 0;
-	background: #f0f3ff;
+	padding: clamp(5rem, 24rem, 20rem) clamp(5rem, 5rem, 5vw) 0 clamp(5rem, 10rem, 10rem);
 	font-size: clamp(1rem, 1.5vw, 1.2rem);
-	transition: opacity 1s ease;
-	z-index: 10;
+    background: #f0f3ff;
+	transition: all .5s;
+    transition-delay: 0s;
+    overflow-x: hidden;
+    z-index: 10;
 
 	&.active01 {
 		background: #f9f7f1;

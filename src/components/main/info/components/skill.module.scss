@@ -1,0 +1,45 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/abstracts/_variables';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+@keyframes aniFadeIn {
+	0% {opacity: 0; transform: translateY(30px);}
+	100% {opacity: 1; transform: translateY(0);}
+}
+@keyframes aniFade {
+	0% {opacity: 0; transform: translateY(30%);}
+	10%, 90% {opacity: 1; transform: translateY(0%);}
+	100% {opacity: 0; transform: translateY(-30%);}
+}
+
+.info_slide {
+	position: relative;
+	width: 100%;
+
+	.skill_swiper {
+		width: 100%;
+
+		.swiper_slide {
+			@include flex('center');
+			flex-wrap: wrap;
+
+			.slide_wrapper {
+				width: 33.333%;
+				text-align: center;
+				margin: 0 auto;
+
+				img {
+					width: inherit;
+					height: inherit;
+					transform: translateY(30%);
+					opacity: 0;
+
+					&.fadeIn {
+						animation: aniFade 4s ease-in-out forwards;
+					}
+				}
+			}
+		}
+	}
+}

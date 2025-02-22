@@ -20,7 +20,6 @@ export default function WorkListPage() {
 		<>
 			{/* loader */}
 			<Loader className='' variant="blind_base" onComplete={ handleLoaderComplete }/>
-			{/* work_view container */}
 			<motion.div 
 				className={`${styles.work_view} ${ isBackgroundInView ? styles.active : ''}`}
 				initial={{ display: 'none', y: '100%' }}

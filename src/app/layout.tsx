@@ -7,7 +7,7 @@ import { StoreProviders } from '@store/stroe.provider';
 import ErrorWrapper from '@lib/error/errorWrapper.boundary';
 import { AlertProvider } from '@lib/alert/alert.context';
 import { LoadingProvider } from '@lib/loading/loading.context';
-import NavComponent from '@components/sementic/nav.component'
+import NavComponent from '@components/sementic/navigation/nav.component'
 import { ResponsiveProvider } from '@lib/context/responsive.context';
  import SmoothScroll from '@lib/scroll/smooth.component';
 //import SmoothScroll from '@lib/scroll/index';

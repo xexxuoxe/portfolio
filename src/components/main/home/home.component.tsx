@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useLoader } from './hooks/useLoader';
 
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
-import FooterComponent from '@components/sementic/footer.component';
+import FooterComponent from '@components/sementic/footer/footer.component';
 import Loader from '@components/_utiles/loader/loader.component';
 import { Project } from '@components/main/work/components/'
 import { AboutSection, Skill, Work } from '@components/main/info/components/'

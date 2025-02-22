@@ -1,5 +1,5 @@
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
-import styles from '../info.module.scss';
+import styles from './aboutSection.module.scss';
 
 export const AboutSection = () => {
   return (

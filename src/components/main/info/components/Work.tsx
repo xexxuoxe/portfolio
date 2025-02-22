@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../info.module.scss';
+import styles from './work.module.scss';
 
 interface WorkTextProps {
   text: string;

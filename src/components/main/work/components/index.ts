@@ -1,5 +1,5 @@
-import { AboutSection } from './AboutSection'
-import { Project } from './Project'
-import { SubProject } from './SubProject'
+import { AboutSection } from './aboutSection'
+import { Project } from './project'
+import { SubProject } from './subProject'
 
 export { AboutSection, Project, SubProject }

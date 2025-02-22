@@ -1,6 +1,6 @@
-import { AboutSection } from './AboutSection'
-import { Skill } from './Skill'
-import { SkillInfo } from './SkillInfo'
-import { Work } from './Work'
+import { AboutSection } from './aboutSection'
+import { Skill } from './skill'
+import { SkillInfo } from './skillInfo'
+import { Work } from './work'
 
 export { AboutSection, Skill, SkillInfo, Work}
