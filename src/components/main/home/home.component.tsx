@@ -30,14 +30,19 @@ export default function HomeItemPage() {
 	const [isBackgroundInView02, setIsBackgroundInView02] = useState(false);
 
 	// loader
-	const handleLoaderComplete = (): void => {
+	useEffect(() => {
+		if (isLoaderDone) {
+			setShowContent(true);
+		}
+	}, [isLoaderDone]);
+	
+	const handleLoaderComplete = () => {
 		setIsLoaderDone(true);
-	  	setShowContent(true);
-	}
+	};
 	// slider
 	const handleSlideChange = useCallback(() => {
 		setAnimating(false);
-		setInterval(() => setAnimating(true), 50);
+		setTimeout(() => setAnimating(true), 50);
 	}, []);
 	//slider array
 	const logos = [
@@ -192,7 +197,7 @@ export default function HomeItemPage() {
 					<Swiper
 						className={styles.skill_swiper}
 						modules={[ Autoplay, EffectFade ]}
-						effect={"fade"}
+						effect="fade"
 						fadeEffect= {{crossFade: true}}
 						loop={true}
 						speed={500}
@@ -267,7 +272,7 @@ export default function HomeItemPage() {
 									<picture className={styles.box_img}>
 										<Image 
 											src={value.img}
-											fill="true"
+											fill={true}
 											alt=""
 										/>
 									</picture>

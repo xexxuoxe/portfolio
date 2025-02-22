@@ -4,9 +4,6 @@
 */
 'use client';
 import { useParams } from 'next/navigation';
-import NavComponent from '@components/sementic/siwon/nav.component'
-import GnbComponent from '@components/sementic/siwon/gnb.component'
-import FooterComponent from '@components/sementic/siwon/footer.component'
 import PostWritePage from '@components/main/post/write/postWrite.component';
 
 export default function Main() {

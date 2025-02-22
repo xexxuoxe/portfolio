@@ -17,12 +17,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'siwon-cdn.siwonschool.com',
+        hostname: '',
         pathname: '**',
       },
       {
         protocol: 'https',
-        hostname: 'data.siwonschool.com',
+        hostname: '',
         pathname: '**',
       },
     ],

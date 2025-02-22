@@ -188,15 +188,8 @@ export const userRepository = {
 
 ## Local RUN
 
-### env 파일 생성
-
-- NAS에 NAS/siwon-web/{서비스폴더} 내에 .env.local 파일 복사하여 소스 상위에 붙여넣기
-
 ### 사이트 실행
 ```bash
 yarn run start
 # http://localhost:3001 접속
 ```
-
-
-https://git.sjwcorp.kr/siwon-web/services/member
