@@ -17,6 +17,8 @@ export default function PostListItem() {
   const { showContent, handleLoaderComplete } = useLoader();
   const { pages, fetchPages } = useNotion();
 
+  console.log(pages)
+
 
   return (
     <>

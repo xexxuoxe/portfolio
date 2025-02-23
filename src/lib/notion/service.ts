@@ -31,6 +31,7 @@ export class NotionService {
      * 페이지 데이터를 NotionPage 형식으로 변환
      */
     private convertToNotionPage(page: PageObjectResponse): NotionPage {
+        console.log(page)
         const properties = page.properties;
         
         // writer 프로퍼티 처리
@@ -41,13 +42,15 @@ export class NotionService {
             writerName = this.extractUserName(properties.writer.people);
         }
 
+     
+
         return {
             id: page.id,
             title: 'title' in properties && properties.title?.type === 'title' 
                 ? properties.title.title[0]?.plain_text || ''
                 : '',
-                link: 'content' in properties && properties.content?.type === 'rich_text'
-                ? properties.content.rich_text[0]?.plain_text || ''
+                link: 'link' in properties && properties.link?.type === 'url'
+                ? properties.link.url?.plain_text || ''
                 : '',
             writer: writerName
         };
