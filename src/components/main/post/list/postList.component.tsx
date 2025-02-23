@@ -24,7 +24,7 @@ export default function PostListItem() {
     {
       key: 'title',
       header: '제목',
-      render: (post: any) => <Link href={`/post/view/${post.id}`}>{post.properties.Title.title[0]?.text.content}</Link>,
+      render: (pages: any) => <Link href={`/post/view/${pages.id}`}>{pages.properties.Title.title[0]?.text.content}</Link>,
     },
     { key: 'content', header: '내용' },
     { key: 'writer', header: '작성자' },
