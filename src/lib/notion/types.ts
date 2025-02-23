@@ -4,7 +4,7 @@
 export interface NotionPage {
     id: string;
     title: string;
-    content: string;
+    link: string;
     writer: string;
 }
 

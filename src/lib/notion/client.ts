@@ -18,7 +18,7 @@ export class NotionClient {
 
     /**
      * Notion 클라이언트 인스턴스 가져오기
-     */
+    */
     public static getInstance(config: NotionConfig): NotionClient {
         if (!NotionClient.instance) {
             NotionClient.instance = new NotionClient(config);

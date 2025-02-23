@@ -46,7 +46,7 @@ export class NotionService {
             title: 'title' in properties && properties.title?.type === 'title' 
                 ? properties.title.title[0]?.plain_text || ''
                 : '',
-            content: 'content' in properties && properties.content?.type === 'rich_text'
+                link: 'content' in properties && properties.content?.type === 'rich_text'
                 ? properties.content.rich_text[0]?.plain_text || ''
                 : '',
             writer: writerName
@@ -118,6 +118,9 @@ export class NotionService {
                                 },
                             },
                         ],
+                    },
+                    hit: {
+                        number: 0
                     },
                     writer: {
                         type: 'people',

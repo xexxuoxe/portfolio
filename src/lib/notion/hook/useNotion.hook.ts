@@ -1,6 +1,6 @@
 
 import { useState, useCallback, useEffect } from 'react';
-import { notionApi } from './api';
+import * as action from '../action';
 import { NotionPage } from '../types'
 
 /**
@@ -51,7 +51,7 @@ export const useNotion = (): UseNotionReturn => {
         try {
             setLoading(true);
             setError(null);
-            const response = await notionApi.getPages();
+            const response = await action.getPages();
 
             setPages(response);
         } catch (error) {
@@ -68,7 +68,7 @@ export const useNotion = (): UseNotionReturn => {
         try {
             setLoading(true);
             setError(null);
-            const response = await notionApi.getPage(pageId);
+            const response = await action.getPage(pageId);
             setCurrentPage(response);
         } catch (error) {
             handleError(error, `Failed to fetch page ${pageId}`);
@@ -84,7 +84,7 @@ export const useNotion = (): UseNotionReturn => {
         try {
             setLoading(true);
             setError(null);
-            const newPage = await notionApi.createPage(title, content);
+            const newPage = await action.createPage(title, content);
             setPages(prev => [...prev, newPage]);
             setCurrentPage(newPage);
         } catch (error) {
@@ -101,7 +101,7 @@ export const useNotion = (): UseNotionReturn => {
         try {
             setLoading(true);
             setError(null);
-            const updatedPage = await notionApi.updatePage(pageId, title, content);
+            const updatedPage = await action.updatePage(pageId, title, content);
             setPages(prev => prev.map(page => 
                 page.id === pageId ? updatedPage : page
             ));
@@ -120,7 +120,7 @@ export const useNotion = (): UseNotionReturn => {
         try {
             setLoading(true);
             setError(null);
-            await notionApi.deletePage(pageId);
+            await action.deletePage(pageId);
             setPages(prev => prev.filter(page => page.id !== pageId));
             if (currentPage?.id === pageId) {
                 setCurrentPage(null);

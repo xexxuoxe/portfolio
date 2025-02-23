@@ -17,23 +17,6 @@ export default function PostListItem() {
   const { showContent, handleLoaderComplete } = useLoader();
   const { pages, fetchPages } = useNotion();
 
-  console.log(pages.length)
-
-
-  const columns = [
-    {
-      key: 'title',
-      header: '제목',
-      render: (pages: any) => <Link href={`/post/view/${pages.id}`}>{pages.properties.Title.title[0]?.text.content}</Link>,
-    },
-    { key: 'content', header: '내용' },
-    { key: 'writer', header: '작성자' },
-  ];
-
-  // 페이지 로드가 완료되면 데이터를 가져옴
-  useEffect(() => {
-    fetchPages();
-  }, [fetchPages]);
 
   return (
     <>
@@ -65,22 +48,15 @@ export default function PostListItem() {
                 <h2>총 <span>{pages.length}</span>개의 게시글</h2>
               </div>
             </div>
-            <div className={styles.post_header_right}>
-              <ul className={styles.post_button}>
-                <li>
-                  <LinkButton
-                    variant="btn_pastel_blue"
-                    href="/post/write"
-                    text="글 작성"
-                    target="_self"
-                    className={''}
-                  />
-                </li>
-              </ul>
-            </div>
           </div>
           <div className={styles.post_table}>
-            <Table items={pages} columns={columns} />
+            <table>
+              <tr>
+                <th>
+                  <p>{pages.title}</p>
+                </th>
+              </tr>
+            </table>
           </div>
         </div>
       </motion.div>
