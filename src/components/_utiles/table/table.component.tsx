@@ -13,9 +13,9 @@ interface Column<T> {
 	render?: (item: T) => React.ReactNode;
 }
 
-interface PostListProps<T extends Record> {
+interface PostListProps<T extends object> {
 	className?: string;
-	variant: string;
+	variant?: string;
 	items: T[];
 	columns: Column<T>[];
 	itemsPerPage?: number;
@@ -23,7 +23,7 @@ interface PostListProps<T extends Record> {
 
 function PostList<T extends Record>({
 	className,
-	variant,
+	variant = 'default',
 	items,
 	columns,
 	itemsPerPage = 10
@@ -47,7 +47,7 @@ function PostList<T extends Record>({
 	}
 
 	return (
-		<div className={`${styles[variant]} ${className}`}>
+		<div className={`${variant ? styles[variant] : ''} ${className}`}>
 			<div className={styles.table_container}>
 				<table>
 					<thead>
@@ -81,8 +81,8 @@ function PostList<T extends Record>({
 					currentPage={currentPage}
 					totalPages={Math.ceil(items.length / itemsPerPage)}
 					onPageChange={paginate}
-					className={className} 
-					variant={variant}   
+					className={className}
+					variant={variant}
 				/>
 			)}
 		</div>

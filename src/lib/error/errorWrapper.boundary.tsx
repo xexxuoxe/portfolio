@@ -1,4 +1,3 @@
-// ErrorBoundaryWrapper.tsx
 'use client';
 
 import React from 'react';
@@ -11,17 +10,17 @@ const ErrorBoundaryWrapper: React.FC<{ children: React.ReactNode }> = ({ childre
     const { errorMessage, setErrorMessage } = useError();
     const { popupState, openPopup, closePopup } = usePopup();
 
+  
     const handleError = (error: Error) => {
         if (error instanceof AppError) {
             openPopup(error.message);
         } else {
-            handleAppError(error);
+            handleAppError(error, setErrorMessage);
         }
     };
 
     React.useEffect(() => {
         if (errorMessage) {
-            console.log(errorMessage)
             openPopup(errorMessage);
         }
     }, [errorMessage, openPopup]);

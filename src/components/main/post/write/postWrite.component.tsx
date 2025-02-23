@@ -5,15 +5,15 @@ import TextArea from '@components/_utiles/textarea/textarea.component';
 import Checkbox from '@components/_utiles/checkbox/checkbox.component';
 import Link from '@components/_utiles/link/link.component';
 import Button from '@components/_utiles/button/button.component';
-import { PostData, usePostWrite } from './postWrite.hook';
+import { usePostWrite } from './postWrite.hook'; 
 import styles from './postWrite.module.scss';
 
 interface PostWriteProps {
-  post?: PostData; // 타입 수정
+  post?: string; 
 }
 
 export default function PostWritePage({ post }: PostWriteProps) {
-  const { postData, handleChange, handleSubmit } = usePostWrite(post);
+  const { postData, handleChange, handleSubmit } = usePostWrite(post || '');
 
   return (
     <div className={styles.inner_container}>
@@ -114,7 +114,7 @@ export default function PostWritePage({ post }: PostWriteProps) {
                     id="write_content"
                     name="content"
                     variant="textarea_base"
-                    value={postData.contents}
+                    defaultValue={postData.content}
                     onChange={handleChange}
                     placeholder="내용을 입력해주세요"
                     className="content"

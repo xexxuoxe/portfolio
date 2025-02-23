@@ -8,7 +8,7 @@ import styles from './link.module.scss'
 const LinkButton = ({ text, href, target, variant, className}: {
 		text: string;
 		href: string;
-		target: string;
+		target?: string;
 		variant: keyof typeof styles;
 		className : string;
 	}) => {

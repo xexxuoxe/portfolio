@@ -1,86 +1,96 @@
-/*
-	scr/components/main/post/write/postWrite.hook.ts
-*/
 'use client'
-import { useEffect , useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@lib/api/fetch.client';
-// Type 선언
-interface FormData {
-	id?: string,
-  	title: string;
-	author: string,
-	date: string,
-	teacher: string,
-  	content: string,
-  	collect: boolean,
+
+// Type declaration for the form data
+interface PostData {
+  id?: string;
+  title: string;
+  author: string;
+  date: string;
+  teacher: string;
+  content: string;
+  collect: boolean;
 }
 
-export const usePostWrite = ( postId: string ) => {
+export const usePostWrite = (postId: string) => {
+  const [postData, setPostData] = useState<PostData>({
+    title: '',
+    author: '',
+    date: '',
+    teacher: '',
+    content: '',
+    collect: false,
+  });
 
-	const [postData, setPostData] = useState<FormData>({
-		title: '',
-		author: '',
-		date: '',
-		teacher: '',
-		content: '',
-		collect: false,
-	});
+  const router = useRouter();
 
-	const router = useRouter();
+  useEffect(() => {
+    if (postId) {
+      const getData = async () => {
+        try {
+          const ports = await api.get<{ data: PostData }>(`http://localhost:3002/postReview/${postId}`);
 
-	
-	useEffect(() => {
-		if(postId) {
-			const getData = async () => {
-				const ports = await api.get(`http://localhost:3002/postReview/${postId}`);
-				setPostData(ports);
-			};
-			getData();
-		}
-	}, [postId]);
+          // setPostData(ports); 
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { name, value, type, checked } = e.target;
-		setPostData((prev) => ({
-			...prev,
-			[name]: type === 'checkbox' ? checked : value,
-		}));
-	};
+        } catch (error) {
+          console.error('Error', error);
+        }
+      };
+      getData();
+    }
+  }, [postId]);
 
-	const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) =>  {
-		e.preventDefault();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
 
-		// 유효성 검사
-		const isAllFieldsFilled = 
-		postData.title.trim() !== '' &&
-		postData.author.trim() !== '' &&
-		postData.date.trim() !== '' &&
-		postData.teacher.trim() !== '' &&
-		postData.content.trim() !== '' &&
-		postData.collect === true; 
+    setPostData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
 
-		if (!isAllFieldsFilled) {
-			alert('모든 항목을 입력하고 개인정보 수집 동의에 체크해주세요.');
-			return;
-		}
 
-		const response = postId
-		? await api.put(`http://localhost:3002/postReview/${postId}` , postData)
-		: await api.post(`http://localhost:3002/postReview` , postData)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-		if (response) {
-			alert('등록되었습니다.');
-			router.push('/post/list');
-		} else {
-			alert(response.message || 'error');
-			alert('실패하였습니다.');
-		}
-	};
+    // Validation check
+    const isAllFieldsFilled =
+      postData.title.trim() !== '' &&
+      postData.author.trim() !== '' &&
+      postData.date.trim() !== '' &&
+      postData.teacher.trim() !== '' &&
+      postData.content.trim() !== '' &&
+      postData.collect === true;
 
-	return {
-		postData,
-		handleChange,
-		handleSubmit,
-	};
+    if (!isAllFieldsFilled) {
+      alert('모든 항목을 입력하고 개인정보 수집 동의에 체크해주세요.');
+      return;
+    }
+
+    try {
+      // Sending data to the API
+      const response = postId
+        ? await api.put(`http://localhost:3002/postReview/${postId}`, postData)
+        : await api.post(`http://localhost:3002/postReview`, postData);
+
+      if (response) {
+        alert('등록되었습니다.');
+        router.push('/post/list');
+      } else {
+        alert('실패하였습니다.');
+      }
+    } catch (error) {
+      console.error('Error submitting post data:', error);
+      alert('실패하였습니다.');
+    }
+  };
+
+  return {
+    postData,
+    handleChange,
+    handleSubmit,
+  };
 };

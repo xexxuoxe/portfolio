@@ -8,7 +8,8 @@ const Input = ({
     variant,
     value,
     onChange,
-    placeholder
+    placeholder,
+    required
 }: {
     id: string;
     name: string;
@@ -18,6 +19,7 @@ const Input = ({
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     placeholder?: string;
+    required?: boolean;
 }) => {
     return (
         <div className={`${styles[variant]} ${className}`}>
