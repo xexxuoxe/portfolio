@@ -1,24 +1,35 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import LinkButton from '@components/_utiles/link/link.component';
 import Loader from '@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
-import Table from '@components/_utiles/table/table.component';
+import Pagination from '@components/_utiles/pagination/pagination.component';
 
 import { useLoader } from '../hooks/useLoader';
 import { useNotion } from '@lib/notion/hook/useNotion.hook';
 import styles from './postList.module.scss';
 
 export default function PostListItem() {
-  
   const { showContent, handleLoaderComplete } = useLoader();
   const { pages, fetchPages } = useNotion();
 
-  console.log(pages)
+  // 페이지네이션 상태 관리
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 5; // 한 페이지에 표시할 게시글 수
+  const totalPages = Math.ceil(pages.length / postsPerPage);
 
+  // 현재 페이지의 게시글 필터링
+  const paginatedPages = pages.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
+
+  // 페이지 변경 핸들러
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <>
@@ -38,29 +49,33 @@ export default function PostListItem() {
           </FadeInMotion>
           <div className={styles.info_cont}>
             <FadeInMotion delay={0.4} initialX={0} initialY={100}>
-              <h3>자유롭게 글을 작성해보세요</h3>
+              <h3>총 <span>{pages.length}</span>개의 게시글</h3>
             </FadeInMotion>
           </div>
         </div>
 
         <div className={styles.board_main}>
           <div className={styles.post_header}>
-            <div className={styles.post_header_left}>
-              <div className={styles.post_title}>
-                <h2>총 <span>{pages.length}</span>개의 게시글</h2>
-              </div>
-            </div>
+            <h2>게시글 목록</h2>
           </div>
-          <div className={styles.post_table}>
 
-            {pages.map((page, index) => (
-               <div key={index}>
-                <p>title :  {page.title}</p>
-                <p key={index}>link :  {page.link}</p>
+          <div className={styles.post_table}>
+            {paginatedPages.map((page, index) => (
+              <div key={index} className={styles.post_card}>
+                <h1 className={styles.post_title}>{page.title}</h1>
+                <p className={styles.post_content}>{page.link}</p>
+                <div className={styles.post_footer}>
+                  <Link href={`/post/${page.id}`}>더보기 →</Link>
+                </div>
               </div>
             ))}
-            
           </div>
+
+          <Pagination 
+            currentPage={currentPage} 
+            totalPages={totalPages} 
+            onPageChange={handlePageChange} 
+          />
         </div>
       </motion.div>
     </>
