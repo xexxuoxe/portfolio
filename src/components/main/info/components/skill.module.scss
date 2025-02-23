@@ -3,36 +3,25 @@
 @import '@styles/base/_reset';
 @import '@styles/base/_typography.scss';
 
-@keyframes aniFade {
-	0% {opacity: 0; transform: translateY(30%);}
-	10%, 90% {opacity: 1; transform: translateY(0%);}
-	100% {opacity: 0; transform: translateY(-30%);}
-}
 
-
-.info_slide {
+.info_items {
 	position: relative;
 	width: 100%;
-	padding: 10rem 0;
+	padding-bottom: 15rem;
 
-	.skill_swiper {
-		width: 100%;
-		height: 35rem;
-		margin: auto;
+	.items_box {
+		@include flex('center');
+		flex-wrap: wrap;
 
-		.swiper_slide {
-			@include flex('center');
-			flex-wrap: wrap;
+		.slide_wrapper {
+			width: 25%;
+			padding: 3rem 0;
+			text-align: center;
+			margin: 0 auto;
 
-			.slide_wrapper {
-				width: 33.333%;
-				text-align: center;
-				margin: 0 auto;
-
-				img {
-					width: 24%;
-					height: auto;
-				}
+			img {
+				width: 24%;
+				height: auto;
 			}
 		}
 	}

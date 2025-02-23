@@ -52,13 +52,14 @@ export default function PostListItem() {
             </div>
           </div>
           <div className={styles.post_table}>
-            <table>
-              <tr>
-                <th>
-                  <p>{pages.title}</p>
-                </th>
-              </tr>
-            </table>
+
+            {pages.map((page, index) => (
+               <div key={index}>
+                <p>title :  {page.title}</p>
+                <p key={index}>link :  {page.link}</p>
+              </div>
+            ))}
+            
           </div>
         </div>
       </motion.div>

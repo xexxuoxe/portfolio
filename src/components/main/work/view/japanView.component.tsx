@@ -93,8 +93,8 @@ export default function WorkViewPage() {
 										</p>
 									</li>
 									<li>
-										<h4>Year</h4>
-										<p>2024</p>
+										<h4>Period</h4>
+										<p>21일</p>
 									</li>
 								</ul>
 								<ul>

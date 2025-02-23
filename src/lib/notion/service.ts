@@ -42,15 +42,13 @@ export class NotionService {
             writerName = this.extractUserName(properties.writer.people);
         }
 
-     
-
         return {
             id: page.id,
-            title: 'title' in properties && properties.title?.type === 'title' 
-                ? properties.title.title[0]?.plain_text || ''
+            title: 'title' in properties && properties.title?.type === 'rich_text' 
+                ? properties.title.rich_text[0]?.plain_text || ''
                 : '',
                 link: 'link' in properties && properties.link?.type === 'url'
-                ? properties.link.url?.plain_text || ''
+                ? properties.link.url || ''
                 : '',
             writer: writerName
         };
@@ -124,10 +122,6 @@ export class NotionService {
                     },
                     hit: {
                         number: 0
-                    },
-                    writer: {
-                        type: 'people',
-                        people: []  // 필요한 경우 실제 유저 ID로 설정
                     }
                 },
             });
