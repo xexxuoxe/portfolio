@@ -3,10 +3,6 @@
 @import '@styles/base/_reset';
 @import '@styles/base/_typography.scss';
 
-@keyframes aniFadeIn {
-	0% {opacity: 0; transform: translateY(30px);}
-	100% {opacity: 1; transform: translateY(0);}
-}
 @keyframes aniFade {
 	0% {opacity: 0; transform: translateY(30%);}
 	10%, 90% {opacity: 1; transform: translateY(0%);}
@@ -17,9 +13,12 @@
 .info_slide {
 	position: relative;
 	width: 100%;
+	padding: 10rem 0;
 
 	.skill_swiper {
 		width: 100%;
+		height: 35rem;
+		margin: auto;
 
 		.swiper_slide {
 			@include flex('center');
@@ -31,14 +30,8 @@
 				margin: 0 auto;
 
 				img {
-					width: inherit;
-					height: inherit;
-					transform: translateY(30%);
-					opacity: 0;
-
-					&.fadeIn {
-						animation: aniFade 4s ease-in-out forwards;
-					}
+					width: 24%;
+					height: auto;
 				}
 			}
 		}

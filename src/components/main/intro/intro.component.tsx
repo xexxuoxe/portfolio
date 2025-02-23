@@ -1,4 +1,5 @@
 'use client'
+
 import { useIntroAnimation } from './intro.hook';
 import styles from './intro.module.scss';
 

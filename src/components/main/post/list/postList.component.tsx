@@ -1,36 +1,39 @@
-'use client';
+'use client'
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import LinkButton from '@components/_utiles/link/link.component';
 import Loader from '@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import Table from '@components/_utiles/table/table.component';
-import { Post, usePostHook, Column } from './postList.hook';
+
+import { useLoader } from '../hooks/useLoader';
+import { useNotion } from '@lib/notion/hook/useNotion.hook';
 import styles from './postList.module.scss';
 
 export default function PostListItem() {
-  const [isLoaderDone, setIsLoaderDone] = useState<boolean>(false);
-  const [showContent, setShowContent] = useState<boolean>(false);
-  const { postData } = usePostHook();
+  
+  const { showContent, handleLoaderComplete } = useLoader();
+  const { pages, fetchPages } = useNotion();
 
-  const handleLoaderComplete = (): void => {
-    setIsLoaderDone(true);
-    setShowContent(true);
-  };
+  console.log(pages.length)
 
-  const posts = postData;
 
-  const columns: Column<Post>[] = [
+  const columns = [
     {
       key: 'title',
       header: '제목',
-      render: (post) => <Link href={`/post/view/${post.id}`}>{post.title}</Link>,
+      render: (post: any) => <Link href={`/post/view/${post.id}`}>{post.properties.Title.title[0]?.text.content}</Link>,
     },
-    { key: 'author', header: '작성자' },
-    { key: 'date', header: '작성일' },
+    { key: 'content', header: '내용' },
+    { key: 'writer', header: '작성자' },
   ];
+
+  // 페이지 로드가 완료되면 데이터를 가져옴
+  useEffect(() => {
+    fetchPages();
+  }, [fetchPages]);
 
   return (
     <>
@@ -46,7 +49,7 @@ export default function PostListItem() {
       >
         <div className={`${styles.board_detail} ${styles.info_container}`}>
           <FadeInMotion delay={0} initialX={-100} initialY={0}>
-            <h1 className={styles.board_title}>board</h1>
+            <h1 className={styles.board_title}>Board</h1>
           </FadeInMotion>
           <div className={styles.info_cont}>
             <FadeInMotion delay={0.4} initialX={0} initialY={100}>
@@ -59,7 +62,7 @@ export default function PostListItem() {
           <div className={styles.post_header}>
             <div className={styles.post_header_left}>
               <div className={styles.post_title}>
-                <h2>총 <span>{posts.length}</span>개의 게시글</h2>
+                <h2>총 <span>{pages.length}</span>개의 게시글</h2>
               </div>
             </div>
             <div className={styles.post_header_right}>
@@ -77,7 +80,7 @@ export default function PostListItem() {
             </div>
           </div>
           <div className={styles.post_table}>
-            <Table<Post> items={posts} columns={columns} />
+            <Table items={pages} columns={columns} />
           </div>
         </div>
       </motion.div>
