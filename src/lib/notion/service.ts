@@ -45,12 +45,14 @@ export class NotionService {
         return {
             id: page.id,
             title: 'title' in properties && properties.title?.type === 'rich_text' 
-                ? properties.title.rich_text[0]?.plain_text || ''
-                : '',
-                link: 'link' in properties && properties.link?.type === 'url'
-                ? properties.link.url || ''
-                : '',
-            writer: writerName
+            ? properties.title.rich_text[0]?.plain_text || ''
+            : '',
+            contents: 'contents' in properties && properties.contents?.type === 'rich_text'
+            ? properties.contents.rich_text[0]?.plain_text || ''
+            : '',
+            tags: 'tags' in properties && properties.tags?.type === 'multi_select'
+            ? properties.tags.multi_select.map(tag => tag.name) 
+            : [],
         };
     }
 
@@ -95,7 +97,7 @@ export class NotionService {
     /**
      * 새 페이지 생성
      */
-    async createPage(title: string, content: string, writer: string = ''): Promise<NotionPage> {
+    async createPage(title: string, contents: string, tags: string[], ): Promise<NotionPage> {
         try {
             const response = await this.client.pages.create({
                 parent: {
@@ -111,18 +113,19 @@ export class NotionService {
                             },
                         ],
                     },
-                    content: {
+                    contents: {
                         rich_text: [
                             {
                                 text: {
-                                    content: content,
+                                    content: contents,
                                 },
                             },
                         ],
                     },
-                    hit: {
-                        number: 0
-                    }
+                    tags: {
+                        multi_select: 
+                            tags.map(tags => ({ name: tags })),
+                    },
                 },
             });
 

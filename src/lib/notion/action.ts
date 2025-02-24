@@ -36,10 +36,10 @@ export async function getPage(pageId: string): Promise<NotionPage> {
 /**
  * 페이지 생성 액션
 */
-export async function createPage(title: string, content: string): Promise<NotionPage> {
+export async function createPage(title: string, contents: string, tags: string[]): Promise<NotionPage> {
   const notionService = createNotionService();
   try {
-    const newPage = await notionService.createPage(title, content);
+    const newPage = await notionService.createPage(title, contents, tags);
     revalidatePath('/notion'); // 페이지 목록 갱신
     return newPage;
   } catch (error) {

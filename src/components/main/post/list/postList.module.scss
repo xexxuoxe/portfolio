@@ -20,7 +20,7 @@
 	}
 
 	// board
-	.board_detail {
+	.board_list {
 		margin-bottom: clamp(3.8rem, 10.375vw - 4.675rem, 14.375rem);
 
 		.board_title {
@@ -35,70 +35,17 @@
 	}
 
 	.board_main {
+		@include flex('between');
+		align-items: flex-start;
 
 		.post_header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding-bottom: 1rem;
+			width: 30%;
 
-			.post_header_left {
-				.post_title {
-					h2 {
-						font-size: 1.8rem;
-						color: #000;
-						font-weight: 300;
-
-						span {
-							color: #000;
-							font-weight: 600;
-						}
-					}
-				}
-			}
-
-			.post_header_right {
-				.post_button {
-					display: flex;
-					gap: 0.8rem;
-
-					li {
-						margin: 0;
-					}
-				}
-			}
-		}
-
-		.post_table {
-
-			.post_card {
-				border-bottom: 1px solid #333;
-				cursor: pointer;
-
-				&:hover {
-					background-color: #fff;
-					transform: translateY(-5px);
-				}
-
-				.post_title {
-					font-size: 1.4rem;
-					font-weight: 600;
-					color: #000;
-					margin-bottom: 0.8rem;
-				}
-
-				.post_content {
-					font-size: 1rem;
-					color: #444;
-					line-height: 1.5;
-				}
-
-				.post_footer {
-					margin-top: 1rem;
-					font-size: 0.9rem;
-					color: #666;
-					text-align: right;
-				}
+			button {
+				font-weight: 600;
+				font-size: 3rem;
+				border: none;
+				background: none;
 			}
 		}
 	}

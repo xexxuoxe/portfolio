@@ -1,14 +1,26 @@
 'use client';
+
+import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
+import { useNotion } from '@lib/notion/hook/useNotion.hook';
 import PostViewItem from '@components/main/post/view/postView.component';
 
-export default function Main() {
-  const params = useParams();
-  const postId = Array.isArray(params.id) ? params.id[0] : params.id;
+export default function PostDetail() {
+  const { id } = useParams(); 
+  const { fetchPage, currentPage, loading, error } = useNotion();
+
+  useEffect(() => {
+    if (id) {
+      fetchPage(id as string);
+    }
+  }, [id, fetchPage]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
-    <div className='review_section'>
-      <PostViewItem post={postId} /> 
-    </div>
+    <>
+      {currentPage && <PostViewItem post={currentPage} />}
+    </>
   );
 }

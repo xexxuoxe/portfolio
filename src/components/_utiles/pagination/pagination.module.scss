@@ -10,37 +10,33 @@
 		.page_num_on {
 			@include flex($align: 'center');
 			display: inline-block;
-			width: 36px;
-			height: 36px;
-			margin: 0 5px;
-			border: 1px solid #e2e2e2;
-			border-radius: 50%;
-			font-size: 16px;
-			color: #666;
-			background: #fff;
+			width: 1.5rem;
+			height: 2.25rem;
+			margin: 0 1rem;
+			border: none;
+			font-size: 1.34rem;
+			font-weight: 500;
+			color: #141414;
+			background: transparent;
 			cursor: pointer;
-			transition: background 0.3s, color 0.3s;
 
 			&:hover {
-				background: #f0f0f0;
-				color: #1e57ab;
+				color: #FC6454;
 			}
 		}
 
 		.page_num_on {
-			background: #1e57ab;
-			border: 1px solid #1e57ab;
-			color: #fff;
+			color: #FC6454;
 		}
 
 		.page_prev,
 		.page_next {
-			width: 36px;
-			height: 36px;
-			background: none;
+			width: 6rem;
+			height: 2.25rem;
+			background: transparent;
 			border: none;
-			color: #1e57ab;
-			font-size: 24px;
+			color: #141414;
+			font-size: 1.5rem;
 			font-weight: 400;
 			cursor: pointer;
 			transition: color 0.3s;
@@ -51,7 +47,7 @@
 			}
 
 			&:hover:not(:disabled) {
-				color: #0f4b88;
+				color: #FC6454;
 			}
 		}
 	}

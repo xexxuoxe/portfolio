@@ -16,8 +16,8 @@ interface UseNotionReturn {
     // 메서드
     fetchPages: () => Promise<void>;
     fetchPage: (pageId: string) => Promise<void>;
-    createPage: (title: string, content: string) => Promise<void>;
-    updatePage: (pageId: string, title: string, content: string) => Promise<void>;
+    createPage: (title: string, content: string, contents: string, tags: string[]) => Promise<void>;
+    updatePage: (pageId: string, title: string, contents: string, tags: string[]) => Promise<void>;
     deletePage: (pageId: string) => Promise<void>;
     
     // 상태 초기화
@@ -80,11 +80,11 @@ export const useNotion = (): UseNotionReturn => {
     /**
      * 새 페이지 생성
      */
-    const createPage = useCallback(async (title: string, content: string) => {
+    const createPage = useCallback(async (title: string, contents: string, tags: string[]) => {
         try {
             setLoading(true);
             setError(null);
-            const newPage = await action.createPage(title, content);
+            const newPage = await action.createPage(title, contents,  tags);
             setPages(prev => [...prev, newPage]);
             setCurrentPage(newPage);
         } catch (error) {
