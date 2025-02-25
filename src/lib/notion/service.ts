@@ -143,12 +143,13 @@ export class NotionService {
     /**
      * 페이지 수정
      */
-    async updatePage(pageId: string, title: string, content: string): Promise<NotionPage> {
+    async updatePage(pageId: string, title: string, contents: string, tags: string[]): Promise<NotionPage> {
         try {
+            // 페이지 속성 업데이트
             const response = await this.client.pages.update({
                 page_id: pageId,
                 properties: {
-                    Name: {
+                    title: {
                         title: [
                             {
                                 text: {
@@ -156,6 +157,18 @@ export class NotionService {
                                 },
                             },
                         ],
+                    },
+                    contents: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: contents,
+                                },
+                            },
+                        ],
+                    },
+                    tags: {
+                        multi_select: tags.map(tag => ({ name: tag })),
                     },
                 },
             });
@@ -176,7 +189,7 @@ export class NotionService {
                                 {
                                     type: 'text',
                                     text: {
-                                        content: content,
+                                        content: contents,
                                     },
                                 },
                             ],

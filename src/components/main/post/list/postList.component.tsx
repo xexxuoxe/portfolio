@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Loader from '@components/_utiles/loader/loader.component';
@@ -40,6 +41,13 @@ export default function PostListItem() {
                 ALL({pages.length})
               </button>
             </li>
+
+          
+            <div className={styles.post_write_btn}>
+                <Link href="/post/write">
+                    <span>Writing 🖊</span>
+                </Link>
+            </div>
           </ul>
           <PostItem />
         </div>

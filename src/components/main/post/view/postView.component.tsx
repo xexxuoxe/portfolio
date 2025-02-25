@@ -1,11 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Loader from '@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import { useLoader } from '../hooks/useLoader';
-import { usePostActions } from '../hooks/useDeleteActions';
+import { usePostActions } from '../hooks/useDelete';
 import PostViewButtons from './components/actionButtons'; 
 import styles from './postView.module.scss';
 

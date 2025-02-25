@@ -54,11 +54,12 @@ export async function createPage(title: string, contents: string, tags: string[]
 export async function updatePage(
   pageId: string,
   title: string,
-  content: string
+  content: string,
+  tags: string[]
 ): Promise<NotionPage> {
   const notionService = createNotionService();
   try {
-    const updatedPage = await notionService.updatePage(pageId, title, content);
+    const updatedPage = await notionService.updatePage(pageId, title, content, tags);
     revalidatePath(`/notion/${pageId}`); // 해당 페이지 갱신
     revalidatePath('/notion'); // 목록도 갱신
     return updatedPage;

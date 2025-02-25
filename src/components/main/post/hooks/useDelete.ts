@@ -5,7 +5,7 @@ export const usePostActions = (postId: string) => {
 
   const handleDelete = async () => {
 
-    const confirmed = window.confirm("정말로 삭제하실겁니까?");
+    const confirmed = window.confirm("정말로 삭제하시겠습니까?");
 
     if (confirmed) {
       try {

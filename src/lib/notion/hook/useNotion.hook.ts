@@ -16,7 +16,7 @@ interface UseNotionReturn {
     // 메서드
     fetchPages: () => Promise<void>;
     fetchPage: (pageId: string) => Promise<void>;
-    createPage: (title: string, content: string, contents: string, tags: string[]) => Promise<void>;
+    createPage: (title: string, contents: string, tags: string[]) => Promise<void>;
     updatePage: (pageId: string, title: string, contents: string, tags: string[]) => Promise<void>;
     deletePage: (pageId: string) => Promise<void>;
     
@@ -84,8 +84,10 @@ export const useNotion = (): UseNotionReturn => {
         try {
             setLoading(true);
             setError(null);
-            const newPage = await action.createPage(title, contents,  tags);
+            const newPage = await action.createPage(title, contents, tags);
+            console.log(newPage)
             setPages(prev => [...prev, newPage]);
+            console.log('너들어갔니?')
             setCurrentPage(newPage);
         } catch (error) {
             handleError(error, 'Failed to create page');
@@ -97,22 +99,21 @@ export const useNotion = (): UseNotionReturn => {
     /**
      * 페이지 수정
      */
-    const updatePage = useCallback(async (pageId: string, title: string, content: string) => {
+    const updatePage = useCallback(async (pageId: string, title: string, contents: string, tags: string[]) => {
         try {
             setLoading(true);
             setError(null);
-            const updatedPage = await action.updatePage(pageId, title, content);
+            const updatedPage = await action.updatePage(pageId, title, contents, tags);
             setPages(prev => prev.map(page => 
                 page.id === pageId ? updatedPage : page
             ));
-            setCurrentPage(updatedPage);
+            setCurrentPage(updatedPage); 
         } catch (error) {
             handleError(error, `Failed to update page ${pageId}`);
         } finally {
             setLoading(false);
         }
     }, []);
-
     /**
      * 페이지 삭제
      */
