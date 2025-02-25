@@ -11,7 +11,7 @@ export default function Main() {
 
   useEffect(() => {
     if (id) fetchPage(id as string);
-  }, [id]);
+  }, [id, fetchPage]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
