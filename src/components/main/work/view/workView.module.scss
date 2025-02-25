@@ -83,7 +83,7 @@
 		header {
 
 			.work_detail_title {
-				font-size: clamp(8.8rem, calc(-1.675rem + 13.375vw), 14.375rem);
+				font-size: clamp(3.8rem, 13.375vw - 2.9rem, 13.375rem);
 				font-weight: 700;
 				line-height: 2.375rem;
 				margin-bottom: clamp(4.8rem, 11.375vw - 1.675rem, 14.375rem);
@@ -124,7 +124,7 @@
 				position: relative;
 				@include flex('between');
 				align-items: flex-start;
-				width: calc(100% - 5vw);
+				width: calc(100% - 10vw);
 				left: -5vw;
 				padding: 10vw;
 				margin-top: 3vw;
@@ -148,7 +148,7 @@
 			.grid_100 {
 				position: relative;
 				width: calc(100% + 12rem);
-				height: 65rem;
+				height: 67rem;
 				left: -6rem;
 
 				@media (max-width: 768px) {
@@ -240,7 +240,7 @@
 			.grid_30 {
 				position: relative;
 				width: 30%;
-				height: clamp(8.8rem, 72rem, 102rem);
+				height: clamp(8.8rem, 73rem, 102rem);
 				filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.16));
 				border-radius: 20px;
 				overflow: hidden;
@@ -281,7 +281,6 @@
 
 							span {
 								display: inline-block;
-								padding: 0 1rem 0 0;
 							}
 
 							.project_btn {

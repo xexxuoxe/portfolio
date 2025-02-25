@@ -2,6 +2,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './footer.module.scss';
 import { useFooter } from './hooks/useFooter';
 
@@ -20,8 +21,12 @@ export default function FooterComponent() {
             <div className={styles.media_title}>Social media</div>
             {SOCIAL_LINKS.map((link, index) => (
               <a key={index} href={link.url} target="_blank" className={styles.media_icon} aria-label={link.name}>
-                <svg width="40px" height="40px" viewBox="0 0 15 15" fill="none">
-                </svg>
+                <Image
+                  src={link.img}
+                  width={60}
+                  height={60}
+                  alt=''
+                />
               </a>
             ))}
           </aside>

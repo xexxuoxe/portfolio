@@ -23,7 +23,7 @@ export default function WorkViewPage() {
 		<>
 			{/* loader */}
 			<Loader
-				className='' variant="blind_dark_blue" onComplete={ handleLoaderComplete }/>
+				className='' variant="blind_coral" onComplete={ handleLoaderComplete }/>
 			<motion.div 
 				className={` ${styles.work_view} ${ isBackgroundInView ? styles.active : ''}`}
 				initial={{ display: "none",	y: "100%" }}
@@ -94,7 +94,7 @@ export default function WorkViewPage() {
 									</li>
 									<li>
 										<h4>Period</h4>
-										<p>21일</p>
+										<p>14일</p>
 									</li>
 								</ul>
 								<ul>

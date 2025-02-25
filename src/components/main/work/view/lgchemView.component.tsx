@@ -23,7 +23,7 @@ export default function WorkViewPage() {
 		<>
 			{/* loader */}
 			<Loader
-				className='' variant="blind_dark_blue" onComplete={ handleLoaderComplete }/>
+				className='' variant="blind_lavender" onComplete={ handleLoaderComplete }/>
 			<motion.div 
 				className={` ${styles.work_view} ${ isBackgroundInView ? styles.active : ''}`}
 				initial={{ display: "none",	y: "100%" }}

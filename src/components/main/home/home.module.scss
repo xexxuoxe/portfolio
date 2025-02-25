@@ -6,9 +6,9 @@
 /* home */
 .home_detail {
 	position: absolute;
-    width: calc(100% - 20rem);
+    width: calc(100% - 10vw);
 	min-width: 1000px;
-	padding: clamp(5rem, 24rem, 20rem) clamp(5rem, 10rem, 10rem) 0 clamp(5rem, 10rem, 10rem);
+	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 5vw) clamp(5rem, 10vw, 10rem);
 	font-size: clamp(1rem, 1.5vw, 1.2rem);
     background: #f0f3ff;
 	transition: all .5s;

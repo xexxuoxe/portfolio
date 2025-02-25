@@ -32,6 +32,12 @@
 				transition-delay: .3s;
 			}
 		}
+
+		footer {
+			&::before {
+				background-color: #141414 !important;
+			}
+		}
 	}
 	
 	.info_title {

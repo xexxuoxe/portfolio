@@ -6,6 +6,6 @@ export const MENU_LIST = [
 ];
 
 export const SOCIAL_LINKS = [
-    { name: "GitHub", url: "https://github.com/your-profile" },
-    { name: "Notion", url: "https://www.notion.so/your-page" }
+    { name: "GitHub", url: "https://github.com/xexxuoxe", img: "/images/icon_git_white.svg"},
+    // { name: "Notion", url: "https://www.notion.so/your-page" }
 ];

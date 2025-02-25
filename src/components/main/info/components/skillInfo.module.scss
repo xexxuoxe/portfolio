@@ -27,7 +27,7 @@
 		}
 
 		h3 {
-			font-size: clamp(2rem, 3.5vw, 2.8rem);
+			font-size: clamp(2rem, 3.5vw, 3rem);
 			font-weight: 800;
 		}
 	}
@@ -37,7 +37,7 @@
 		align-items: flex-start;
 
 		.sub_title {
-			width: 70%;
+			width: 60%;
 			line-height: 2.1;
 
 			p {
@@ -46,15 +46,15 @@
 		}
 
 		.skill_list {
-			width: 25%;
+			width: 32%;
 
 			li {
-				font-size: clamp(1rem, 1.2vw, 1.1rem);
+				font-size: clamp(1rem, 1.1vw, 1.8rem);
 				font-weight: 400;
-				line-height: clamp(2rem, 2.5vw, 2.3rem);
+				line-height: clamp(2rem, 2.5vw, 2.5rem);
 				position: relative;
 				color: #242532;
-				padding-left: clamp(2rem, 10vw, 3.3rem);
+				padding-left: clamp(2rem, 10vw, 4.3rem);
 
 				&::before {
 					@include pseudo-element(2rem, 0.0625rem, 1.1rem, 0);
