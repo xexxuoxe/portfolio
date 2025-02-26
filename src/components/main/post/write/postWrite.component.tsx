@@ -54,6 +54,7 @@ export default function PostWritePage({ post }: PostWriteProps) {
             <label htmlFor='contents'>Contents</label>
             <textarea
               id='contents'
+              cols={200}
               wrap="hard"
               value={contents}
               onChange={handleContentsChange}

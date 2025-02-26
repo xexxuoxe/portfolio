@@ -39,10 +39,12 @@ export function usePost(initialPost?: PostData | null) {
         try {
             if (initialPost?.id) {
                 await updatePage(initialPost.id, title, contents, tags);
+                alert('글이 수정되었습니다.')
                 router.push(`/post/view/${initialPost.id}`);
                 
             } else {
                 await createPage(title, contents, tags);
+                alert('글이 작성되었습니다.')
                 router.push('/post/list');
             }
 
