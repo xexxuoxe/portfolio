@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from './actionButtons.module.scss';
 
 interface PostViewButtonsProps {
@@ -9,6 +10,18 @@ interface PostViewButtonsProps {
 }
 
 const PostViewButtons = ({ postId, handleDelete }: PostViewButtonsProps) => {
+
+    const [loading, setLoading] = useState(false);
+
+    const onSubmit = async () => {
+        setLoading(true);
+        try {
+            await handleDelete();
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className={styles.post_view_btn}>
             <div className={styles.post_list_btn}>
@@ -24,7 +37,7 @@ const PostViewButtons = ({ postId, handleDelete }: PostViewButtonsProps) => {
                 </div>
                 <div className={styles.post_delete_btn}>
                     <button onClick={handleDelete}>
-                        <span>DELETE</span>
+                        <span>{loading ? 'DELETING...' : 'DELETE'}</span>
                     </button>
                 </div>
             </div>
