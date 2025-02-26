@@ -19,10 +19,19 @@
                 height: 100%;
 
                 .post_tags {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
 
                     span {
-                        font-size: 1.3rem;
+                        font-size: 1rem;
                         font-weight: 600;
+                        border-radius: 50px;
+                        background: linear-gradient(-45deg, #a89be2, #fdd0f6, #9ae4fa) !important;
+                        color: #000;
+                        overflow: hidden;
+                        padding: .4rem 1rem;
+                        margin-left: .5rem;
                     }
                 }
         
@@ -41,6 +50,11 @@
                     font-size: 1.3rem;
                     font-weight: 300;
                     word-break: break-all;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
                 }
             }
         }
