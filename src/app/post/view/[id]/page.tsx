@@ -7,7 +7,7 @@ import PostViewItem from '@components/main/post/view/postView.component';
 
 export default function PostDetail() {
   const { id } = useParams(); 
-  const { fetchPage, currentPage, loading, error } = useNotion();
+  const { fetchPage, currentPage, error } = useNotion();
 
   useEffect(() => {
     if (id) {
@@ -15,7 +15,6 @@ export default function PostDetail() {
     }
   }, [id, fetchPage]);
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
