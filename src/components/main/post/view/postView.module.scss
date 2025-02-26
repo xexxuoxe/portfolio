@@ -52,6 +52,10 @@
 					font-weight: 100;
 					font-size: 1.5rem;
 					word-break: break-word;
+					
+					pre {
+						white-space: pre-wrap;
+					}
 				}
 			}
 		}
