@@ -32,7 +32,7 @@ export default function PostListItem() {
           </FadeInMotion>
           <div className={styles.info_cont}>
             <FadeInMotion delay={0.4} initialX={0} initialY={100}>
-              <h3>개발에 관한 글을 확인하실 수 있습니다.</h3>
+              <h3>자유롭게 작성해보세요 🖊 </h3>
             </FadeInMotion>
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function PostListItem() {
             </li>
             <div className={styles.post_write_btn}>
               <Link href="/post/write">
-                <span>Writing 🖊</span>
+                <span>Writing</span>
               </Link>
             </div>
           </ul>

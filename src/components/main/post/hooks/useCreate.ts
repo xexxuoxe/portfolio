@@ -39,11 +39,12 @@ export function usePost(initialPost?: PostData | null) {
         try {
             if (initialPost?.id) {
                 await updatePage(initialPost.id, title, contents, tags);
+                router.push(`/post/view/${initialPost.id}`);
                 
             } else {
                 await createPage(title, contents, tags);
+                router.push('/post/list');
             }
-            router.push('/post/list');
 
         } catch (error) {
             console.error('Failed to save post', error);

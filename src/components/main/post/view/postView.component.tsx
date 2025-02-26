@@ -49,7 +49,7 @@ export default function PostViewItem({ post }: PostViewItemProps) {
             </FadeInMotion>
             <FadeInMotion delay={0.6} initialX={0} initialY={100}>
               <div className={styles.view_contents}>
-                <div>{post.contents}</div>
+                <div><pre>{post.contents}</pre></div>
               </div>
             </FadeInMotion>
           </div>

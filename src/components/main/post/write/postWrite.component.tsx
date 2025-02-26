@@ -54,6 +54,7 @@ export default function PostWritePage({ post }: PostWriteProps) {
             <label htmlFor='contents'>Contents</label>
             <textarea
               id='contents'
+              wrap="hard"
               value={contents}
               onChange={handleContentsChange}
               placeholder="내용을 입력해주세요."
