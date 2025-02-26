@@ -27,7 +27,7 @@ interface UseNotionReturn {
 
 /**
  * Notion API를 사용하기 위한 커스텀 훅
- */
+*/
 export const useNotion = (): UseNotionReturn => {
     // 상태 관리
     const [pages, setPages] = useState<NotionPage[]>([]);
@@ -80,14 +80,14 @@ export const useNotion = (): UseNotionReturn => {
     /**
      * 새 페이지 생성
      */
-    const createPage = useCallback(async (title: string, contents: string, tags: string[]) => {
+    const createPage = useCallback(async (title: string, contents: string, tags: string[]) => 
+        {
         try {
             setLoading(true);
             setError(null);
             const newPage = await action.createPage(title, contents, tags);
-            console.log(newPage)
+            
             setPages(prev => [...prev, newPage]);
-            console.log('너들어갔니?')
             setCurrentPage(newPage);
         } catch (error) {
             handleError(error, 'Failed to create page');

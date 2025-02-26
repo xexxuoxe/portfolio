@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useLoader } from '../hooks/useLoader';
 
 import Loader from'@components/_utiles/loader/loader.component';
+import NavComponent from '@components/sementic/navigation/nav.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
 
@@ -29,6 +30,7 @@ export default function WorkViewPage() {
 				initial={{ display: "none",	y: "100%" }}
 				animate={{ display: "block", y: showContent ? 0 : "100%", transition: { duration: .3, ease: "easeOut"}}}
 			>
+				<NavComponent />
 				{/* view */}
 				<div className={`${styles.work_detail_veiw} ${styles.work_container}`}>
 					<header>

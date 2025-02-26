@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion';
 import Loader from '@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
+import NavComponent from '@components/sementic/navigation/nav.component';
 import { useLoader } from '../hooks/useLoader';
 import { usePostActions } from '../hooks/useDelete';
-import PostViewButtons from './components/actionButtons'; 
+import PostViewButtons from './components/actionButtons';
 import styles from './postView.module.scss';
 
 interface PostViewItemProps {
@@ -29,6 +30,7 @@ export default function PostViewItem({ post }: PostViewItemProps) {
         initial={{ display: 'none', y: '100%' }}
         animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.3, ease: 'easeOut' } }}
       >
+        <NavComponent />
         <div className={styles.board_detail}>
           <div className={styles.board_cont}>
             <FadeInMotion delay={0} initialX={0} initialY={100}>

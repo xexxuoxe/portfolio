@@ -39,9 +39,12 @@ export async function getPage(pageId: string): Promise<NotionPage> {
 export async function createPage(title: string, contents: string, tags: string[]): Promise<NotionPage> {
   const notionService = createNotionService();
   try {
+
     const newPage = await notionService.createPage(title, contents, tags);
+
     revalidatePath('/notion'); // 페이지 목록 갱신
     return newPage;
+
   } catch (error) {
     console.error('Failed to create page:', error);
     throw new Error('Failed to create page');

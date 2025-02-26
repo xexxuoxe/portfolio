@@ -7,6 +7,7 @@ import Loader from '@components/_utiles/loader/loader.component';
 import FooterComponent from '@components/sementic/footer/footer.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import PostItem from '@components/main/post/list/components/postItem'
+import NavComponent from '@components/sementic/navigation/nav.component';
 
 import { useLoader } from '../hooks/useLoader';
 import { useNotion } from '@lib/notion/hook/useNotion.hook';
@@ -24,6 +25,7 @@ export default function PostListItem() {
         initial={{ display: 'none', y: '100%' }}
         animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
       >
+        <NavComponent />
         <div className={`${styles.board_list}`}>
           <FadeInMotion delay={0} initialX={-100} initialY={0}>
             <h1 className={styles.board_title}>Board</h1>
@@ -34,7 +36,6 @@ export default function PostListItem() {
             </FadeInMotion>
           </div>
         </div>
-
         <div className={styles.board_main}>
           <ul className={styles.post_header}>
             <li>
@@ -42,12 +43,10 @@ export default function PostListItem() {
                 ALL({pages.length})
               </button>
             </li>
-
-          
             <div className={styles.post_write_btn}>
-                <Link href="/post/write">
-                    <span>Writing 🖊</span>
-                </Link>
+              <Link href="/post/write">
+                <span>Writing 🖊</span>
+              </Link>
             </div>
           </ul>
           <PostItem />

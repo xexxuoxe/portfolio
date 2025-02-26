@@ -20,27 +20,6 @@ export function usePost(initialPost?: PostData | null) {
     const [tags, setTags] = useState<string[]>(initialPost?.tags || []);
     const { createPage, updatePage } = useNotion();
 
-    const handleSubmit = async () => {
-        setLoading(true);
-        try {
-            if (initialPost?.id) {
-                await updatePage(initialPost.id, title, contents, tags);
-
-                console.log('수정되었습니다.')
-            } else {
-                await createPage(title, contents, tags);
-
-                console.log('작성되었습니다.')
-            }
-            router.push('/post/list');
-
-        } catch (error) {
-            console.error('Failed to save post', error);
-
-        } finally {
-            setLoading(false);
-        }
-    }; 
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(e.target.value);
@@ -54,6 +33,25 @@ export function usePost(initialPost?: PostData | null) {
         setTags(e.target.value.split(',').map(tag => tag.trim()));
     };
 
+    const handleSubmit = async () => {
+
+        setLoading(true);
+        try {
+            if (initialPost?.id) {
+                await updatePage(initialPost.id, title, contents, tags);
+                
+            } else {
+                await createPage(title, contents, tags);
+            }
+            router.push('/post/list');
+
+        } catch (error) {
+            console.error('Failed to save post', error);
+
+        } finally {
+            setLoading(false);
+        }
+    }; 
     return {
         title,
         contents,

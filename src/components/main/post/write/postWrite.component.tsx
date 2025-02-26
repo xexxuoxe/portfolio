@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useLoader } from '../hooks/useLoader';
 import Loader from '@components/_utiles/loader/loader.component';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
+import NavComponent from '@components/sementic/navigation/nav.component';
 import PostWriteButtons from './components/actionButtons';
 import { usePost, PostData } from '../hooks/useCreate';
 import styles from './postWrite.module.scss';
@@ -32,6 +33,7 @@ export default function PostWritePage({ post }: PostWriteProps) {
         initial={{ display: 'none', y: '100%' }}
         animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.3, ease: 'easeOut' } }}
       >
+        <NavComponent />
         <div className={styles.info_cont}>
           <FadeInMotion delay={0} initialX={100} initialY={0}>
             <h3>글을 자유롭게 작성해보세요😀</h3>
@@ -68,7 +70,7 @@ export default function PostWritePage({ post }: PostWriteProps) {
             />
           </div>
         </div>
-        <PostWriteButtons postId={post?.id || ''}  handleSubmit={handleSubmit}
+        <PostWriteButtons postId={post?.id || ''} handleSubmit={handleSubmit}
         />
       </motion.div>
     </>

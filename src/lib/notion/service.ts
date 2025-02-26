@@ -31,7 +31,10 @@ export class NotionService {
      * 페이지 데이터를 NotionPage 형식으로 변환
      */
     private convertToNotionPage(page: PageObjectResponse): NotionPage {
-        console.log(page)
+
+
+        // console.log(page)
+
         const properties = page.properties;
         
         // writer 프로퍼티 처리
@@ -105,7 +108,7 @@ export class NotionService {
                 },
                 properties: {
                     title: {
-                        title: [
+                        rich_text: [
                             {
                                 text: {
                                     content: title,
@@ -150,7 +153,7 @@ export class NotionService {
                 page_id: pageId,
                 properties: {
                     title: {
-                        title: [
+                        rich_text: [
                             {
                                 text: {
                                     content: title,

@@ -7,6 +7,7 @@ import { useLoader } from './hooks/useLoader';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import FooterComponent from '@components/sementic/footer/footer.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
+import NavComponent from '@components/sementic/navigation/nav.component';
 import Loader from'@components/_utiles/loader/loader.component';
 import { AboutSection, Skill, SkillInfo, Work } from './components/'
 
@@ -27,20 +28,16 @@ export default function InfoItemPage() {
 				initial={{ display: 'none', y: '100%' }}
 				animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
 			>
+				<NavComponent />
 				 <FadeInMotion delay={0} initialX={-100} initialY={0}>
 					<h1 className={styles.info_title}>About me</h1>
 				</FadeInMotion>
-				{/* about */}
 				<AboutSection />
-				{/* skill*/}
 				<Skill />
-				{/* skill info */}
 				<SkillInfo />
-				{/* work button */}
 				<BackgroundMotion onInView={setIsBackgroundInView}>
 					<Work/>
 				</BackgroundMotion>
-				{/* footer */}
 				<FooterComponent />
 			</motion.div>
 		</>
