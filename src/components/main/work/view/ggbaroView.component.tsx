@@ -83,7 +83,7 @@ export default function WorkViewPage() {
 									</li>
 									<li>
 										<h4>Participation</h4>
-										<p>Front : 100%</p>
+										<p>Front : 40%</p>
 									</li>
 									<li>
 										<h4>Technology</h4>
@@ -98,7 +98,7 @@ export default function WorkViewPage() {
 									</li>
 									<li>
 										<h4>Period</h4>
-										<p>2개월</p>
+										<p>1개월</p>
 									</li>
 								</ul>
 								<ul>
