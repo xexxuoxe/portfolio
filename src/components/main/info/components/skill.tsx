@@ -1,26 +1,40 @@
 import Image from 'next/image';
-import { SKILL_LOGOS } from '../constants/skillLogs';
-import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import styles from './skill.module.scss';
+import { skillsData } from '../constants/skillLogs';
+import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 
-export const Skill = () => {
-
+export const SkillsSection = () => {
   return (
-    <div className={styles.info_items}>
-      <FadeInMotion delay={0} initialX={0} initialY={100}>
-        <div className={styles.items_box}>
-          {SKILL_LOGOS.map((list, idx) => (
-            <div className={`${styles.slide_wrapper}`} key={idx}>
-              <Image
-                src={list.img}
-                width={130}
-                height={130}
-                alt={list.title || 'Logo'}
-              />
+    <section className={styles.skillsSection}>
+      <h2 className={styles.sub_title}>SKILLS</h2>
+      <h1 className={styles.title}>아래의 기술을 사용할 수 있습니다.</h1>
+      <div className={styles.skillsGrid}>
+        {skillsData.map((skill, index) => (
+          <FadeInMotion
+            key={index}
+            delay={index * 0.4}
+            initialX={0}
+            initialY={100}
+          >
+            <div className={styles.skillCard}>
+              <div className={styles.iconTitle}>
+                <Image
+                  src={skill.icon}
+                  width={18}
+                  height={18}
+                  alt={`${skill.title} icon`}
+                />
+                <h3>{skill.title}</h3>
+              </div>
+              <ul>
+                {skill.items.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
-      </FadeInMotion>
-    </div>
+          </FadeInMotion>
+        ))}
+      </div>
+    </section>
   );
 };

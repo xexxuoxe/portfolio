@@ -1,67 +1,60 @@
-@import '@styles/abstracts/_mixins';
-@import '@styles/abstracts/_variables';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
+@use "@styles/common" as *;
 
-
-.sub_content {
-	width: 100%;
-	height: auto;
+.projectListWrapper {
+	width: 1200px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 	margin: 0 auto;
-	padding-top: 13rem;
+}
 
-	.sub_content_title {
-		display: ruby-text;
-		background: linear-gradient(-45deg, #a89be2, #fdd0f6, #9ae4fa) !important;
-		color: transparent !important;
-		-webkit-background-clip: text !important;
-		font-size: clamp(2.8rem, 11.75vw - 3.675rem, 14.375rem);
-		font-weight: 900;
-		line-height: 2.375rem;
-		margin-bottom: 5rem;
-		text-transform: uppercase !important;
-	}
-	
-	.sub_list_box { 
+.projectItem {
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	padding: 16px 24px;
+	border-radius: 12px;
+
+	.leftArea {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid  #fff;
-		padding: 1rem 0;
+		flex-direction: column;
+		gap: 8px;
+		flex: 1;
 
-		.box_left {
-			width: 60%;
-			line-height: 1.5;
+		.badgeContainer {
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
 
-			h4 {
-				font-weight: 700;
-				font-size: 1rem;
-			}
-
-			h3 {    
-				font-size: 1.8rem;
-				font-weight: 400;
-				padding: 0.7rem 0 1rem;
-				line-height: 1;
-			}
-
-			.date {
-				display: inline-block;
-				border-radius: 50px;
-				background: linear-gradient(-45deg, #9df6dd, #a89be2, #fdd0f6, #9ae4fa);
-				font-size: .9rem;
-				color: #000 !important;
-				font-weight: bold;
-				padding: .0625rem .5625rem .2rem ;
+			.badge {
+				background-color: #4776f3;
+				color: white;
+				font-size: 12px;
+				padding: 4px 8px;
+				border-radius: 4px;
+				font-weight: 500;
 			}
 		}
-		
-		.box_right {
-			width: 50%;
-			text-align: right;
-			p {
-				font-size: 1.15rem;
-			}
+
+		.projectTitle {
+			font-size: 16px;
+			font-weight: 600;
+		}
+	}
+
+	.projectMeta {
+		font-size: 14px;
+		font-weight: 400;
+		color: #fff;
+
+		.rightArea {
+			flex: 1.5;
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			font-size: 14px;
+			line-height: 1.5;
+			padding-left: 24px;
 		}
 	}
 }

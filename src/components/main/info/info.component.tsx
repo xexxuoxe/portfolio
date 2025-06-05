@@ -9,7 +9,7 @@ import FooterComponent from '@components/sementic/footer/footer.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
 import NavComponent from '@components/sementic/navigation/nav.component';
 import Loader from'@components/_utiles/loader/loader.component';
-import { AboutSection, Skill, SkillInfo, Work } from './components/'
+import { AboutSection, SkillsSection, SkillInfo, Work } from './components/'
 
 import styles from './info.module.scss';
 
@@ -29,11 +29,8 @@ export default function InfoItemPage() {
 				animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
 			>
 				<NavComponent />
-				 <FadeInMotion delay={0} initialX={-100} initialY={0}>
-					<h1 className={styles.info_title}>About me</h1>
-				</FadeInMotion>
 				<AboutSection />
-				<Skill />
+				<SkillsSection />
 				<SkillInfo />
 				<BackgroundMotion onInView={setIsBackgroundInView}>
 					<Work/>

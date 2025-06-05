@@ -1,44 +1,31 @@
-'use client'
-
-import { useIntroAnimation } from './intro.hook';
+// components/IntroSection.tsx
 import styles from './intro.module.scss';
 
-export default function IntroItemPage() {
-  const { followRef, contentRefs, loaderRef, mainViewRef, handleIndexEffect } = useIntroAnimation();
-
-  // Create a type-safe ref callback function
-  const setContentRef = (index: number) => (element: HTMLDivElement | null) => {
-    contentRefs.current[index] = element;
-  };
-
+export const IntroSection = () => {
   return (
-    <>
-      <div className={styles.main_view} ref={mainViewRef} onClick={handleIndexEffect}>
-        <div className={styles.intro_txt}>
-          <div 
-            ref={setContentRef(0)} 
-            className={`${styles.intro_content} ${styles.intro_content01}`}
-          >
-            <h1 className={styles.title}>Portfolio</h1>
-          </div>
-          <div 
-            ref={setContentRef(1)} 
-            className={`${styles.intro_content} ${styles.intro_content02}`}
-          >
-            <h1 className={styles.title}>Lee Eun Seo</h1>
-          </div>
-          <div 
-            ref={setContentRef(2)} 
-            className={`${styles.intro_content} ${styles.intro_content03}`}
-          >
-            <h1 className={styles.title}>Projects</h1>
-          </div>
-        </div>
-        <div className={styles.follow} ref={followRef}>
-          VIEW<br />PROJECT
-        </div>
+    <section className={styles.introSection}>
+      <div className={styles.textWrapper}>
+        <h1 className={`${styles.text} ${styles.delay1}`}>HELLO!</h1>
+        <h1 className={`${styles.text} ${styles.delay2}`}>FRONTEND DEVELOPER</h1>
+        <h1 className={`${styles.text} ${styles.delay3}`}>LEE EUN SEO</h1>
       </div>
-      <div className={styles.loader_window} ref={loaderRef}></div>
-    </>
+
+      <div className={styles.roundTextWrapper}>
+        <svg viewBox="0 0 200 200" className={styles.roundText}>
+          <defs>
+            <path
+              id="circlePath"
+              d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"
+            />
+          </defs>
+          <circle cx="100" cy="100" r="3" className={styles.dot} />
+          <text>
+            <textPath href="#circlePath" startOffset="0%">
+            • Scroll down • Scroll down • Scroll down 
+            </textPath>
+          </text>
+        </svg>
+      </div>
+    </section>
   );
-}
+};

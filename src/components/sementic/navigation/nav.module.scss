@@ -1,5 +1,4 @@
-@import '@styles/abstracts/_mixins';
-@import '@styles/abstracts/_mixins';
+@use "@styles/common" as *;
 
 #navigation {
 	position: fixed;

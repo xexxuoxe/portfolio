@@ -5,11 +5,13 @@ import { motion } from 'framer-motion';
 import { useLoader } from './hooks/useLoader';
 
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
-import FooterComponent from '@components/sementic/footer/footer.component';
+// import FooterComponent from '@components/sementic/footer/footer.component';
 import Loader from '@components/_utiles/loader/loader.component';
 import NavComponent from '@components/sementic/navigation/nav.component';
-import { Project } from '@components/main/work/components/'
-import { AboutSection, Skill, Work } from '@components/main/info/components/'
+import { IntroSection } from '@components/main/intro/intro.component'
+import { Project, SubProject } from '@components/main/work/components'
+import { ArchivingSection } from '@components/main/archiving/archiving.component'
+import { AboutSection, SkillsSection, Work } from '@components/main/info/components/'
 
 import styles from './home.module.scss';
 
@@ -29,17 +31,14 @@ export default function HomeItemPage() {
         animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
       >
         <NavComponent />
+        <IntroSection />
         <AboutSection />
-        <Skill />
+        <SkillsSection />
+        <ArchivingSection />
         <BackgroundMotion onInView={setIsBackgroundInView01}>
-          <div className={styles.main_content}>
             <Project />
-          </div>
+            <SubProject />
         </BackgroundMotion>
-        <BackgroundMotion onInView={setIsBackgroundInView02}>
-          <Work />
-        </BackgroundMotion>
-        <FooterComponent />
       </motion.div>
     </>
   );

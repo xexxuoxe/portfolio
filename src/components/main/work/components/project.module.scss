@@ -1,83 +1,95 @@
-@import '@styles/abstracts/_mixins';
-@import '@styles/abstracts/_variables';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
+@use "@styles/common" as *;
 
+.projectSection {
+  padding: 40px 20px;
 
-.main_content { 
+  .projectGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
 
-	.main_grid {
-		@include flex('between');
-		flex-wrap: wrap;
-		align-items: flex-start;
-		width: 100%;
-		margin-bottom: 4rem;
-		margin: auto;
-		
-		.main_list_box {
-			width: 32.5%;
+    .projectCard {
+      width: 500px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
 
-			> div{
-				width: 100%;
-				height: 100%;
+      .websiteBtn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: #f2f2f2;
+        padding: 8px 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 14px;
+      }
 
-				a {
-					display: block;
-					width: 100%;
-					height: auto;
-					transition: all .5s cubic-bezier(0.16, 0.01, 0.77, 1);
+      .badgeContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
 
-					.box_img {	
-						position: relative;
-						display: block;
-						width: 100%;
-						height: clamp(20rem, 30vw, 32rem);
-						border-radius: 5px;
-						overflow: hidden;
+        .badge {
+          background-color: #4776f3;
+          color: white;
+          font-size: 12px;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-weight: 500;
+        }
+      }
 
-						img {	
-							object-fit: cover;
-							transition: all .5s  cubic-bezier(0.16, 0.01, 0.77, 1);
-						}
-					}
-	
-					.box_text {
-						width: 100%;
-						height: auto;
-						padding: clamp(1rem, 2vw, 1.3rem) 0;
-						line-height: 1.2;
-	
-						p {
-							color:  #000;
-							font-size: clamp(.8rem, 1.5vw, 1.3rem);
-	
-							&:nth-child(1) {
-								font-weight: 700;
-							}
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 8px;
+      }
 
-							&:nth-child(2) {
-								padding: .5rem 0;
-								font-size: clamp(1.1rem, 2vw, 1.6rem);
-							}
-						}
-					}
+      .subtitle {
+        font-size: 14px;
+        color: #555;
+      }
 
-					&:hover, &:focus, :active {
-						transform: scale(0.95);
-						transition: all .5s cubic-bezier(0.16, 0.01, 0.77, 1);
+      .company {
+        font-size: 14px;
+        color: #888;
+      }
 
-						.box_img {	
+      .descriptionList {
+        font-size: 14px;
+        color: #333;
+        list-style: none;
+        padding-left: 0;
+        line-height: 1.6;
+      }
 
-							img {	
-								transform: scale(1.15);
-								transition: all .5s  cubic-bezier(0.16, 0.01, 0.77, 1);
+      .linkButtons {
+        display: flex;
+        gap: 16px;
+        margin-top: 12px;
+        flex-wrap: wrap;
 
-							}
-						}
-					}
-				}
-			}
-			
-		}
-	}
+        a {
+          font-size: 14px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f5f5f5;
+          padding: 6px 10px;
+          border-radius: 6px;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            background-color: #e0e0e0;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,8 +1,4 @@
-@import '@styles/abstracts/_mixins';
-@import '@styles/abstracts/_variables';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
-
+@use "@styles/common" as *;
 
 .info_skill {
 	width: clamp(2rem, 63vw, 100rem);

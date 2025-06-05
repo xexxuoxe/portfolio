@@ -1,81 +1,62 @@
-@import '@styles/abstracts/_mixins';
-@import '@styles/base/_reset';
-@import '@styles/base/_typography.scss';
+@use "@styles/common" as *;
 
-/* intro */
-.main_view {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	min-width: 1000px;
-	height: 100vh;
-	background: #f6f6f6;
-	z-index: 1;
-	z-index: 50;
-
-    .intro_txt {
-
-        .intro_content {
-            width: 100%;
-            height: 100vh;
-            background: #f0f3ff;
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-           	.title {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: clamp(4.5rem, 8vw, 8.13rem);
-                color: #f0f3ff;
-                -webkit-text-stroke: 1.5px #0c0c0e;
-                font-weight: 400;
-				cursor: default;
-            }
-
-			&.intro_content01 {
-				display: block;
-			}
-
-			&.intro_content03 {
-				background: #000;
-
-				.title {
-					color: #000;
-					-webkit-text-stroke: 1.5px #fff;
-				}
-			}
-        }
-    }
-
-    .follow {
-		position: fixed;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: clamp(3rem, 4.2vw, 4rem); 
-		height: clamp(3rem, 4.2vw, 4rem);
-		background-color: #4467a2;
-		font-size: clamp(0.5rem, 0.7vw, 0.7rem);
-		font-weight: 300;
-		font-family: 'Helvetica Neue' , 'Spoqa Han Sans Neo';
-		color: white;
-		text-align: center;
-		border-radius: 50%;
-		pointer-events: none;
-    }
+.introSection {
+	position: relative;
+	@include flex('center');
+	padding: 120px 0;
 }
 
-.loader_window {
+.textWrapper {
+	text-align: center;
+}
+
+.text {
+	font-size: 64px;
+	font-weight: 700;
+	color: #4b6ff4;
+	opacity: 0;
+	transform: translateY(50px);
+	animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.roundTextWrapper {
 	position: absolute;
-    width: 100%;
-	height: 100vh;
-	min-height: 100vh;
-    top: 100vh;
-	background-color: #a3bded;
-    z-index: 51;
+	top: 500px;
+	right: 40px;
+	width: 170px;
+	height: 170px;
+	animation: rotate 10s linear infinite;
+}
+
+.roundText {
+	width: 100%;
+	height: 100%;
+
+	text {
+		fill: #000;
+		font-size: 22px;
+		letter-spacing: 1.3;
+	}
+}
+
+.dot {
+  fill: #000;
+}
+
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }

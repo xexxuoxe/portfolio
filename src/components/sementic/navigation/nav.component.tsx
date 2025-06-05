@@ -6,7 +6,6 @@ import { MENU_LIST } from './constants/navLinks';
 import styles from "./nav.module.scss";
 
 export default function NavComponent() {
-
 	return (
 		<div id={ styles.navigation }>
 			<div className={ styles.inner_wrap }>

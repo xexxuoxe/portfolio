@@ -1,6 +1,17 @@
 export const MENU_LIST = [
-    { name: "HOME", url: "/home" },
-		{ name: "ABOUT", url: "/info" },
-		{ name: "WORK", url: "/work/list" },
-		{ name: "BOARD", url: "/post/list" }
+	{ 
+		name: "ABOUT ME" , url: "/info"
+	},
+	{ 
+		name: "SKILLS" , url: "/work/list"
+	},
+	{ 
+		name: "ARCHIVING" , url: "/work/list"
+	},
+	{ 
+		name: "PROJECTS" , url: "/work/list"
+	},
+	{ 
+		name: "GUESTBOOK" , url: "/post/list"
+	}
 ];

@@ -1,18 +1,22 @@
-export const SKILL_LOGOS = [
-  { img: "/images/ico_react.png", title: "react logo" },
-  { img: "/images/ico_next.png", title: "next logo" },
-  { img: "/images/ico_typescript.png", title: "typescript logo" },
-  { img: "/images/ico_javascript.png", title: "javascript logo" },
-  { img: "/images/ico_node.png", title: "node logo" },
-  { img: "/images/ico_webpack.png", title: "webpack logo" },
-  { img: "/images/ico_jquery.png", title: "jquery logo" },
-  { img: "/images/ico_git.png", title: "git logo" },
-  { img: "/images/ico_github.png", title: "github logo" },
-  { img: "/images/ico_html.png", title: "html logo" },
-  { img: "/images/ico_css.png", title: "css logo" },
-  { img: "/images/ico_sass.png", title: "sass logo" },
-  { img: "/images/ico_tail.png", title: "tail logo" },
-  { img: "/images/ico_figma.png", title: "figma logo" },
-  { img: "/images/ico_zeplin.png", title: "zeplin logo" },
-  { img: "/images/ico_photo.png", title: "photo logo" },
+export const skillsData = [
+  {
+    icon: '/images/repair_tools.png',
+    title: 'Tools & DevOps',
+    items: ['Git, GitHub', 'Vercel', 'VS Code'],
+  },
+  {
+    icon: '/images/code.png',
+    title: 'FrontEnd',
+    items: ['Next.js, React', 'Zustand, React Query', 'SCSS, Tailwind CSS', 'jQuery', 'Node.js, webpack, babel'],
+  },
+  {
+    icon: '/images/translation.png',
+    title: 'language',
+    items: ['JavaScript, TypeScript'],
+  },
+  {
+    icon: '/images/layers.png',
+    title: 'Design',
+    items: ['Figma', 'Zeplin', 'Adobe Photoshop'],
+  },
 ];
