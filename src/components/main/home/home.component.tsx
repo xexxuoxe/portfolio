@@ -11,6 +11,7 @@ import NavComponent from '@components/sementic/navigation/nav.component';
 import { IntroSection } from '@components/main/intro/intro.component'
 import { Project, SubProject } from '@components/main/work/components'
 import { ArchivingSection } from '@components/main/archiving/archiving.component'
+import { GuestSection } from '@components/main/guestbook/guestbook.component'
 import { AboutSection, SkillsSection, Work } from '@components/main/info/components/'
 
 import styles from './home.module.scss';
@@ -35,11 +36,13 @@ export default function HomeItemPage() {
         <AboutSection />
         <SkillsSection />
         <ArchivingSection />
-        <BackgroundMotion onInView={setIsBackgroundInView01}>
-            <Project />
-            <SubProject />
-        </BackgroundMotion>
+        <Project />
+        <SubProject />
+        <GuestSection />
+        {/* <BackgroundMotion onInView={setIsBackgroundInView01}>
+        </BackgroundMotion> */}
       </motion.div>
+
     </>
   );
 }

@@ -42,12 +42,12 @@ body, form, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, fieldset, th
   padding: 0;
   font-style: normal;
   font-family: $font-family-base;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 html, body {
   font-size: $font-size-base;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   line-height: $line-height-base;
   color: $color-text;

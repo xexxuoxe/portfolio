@@ -1,26 +1,24 @@
 @use "@styles/common" as *;
 
 .projectListWrapper {
-	width: 1200px;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	width: 1200px;
 	margin: 0 auto;
+	padding: 100px 0;
 }
 
 .projectItem {
-	display: flex;
+	@include flex('center');
 	justify-content: space-between;
-	color: white;
+	color: #000;
 	padding: 16px 24px;
-	border-radius: 12px;
+	border-bottom: 1px solid #8d8d8d;
+	transition: .4s;
 
 	.leftArea {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
 		flex: 1;
-
 		.badgeContainer {
 			display: flex;
 			gap: 8px;
@@ -29,32 +27,37 @@
 			.badge {
 				background-color: #4776f3;
 				color: white;
-				font-size: 12px;
+				font-size: 14px;
 				padding: 4px 8px;
 				border-radius: 4px;
-				font-weight: 500;
 			}
 		}
 
 		.projectTitle {
-			font-size: 16px;
-			font-weight: 600;
+			font-size: 18px;
+			padding-top: 5px;
+			font-weight: 400;
 		}
 	}
 
 	.projectMeta {
-		font-size: 14px;
-		font-weight: 400;
-		color: #fff;
+		flex: .5;
+		font-size: 16px;
+		color: #616161;
+	}
 
-		.rightArea {
-			flex: 1.5;
-			display: flex;
-			flex-direction: column;
-			gap: 6px;
-			font-size: 14px;
-			line-height: 1.5;
-			padding-left: 24px;
-		}
+	.rightArea {
+		flex: 1.5;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		font-size: 16px;
+		line-height: 1.5;
+		padding-left: 24px;
+		text-align: right;
+	}
+
+	&:hover {
+		border-bottom: 1px solid #000;
 	}
 }

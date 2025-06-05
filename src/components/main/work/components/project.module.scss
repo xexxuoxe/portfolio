@@ -1,24 +1,53 @@
 @use "@styles/common" as *;
 
 .projectSection {
-  padding: 40px 20px;
+  width: 1200px;
+  padding: 150px 32px 80px;
+  margin: auto;
+
+  .sub_title {
+    font-size: 15px;
+    color: #4366db;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  > .title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #000;
+  }
 
   .projectGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 70px;
     gap: 32px;
-    justify-content: center;
 
     .projectCard {
-      width: 500px;
+      position: relative;
+      width: 550px;
+      min-height: 400px;
       background: #fff;
       border-radius: 16px;
-      padding: 24px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      overflow: hidden;
+
+      .image {
+        position: relative;
+        width: 100%;
+        height: 134px;
+
+        img {
+          position: absolute;
+          object-fit: cover;
+        }
+      }
 
       .websiteBtn {
         position: absolute;
@@ -31,62 +60,89 @@
         font-size: 14px;
       }
 
-      .badgeContainer {
+      .CardContents {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 8px;
+        padding: 15px 24px;
+        border-top: 1px solid #dbdbdb;
 
-        .badge {
-          background-color: #4776f3;
-          color: white;
-          font-size: 12px;
-          padding: 4px 8px;
-          border-radius: 4px;
-          font-weight: 500;
+        .badgeContainer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+
+          .badge {
+            background-color: #4776f3;
+            color: white;
+            font-size: 12px;
+            padding: 5px 8px 3px;
+            border-radius: 4px;
+            font-weight: 300;
+          }
         }
-      }
 
-      .title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 8px;
-      }
+        .title {
+          font-size: 20px;
+          font-weight: bold;
+          margin-top: 8px;
+        }
 
-      .subtitle {
-        font-size: 14px;
-        color: #555;
-      }
-
-      .company {
-        font-size: 14px;
-        color: #888;
-      }
-
-      .descriptionList {
-        font-size: 14px;
-        color: #333;
-        list-style: none;
-        padding-left: 0;
-        line-height: 1.6;
-      }
-
-      .linkButtons {
-        display: flex;
-        gap: 16px;
-        margin-top: 12px;
-        flex-wrap: wrap;
-
-        a {
+        .subtitle {
           font-size: 14px;
-          text-decoration: none;
-          color: #333;
-          background-color: #f5f5f5;
-          padding: 6px 10px;
-          border-radius: 6px;
-          transition: 0.2s ease-in-out;
+          color: #555;
+        }
 
-          &:hover {
-            background-color: #e0e0e0;
+        .company {
+          font-size: 14px;
+          color: #888;
+        }
+
+        .descriptionList {
+          font-size: 14px;
+          color: #333;
+          list-style: none;
+          padding-left: 0;
+          line-height: 1.6;
+        }
+
+        .linkButtons {
+          @include flex('center');
+          justify-content: flex-start;
+          gap: 16px;
+          margin-top: 12px;
+
+          a {
+            @include flex('center');
+            gap: 5px;
+            font-size: 15px;
+            color: #000;
+
+            i {
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+
+              &.ico_git {
+                background: url('/images/ico_git_link.png') no-repeat center/contain;
+              }
+
+              &.ico_web {
+                background: url('/images/ico_web_link.png') no-repeat center/contain;
+              }
+
+              &.ico_read {
+                background: url('/images/ico_read_link.png') no-repeat center/contain;
+              }
+
+              &.ico_figma {
+                background: url('/images/ico_fig_link.png') no-repeat center/contain;
+              }
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }

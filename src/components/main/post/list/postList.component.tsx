@@ -25,17 +25,6 @@ export default function PostListItem() {
         initial={{ display: 'none', y: '100%' }}
         animate={{ display: 'block', y: showContent ? 0 : '100%', transition: { duration: 0.6, ease: 'easeOut' } }}
       >
-        <NavComponent />
-        <div className={`${styles.board_list}`}>
-          <FadeInMotion delay={0} initialX={-100} initialY={0}>
-            <h1 className={styles.board_title}>Board</h1>
-          </FadeInMotion>
-          <div className={styles.info_cont}>
-            <FadeInMotion delay={0.4} initialX={0} initialY={100}>
-              <h3>자유롭게 작성해보세요 🖊 </h3>
-            </FadeInMotion>
-          </div>
-        </div>
         <div className={styles.board_main}>
           <ul className={styles.post_header}>
             <li>

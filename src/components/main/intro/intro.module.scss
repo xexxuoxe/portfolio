@@ -1,62 +1,58 @@
 @use "@styles/common" as *;
 
-.introSection {
-	position: relative;
-	@include flex('center');
-	padding: 120px 0;
-}
 
-.textWrapper {
-	text-align: center;
-}
-
-.text {
-	font-size: 64px;
-	font-weight: 700;
-	color: #4b6ff4;
-	opacity: 0;
-	transform: translateY(50px);
-	animation: slideUp 1s ease forwards;
+@keyframes rotate {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
 }
 
 @keyframes slideUp {
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.roundTextWrapper {
-	position: absolute;
-	top: 500px;
-	right: 40px;
-	width: 170px;
-	height: 170px;
-	animation: rotate 10s linear infinite;
-}
-
-.roundText {
-	width: 100%;
-	height: 100%;
-
-	text {
-		fill: #000;
-		font-size: 22px;
-		letter-spacing: 1.3;
-	}
-}
-
-.dot {
-  fill: #000;
-}
+	to {opacity: 1; transform: translateY(0);}}
 
 
-@keyframes rotate {
-	0% {
-		transform: rotate(0deg);
+.introSection {
+	position: relative;
+	@include flex('center');
+	padding: 150px 32px 80px;
+
+	.textWrapper {
+		text-align: center;
+
+		.text {
+			font-size: 64px;
+			font-weight: 700;
+			color: #4b6ff4;
+			opacity: 0;
+			transform: translateY(50px);
+			animation: slideUp 1s ease forwards;
+		}
 	}
 
-	100% {
-		transform: rotate(360deg);
+	a {
+		display: block;
+
+		&.roundTextWrapper {
+			position: absolute;
+			top: 500px;
+			right: 80px;
+			width: 170px;
+			height: 170px;
+			animation: rotate 10s linear infinite;
+		}
+
+		.roundText {
+			width: 100%;
+			height: 100%;
+
+			text {
+				fill: #000;
+				font-size: 22px;
+				letter-spacing: 1.3;
+			}
+		}
+
+		.dot {
+			fill: #000;
+		}
 	}
 }

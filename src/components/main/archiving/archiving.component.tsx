@@ -5,7 +5,7 @@ import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 
 export const ArchivingSection = () => {
   return (
-    <section className={styles.archivingSection}>
+    <section className={styles.archivingSection} id='ARCHIVING'>
       <h2 className={styles.sub_title}>ARCHIVING</h2>
       <h1 className={styles.title}>저의 기술을 확인해보세요!</h1>
       <div className={styles.archiveGrid}>

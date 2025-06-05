@@ -3,7 +3,7 @@ import styles from './aboutSection.module.scss';
 
 export const AboutSection = () => {
   return (
-    <div className={`${styles.info_detail} ${styles.info_container}`}>
+    <div className={`${styles.info_detail} ${styles.info_container}`} id='ABOUT'>
       <div className={styles.sub_title}>
         <FadeInMotion delay={0.2} initialX={-100} initialY={0}>
           <h2>ABOUT ME</h2>

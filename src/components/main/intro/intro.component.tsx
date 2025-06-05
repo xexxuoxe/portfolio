@@ -9,8 +9,7 @@ export const IntroSection = () => {
         <h1 className={`${styles.text} ${styles.delay2}`}>FRONTEND DEVELOPER</h1>
         <h1 className={`${styles.text} ${styles.delay3}`}>LEE EUN SEO</h1>
       </div>
-
-      <div className={styles.roundTextWrapper}>
+      <a className={styles.roundTextWrapper} href="#ABOUT">
         <svg viewBox="0 0 200 200" className={styles.roundText}>
           <defs>
             <path
@@ -21,11 +20,11 @@ export const IntroSection = () => {
           <circle cx="100" cy="100" r="3" className={styles.dot} />
           <text>
             <textPath href="#circlePath" startOffset="0%">
-            • Scroll down • Scroll down • Scroll down 
+              • Scroll down • Scroll down • Scroll down
             </textPath>
           </text>
         </svg>
-      </div>
+      </a>
     </section>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { MENU_LIST } from './constants/navLinks';
 import styles from "./nav.module.scss";
 
@@ -13,9 +12,9 @@ export default function NavComponent() {
 			<ul className={ styles.nav_menu }>
 				{ MENU_LIST.map(( link, index ) => (
 				<li key={ index }>
-					<Link href={ link.url }>
+					<a href={ link.return }>
 						{ link.name }
-					</Link>
+					</a>
 				</li>
 				))}
 			</ul>

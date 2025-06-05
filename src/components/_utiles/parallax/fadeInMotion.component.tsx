@@ -18,7 +18,7 @@ const FadeInMotion = ({
   initialClip = 0
 }: FadeInMotionProps) => {
   const { ref, inView } = useInView({
-    //triggerOnce: true,
+    triggerOnce: true, //한번만
     threshold: 0,
   });
 

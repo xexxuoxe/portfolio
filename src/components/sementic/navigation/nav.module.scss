@@ -3,51 +3,48 @@
 #navigation {
 	position: fixed;
 	width: 100%;
-	min-width: 1000px;
-	height: clamp(4rem, 8vw, 6rem); 
-	top: 0;
-	left: 0;
-	backdrop-filter: blur(12px);
-	z-index: 49;
+	top: 20px;
+	z-index: 50;
 
 	.inner_wrap {
 		@include flex($align: 'center');
-		width: clamp(40%, 45vw, 23%);
-		height: 100%;
-		margin-left: auto;
+		width: 748px;
+		height: 56px;
+		margin: 0 auto;
 
 		.nav_menu {
 			@include flex($align: 'center');
 			width: 100%;
 			height: 100%;
+			background-color: rgba(255, 255, 255, 0.636);
+			border-radius: 50px;
+			backdrop-filter: blur(12px);
+			gap: 20px;
+			border: 1px solid #EEF2FF;
 
 			li {
 				position: relative;
-				width: clamp(15%, 12vw, 11%);
-				height: 100%;
-
-				&:hover,
-				&:focus,
-				&:active {
-					>a {
-						color: #000;
-						text-decoration: underline;
-					}
-
-					>.sub_menu {
-						display: block;
-					}
-				}
 
 				a {
 					@include flex($align: 'center');
 					width: 100%;
 					height: 100%;
-					font-size: clamp(0.9rem, 1.2vw, 1.08rem);
-					font-weight: 600;
+					font-size: 18px;
 					text-align: center;
-					font-family: 'Helvetica Neue', 'Spoqa Han Sans Neo';
-					transition: color 0.3s;
+					padding: 8px 10px;
+					transition: 0.3s;
+					color: #929292;
+					font-weight: 500;
+				}
+
+				&:hover,
+				&:focus,
+				&:active {
+					>a {
+						color: #fff;
+						background-color: #5077F9;
+						border-radius: 50px;
+					}
 				}
 			}
 		}
