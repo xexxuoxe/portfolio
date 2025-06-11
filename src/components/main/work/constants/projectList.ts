@@ -14,7 +14,7 @@ export const projectData = [
         ],
         links: {
             github: "https://github.com/xexxuoxe/Threed",
-            demo: "https://lab.siwonschool.com/m/?s=products",
+            demo: "https://threedblog.netlify.app/",
             readme: "",
             figma: "https://www.figma.com/design/l7CHtob6upjCQOw8ZMc04K/%EA%B8%B0%EC%88%A0%EB%B8%94%EB%A1%9C%EA%B7%B8?node-id=0-1&t=xJ3r1tKJd7qE0Jlz-1"
         }
