@@ -7,7 +7,7 @@ import FooterComponent from '@components/sementic/footer/footer.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
 import NavComponent from '@components/sementic/navigation/nav.component';
 import Loader from '@components/_utiles/loader/loader.component';
-import { AboutSection, Project, SubProject } from '../components/'
+import { AboutSection, ProjectSection, SubProject } from '../components/'
 
 import styles from './workList.module.scss';
 
@@ -29,7 +29,7 @@ export default function WorkListPage() {
 			>
 				<NavComponent />
 				<AboutSection />
-				<Project />
+				<ProjectSection />
 				<BackgroundMotion onInView={setIsBackgroundInView}>
 					<SubProject />
 				</BackgroundMotion>
