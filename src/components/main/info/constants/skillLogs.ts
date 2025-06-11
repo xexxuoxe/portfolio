@@ -2,7 +2,7 @@ export const skillsData = [
   {
     icon: '/images/repair_tools.png',
     title: 'Tools & DevOps',
-    items: ['Git, GitHub', 'Vercel', 'VS Code'],
+    items: ['Git, GitHub', 'Vercel', 'VS Code', 'WebStorm'],
   },
   {
     icon: '/images/code.png',

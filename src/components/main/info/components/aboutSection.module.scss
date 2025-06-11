@@ -1,9 +1,8 @@
 @use "@styles/common" as *;
 
 .info_detail {
-	width: 1200px;
-	padding: 150px 32px 80px;
-	margin: auto;
+	background: #f9fafb;
+	padding: 120px 32px;
 
 	h3,
 	h5 {
@@ -12,35 +11,29 @@
 	}
 
 	.sub_title {
-		@include flex();
+		@include flex('center');
 		align-items: flex-start;
+		width: 1200px;
+		margin: 0 auto;
 		line-height: 33px;
-		color: #242532;
+		color: #000;
 
 		h2 {
 			display: block;
-    		width: 180px;
-			font-size: 30px;
-			font-weight: 500;
-			line-height: 1.1;
+    		width: 130px;
+			color: #2957e2;
+			letter-spacing: 1px;
+			font-size: 15px;
+			font-weight: 700;
 		}
 
 		.info_cont {
 			padding-left: 30px;
 
-			h3,
-			h5 {
-				padding-bottom: 20px;
-				line-height: 1;
-			}
-
-			h5 {
-				font-weight: 100;
-			}
-
 			p {
-				font-weight: 300;
-				line-height: 2;
+				font-size: 30px;
+				font-weight: 600;
+				padding-bottom: 20px;
 			}
 
 			.contact_cont {
@@ -48,13 +41,16 @@
 				justify-content: flex-start;
 				gap: 70px;
 				height: 50px;
-				padding: 12px 20px 7px;
-				border-radius: 10px;
-				background: #fff;
+				padding: 10px 20px 11px;
+				border-radius: 20px;
+				background: rgba(255, 255, 255, 0.637);
 				margin-top: 20px;
+				box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
 
 				.title {
 					font-size: 20px;
+					letter-spacing: normal;
+					font-weight: 500
 				}
 
 				.list {
@@ -66,8 +62,9 @@
 						display: inline-block;
 						width: 36px;
 						height: 36px;
-						border-radius: 50%;
-						background: linear-gradient(90deg, #4366db -8.75%, #6d87df 106.25%);
+						border-radius: 15px;
+						background: linear-gradient(90deg, #2957e2 -8.75%, #2957e2 106.25%);
+
 
 						i {
 							position: absolute;
@@ -79,22 +76,22 @@
 						&.ico_mail {
 							i {
 								background: url(/images/ico_mail.png) center no-repeat;
-								background-position: 5px 5px;
+								background-position: 6px 6px;
 							}
 						}
 
 						&.ico_call {
 							i {
 								background: url("/images/ico_call.png") no-repeat center;
-								background-position: 9px 7px;
+								background-position: 9px 8px;
 							}
 						}
 
 					}
 					span {
 						font-size: 16px;
-						font-weight: 300;
-						color: #333;
+						font-weight: 400;
+    					letter-spacing: normal;
 					}
 				}
 			}

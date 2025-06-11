@@ -12,33 +12,39 @@
 
 .introSection {
 	position: relative;
-	@include flex('center');
-	padding: 150px 32px 80px;
+	padding: 200px 32px 180px;
+	margin: auto;
+
 
 	.textWrapper {
 		text-align: center;
+		line-height: 1.6;
 
 		.text {
-			font-size: 64px;
+			font-size: 55px;
 			font-weight: 700;
-			color: #4b6ff4;
+			color: #000;
 			opacity: 0;
 			transform: translateY(50px);
 			animation: slideUp 1s ease forwards;
+			
+			textPath {
+				letter-spacing: normal;
+			}
+			span {
+				color: #0070f3;
+			}
 		}
 	}
 
-	a {
+	.roundTextWrapper {
+		position: relative;
 		display: block;
-
-		&.roundTextWrapper {
-			position: absolute;
-			top: 500px;
-			right: 80px;
-			width: 170px;
-			height: 170px;
-			animation: rotate 10s linear infinite;
-		}
+		width: 150px;
+		height: 150px;
+		margin: auto;
+		top: 80px;
+		animation: rotate 10s linear infinite;
 
 		.roundText {
 			width: 100%;

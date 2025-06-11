@@ -7,26 +7,28 @@ import ErrorWrapper from '@lib/error/errorWrapper.boundary';
 import { AlertProvider } from '@lib/alert/alert.context';
 import { LoadingProvider } from '@lib/loading/loading.context';
 import { ResponsiveProvider } from '@lib/context/responsive.context';
-//import SmoothScroll from '@lib/scroll/index';
+import { SessionProvider } from "next-auth/react"
 import './globals.scss'
 
-export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
 
-    return (
-        <html lang="ko">
-            <ErrorWrapper>
+	return (
+		<html lang="ko">
+			<ErrorWrapper>
 				<body>
 					<AlertProvider>
 						<LoadingProvider>
-							<Suspense fallback={ <Loading /> }>
+							<Suspense fallback={<Loading />}>
 								<ResponsiveProvider>
+									<SessionProvider>
 										{children}
+									</SessionProvider>
 								</ResponsiveProvider>
 							</Suspense>
 						</LoadingProvider>
 					</AlertProvider>
 				</body>
-            </ErrorWrapper>
-        </html>
-    )
+			</ErrorWrapper>
+		</html>
+	)
 }

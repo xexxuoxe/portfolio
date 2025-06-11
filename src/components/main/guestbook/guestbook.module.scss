@@ -1,66 +1,31 @@
 @use "@styles/common" as *;
 
-.archivingSection {
-	text-align: center;
-	padding: 150px 32px 80px;
+.guestbookSection {
+	color: #000;
+	background: #f6f7fa;
+	padding: 120px 20px;
 
-	.sub_title {
-		font-size: 15px;
-		color: #4366db;
-		font-weight: 700;
-		margin-bottom: 10px;
-		letter-spacing: 1px;
-	}
+	.guestbookWrap {
+		@include flex('between');
+		align-items: flex-start;
+		width: 1200px;
+		margin: 0 auto;
 
-	.title {
-		font-weight: 400;
-		font-size: 30px;
-		line-height: 36px;
-		text-align: center;
-		color: #000000;
-	}
+		.wrapLeft {
+			width: 597px;
+		}
 
-	.archiveGrid {
-		@include flex('center');
-		gap: 40px;
-		margin-top: 70px;
+		.title {
+			font-size: 35px;
+			font-weight: 700;
+			margin-bottom: 40px;
+		}
 
-		.archiveCard {
-			width: 350px;
-			height: 130px;
-			background-color: #fff;
-			border-radius: 20px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
-			padding: 30px;
-			text-align: left;
-			transition: transform 0.3s ease;
-
-			&:hover {
-				transform: translateY(-5px);
-			}
-
-			.iconTitle {
-				font-size: 24px;
-				font-weight: 700;
-				margin-bottom: 10px;
-			}
-
-			.link {
-				display: inline-block;
-				color: #4b6ff4;
-				font-size: 15px;
-				text-decoration: none;
-				margin-bottom: 10px;
-
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-
-			.description {
-				font-size: 15px;
-				color: #111;
-			}
+		.write_detail {
+			@include flex('column');
+			align-items: flex-start;
+			margin: 0 auto;
+			width: 597px;
 		}
 	}
 }

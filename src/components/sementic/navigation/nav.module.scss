@@ -8,42 +8,51 @@
 
 	.inner_wrap {
 		@include flex($align: 'center');
-		width: 748px;
-		height: 56px;
+		width: 700px;
+		height: 50px;
 		margin: 0 auto;
 
 		.nav_menu {
 			@include flex($align: 'center');
+			gap: 10px;
 			width: 100%;
 			height: 100%;
 			background-color: rgba(255, 255, 255, 0.636);
-			border-radius: 50px;
+			border-radius: 20px;
 			backdrop-filter: blur(12px);
-			gap: 20px;
 			border: 1px solid #EEF2FF;
 
 			li {
 				position: relative;
+				display: flex;
 
 				a {
 					@include flex($align: 'center');
 					width: 100%;
 					height: 100%;
-					font-size: 18px;
+					font-size: 15px;
 					text-align: center;
-					padding: 8px 10px;
+					padding: 8px 20px;
 					transition: 0.3s;
-					color: #929292;
-					font-weight: 500;
+					color: #000000;
+					font-weight: 400;
+					border-radius: 20px;
+					letter-spacing: normal;
 				}
-
+				&.active {
+					>a {
+						color: #fff;
+						background-color: #0070f3;
+						border-radius: 20px;
+					}
+				}
 				&:hover,
 				&:focus,
 				&:active {
 					>a {
-						color: #fff;
-						background-color: #5077F9;
-						border-radius: 50px;
+						color: #000000;
+						background-color: #dddfe7;
+						border-radius: 20px;
 					}
 				}
 			}

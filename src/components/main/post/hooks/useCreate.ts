@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useNotion } from '@lib/notion/hook/useNotion.hook';
+import { useSession } from 'next-auth/react';
 
 export interface PostData {
     id?: string;
@@ -12,13 +13,21 @@ export interface PostData {
 }
 
 export function usePost(initialPost?: PostData | null) {
-
+    const { data: session } = useSession();
     const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState(initialPost?.title || '');
     const [contents, setContents] = useState(initialPost?.contents || '');
     const [tags, setTags] = useState<string[]>(initialPost?.tags || []);
     const { createPage, updatePage } = useNotion();
+
+    useEffect(() => {
+        if (!initialPost && session?.user?.name) {
+            setTitle(session.user.name);
+        } else if (!initialPost && !session?.user?.name) {
+            setTitle('알 수 없는 사용자');
+        }
+    }, [session, initialPost]);
 
 
     const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,16 +46,19 @@ export function usePost(initialPost?: PostData | null) {
 
         setLoading(true);
         try {
-            if (initialPost?.id) {
-                await updatePage(initialPost.id, title, contents, tags);
-                alert('글이 수정되었습니다.')
-                router.push(`/post/view/${initialPost.id}`);
-                
-            } else {
+            if (!initialPost?.id) {
+                await createPage(title, contents, tags);
+                alert('글이 작성되었습니다.');
+
+                window.location.reload();
+            }
+            else {
                 await createPage(title, contents, tags);
                 alert('글이 작성되었습니다.')
-                router.push('/post/list');
+                router.push('/');
             }
+
+
 
         } catch (error) {
             console.error('Failed to save post', error);
@@ -54,7 +66,7 @@ export function usePost(initialPost?: PostData | null) {
         } finally {
             setLoading(false);
         }
-    }; 
+    };
     return {
         title,
         contents,

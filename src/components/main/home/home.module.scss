@@ -5,20 +5,19 @@
 	position: absolute;
 	width: 100%;
 	font-size: 16px; 
-	background: #F4F6FF;
+	background: #fff;
 	transition: all 0.5s;
 	transition-delay: 0s;
-	overflow-x: hidden;
 	z-index: 10;
 
 	&.active01 {
 		background: #303030;
 		transition: 0.5s;
 		transition-delay: 0.5s;
-		// * {
-		// 	color: #fff !important;
-		// 	transition: 0.5s;
-		// 	transition-delay: 0.5s;
-		// }
+		* {
+			color: #fff !important;
+			transition: 0.5s;
+			transition-delay: 0.5s;
+		}
 	}
 }

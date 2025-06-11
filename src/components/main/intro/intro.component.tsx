@@ -1,13 +1,16 @@
-// components/IntroSection.tsx
 import styles from './intro.module.scss';
+import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 
 export const IntroSection = () => {
   return (
     <section className={styles.introSection}>
       <div className={styles.textWrapper}>
-        <h1 className={`${styles.text} ${styles.delay1}`}>HELLO!</h1>
-        <h1 className={`${styles.text} ${styles.delay2}`}>FRONTEND DEVELOPER</h1>
-        <h1 className={`${styles.text} ${styles.delay3}`}>LEE EUN SEO</h1>
+        <FadeInMotion delay={.2} initialX={0} initialY={-100}>
+          <h1 className={`${styles.text} ${styles.delay1}`}>안녕하세요.</h1>
+          <h1 className={`${styles.text} ${styles.delay2}`}>프론트엔드 개발자 </h1>
+          <h1 className={`${styles.text} ${styles.delay2}`}><span>이은서</span>입니다.</h1>
+        </FadeInMotion>
+        {/* <h1 className={`${styles.text} ${styles.delay3}`}></h1> */}
       </div>
       <a className={styles.roundTextWrapper} href="#ABOUT">
         <svg viewBox="0 0 200 200" className={styles.roundText}>
@@ -20,7 +23,7 @@ export const IntroSection = () => {
           <circle cx="100" cy="100" r="3" className={styles.dot} />
           <text>
             <textPath href="#circlePath" startOffset="0%">
-              • Scroll down • Scroll down • Scroll down
+              • Scroll down • Scroll down • Scroll down • Scroll down • Scroll down
             </textPath>
           </text>
         </svg>
@@ -28,3 +31,5 @@ export const IntroSection = () => {
     </section>
   );
 };
+
+

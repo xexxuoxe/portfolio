@@ -7,16 +7,15 @@ export const ArchivingSection = () => {
   return (
     <section className={styles.archivingSection} id='ARCHIVING'>
       <h2 className={styles.sub_title}>ARCHIVING</h2>
-      <h1 className={styles.title}>저의 기술을 확인해보세요!</h1>
+      <h1 className={styles.title}>저의 <span> 작업물을 </span> 확인해보세요</h1>
       <div className={styles.archiveGrid}>
         {archiveData.map((item, index) => (
           <FadeInMotion key={index} delay={index * 0.4} initialX={0} initialY={100}>
             <div className={styles.archiveCard}>
-              <div className={styles.iconTitle}>
+              <div className={`${styles.iconTitle} ${styles[item.class]}`}>
                 <Image 
                   src={item.img} 
-                  width={150}
-                  height={80}
+                  fill
                   alt={item.alt} 
                   />
               </div>

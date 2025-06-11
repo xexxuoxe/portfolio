@@ -33,7 +33,7 @@ export const usePostView = (postId: string) => {
 
 	// Delete function
 	const deleteData = async (postId: string) => {
-		console.log(postId);
+		// console.log(postId);
 		await api.delete(`http://localhost:3002/postReview/${postId}`);
 		window.location.href = '/post/list';
 	};

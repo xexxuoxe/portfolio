@@ -33,7 +33,7 @@ export class NotionService {
     private convertToNotionPage(page: PageObjectResponse): NotionPage {
 
 
-        console.log(page)
+        // console.log(page)
 
         const properties = page.properties;
         
@@ -68,7 +68,7 @@ export class NotionService {
                 database_id: this.databaseId,
             });
 
-            console.log(response , 'getPages')
+            // console.log(response , 'getPages')
 
             return response.results
                 .filter((page): page is PageObjectResponse => 'properties' in page)
@@ -88,7 +88,7 @@ export class NotionService {
                 page_id: pageId,
             });
 
-            console.log(response , 'getPage')
+            // console.log(response , 'getPage')
 
             if (!('properties' in response)) {
                 throw new Error('Invalid page response');
@@ -136,7 +136,7 @@ export class NotionService {
                 },
             });
 
-            console.log(response , 'createPage')
+            // console.log(response , 'createPage')
 
             if (!('properties' in response)) {
                 throw new Error('Invalid page response');

@@ -1,23 +1,30 @@
 @use "@styles/common" as *;
 
 .archivingSection {
-	text-align: center;
-	padding: 150px 32px 80px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 32px;
+	background: #2957e2;
 
 	.sub_title {
 		font-size: 15px;
-		color: #4366db;
+		color: #fff;
 		font-weight: 700;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 		letter-spacing: 1px;
 	}
 
 	.title {
 		font-weight: 400;
-		font-size: 30px;
+		font-size: 35px;
 		line-height: 36px;
 		text-align: center;
-		color: #000000;
+		color: #fff;
+
+		span {
+			font-weight: 600;
+			padding: 0 3px;
+		}
 	}
 
 	.archiveGrid {
@@ -26,6 +33,8 @@
 		margin-top: 70px;
 
 		.archiveCard {
+			display: grid;
+    		align-items: center;
 			width: 350px;
 			height: 130px;
 			background-color: #fff;
@@ -40,17 +49,22 @@
 			}
 
 			.iconTitle {
-				font-size: 24px;
-				font-weight: 700;
-				margin-bottom: 10px;
+				position: relative;
+				width: 200px;
+				height: 45px;
+
+				&.blog {
+					width: 135px;
+    				height: 72px;
+				}
 			}
 
 			.link {
 				display: inline-block;
 				color: #4b6ff4;
-				font-size: 15px;
+				font-size: 16px;
 				text-decoration: none;
-				margin-bottom: 10px;
+				letter-spacing: normal;
 
 				&:hover {
 					text-decoration: underline;
@@ -58,8 +72,9 @@
 			}
 
 			.description {
-				font-size: 15px;
+				font-size: 16px;
 				color: #111;
+				font-weight: 400;
 			}
 		}
 	}

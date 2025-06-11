@@ -30,6 +30,7 @@
     "html-react-parser": "^5.1.12",
     "locomotive-scroll": "^4.1.4",
     "next": "^15.3.3",
+    "next-auth": "^4.24.11",
     "next-redux-wrapper": "^8.1.0",
     "nookies": "^2.5.2",
     "react": "^19.1.0",

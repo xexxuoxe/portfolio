@@ -1,40 +1,22 @@
 @import '@styles/abstracts/_mixins';
-// @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
 
+// font
+@include font-face("Paperlogy", "/fonts/Paperlogy-1Thin.ttf", 100, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-2ExtraLight.ttf", 200, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-3Light.ttf", 300, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-4Regular.ttf", 400, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-5Medium.ttf", 500, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-6SemiBold.ttf", 600, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-7Bold.ttf", 700, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-8ExtraBold.ttf", 800, "ttf");
+@include font-face("Paperlogy", "/fonts/Paperlogy-9Black.ttf", 900, "ttf");
 // Variables
-$font-family-base: 'Pretendard', Roboto, -apple-system, BlinkMacSystemFont, system-ui, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Spoqa Han Sans Neo', 'sans-serif', 'Helvetica';
+$font-family-base: 'Pretendard', Roboto, -apple-system, BlinkMacSystemFont, system-ui, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Paperlogy', 'sans-serif', 'Helvetica';
 $font-size-base: 16px;
 $line-height-base: inherit;
 $color-text: #141414;
 $color-link: #000;
 $base_width : 1200px;
-
-// SpoqaHan 폰트 정의 
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.otf", 100, "opentype");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.ttf", 100, "ttf");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.eot", 100, "eot");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.woff", 100, "woff");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Thin.woff2", 100, "woff2");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.otf", 300, "opentype");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.ttf", 300, "ttf");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.eot", 300, "eot");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.woff", 300, "woff");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Light.woff2", 300, "woff2");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.otf", 400, "opentype");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.ttf", 400, "ttf");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.eot", 400, "eot");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.woff", 400, "woff");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Regular.woff2", 400, "woff2");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.otf", 500, "opentype");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.ttf", 500, "ttf");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.eot", 500, "eot");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.woff", 500, "woff");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Medium.woff2", 500, "woff2");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.otf", 600, "opentype");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.ttf", 600, "ttf");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.eot", 600, "eot");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.woff", 600, "woff");
-// @include font-face("Spoqa Han Sans Neo", "/fonts/SpoqaHanSansNeo-Bold.woff2", 600, "woff2");
 
 // Reset and base styles
 body, form, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, fieldset, th, td, input, textarea, button, select {
@@ -60,7 +42,8 @@ html, body {
   }
   
   * {
-		font-family: 'Helvetica Neue' , 'Spoqa Han Sans Neo', 'Spoqa Han Sans Neo', 'sans-serif';
+		font-family: 'Helvetica Neue' , 'Paperlogy', 'sans-serif';
+    letter-spacing: -2px;
 	}
 }
 
@@ -79,7 +62,7 @@ address, caption, em, var {
   font-weight: normal;
 }
 
-input, textarea, select { letter-spacing: normal; }
+input, textarea, select { letter-spacing: -3px; }
 input, select { vertical-align: middle; }
 
 ol, ul, dl { list-style: none; }
@@ -95,7 +78,7 @@ img {
 
 hr { display: none; }
 table { border-collapse: collapse; border-spacing: 0; }
-br, p { letter-spacing: normal; }
+br, p { letter-spacing: -2.6px; }
 
 input {
   &:-webkit-autofill,

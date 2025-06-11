@@ -1,64 +1,24 @@
-@import '@styles/abstracts/_mixins';
+@use "@styles/common" as *;
 
-.board_write {
-	position: absolute;
-	width: calc(100% - 30vw);
-	min-width: 1000px;
-	min-height: calc(100% - 20vw);
-	padding: clamp(5rem, 15vw, 40rem) clamp(5rem, 15vw, 20vw) clamp(5rem, 10vw, 10rem);
-	font-size: clamp(1rem, 1.5vw, 1.2rem);
-	background: #f0f3ff;
-	transition: all .5s;
-	transition-delay: 0s;
-	overflow-x: hidden;
-	z-index: 10;
+.writeForm {
+	width: 100%;
 
+	textarea {
+		width: calc(100% - 32px);
+		min-height: 153px;
+		border: 1px solid #c3d8ff;
+		border-radius: 8px;
+		padding: 16px;
+		font-size: 18px;
+		resize: none;
+		background: #fff;
+		color: #000;
+		outline: none;
+		box-shadow: 0 4px 12px #8686861a;
 
-	.info_cont {
-		font-size: 2.7rem;
-		padding: 0 0 4rem 0;
-	}
-
-	.write_detail {
-		margin-bottom: 2rem;
-
-		.input_group {
-			margin-bottom: 1.5rem;
-
-			label {
-				display: block;
-				margin-bottom: 0.5rem;
-				font-weight: 600;
-				font-size: 1.4rem;
-				color: #333;
-			}
-
-			input[type="text"],
-			textarea {
-				width: 100%;
-				padding: 1.2rem;
-				border: none;
-				border-bottom: 1px solid #490b95;
-				font-size: 1.3rem;
-				transition: border-color 0.3s ease;
-				background-color: #ffffff;
-
-				&:focus {
-					outline: none;
-					border-color: #4a90e2;
-					background-color: #fff;
-					box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
-				}
-
-				&::placeholder {
-					color: #aaa;
-				}
-			}
-
-			textarea {
-				min-height: 200px;
-				resize: vertical;
-			}
+		&.off {
+			border: 1px solid #d6e4ff;
+			cursor: not-allowed;
 		}
 	}
 }
