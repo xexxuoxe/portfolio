@@ -25,7 +25,7 @@ export default function HomeItemPage() {
   return (
     <>
       {/* loader */}
-      <Loader variant="blind_base" onComplete={handleLoaderComplete} className={''} />
+      <Loader variant="blind_pastel_blue" onComplete={handleLoaderComplete} className={''} />
       <motion.div
         className={`${styles.home_detail} ${isBackgroundInView01 ? styles.active01 : ''} ${isBackgroundInView02 ? styles.active02 : ''}`}
         initial={{ display: 'none', y: '100%' }}
