@@ -1,0 +1,88 @@
+@import '@styles/abstracts/_mixins';
+
+.post_view_btn {
+    @include flex('center');
+    justify-content: space-between;
+    padding: 10rem 0 0 0;
+
+    .view_btn_right {
+        @include flex('center');
+    }
+
+    .post_list_btn,
+    .post_delete_btn,
+    .post_edit_btn {
+
+        a,
+        button {
+            position: relative;
+            display: inline-block;
+            min-width: 8rem;
+            padding: 1.5rem 2rem 1.5rem;
+            border: none;
+            background: none;
+            border-bottom: 2px solid #000;
+            margin: auto;
+            text-align: center;
+
+            span {
+                display: block;
+                font-size: 1.3rem;
+                color: #000;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: block;
+                top: 0;
+                left: 0;
+                background-color: #ffd810;
+                transform-origin: bottom left;
+                transform: scaleY(0);
+                transition-duration: 380ms;
+                z-index: -1;
+            }
+
+            &:hover {
+                text-decoration: none;
+
+                &::before {
+                    transform: scaleY(1);
+
+                }
+            }
+        }
+    }
+
+    .post_edit_btn {
+        margin-left: 2rem;
+    }
+
+    .post_delete_btn {
+        margin-left: 2rem;
+
+        button {
+            border-bottom: 2px solid #7d7d7d;
+
+            span {
+                color: #5a5a5a;
+            }
+
+            &::before {
+                background-color: #fc6454;
+
+
+            }
+
+            &:hover {
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

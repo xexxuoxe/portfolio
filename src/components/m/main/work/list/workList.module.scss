@@ -1,0 +1,28 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/abstracts/_variables';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+/* info */
+.work_view {
+	position: absolute;
+    width: calc(100% - 10vw);
+	min-width: 1000px;
+	padding: clamp(5rem, 24vw, 20rem) clamp(5rem, 5vw, 5vw) clamp(5rem, 10vw, 10rem);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+    background: #f0f3ff;
+	transition: all .5s;
+    transition-delay: 0s;
+    overflow-x: hidden;
+    z-index: 10;
+
+	&.active {
+		background: #000;
+		transition: .5s;
+		transition-delay: .5s;
+
+		* { 
+			color: #fff !important;
+		}
+	}
+}

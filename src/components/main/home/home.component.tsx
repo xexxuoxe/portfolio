@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react';
+import { useLoader } from './hooks/useLoader';
+import Loader from '@components/_utiles/loader/loader.component';
 import NavComponent from '@components/sementic/navigation/nav.component';
 import { IntroSection } from '@components/main/intro/intro.component'
 import { ProjectSection } from '@components/main/work/components/project'

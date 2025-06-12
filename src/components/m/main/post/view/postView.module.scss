@@ -1,0 +1,64 @@
+@import '@styles/abstracts/_mixins';
+
+
+.board_view {
+	position: absolute;
+	width: calc(100% - 30vw);
+	min-width: 1000px;
+	min-height: calc(100% - 20vw);
+	padding: clamp(5rem, 15vw, 40rem) clamp(5rem, 15vw, 20vw) clamp(5rem, 10vw, 10rem);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+	background: #f0f3ff;
+	transition: all .5s;
+	transition-delay: 0s;
+	overflow-x: hidden;
+	z-index: 10;
+
+	.board_detail {
+
+		.board_cont {
+
+			.view_tags {
+				margin-bottom: 1rem;
+
+				div {
+					display: inline-block;
+					h1 {
+						font-weight: 400;
+						font-size: 1.5rem;
+                        border-radius: 50px;
+                        background: linear-gradient(-45deg, #a89be2, #fdd0f6, #9ae4fa) !important;
+                        color: #000;
+                        overflow: hidden;
+                        padding: .4rem 1rem;
+                        margin-right: .5rem;
+					}
+				}
+			}
+
+			.view_title {
+				margin-bottom: 2.5rem;
+
+				h1 {
+					font-weight: 900;
+					font-size: 4rem;
+				}
+			}
+
+			.view_contents {
+				min-height: 10rem;
+
+				div {
+					font-weight: 100;
+					font-size: 1.5rem;
+					word-break: break-word;
+					
+					pre {
+						white-space: pre-wrap;
+					}
+				}
+			}
+		}
+	}
+	
+}

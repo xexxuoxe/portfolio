@@ -1,0 +1,55 @@
+@use "@styles/common" as *;
+
+.post_submit_btn {
+    width: 100%;
+
+    button {
+        @include flex('center');
+        width: 100%;
+        color: #fff;
+        font-weight: 400;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 17px;
+        margin-top: 12px;
+        border: none;
+        transition: all 0.3s;
+        background: #0070f3;
+        cursor: pointer;
+
+        &:hover {
+            background: #000;
+        }
+
+        &:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        span {
+            @include flex('center');
+
+            i {
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+
+                &.ico_send {
+                    margin: 2px 0 0 8px;
+                    background: url('/images/ico_send.png') no-repeat center/contain;
+                }
+
+                &.ico_git {
+                    width: 25px;
+                    height: 25px;
+                    background: url('/images/ico_login_github.png') no-repeat center/contain;
+                    transform: translate(-8px, -1px);
+
+                    &+span {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

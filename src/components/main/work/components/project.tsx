@@ -36,7 +36,7 @@ export const ProjectSection = () => {
                     <p className={styles.company}>회사 : {project.company}</p>
                     <ul className={styles.descriptionList}>
                       {project.descriptions.map((desc, idx) => (
-                        <li key={idx}>• {desc}</li>
+                        <li key={idx}>{desc}</li>
                       ))}
                     </ul>
                   </div>

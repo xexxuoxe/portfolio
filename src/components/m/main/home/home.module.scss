@@ -1,0 +1,23 @@
+@use "@styles/common" as *;
+
+/* home */
+.home_detail {
+	position: absolute;
+	width: 100%;
+	font-size: 16px; 
+	background: #fff;
+	transition: all 0.5s;
+	transition-delay: 0s;
+	z-index: 10;
+
+	&.active01 {
+		background: #303030;
+		transition: 0.5s;
+		transition-delay: 0.5s;
+		* {
+			color: #fff !important;
+			transition: 0.5s;
+			transition-delay: 0.5s;
+		}
+	}
+}

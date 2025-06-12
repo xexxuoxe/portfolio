@@ -1,0 +1,50 @@
+@import '@styles/abstracts/_mixins';
+@import '@styles/abstracts/_variables';
+@import '@styles/base/_reset';
+@import '@styles/base/_typography.scss';
+
+
+.work_detail {
+	
+	h3,
+	h5 {
+		font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+		font-weight: 700;
+	}
+
+	.work_title {
+		font-size: clamp(8.8rem, 13.375vw - 3rem, 14.375rem);
+		font-weight: 700;
+		line-height: 2.375rem;
+		margin-bottom: 8rem;
+		text-transform: uppercase !important;
+		margin-bottom: clamp(3.8rem, 10.375vw - 1.675rem, 14.375rem);
+	}
+
+	.sub_title {
+		@include flex();
+		align-items: flex-start;
+		line-height: 2.0625rem;
+		color: #242532;
+
+		.work_cont {
+			width: 87%;
+
+			h3, h5 {
+				font-size: clamp(1.5rem, 2.5vw, 2rem);
+				padding-bottom: clamp(.8rem, 5.5vw, 1.3rem);
+				font-weight: 700;
+				line-height: 1;
+			}
+			
+			h5 {
+				font-weight: 100;
+				line-height: 1.3;
+			}
+
+			p {
+				line-height: 2;
+			}
+		}
+	}
+}
