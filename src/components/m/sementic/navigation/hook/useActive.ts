@@ -8,7 +8,7 @@ export function useNaveAct() {
         const observerOptions = {
             root: null,
             rootMargin: "0px",
-            threshold: 0.5,
+            threshold: 0.8,
         };
 
         const observerCallback = (entries: IntersectionObserverEntry[]) => {
