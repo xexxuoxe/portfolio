@@ -31,8 +31,8 @@
 
             i {
                 display: inline-block;
-                width: 2.4vw;
-                height: 2.4vw;
+                width: 3vw;
+                height: 3vw;
 
                 &.ico_send {
                     margin: 0.267vw 0 0 1.067vw;
@@ -40,13 +40,14 @@
                 }
 
                 &.ico_git {
-                    width: 3.333vw;
-                    height: 3.333vw;
+                    width: 4.333vw;
+                    height: 4.333vw;
                     background: url('/images/ico_login_github.png') no-repeat center/contain;
                     transform: translate(-1.067vw, -0.133vw);
 
                     &+span {
                         font-weight: 500;
+                        letter-spacing: -1px;
                     }
                 }
             }
