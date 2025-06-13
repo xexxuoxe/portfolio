@@ -1,68 +1,72 @@
 @use "@styles/common" as *;
 
 .archivingSection {
+	width: calc(100vw - 8.6vw);
     margin: 0 auto;
     text-align: center;
-    padding: 100px 32px;
+    padding: 13.333vw 4.3vw;
 	background: #2957e2;
 
 	.sub_title {
-		font-size: 15px;
+		font-size: 2.5vw;
 		color: #fff;
 		font-weight: 700;
-		margin-bottom: 15px;
-		letter-spacing: 1px;
+		margin-bottom: 2vw;
+		letter-spacing: 0.133vw;
 	}
 
 	.title {
 		font-weight: 400;
-		font-size: 35px;
-		line-height: 36px;
+		font-size: 4.667vw;
+		line-height: 4.8vw;
 		text-align: center;
 		color: #fff;
 
 		span {
 			font-weight: 600;
-			padding: 0 3px;
+			padding: 0 0.4vw;
 		}
 	}
 
 	.archiveGrid {
 		@include flex('center');
-		gap: 40px;
-		margin-top: 70px;
+		gap: 5.333vw;
+		align-items: center;
+		margin-top: 9.333vw;
 
 		.archiveCard {
 			display: grid;
     		align-items: center;
-			width: 350px;
-			height: 130px;
+			justify-content: center;
+			width: 30vw;
+			height: 23vw;
 			background-color: #fff;
-			border-radius: 20px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
-			padding: 30px;
+			border-radius: 2.667vw;
+			box-shadow: 0vw 0vw 1.333vw rgba(0, 0, 0, 0.08);
+			padding: 4vw;
 			text-align: left;
 			transition: transform 0.3s ease;
 
 			&:hover {
-				transform: translateY(-5px);
+				transform: translateY(-0.667vw);
 			}
 
 			.iconTitle {
 				position: relative;
-				width: 200px;
-				height: 45px;
+				width: 28vw;
+    			height: 6vw;
 
 				&.blog {
-					width: 152px;
-    				height: 72px;
+					width: 20vw;
+    				height: 9.3vw;
 				}
 			}
 
 			.link {
 				display: inline-block;
 				color: #4b6ff4;
-				font-size: 16px;
+				font-size: 2.2vw;
+				font-weight: 400;
 				text-decoration: none;
 				letter-spacing: normal;
 
@@ -72,7 +76,7 @@
 			}
 
 			.description {
-				font-size: 16px;
+				font-size: 2.7vw;
 				color: #111;
 				font-weight: 400;
 			}

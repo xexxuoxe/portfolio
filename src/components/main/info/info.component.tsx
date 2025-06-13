@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLoader } from './hooks/useLoader';
 
-import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
-import FooterComponent from '@components/sementic/footer/footer.component';
 import BackgroundMotion from '@components/_utiles/parallax/backgroundMotion.component';
 import NavComponent from '@components/sementic/navigation/nav.component';
 import Loader from'@components/_utiles/loader/loader.component';
@@ -35,7 +33,6 @@ export default function InfoItemPage() {
 				<BackgroundMotion onInView={setIsBackgroundInView}>
 					<Work/>
 				</BackgroundMotion>
-				<FooterComponent />
 			</motion.div>
 		</>
     )

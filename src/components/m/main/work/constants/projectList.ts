@@ -101,7 +101,7 @@ export const projectData = [
         links: {
             github: "",
             demo: "",
-            readme: "/work/view/lgchem",
+            readme: "/m/work/view/lgchem",
             figma: ""
         }
     },
@@ -123,7 +123,7 @@ export const projectData = [
         links: {
             github: "",
             demo: "",
-            readme: "/work/view/lges",
+            readme: "/m/work/view/lges",
             figma: ""
         }
     },
@@ -144,7 +144,7 @@ export const projectData = [
         links: {
             github: "",
             demo: "",
-            readme: "/work/view/korloy",
+            readme: "/m/work/view/korloy",
             figma: ""
         }
     },

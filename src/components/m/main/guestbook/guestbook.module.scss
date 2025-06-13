@@ -1,31 +1,27 @@
 @use "@styles/common" as *;
 
 .guestbookSection {
+	width: calc(100vw - 8.6vw);
 	color: #000;
 	background: #f6f7fa;
-	padding: 120px 20px;
+	padding: 16vw 4.3vw;
 
 	.guestbookWrap {
-		@include flex('between');
-		align-items: flex-start;
-		width: 1200px;
+		width: 100%;
 		margin: 0 auto;
 
-		.wrapLeft {
-			width: 597px;
-		}
-
 		.title {
-			font-size: 35px;
+			width: 100%;
+			font-size: 5vw;
 			font-weight: 700;
-			margin-bottom: 40px;
+			margin-bottom: 5.333vw;
 		}
 
 		.write_detail {
 			@include flex('column');
 			align-items: flex-start;
 			margin: 0 auto;
-			width: 597px;
+			width: 100%;
 		}
 	}
 }

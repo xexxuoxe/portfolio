@@ -1,9 +1,9 @@
 'use client';
 
-import WriteGuestButtons from './components/actionGuestButtons';
 import { usePost, PostData } from '../hooks/useCreate';
 import { useSession } from 'next-auth/react'
-import UserInfoPage from '@components/main/guestbook/components/userInfo.component';
+import UserInfoPage from '@components/m/main/guestbook/components/userInfo.component';
+import WriteGuestButtons from './components/actionGuestButtons';
 import styles from './postWrite.module.scss';
 
 interface PostWriteProps {

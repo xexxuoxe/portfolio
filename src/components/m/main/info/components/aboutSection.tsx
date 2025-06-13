@@ -14,7 +14,6 @@ export const AboutSection = () => {
             <p>디자이너와 개발자의 협업을 유연하게 조율해주는 역할,</p>
             <p>고객과 회사의 징검다리 역할하는 전문 인력</p>
             <div className={styles.contact_cont}>
-              <span className={styles.title}>CONTACT</span>
               <div className={styles.list}>
                 <b className={styles.ico_mail}><i></i></b>
                 <span>dlwltn1283@naver.com  / ieunseo802@gmail.com</span>

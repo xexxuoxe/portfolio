@@ -1,7 +1,6 @@
 import styles from './guestbook.module.scss';
-import PostWritePage from '@components/main/post/write/postWrite.component';
-import PostItem from '@components/main/post/list/components/postItem';
-import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
+import PostWritePage from '@components/m/main/post/write/postWrite.component';
+import PostItem from '@components/m/main/post/list/components/postItem';
 
 export function GuestSection() {
   return (

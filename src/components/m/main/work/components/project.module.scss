@@ -2,12 +2,12 @@
 
 .fakeFrame {
   position: relative;
-  padding: 120px 0;
+  padding: 16vw 0;
 
   .fake {
     position: absolute;
     width: 100%;
-    height: 800px;
+    height: 106.667vw;
 
     &:last-child {
       bottom: 0;
@@ -16,55 +16,54 @@
 }
 
 .projectSection {
+  width: 90vw;
   position: relative;
   margin: auto;
   z-index: 1;
 
   .sub_title {
-    font-size: 15px;
+    font-size: 2.5vw;
     color: #2957e2;
     font-weight: 700;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+    margin-bottom: 2vw;
+    letter-spacing: 0.133vw;
     text-align: center;
   }
 
   >.title {
     font-weight: 400;
-    font-size: 35px;
-    line-height: 36px;
+    font-size: 4.667vw;
+    line-height: 4.8vw;
     text-align: center;
     color: #000;
 
     span {
       font-weight: 600;
-      padding: 0 3px;
+      padding: 0 0.4vw;
     }
   }
 
   .projectGrid {
-    width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 70px;
-    gap: 32px;
+    @include flex('column');
+    width: 100%;
+    align-items: center;
+    margin-top: 9.333vw;
+    gap: 4.267vw;
 
     .projectCard {
       position: relative;
-      width: 570px;
-      min-height: 400px;
+      width: 90vw;
+      min-height: 53.333vw;
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 2.133vw;
+      box-shadow: 0 0.267vw 1.6vw rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      border: 1px solid #ececec;
+      border: 0.133vw solid #ececec;
 
       .image {
         position: relative;
         width: 100%;
-        height: 170px;
+        height: 22.667vw;
 
         img {
           position: absolute;
@@ -77,16 +76,16 @@
         position: absolute;
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        top: 16px;
-        left: 16px;
+        gap: 1.067vw;
+        top: 2.133vw;
+        left: 2.133vw;
 
         .badge {
           color: #fff;
           background-color: #0070f3;
-          font-size: 13px;
-          padding: 3px 8px 5px;
-          border-radius: 4px;
+          font-size: 2vw;
+          padding: 0.4vw 1.067vw 0.667vw;
+          border-radius: 0.533vw;
           font-weight: 500;
           letter-spacing: normal;
         }
@@ -94,11 +93,11 @@
 
       .websiteBtn {
         position: absolute;
-        top: 16px;
-        right: 16px;
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 14px;
+        top: 2.133vw;
+        right: 2.133vw;
+        padding: 1.067vw 2.133vw;
+        border-radius: 1.067vw;
+        font-size: 2vw;
         color: #fff;
         background-color: #ff10108a;
         font-weight: 500;
@@ -108,39 +107,39 @@
 
       .CardContents {
         position: relative;
-        height: 290px;
-        padding: 15px 24px;
-        border-top: 1px solid #dbdbdb;
+        height: 55vw;
+        padding: 2vw 3.2vw;
+        border-top: 0.133vw solid #dbdbdb;
 
         .CardContentsTop {
           @include flex('column');
-          gap: 8px;
+          gap: 1.067vw;
 
           * {
 
             font-weight: 400;
-            letter-spacing: -1.2px;
+            letter-spacing: -0.16vw;
           }
 
           .title {
-            font-size: 20px;
+            font-size: 3vw;
             font-weight: bold;
-            margin-top: 8px;
+            margin-top: 1.067vw;
           }
 
           .subtitle {
-            font-size: 14px;
+            font-size: 2.4vw;
             color: #0070f3;
           }
 
           .company {
-            font-size: 16px;
+            font-size: 2.5vw;
             color: #000000;
 
           }
 
           .descriptionList {
-            font-size: 15px;
+            font-size: 2.6vw;
             color: #000;
             list-style: none;
             padding-left: 0;
@@ -149,17 +148,17 @@
             li {
               display: inline-block;
               position: relative;
-              padding-left: 11px;
+              padding-left: 1.467vw;
 
               &::before {
                 position: absolute;
                 content: '';
-                width: 4px;
-                height: 4px;
+                width: 0.533vw;
+                height: 0.533vw;
                 background-color: #000;
                 border-radius: 50%;
-                left: 0px;
-                top: 10px;
+                left: 0vw;
+                top: 1.333vw;
               }
             }
           }
@@ -169,25 +168,25 @@
         .linkButtons {
           @include flex('center');
           justify-content: flex-start;
-          width: calc(100% - 48px);
+          width: calc(100% - 6.4vw);
           position: absolute;
-          height: 45px;
-          gap: 16px;
-          border-top: 1px solid #dadada;
+          height: 7vw;
+          gap: 2.133vw;
+          border-top: 0.133vw solid #dadada;
           bottom: 0;
 
           a {
             @include flex('center');
-            gap: 5px;
-            font-size: 15px;
+            gap: 0.667vw;
+            font-size: 2.3vw;
             font-weight: 500;
             color: #000;
             letter-spacing: normal;
 
             i {
               display: inline-block;
-              width: 18px;
-              height: 18px;
+              width: 2.4vw;
+              height: 2.4vw;
 
               &.ico_git {
                 background: url('/images/ico_git_link.png') no-repeat center/contain;

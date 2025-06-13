@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './project.module.scss';
 import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
-import { SubProject } from '@components/main/work/components/subProject'
+import { SubProject } from '@components/m/main/work/components/subProject'
 import { projectData } from '../constants/projectList';
 
 export const ProjectSection = () => {

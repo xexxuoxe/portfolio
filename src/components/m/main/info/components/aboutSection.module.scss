@@ -1,70 +1,65 @@
 @use "@styles/common" as *;
 
 .info_detail {
+	width: calc(100vw - 8.6vw);
 	background: #f9fafb;
-	padding: 120px 32px;
+	padding: 16vw 4.3vw;
 
 	h3,
 	h5 {
-		font-size: 40px;
+		font-size: 5.333vw;
 		font-weight: 700;
 	}
 
 	.sub_title {
-		@include flex('center');
-		align-items: flex-start;
-		width: 1200px;
+		width: 100%;
 		margin: 0 auto;
-		line-height: 33px;
+		line-height: 4.4vw;
 		color: #000;
 
 		h2 {
 			display: block;
-    		width: 130px;
+    		width: 100%;
 			color: #2957e2;
-			letter-spacing: 1px;
-			font-size: 15px;
+			letter-spacing: 0.133vw;
+			font-size: 2.3vw;
+			text-align: center;
+			padding-bottom: 2vw;
 			font-weight: 700;
 		}
 
 		.info_cont {
-			padding-left: 30px;
 
 			p {
-				font-size: 30px;
+				font-size: 4vw;
 				font-weight: 600;
-				padding-bottom: 20px;
+				padding-bottom: 2vw;
+				text-align: center;
 			}
 
 			.contact_cont {
-				@include flex('center');
-				justify-content: flex-start;
-				gap: 70px;
-				height: 50px;
-				padding: 10px 30px 11px;
-				border-radius: 20px;
+				width: calc(100% - 8vw);
+				height: auto;
+				padding: 1.333vw 4vw 1.467vw;
+				border-radius: 2.667vw;
 				background: rgba(255, 255, 255, 0.637);
-				margin-top: 20px;
-				box-shadow: rgba(71, 71, 71, 0.1) 0px 2px 8px 0px;
-
-				.title {
-					font-size: 20px;
-					letter-spacing: normal;
-					font-weight: 500
-				}
+				margin-top: 2.667vw;
+				box-shadow: rgba(71, 71, 71, 0.1) 0vw 0.267vw 1.067vw 0vw;
+    			text-align: center;
 
 				.list {
-					@include flex('center');
-					gap: 12px;
+					display: block;
+					padding-top: 2vw;
 
 					b {
 						position: relative;
-						display: inline-block;
-						width: 36px;
-						height: 36px;
-						border-radius: 15px;
+						display: block;
+						margin: auto;
+						width: 4.8vw;
+						height: 4.8vw;
+						border-radius: 50%;
 						background: linear-gradient(90deg, #2957e2 -8.75%, #2957e2 106.25%);
-
+    					text-align: left;
 
 						i {
 							position: absolute;
@@ -75,21 +70,19 @@
 
 						&.ico_mail {
 							i {
-								background: url(/images/ico_mail.png) center no-repeat;
-								background-position: 6px 6px;
+								background: url(/images/ico_mail.png) 1vw 0.8vw / 3vw no-repeat;
 							}
 						}
 
 						&.ico_call {
 							i {
-								background: url("/images/ico_call.png") no-repeat center;
-								background-position: 9px 8px;
+								background: url("/images/ico_call.png") 1.3vw 1vw / 2.2vw no-repeat;
 							}
 						}
 
 					}
 					span {
-						font-size: 16px;
+						font-size: 2.4vw;
 						font-weight: 400;
     					letter-spacing: normal;
 					}

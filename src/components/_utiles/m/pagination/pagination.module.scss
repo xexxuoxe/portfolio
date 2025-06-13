@@ -1,0 +1,54 @@
+@import '@styles/abstracts/_mixins';
+
+.pagination {
+	padding: 3.333vw 0;
+	.page_list {
+		@include flex($align: 'center');
+		justify-content: center;
+
+		.page_num,
+		.page_num_on {
+			@include flex($align: 'center');
+			display: inline-block;
+			width: 4.667vw;
+			height: 4.667vw;
+			margin: 0 1vw;
+			font-size: 3.2vw;
+			font-weight: 500;
+			color: #000000;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+
+			&:hover {
+				color: #0070f3;
+			}
+		}
+
+		.page_num_on {
+			color: #0070f3;
+		}
+
+		.page_prev,
+		.page_next {
+			width: 8vw;
+			height: 4vw;
+			font-size: 4.5vw;
+			background: transparent;
+			border: none;
+			color: #141414;
+			font-weight: 400;
+			cursor: pointer;
+			transition: color 0.3s;
+
+			&:disabled {
+				color: #b6b6b6;
+				cursor: default;
+			}
+
+			&:hover:not(:disabled) {
+				color: #FC6454;
+			}
+		}
+	}
+}

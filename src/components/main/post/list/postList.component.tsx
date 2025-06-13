@@ -4,10 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Loader from '@components/_utiles/loader/loader.component';
-import FooterComponent from '@components/sementic/footer/footer.component';
-import FadeInMotion from '@components/_utiles/parallax/fadeInMotion.component';
 import PostItem from '@components/main/post/list/components/postItem'
-import NavComponent from '@components/sementic/navigation/nav.component';
 
 import { useLoader } from '../hooks/useLoader';
 import { useNotion } from '@lib/notion/hook/useNotion.hook';
@@ -39,9 +36,7 @@ export default function PostListItem() {
             </div>
           </ul>
           <PostItem />
-        </div>
-        {/* footer */}
-        <FooterComponent />
+        </div>y
       </motion.div>
     </>
   );

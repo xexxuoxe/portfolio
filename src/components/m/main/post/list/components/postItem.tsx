@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Pagination from '@components/_utiles/pagination/pagination.component';
+import Pagination from '@components/_utiles/m/pagination/pagination.component';
 import { useNotion } from '@lib/notion/hook/useNotion.hook';
 import styles from './postItem.module.scss';
 

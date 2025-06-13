@@ -8,10 +8,10 @@
         width: 100%;
         color: #fff;
         font-weight: 400;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-size: 17px;
-        margin-top: 12px;
+        padding: 2vw 3.2vw;
+        border-radius: 1.067vw;
+        font-size: 3.5vw;
+        margin-top: 1.6vw;
         border: none;
         transition: all 0.3s;
         background: #0070f3;
@@ -31,19 +31,19 @@
 
             i {
                 display: inline-block;
-                width: 18px;
-                height: 18px;
+                width: 2.4vw;
+                height: 2.4vw;
 
                 &.ico_send {
-                    margin: 2px 0 0 8px;
+                    margin: 0.267vw 0 0 1.067vw;
                     background: url('/images/ico_send.png') no-repeat center/contain;
                 }
 
                 &.ico_git {
-                    width: 25px;
-                    height: 25px;
+                    width: 3.333vw;
+                    height: 3.333vw;
                     background: url('/images/ico_login_github.png') no-repeat center/contain;
-                    transform: translate(-8px, -1px);
+                    transform: translate(-1.067vw, -0.133vw);
 
                     &+span {
                         font-weight: 500;
