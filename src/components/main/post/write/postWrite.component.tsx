@@ -27,7 +27,7 @@ export default function PostWritePage({ post }: PostWriteProps) {
       <div className={styles.writeForm}>
         <textarea
           id='contents'
-          cols={200}
+          cols={100}
           wrap="hard"
           value={contents}
           maxLength={100}
