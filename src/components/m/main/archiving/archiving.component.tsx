@@ -20,6 +20,7 @@ export const ArchivingSection = () => {
                 />
               </div>
               <a
+                href={item.url}
                 className={styles.link}
                 target="_blank"
                 rel="noopener noreferrer"
