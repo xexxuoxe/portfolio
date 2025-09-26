@@ -19,4 +19,9 @@ export const skillsData = [
     title: 'Design',
     items: ['Figma', 'Zeplin', 'Adobe Photoshop'],
   },
+  {
+    icon: '/images/ai.png',
+    title: 'AI Tool',
+    items: ['Cursor', 'Claude', 'ChatGPT', 'Grok'],
+  },
 ];

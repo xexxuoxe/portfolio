@@ -5,7 +5,7 @@ export const projectData = [
         title: "Threed 기술 블로그 자체제작",
         year: "2025.05 (1개월)",
         role: "Front / back",
-        company: "부트캠프 팀(4인) 프로젝트",
+        company: "팀(4인) 프로젝트",
         skills: ["NEXT.JS", "TYPESCRIPT", "Express", "SCSS"],
         descriptions: [
             "사용자 로그인 상태에 따라 동적으로 렌더링된 콘텐츠를 제공하는 컴포넌트 개발 및 개인화된 사용자 경험 보장",

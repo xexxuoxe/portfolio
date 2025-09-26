@@ -4,13 +4,12 @@ export const projectData = [
         type: "WEBSITE",
         title: "Threed 기술 블로그 자체제작",
         year: "2025.05 (1개월)",
-        role: "Front",
-        company: "부트캠프 팀(4인) 프로젝트",
-        skills: ["NEXT.JS", "TYPESCRIPT", "SCSS"],
+        role: "Front / back",
+        company: "팀(4인) 프로젝트",
+        skills: ["NEXT.JS", "TYPESCRIPT", "Express", "SCSS"],
         descriptions: [
-            "메인 페이지 필터링 및 검색, 로그인 페이지, 북마크/마이 페이지 개발",
             "사용자 로그인 상태에 따라 동적으로 렌더링된 콘텐츠를 제공하는 컴포넌트 개발 및 개인화된 사용자 경험 보장",
-            "현장 계획 및 설계(기획)부터 디자인, 개발 및 배포까지 전체 개발 라이프사이클 참여",
+            "AI 도구를 활용한 현장 계획 및 설계(기획)부터 디자인, 개발(Front/Back) 및 배포까지 전체 개발 라이프사이클 참여",
             "확장성과 유지관리성을 위해 아키텍처 지향적인 파일 구조와 모듈화된 API를 중심으로 파일 구조를 설계"
         ],
         links: {

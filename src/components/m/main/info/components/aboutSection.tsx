@@ -10,9 +10,9 @@ export const AboutSection = () => {
         </FadeInMotion>
         <FadeInMotion delay={0.4} initialX={0} initialY={100}>
           <div className={styles.info_cont}>
-            <p>"전체적인 기획, 사용자입장이 되어 고뇌하는 습관"</p>
-            <p>"디자이너와 개발자의 협업을 유연하게 조율해주는 역할"</p>
-            <p>"고객과 회사의 징검다리 역할하는 전문 인력"</p>
+            <p>전체적인 기획, 사용자입장이 되어 고뇌하는 습관,</p>
+            <p>디자이너와 개발자의 협업을 유연하게 조율해주는 역할,</p>
+            <p>AI를 활용한 효율적 업무와 고객과 회사의 징검다리 역할하는 전문 인력</p>
             <div className={styles.contact_cont}>
               <div className={styles.list}>
                 <b className={styles.ico_mail}><i></i></b>
