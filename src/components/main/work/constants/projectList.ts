@@ -4,7 +4,7 @@ export const projectData = [
         type: "WEBSITE",
         title: "Threed 기술 블로그 자체제작",
         year: "2025.05 (1개월)",
-        role: "Front / back",
+        role: "Front / Back",
         company: "팀(4인) 프로젝트",
         skills: ["NEXT.JS", "TYPESCRIPT", "Express", "SCSS"],
         descriptions: [
