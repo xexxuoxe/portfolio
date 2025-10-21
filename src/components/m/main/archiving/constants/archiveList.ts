@@ -11,9 +11,9 @@ export const archiveData = [
   },
   {
     img: '/images/ico_xexxuoxe2.png',
-    alt: 'threed',
-    url: '죄송합니다. 10월 오픈예정입니다.',
-    description: '개인 기술 블로그 (10월 오픈 예정)',
+    alt: '기술 블로그',
+    url: 'https://xexxuoxe.tistory.com/',
+    description: '기술 블로그',
     class: 'blog',
   },
 ];
