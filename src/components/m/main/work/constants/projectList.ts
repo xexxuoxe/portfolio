@@ -68,7 +68,7 @@ export const projectData = [
         type: "WEBSITE",
         title: "경기도상권분석서비스",
         year: "2023 (1개월)",
-        role: "Front 40%",
+        role: "Front 20%",
         company: "엠에스링크앤솔루션",
         skills: ["HTML", "CSS", "JAVASCRIPT", "Jquery", "Figma"],
         descriptions: [
