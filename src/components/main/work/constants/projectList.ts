@@ -4,9 +4,9 @@ export const projectData = [
         type: "WEBSITE",
         title: "Threed 기술 블로그 자체제작",
         year: "2025.05 (1개월)",
-        role: "Front / Back",
-        company: "팀(4인) 프로젝트",
-        skills: ["NEXT.JS", "TYPESCRIPT", "Express", "SCSS"],
+        role: "기획 / Front / Back",
+        company: "개인 프로젝트",
+        skills: ["NEXT.JS", "TYPESCRIPT", "Node.JS", "Express", "SCSS"],
         descriptions: [
             "사용자 로그인 상태에 따라 동적으로 렌더링된 콘텐츠를 제공하는 컴포넌트 개발 및 개인화된 사용자 경험 보장",
             "AI 도구를 활용한 현장 계획 및 설계(기획)부터 디자인, 개발(Front/Back) 및 배포까지 전체 개발 라이프사이클 참여",
