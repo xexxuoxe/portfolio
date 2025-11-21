@@ -28,7 +28,7 @@ export const projectData = [
         company: "시원스쿨 ((주)에스제이더블유인터내셔널)",
         skills: ["NEXT.JS", "TYPESCRIPT", "SCSS"],
         descriptions: [
-            "수강신청, 선생님, 교재/MP3 페이지 개발",
+            "수강신청, 교재/MP3 페이지 개발",
             "모바일 최적화를 고려한 Next.js 기반 반응형 웹 구조 설계 및 구축.",
             "과목별 API를 유동적으로 바인딩하여 단일 코드베이스 내 유연한 콘텐츠 구성이 가능하도록 구현",
             "강의 및 교재 상세 페이지 동적 렌더링 및 UI/UX 개선 수행",
